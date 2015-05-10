@@ -795,8 +795,7 @@ void mxmenueditor::on_buttonAbout_clicked()
     msgBox.addButton(tr("Cancel"), QMessageBox::AcceptRole); // because we want to display the buttons in reverse order we use counter-intuitive roles.
     msgBox.addButton(tr("License"), QMessageBox::RejectRole);
     if (msgBox.exec() == QMessageBox::RejectRole) {
-        QString cmd = QString("xdg-open http://www.mepiscommunity.org/doc_mx/mx-menu-editor-license.html '%1'").arg(tr("MX Menu Editor"));
-        system(cmd.toAscii());
+        system("xdg-open http://www.mepiscommunity.org/doc_mx/mx-menu-editor-license.html");
     }
 }
 
@@ -808,8 +807,7 @@ void mxmenueditor::setEnabled(QString)
 // Help button clicked
 void mxmenueditor::on_buttonHelp_clicked()
 {
-    QString cmd = QString("xdg-open http://www.mepiscommunity.org/user_manual_mx15/mxum.html#menueditor '%1'").arg(tr("MX Menu Editor"));
-    system(cmd.toAscii());
+    system("xdg-open http://www.mepiscommunity.org/user_manual_mx15/mxum.html#menueditor");
 }
 
 // Cancel button clicked

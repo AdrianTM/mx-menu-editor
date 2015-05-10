@@ -184,8 +184,6 @@
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
         <location filename="../mxmenueditor.cpp" line="791"/>
-        <location filename="../mxmenueditor.cpp" line="798"/>
-        <location filename="../mxmenueditor.cpp" line="811"/>
         <source>MX Menu Editor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -279,7 +277,7 @@
         <location filename="../mxmenueditor.ui" line="328"/>
         <location filename="../mxmenueditor.cpp" line="684"/>
         <location filename="../mxmenueditor.cpp" line="795"/>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -344,17 +342,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>Save changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>Do you want to save your edits?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
