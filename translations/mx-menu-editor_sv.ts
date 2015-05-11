@@ -275,6 +275,10 @@
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="328"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mxmenueditor.cpp" line="684"/>
         <location filename="../mxmenueditor.cpp" line="795"/>
         <location filename="../mxmenueditor.cpp" line="826"/>
