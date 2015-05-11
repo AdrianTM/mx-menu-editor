@@ -325,7 +325,7 @@
         <string>Quit application</string>
        </property>
        <property name="text">
-        <string>Cancel</string>
+        <string>Close</string>
        </property>
        <property name="icon">
         <iconset>
