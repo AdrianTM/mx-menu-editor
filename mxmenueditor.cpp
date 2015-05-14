@@ -498,6 +498,7 @@ void mxmenueditor::changeIcon()
             ui->buttonSave->setEnabled(true);
             text.replace(QRegExp("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
             ui->advancedEditor->setText(text);
+            ui->labelIcon->setPixmap(QPixmap(selected));
         } else { // if running command from add-custom-app window
             add->icon_path = selected;
             add->ui->pushChangeIcon->setIcon(QIcon(selected));
