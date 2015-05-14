@@ -137,6 +137,31 @@
 <context>
     <name>mxmenueditor</name>
     <message>
+        <location filename="../mxmenueditor.ui" line="27"/>
+        <source>Quick Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.ui" line="67"/>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.ui" line="148"/>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.ui" line="217"/>
+        <source>Advanced Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.ui" line="238"/>
+        <source>Categories and applications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mxmenueditor.ui" line="373"/>
         <source>Display help </source>
         <translation type="unfinished"></translation>
@@ -188,16 +213,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="217"/>
-        <source>Advanced Editor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.ui" line="27"/>
-        <source>Quick Editor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mxmenueditor.ui" line="39"/>
         <source>Comment:</source>
         <translation type="unfinished"></translation>
@@ -210,11 +225,6 @@
     <message>
         <location filename="../mxmenueditor.ui" line="60"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.ui" line="67"/>
-        <source>Categories:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -238,11 +248,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="148"/>
-        <source>Options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mxmenueditor.ui" line="157"/>
         <source>Notify startup</source>
         <translation type="unfinished"></translation>
@@ -261,11 +266,6 @@
         <location filename="../mxmenueditor.ui" line="187"/>
         <location filename="../mxmenueditor.cpp" line="504"/>
         <source>Change icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.ui" line="238"/>
-        <source>Select category and then the application:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
