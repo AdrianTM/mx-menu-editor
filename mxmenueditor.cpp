@@ -897,16 +897,10 @@ QString mxmenueditor::findIcon(QString icon_name)
                     QStringList files = out.str.split("\n");
                     return files[0];
                 } else {
-                    out = runCmd("find /usr/share/icons -iname " + icon_name + ext);
+                    out = runCmd("find " + QDir::homePath() + "/.local/share/icons " + "/usr/share/icons /usr/share/pixmaps -iname " + icon_name + ext);
                     if (out.str != "") {
                         QStringList files = out.str.split("\n");
                         return files[0];
-                    } else {
-                        out = runCmd("find /usr/share/pixmaps -iname " + icon_name + ext);
-                        if (out.str != "") {
-                            QStringList files = out.str.split("\n");
-                            return files[0];
-                        }
                     }
                 }
             }
