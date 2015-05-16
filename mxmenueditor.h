@@ -71,6 +71,7 @@ public:
     bool save();
     QString getCatName(QFile *file);
     QString findIcon(QString icon_name);
+    QString findBiggest(QStringList files);
     QStringList listCategories();
     QStringList listDesktopFiles(QString search_category, QString location);
     QStringList listMenuFiles();
