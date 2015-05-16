@@ -26,6 +26,7 @@
 #include "ui_mxmenueditor.h"
 #include "ui_addappdialog.h"
 
+#include <QProcess>
 #include <QFileDialog>
 #include <QTextStream>
 #include <QFormLayout>
@@ -42,13 +43,13 @@ mxmenueditor::mxmenueditor(QWidget *parent) :
     add(new AddAppDialog)
 {
     ui->setupUi(this);
-    proc = new QProcess(this);
     comboBox = new QComboBox;
     version = getVersion("mx-menu-editor");
 
     all_local_desktop_files = listDesktopFiles("\"\"", QDir::homePath() + "/.local/share/applications/*");
     all_usr_desktop_files = listDesktopFiles("\"\"", "/usr/share/applications/*");
 
+    resetInterface();
     loadMenuFiles();
 
     connect(ui->treeWidget, SIGNAL(itemSelectionChanged()), SLOT(loadApps()));
@@ -78,8 +79,9 @@ mxmenueditor::~mxmenueditor()
 }
 
 // util function for getting bash command output and error code
-Output mxmenueditor::runCmd(QString cmd)
+Output runCmd(QString cmd)
 {
+    QProcess *proc = new QProcess();
     QEventLoop loop;
     proc->setReadChannelMode(QProcess::MergedChannels);
     proc->start("/bin/bash", QStringList() << "-c" << cmd);
@@ -377,24 +379,9 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
             }
         }
         QString file_name = ui->treeWidget->currentItem()->text(1);
-        ui->listWidgetEditCategories->clear();
-        ui->checkNotify->setChecked(false);
-        ui->checkHide->setChecked(false);
-        ui->checkRunInTerminal->setChecked(false);
-        ui->checkNotify->setEnabled(true);
-        ui->checkHide->setEnabled(true);
-        ui->checkRunInTerminal->setEnabled(true);
-        ui->advancedEditor->setLineWrapMode(QTextEdit::NoWrap);
-        ui->toolButtonCommand->setEnabled(true);
-        ui->pushAdd->setEnabled(true);
-        ui->pushDelete->setDisabled(true);
-        ui->pushChangeIcon->setEnabled(true);
-        ui->advancedEditor->setEnabled(true);
-        ui->lineEditCommand->setEnabled(true);
-        ui->lineEditComment->setEnabled(true);
-        ui->lineEditName->setEnabled(true);
-        ui->pushChangeIcon->setEnabled(true);
-        ui->buttonSave->setDisabled(true);
+        resetInterface();
+        enableEdit();
+
         QString cmd;
         Output out;
 
@@ -410,24 +397,33 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
         // load name, command, comment
         out = runCmd("grep -m1 ^Name= " + file_name.toAscii() + " | cut -f2 -d=");
         ui->lineEditName->setText(out.str);
-        out = runCmd("grep ^Comment= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Comment= " + file_name.toAscii() + " | cut -f2 -d=");
         ui->lineEditComment->setText(out.str);
         ui->lineEditComment->home(false);
-        out = runCmd("grep ^Exec= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Exec= " + file_name.toAscii() + " | cut -f2 -d=");
         ui->lineEditCommand->setText(out.str);
         ui->lineEditCommand->home(false);
         // load options
-        out = runCmd("grep ^StartupNotify= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^StartupNotify= " + file_name.toAscii() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkNotify->setChecked(true);
         }
-        out = runCmd("grep ^NoDisplay= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^NoDisplay= " + file_name.toAscii() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkHide->setChecked(true);
         }
-        out = runCmd("grep ^Terminal= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Terminal= " + file_name.toAscii() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkRunInTerminal->setChecked(true);
+        }
+        out = runCmd("grep -m1 ^Icon= " + file_name.toAscii() + " | cut -f2 -d=");
+        if (out.str != "") {
+            QString icon = out.str;
+            if (QFile(icon).exists()) {
+                ui->labelIcon->setPixmap(QPixmap(icon));
+            } else {
+                ui->labelIcon->setPixmap(QPixmap(findIcon(icon)));
+            }
         }
 
         // enable RestoreApp button if flag is set up for item
@@ -469,6 +465,7 @@ void mxmenueditor::resetInterface()
     ui->listWidgetEditCategories->clear();
     ui->advancedEditor->clear();
     ui->advancedEditor->setDisabled(true);
+    ui->advancedEditor->setLineWrapMode(QTextEdit::NoWrap);
     ui->lineEditName->clear();
     ui->lineEditComment->clear();
     ui->lineEditCommand->clear();
@@ -480,11 +477,30 @@ void mxmenueditor::resetInterface()
     ui->checkRunInTerminal->setDisabled(true);
     ui->toolButtonCommand->setDisabled(true);
     ui->pushAdd->setDisabled(true);
+    ui->pushDelete->setDisabled(true);
     ui->lineEditCommand->setDisabled(true);
     ui->lineEditComment->setDisabled(true);
     ui->lineEditName->setDisabled(true);
     ui->pushChangeIcon->setDisabled(true);
     ui->pushRestoreApp->setDisabled(true);
+    ui->buttonSave->setDisabled(true);
+    ui->labelIcon->setPixmap(QPixmap());
+}
+
+// enable buttons used to edit item
+void mxmenueditor::enableEdit()
+{
+    ui->checkNotify->setEnabled(true);
+    ui->checkHide->setEnabled(true);
+    ui->checkRunInTerminal->setEnabled(true);
+    ui->toolButtonCommand->setEnabled(true);
+    ui->pushAdd->setEnabled(true);
+    ui->pushChangeIcon->setEnabled(true);
+    ui->advancedEditor->setEnabled(true);
+    ui->lineEditCommand->setEnabled(true);
+    ui->lineEditComment->setEnabled(true);
+    ui->lineEditName->setEnabled(true);
+    ui->pushChangeIcon->setEnabled(true);
 }
 
 // change the icon of the application
@@ -863,4 +879,38 @@ void mxmenueditor::findReloadItem(QString base_name)
         }
         ++it;
     }
+}
+
+QString mxmenueditor::findIcon(QString icon_name)
+{
+    Output out;
+    QStringList extList;
+    extList << ".png" << ".svg" << ".xpm";
+
+    out = runCmd("xfconf-query -c xsettings -p /Net/IconThemeName");
+    if (out.str != "") {
+        QString dir = "/usr/share/icons/" + out.str;
+        if (QDir(dir).exists()) {
+            foreach (QString ext, extList) {
+                out = runCmd("find " + dir + " -iname " + icon_name + ext);
+                if (out.str != "") {
+                    QStringList files = out.str.split("\n");
+                    return files[0];
+                } else {
+                    out = runCmd("find /usr/share/icons -iname " + icon_name + ext);
+                    if (out.str != "") {
+                        QStringList files = out.str.split("\n");
+                        return files[0];
+                    } else {
+                        out = runCmd("find /usr/share/pixmaps -iname " + icon_name + ext);
+                        if (out.str != "") {
+                            QStringList files = out.str.split("\n");
+                            return files[0];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return "";
 }

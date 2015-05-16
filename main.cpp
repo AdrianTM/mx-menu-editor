@@ -32,7 +32,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QIcon::setThemeName("Faenza-Cupertino-mini");
+
+    Output out = runCmd("xfconf-query -c xsettings -p /Net/IconThemeName");
+    QIcon::setThemeName(out.str);
     a.setWindowIcon(QIcon::fromTheme("edit-copy"));
 
     QTranslator qtTran;
