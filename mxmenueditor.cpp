@@ -35,7 +35,7 @@
 #include <QDirIterator>
 #include <QHashIterator>
 
-#include <QDebug>
+//#include <QDebug>
 
 mxmenueditor::mxmenueditor(QWidget *parent) :
     QDialog(parent),
