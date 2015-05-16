@@ -15,14 +15,14 @@ Changes:
  .
    * alpha release
 Checksums-Sha1: 
- d36db99b1cf8f709ec28445e0f4fe94ca50baa05 648 mx-menu-editor_0.15.5mx14.dsc
- 1881e61f90f72406a627b02980e4c44b03566998 36221 mx-menu-editor_0.15.5mx14.tar.gz
- 111d814cea3e97b5710cd1a526680b01a7794dc4 57346 mx-menu-editor_0.15.5mx14_i386.deb
+ 2d588ad7b57a3143b93aee1899d4fd87987f0104 648 mx-menu-editor_0.15.5mx14.dsc
+ 365717854cb12333f29d8052cb7c56e7f726b988 37000 mx-menu-editor_0.15.5mx14.tar.gz
+ 1209afffb7a0079149f301ef2a06e6f5a761b1f2 57476 mx-menu-editor_0.15.5mx14_i386.deb
 Checksums-Sha256: 
- 8df81252736f010186beac85b63e4a90b2abbe0cb6d3986c429e3cdc2ac482c1 648 mx-menu-editor_0.15.5mx14.dsc
- 186e45299184e547462910f59c4bd4ddc1406fb9612126dd89de267fcb372c6b 36221 mx-menu-editor_0.15.5mx14.tar.gz
- f5f9648e6a019c0c3d80b48d25f04f5bf3e369e22d2d4719746a1cb6bf9b79bf 57346 mx-menu-editor_0.15.5mx14_i386.deb
+ 829aa0275c55e7b1b2619ac2ad46899b7e2f30bff914a633263b562acf05c046 648 mx-menu-editor_0.15.5mx14.dsc
+ 80b4d11bc9b94208dd1e2da03bf4c95c91b3abe51833a7da2eb33331e8b3b7cd 37000 mx-menu-editor_0.15.5mx14.tar.gz
+ a5854da1cb47fb756bce9bcb342e1397d1fd247418f98cfe1ea28f522a27da2d 57476 mx-menu-editor_0.15.5mx14_i386.deb
 Files: 
- c9fea99930105af6919f26e388360aeb 648 admin optional mx-menu-editor_0.15.5mx14.dsc
- 388ceb40def5be766a3d051601547e61 36221 admin optional mx-menu-editor_0.15.5mx14.tar.gz
- 24a87daf9cb53f4bd2701096ae7a18ad 57346 admin optional mx-menu-editor_0.15.5mx14_i386.deb
+ f654e6ab23482c82ecfa4ec43513342f 648 admin optional mx-menu-editor_0.15.5mx14.dsc
+ 040c8a0b405502a518cb750b0b98022a 37000 admin optional mx-menu-editor_0.15.5mx14.tar.gz
+ 2896eacfd075b3ecc57cc55a01f96f16 57476 admin optional mx-menu-editor_0.15.5mx14_i386.deb
