@@ -10,8 +10,8 @@ Build-Depends: qt4-qmake, debhelper (>= 7.0.50~)
 Package-List: 
  mx-menu-editor deb admin optional
 Checksums-Sha1: 
- 365717854cb12333f29d8052cb7c56e7f726b988 37000 mx-menu-editor_0.15.5mx14.tar.gz
+ 25cf89691e0ff930762835378f516f63528f31a6 36932 mx-menu-editor_0.15.5mx14.tar.gz
 Checksums-Sha256: 
- 80b4d11bc9b94208dd1e2da03bf4c95c91b3abe51833a7da2eb33331e8b3b7cd 37000 mx-menu-editor_0.15.5mx14.tar.gz
+ 013c30016b033362728cdb409f45e1dc8a13b672050b0d889db0e9115f03cca5 36932 mx-menu-editor_0.15.5mx14.tar.gz
 Files: 
- 040c8a0b405502a518cb750b0b98022a 37000 mx-menu-editor_0.15.5mx14.tar.gz
+ 02d579633d60d33f97d21f83dea637e7 36932 mx-menu-editor_0.15.5mx14.tar.gz

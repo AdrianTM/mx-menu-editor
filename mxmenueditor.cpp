@@ -35,7 +35,7 @@
 #include <QDirIterator>
 #include <QHashIterator>
 
-//#include <QDebug>
+#include <QDebug>
 
 mxmenueditor::mxmenueditor(QWidget *parent) :
     QDialog(parent),
@@ -898,16 +898,32 @@ QString mxmenueditor::findIcon(QString icon_name)
                 out = runCmd("find " + dir + " -iname " + icon_name + ext);
                 if (out.str != "") {
                     QStringList files = out.str.split("\n");
-                    return files[0];
+                    return findBiggest(files);
                 } else {
                     out = runCmd("find " + QDir::homePath() + "/.local/share/icons " + "/usr/share/icons /usr/share/pixmaps -iname " + icon_name + ext);
                     if (out.str != "") {
                         QStringList files = out.str.split("\n");
-                        return files[0];
+                        return findBiggest(files);
                     }
                 }
             }
         }
     }
     return "";
+}
+
+// find largest icon
+QString mxmenueditor::findBiggest(QStringList files)
+{
+    int max = 0;
+    QString name;
+    foreach (QString file, files) {
+        QFile f(file);
+        int size = f.size();
+        if (size >= max) {
+            name = file;
+            max = size;
+        }
+    }
+    return name;
 }
