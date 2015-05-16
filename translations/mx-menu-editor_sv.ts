@@ -142,7 +142,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="264"/>
+        <location filename="../mxmenueditor.ui" line="273"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
@@ -167,47 +167,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="404"/>
+        <location filename="../mxmenueditor.ui" line="413"/>
         <source>Display help </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="407"/>
+        <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="414"/>
+        <location filename="../mxmenueditor.ui" line="423"/>
         <source>Alt+H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="433"/>
+        <location filename="../mxmenueditor.ui" line="442"/>
         <source>Save Changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="440"/>
+        <location filename="../mxmenueditor.ui" line="449"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="475"/>
+        <location filename="../mxmenueditor.ui" line="484"/>
         <source>About this application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="478"/>
+        <location filename="../mxmenueditor.ui" line="487"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="485"/>
+        <location filename="../mxmenueditor.ui" line="494"/>
         <source>Alt+B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="356"/>
+        <location filename="../mxmenueditor.ui" line="365"/>
         <source>Quit application</source>
         <translation type="unfinished"></translation>
     </message>
@@ -233,12 +233,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="276"/>
+        <location filename="../mxmenueditor.ui" line="285"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="290"/>
+        <location filename="../mxmenueditor.ui" line="299"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -268,7 +268,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="250"/>
+        <location filename="../mxmenueditor.ui" line="259"/>
         <location filename="../mxmenueditor.cpp" line="523"/>
         <source>Change icon</source>
         <translation type="unfinished"></translation>
@@ -279,7 +279,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="359"/>
+        <location filename="../mxmenueditor.ui" line="368"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -291,12 +291,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="366"/>
+        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Alt+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="430"/>
+        <location filename="../mxmenueditor.ui" line="439"/>
         <source>Start scanning for shares</source>
         <translation type="unfinished"></translation>
     </message>

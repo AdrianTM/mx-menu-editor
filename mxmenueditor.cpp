@@ -916,14 +916,14 @@ QString mxmenueditor::findIcon(QString icon_name)
 QString mxmenueditor::findBiggest(QStringList files)
 {
     int max = 0;
-    QString name;
+    QString name_biggest;
     foreach (QString file, files) {
         QFile f(file);
         int size = f.size();
         if (size >= max) {
-            name = file;
+            name_biggest = file;
             max = size;
         }
     }
-    return name;
+    return name_biggest;
 }
