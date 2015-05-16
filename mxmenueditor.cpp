@@ -419,11 +419,12 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
         }
         out = runCmd("grep -m1 ^Icon= " + file_name.toAscii() + " | cut -f2 -d=");
         if (out.str != "") {
+            QSize size = ui->labelIcon->size();
             QString icon = out.str;
             if (QFile(icon).exists()) {
-                ui->labelIcon->setPixmap(QPixmap(icon));
+                ui->labelIcon->setPixmap(QPixmap(icon).scaled(size));
             } else {
-                ui->labelIcon->setPixmap(QPixmap(findIcon(icon)));
+                ui->labelIcon->setPixmap(QPixmap(findIcon(icon)).scaled(size));
             }
         }
 
