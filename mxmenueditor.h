@@ -26,7 +26,6 @@
 #define MXMENUEDITOR_H
 
 #include <QMessageBox>
-#include <QProcess>
 #include <QFile>
 #include <QTreeWidget>
 #include <QComboBox>
@@ -49,7 +48,6 @@ class mxmenueditor : public QDialog
     Q_OBJECT
 
 protected:
-    QProcess *proc;
     QComboBox *comboBox;
 
 public:
@@ -57,7 +55,6 @@ public:
     ~mxmenueditor();
 
     QFile config_file;
-    Output runCmd(QString cmd);
     QString getVersion(QString name);
     QString version;
     QStringList all_usr_desktop_files;
@@ -73,6 +70,7 @@ public:
     bool isHidden(QString file_name);
     bool save();
     QString getCatName(QFile *file);
+    QString findIcon(QString icon_name);
     QStringList listCategories();
     QStringList listDesktopFiles(QString search_category, QString location);
     QStringList listMenuFiles();
@@ -86,6 +84,7 @@ public slots:
     void changeCommand();
     void changeComment();
     void resetInterface();
+    void enableEdit();
     void enableDelete();
     void delCategory();
     void addCategory();
@@ -110,6 +109,7 @@ private:
     QTreeWidgetItem *current_item;
 };
 
+Output runCmd(QString cmd);
 
 #endif // MXSNAPSHOT_H
 
