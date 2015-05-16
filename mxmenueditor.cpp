@@ -87,6 +87,7 @@ Output runCmd(QString cmd)
     proc->start("/bin/bash", QStringList() << "-c" << cmd);
     proc->waitForFinished();
     Output out = {proc->exitCode(), proc->readAll().trimmed()};
+    delete proc;
     return out;
 }
 
@@ -487,7 +488,7 @@ void mxmenueditor::resetInterface()
     ui->labelIcon->setPixmap(QPixmap());
 }
 
-// enable buttons used to edit item
+// enable buttons to edit item
 void mxmenueditor::enableEdit()
 {
     ui->checkNotify->setEnabled(true);
@@ -881,6 +882,7 @@ void mxmenueditor::findReloadItem(QString base_name)
     }
 }
 
+// find icon file location using the icon name form .desktop file
 QString mxmenueditor::findIcon(QString icon_name)
 {
     Output out;
