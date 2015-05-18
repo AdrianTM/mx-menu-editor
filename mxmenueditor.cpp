@@ -797,7 +797,9 @@ void mxmenueditor::on_buttonSave_clicked()
     out.write(ui->advancedEditor->toPlainText().toAscii());
     out.flush();
     out.close();
-    system("xfce4-panel --restart");
+    if (system("pgrep xfce4-panel") == 0) {
+        system("xfce4-panel --restart");
+    }
     ui->buttonSave->setDisabled(true);
     findReloadItem(base_name);
 }

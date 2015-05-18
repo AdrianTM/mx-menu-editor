@@ -10,5 +10,5 @@ Vcs-Git: git://github.com/AdrianTM/mx-menu-editor
 Package: mx-menu-editor
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: MX Test
- MX Test is a tool used for testing code
+Description: MX Menu Editor
+ MX Menu Editor is a tool for editing Xfce menu
