@@ -1,25 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=MX Menu Editor
-Name[ca]=MX Test
-Name[de]=MX Test
-Name[el]=MX Test
-Name[es]=MX Test
-Name[fr]=MX Test
-Name[it]=MX Test
-Name[ja]=MX Test
-Name[nl]=MX Test
-Name[sv]=MX Test
-Comment=
-Comment[ca]=
-Comment[de]=
-Comment[el]=
-Comment[es]=
-Comment[fr]=
-Comment[it]=
-Comment[ja]=
-Comment[nl]=
-Comment[sv]=
+Comment=Easily edit system and user menus
 Exec=mx-menu-editor
 Terminal=false
 Type=Application
