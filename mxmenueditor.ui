@@ -410,7 +410,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Display help </string>
+        <string>Display help</string>
        </property>
        <property name="text">
         <string>Help</string>
@@ -436,7 +436,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Start scanning for shares</string>
+        <string/>
        </property>
        <property name="text">
         <string>Save Changes</string>

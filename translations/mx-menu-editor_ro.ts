@@ -19,18 +19,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="52"/>
-        <source>Delete cateogry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../addappdialog.ui" line="69"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../addappdialog.ui" line="111"/>
-        <source>Start scanning for shares</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -44,8 +34,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../addappdialog.ui" line="52"/>
+        <source>Delete category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../addappdialog.ui" line="159"/>
-        <source>Quit application</source>
+        <source>Quit dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -168,7 +163,7 @@
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="413"/>
-        <source>Display help </source>
+        <source>Display help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -293,11 +288,6 @@
     <message>
         <location filename="../mxmenueditor.ui" line="375"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.ui" line="439"/>
-        <source>Start scanning for shares</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
