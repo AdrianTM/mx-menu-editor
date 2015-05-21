@@ -873,7 +873,7 @@ void mxmenueditor::findReloadItem(QString base_name)
 {
     base_name.remove("\"");
     ui->treeWidget->setCurrentItem(current_item); // change current item back to original selection
-    ui->treeWidget->setCurrentItem(current_item->parent()); // change current item to reload cateogry
+    ui->treeWidget->setCurrentItem(current_item->parent()); // change current item to reload category
     QTreeWidgetItemIterator it(current_item->treeWidget());
     while (*it) {
         QFileInfo fi((*it)->text(1).remove("\""));
