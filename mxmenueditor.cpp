@@ -828,7 +828,7 @@ void mxmenueditor::setEnabled(QString)
 // Help button clicked
 void mxmenueditor::on_buttonHelp_clicked()
 {
-    system("xdg-open http://www.mepiscommunity.org/user_manual_mx15/mxum.html#menueditor");
+    system("xdg-open http://mepiscommunity.org/wiki/help-files/help-mx-menu-editor");
 }
 
 // Cancel button clicked
