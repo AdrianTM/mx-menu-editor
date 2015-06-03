@@ -1,8 +1,28 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=MX Menu Editor
+Name[ca]=MX Menu Editor
+Name[de]=MX Menü-Editor
+Name[el]=
+Name[es]=MX Editor del menú
+Name[fr]=MX Menu Editor
+Name[it]=MX Menu Editor
+Name[ja]=
+Name[nl]=MX Menu Editor
+Name[ro]=
+Name[sv]=MX Meny Editor
 Comment=Easily edit system and user menus
-Exec=mx-menu-editor
+Comment=Easily edit system and user menus
+Comment[ca]=Edita fàcilment els menús de sistema i d'usuari
+Comment[de]=Einfaches Bearbeiten von System- und Benutzermenüs
+Comment[el]=
+Comment[es]=Edita fácilmente los menús del sistema y del usuario
+Comment[fr]=Facilement modifier les menus du système et de l'utilisateur
+Comment[it]=Modifica facilmente i menu del sistema e dell'utente
+Comment[ja]=
+Comment[nl]=Eenvoudig systeem- en gebruikersmenu's aanpassen
+Comment[ro]=
+Comment[sv]=Redigera enkelt system och användarmenyerExec=mx-menu-editor
 Terminal=false
 Type=Application
 Icon=edit-copy
