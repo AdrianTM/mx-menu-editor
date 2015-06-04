@@ -8,6 +8,7 @@ Name[fr]=MX Menu Editor
 Name[it]=MX Menu Editor
 Name[nl]=MX Menu Editor
 Name[sv]=MX Meny Editor
+Exec=mx-menu-editor
 Comment=Easily edit system and user menus
 Comment=Easily edit system and user menus
 Comment[ca]=Edita fàcilment els menús de sistema i d'usuari
