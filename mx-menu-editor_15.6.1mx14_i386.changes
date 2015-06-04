@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 04 Jun 2015 12:38:14 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source i386
+Version: 15.6.1mx14
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description: 
+ mx-menu-editor - MX Menu Editor
+Changes: 
+ mx-menu-editor (15.6.1mx14) mx; urgency=medium
+ .
+   * added Exec line .desktop
+Checksums-Sha1: 
+ 77c41cf75fe5ec7dc722a20fad02c64406540e6d 648 mx-menu-editor_15.6.1mx14.dsc
+ b34795a85cb330f92b0a4420916fef4cf124c464 44199 mx-menu-editor_15.6.1mx14.tar.gz
+ 789a089fcdd8759bed1c85020d1aed109f8611f7 58616 mx-menu-editor_15.6.1mx14_i386.deb
+Checksums-Sha256: 
+ 55bd68d640f7819a3152f0a5155d3816223f4748c5bcc0edfb1036415ea5dba7 648 mx-menu-editor_15.6.1mx14.dsc
+ 1dc7ef152572773ea90dc805d32059e54165af20499148bb9b0d9e94c6b77d78 44199 mx-menu-editor_15.6.1mx14.tar.gz
+ 1b02ea76c934eec027d35754612576c225aec7e7686fc4466bcf94a00f5379e0 58616 mx-menu-editor_15.6.1mx14_i386.deb
+Files: 
+ cfe9db9c65933d6e28720cd5e4b58b69 648 admin optional mx-menu-editor_15.6.1mx14.dsc
+ 8d430c9dcf282c778d3c632aee77422e 44199 admin optional mx-menu-editor_15.6.1mx14.tar.gz
+ b84d5de4fb141c9d156fdf277a9d9ef4 58616 admin optional mx-menu-editor_15.6.1mx14_i386.deb
