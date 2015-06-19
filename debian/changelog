@@ -1,3 +1,9 @@
+mx-menu-editor (15.6.2mx14) mx; urgency=medium
+
+  * fixed codec
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 19 Jun 2015 11:03:22 -0400
+
 mx-menu-editor (15.6.1mx14) mx; urgency=medium
 
   * added Exec line .desktop

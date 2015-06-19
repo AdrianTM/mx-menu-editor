@@ -34,6 +34,7 @@
 #include <QDialogButtonBox>
 #include <QDirIterator>
 #include <QHashIterator>
+#include <QTextCodec>
 
 //#include <QDebug>
 
@@ -43,8 +44,11 @@ mxmenueditor::mxmenueditor(QWidget *parent) :
     add(new AddAppDialog)
 {
     ui->setupUi(this);
+
     comboBox = new QComboBox;
     version = getVersion("mx-menu-editor");
+
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     all_local_desktop_files = listDesktopFiles("\"\"", QDir::homePath() + "/.local/share/applications/*");
     all_usr_desktop_files = listDesktopFiles("\"\"", "/usr/share/applications/*");
