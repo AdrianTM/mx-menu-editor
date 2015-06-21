@@ -513,7 +513,15 @@ void mxmenueditor::enableEdit()
 void mxmenueditor::changeIcon()
 {
     QFileDialog dialog;
-    QString selected = dialog.getOpenFileName(this, tr("Select new icon"), "/usr/share/icons", tr("Image Files (*.png *.jpg *.bmp *.xpm)"));
+    QString selected;
+    dialog.setFilter(QDir::Hidden);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm)"));
+    dialog.setDirectory("/usr/share/icons");
+    if (dialog.exec()) {
+        QStringList selected_list = dialog.selectedFiles();
+        selected = selected_list.at(0);
+    }
     if (selected != "") {
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor

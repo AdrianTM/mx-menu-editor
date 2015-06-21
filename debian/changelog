@@ -1,3 +1,9 @@
+mx-menu-editor (15.6.3mx14) mx; urgency=medium
+
+  * allow selecting hidden icons
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 21 Jun 2015 18:31:48 -0400
+
 mx-menu-editor (15.6.2mx14) mx; urgency=medium
 
   * fixed codec
