@@ -77,7 +77,7 @@ void AddAppDialog::on_buttonSave_clicked()
         categories += item->text() + ";";
     }
     output.append(categories + "\n");
-    out.write(output.toAscii());
+    out.write(output.toUtf8());
     out.flush();
     out.close();
     system("xfce4-panel --restart");

@@ -48,7 +48,7 @@ mxmenueditor::mxmenueditor(QWidget *parent) :
     comboBox = new QComboBox;
     version = getVersion("mx-menu-editor");
 
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     all_local_desktop_files = listDesktopFiles("\"\"", QDir::homePath() + "/.local/share/applications/*");
     all_usr_desktop_files = listDesktopFiles("\"\"", "/usr/share/applications/*");
@@ -180,7 +180,7 @@ void mxmenueditor::loadMenuFiles()
 QString mxmenueditor::getCatName(QFile *file)
 {
     QString cmd = QString("grep Name= %1").arg(file->fileName());
-    Output out = runCmd(cmd.toAscii());
+    Output out = runCmd(cmd.toUtf8());
     if (out.exit_code == 0) {
         return out.str.remove("Name=");
     } else {
@@ -345,7 +345,7 @@ void mxmenueditor::addToTree(QString file_name)
 {
     QFile file(file_name);
     if (file.exists()) {
-        QString cmd = "grep -m1 ^Name= \"" + file_name.toAscii() + "\"| cut  -d'=' -f2";
+        QString cmd = "grep -m1 ^Name= \"" + file_name.toUtf8() + "\"| cut  -d'=' -f2";
         QString app_name = runCmd(cmd).str;
         // add item as childItem to treeWidget
         QTreeWidgetItem *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
@@ -390,38 +390,38 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
         QString cmd;
         Output out;
 
-        out = runCmd("cat " + file_name.toAscii());
+        out = runCmd("cat " + file_name.toUtf8());
         ui->advancedEditor->setText(out.str);
         // load categories
-        out = runCmd("grep ^Categories= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep ^Categories= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str.endsWith(";")) {
             out.str.remove(out.str.length() - 1, 1);
         }
         QStringList categories = out.str.split(";");
         ui->listWidgetEditCategories->addItems(categories);
         // load name, command, comment
-        out = runCmd("grep -m1 ^Name= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Name= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditName->setText(out.str);
-        out = runCmd("grep -m1 ^Comment= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Comment= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditComment->setText(out.str);
         ui->lineEditComment->home(false);
-        out = runCmd("grep -m1 ^Exec= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Exec= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditCommand->setText(out.str);
         ui->lineEditCommand->home(false);
         // load options
-        out = runCmd("grep -m1 ^StartupNotify= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkNotify->setChecked(true);
         }
-        out = runCmd("grep -m1 ^NoDisplay= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkHide->setChecked(true);
         }
-        out = runCmd("grep -m1 ^Terminal= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkRunInTerminal->setChecked(true);
         }
-        out = runCmd("grep -m1 ^Icon= " + file_name.toAscii() + " | cut -f2 -d=");
+        out = runCmd("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str != "") {
             QSize size = ui->labelIcon->size();
             QString icon = out.str;
@@ -446,7 +446,7 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
 bool mxmenueditor::isHidden(QString file_name)
 {
     QString cmd = "grep -q NoDisplay=true \"" + file_name + "\"";
-    return !system(cmd.toAscii());
+    return !system(cmd.toUtf8());
 }
 
 // select command to be used
@@ -806,7 +806,7 @@ void mxmenueditor::on_buttonSave_clicked()
         QMessageBox::critical(0, tr("Error"), tr("Could not save the file"));
     }
     all_local_desktop_files << out_name;
-    out.write(ui->advancedEditor->toPlainText().toAscii());
+    out.write(ui->advancedEditor->toPlainText().toUtf8());
     out.flush();
     out.close();
     if (system("pgrep xfce4-panel") == 0) {

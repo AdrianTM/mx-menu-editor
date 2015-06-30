@@ -20,7 +20,7 @@
 # * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
 # **********************************************************************/
 
-QT       += core gui
+QT       += core gui widgets
 
 TARGET = mx-menu-editor
 TEMPLATE = app

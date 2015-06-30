@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Tue, 30 Jun 2015 14:03:14 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source i386
+Version: 15.7mx14
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description: 
+ mx-menu-editor - MX Menu Editor
+Changes: 
+ mx-menu-editor (15.7mx14) mx; urgency=medium
+ .
+   * changed to qt5
+Checksums-Sha1: 
+ 0db2f3d20581485b811990b348b8c82e1d701cc4 640 mx-menu-editor_15.7mx14.dsc
+ 75832ec73937c80fb06550229ef5768ab1ea75c7 44687 mx-menu-editor_15.7mx14.tar.gz
+ 5625e9bdbc388c30ee740968aff836e297578ddd 60380 mx-menu-editor_15.7mx14_i386.deb
+Checksums-Sha256: 
+ 47340cc1ada0d6f7ece806845b67db9c1ca7cabec5d661302a2f8237ba1ff130 640 mx-menu-editor_15.7mx14.dsc
+ 9ad6f24eb1be9d2e6132c0785cb7835c38b5321cc4ae8d377f95684842b4b0ee 44687 mx-menu-editor_15.7mx14.tar.gz
+ 32a64dbd29ec76d1cb8bc29bb140f0cd1f889cbfef05614ff4c89e5e105e40c4 60380 mx-menu-editor_15.7mx14_i386.deb
+Files: 
+ cade7a0f01e5c5c6ed6161ccc1b1ad52 640 admin optional mx-menu-editor_15.7mx14.dsc
+ 345c8edb3a614100d775f609c7a46da2 44687 admin optional mx-menu-editor_15.7mx14.tar.gz
+ 1b4e0817df4638fc7f63eb9fd4ca74f1 60380 admin optional mx-menu-editor_15.7mx14_i386.deb
