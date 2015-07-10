@@ -10,8 +10,8 @@ Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 7.0.50~
 Package-List:
  mx-menu-editor deb admin optional arch=any
 Checksums-Sha1:
- 7616de5bfb02ce4751a933bb43e6928569a5ba47 157160 mx-menu-editor_15.7.1mx15.tar.xz
+ be98808b6506421941e8de66b2cc34e79d85798c 196512 mx-menu-editor_15.7.1mx15.tar.xz
 Checksums-Sha256:
- c3f1b1a1dd54d5f34cb0a539999cf73173882fba4baea8397cfb556808d895f1 157160 mx-menu-editor_15.7.1mx15.tar.xz
+ 58e67f2f180e2927a1e528b2934ddd697824b6b5be224694a2906fafb27915c2 196512 mx-menu-editor_15.7.1mx15.tar.xz
 Files:
- 43c37f2d7c2460fa085e90cbc79949b0 157160 mx-menu-editor_15.7.1mx15.tar.xz
+ 255585e71111573b38ffadf25c4dad8a 196512 mx-menu-editor_15.7.1mx15.tar.xz
