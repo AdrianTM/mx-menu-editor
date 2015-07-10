@@ -280,7 +280,7 @@
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="715"/>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="829"/>
         <location filename="../mxmenueditor.cpp" line="859"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
@@ -356,7 +356,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="829"/>
+        <location filename="../mxmenueditor.cpp" line="828"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
