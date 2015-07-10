@@ -828,7 +828,7 @@ void mxmenueditor::on_buttonAbout_clicked()
     msgBox.addButton(tr("Cancel"), QMessageBox::AcceptRole); // because we want to display the buttons in reverse order we use counter-intuitive roles.
     msgBox.addButton(tr("License"), QMessageBox::RejectRole);
     if (msgBox.exec() == QMessageBox::RejectRole) {
-        system("xdg-open http://www.mepiscommunity.org/doc_mx/mx-menu-editor-license.html");
+        system("xdg-open file:///usr/share/doc/mx-menu-editor/license.html");
     }
 }
 

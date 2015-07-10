@@ -3,3 +3,4 @@ mx-menu-editor.desktop	 usr/share/applications/mx
 translations/*.qm 	 usr/share/mx-menu-editor/locale
 mx-menu-editor.png	usr/share/pixmaps/mx
 icons/*                 usr/share/mx-menu-editor/icons
+license.html		usr/share/doc/mx-menu-editor
