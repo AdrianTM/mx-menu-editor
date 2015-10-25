@@ -131,7 +131,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="812"/>
+        <location filename="../mxmenueditor.cpp" line="824"/>
         <source>MX Menu Editor</source>
         <translation type="unfinished"/>
     </message>
@@ -207,7 +207,7 @@
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="259"/>
-        <location filename="../mxmenueditor.cpp" line="523"/>
+        <location filename="../mxmenueditor.cpp" line="535"/>
         <source>Change icon</source>
         <translation type="unfinished"/>
     </message>
@@ -282,84 +282,79 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="452"/>
+        <location filename="../mxmenueditor.cpp" line="456"/>
         <source>Select executable file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="512"/>
-        <source>Select new icon</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.cpp" line="512"/>
+        <location filename="../mxmenueditor.cpp" line="519"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="692"/>
+        <location filename="../mxmenueditor.cpp" line="704"/>
         <source>Choose category</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="703"/>
-        <location filename="../mxmenueditor.cpp" line="816"/>
-        <location filename="../mxmenueditor.cpp" line="847"/>
+        <location filename="../mxmenueditor.cpp" line="715"/>
+        <location filename="../mxmenueditor.cpp" line="829"/>
+        <location filename="../mxmenueditor.cpp" line="859"/>
         <source>Cancel</source>
         <translation>Anulează</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="704"/>
+        <location filename="../mxmenueditor.cpp" line="716"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="794"/>
+        <location filename="../mxmenueditor.cpp" line="806"/>
         <source>Error</source>
         <translation>Eroare</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="794"/>
+        <location filename="../mxmenueditor.cpp" line="806"/>
         <source>Could not save the file</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="811"/>
+        <location filename="../mxmenueditor.cpp" line="823"/>
         <source>About MX Menu Editor</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="812"/>
+        <location filename="../mxmenueditor.cpp" line="824"/>
         <source>Version: </source>
         <translation>Versiune:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="813"/>
+        <location filename="../mxmenueditor.cpp" line="825"/>
         <source>Program for editing Xfce menu</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="815"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="817"/>
+        <location filename="../mxmenueditor.cpp" line="828"/>
         <source>License</source>
         <translation>Licență</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="847"/>
+        <location filename="../mxmenueditor.cpp" line="859"/>
         <source>Save changes?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="847"/>
+        <location filename="../mxmenueditor.cpp" line="859"/>
         <source>Do you want to save your edits?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="847"/>
+        <location filename="../mxmenueditor.cpp" line="859"/>
         <source>Save</source>
         <translation type="unfinished"/>
     </message>

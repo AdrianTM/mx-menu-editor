@@ -36,15 +36,17 @@ HEADERS  += mxmenueditor.h \
 FORMS    += mxmenueditor.ui \
     addappdialog.ui
 
-TRANSLATIONS += translations/mx-menu-editor_ca.ts \
-                translations/mx-menu-editor_de.ts \
-                translations/mx-menu-editor_el.ts \
-                translations/mx-menu-editor_es.ts \
-                translations/mx-menu-editor_fr.ts \
-                translations/mx-menu-editor_it.ts \
-                translations/mx-menu-editor_ja.ts \
-                translations/mx-menu-editor_nl.ts \
-                translations/mx-menu-editor_ro.ts \
-                translations/mx-menu-editor_sv.ts
+TRANSLATIONS += translations/mx-menueditor_ca.ts \
+                translations/mx-menueditor_de.ts \
+                translations/mx-menueditor_el.ts \
+                translations/mx-menueditor_es.ts \
+                translations/mx-menueditor_fr.ts \
+                translations/mx-menueditor_it.ts \
+                translations/mx-menueditor_ja.ts \
+                translations/mx-menueditor_nl.ts \
+                translations/mx-menueditor_pl.ts \
+                translations/mx-menueditor_ro.ts \
+                translations/mx-menueditor_ru.ts \
+                translations/mx-menueditor_sv.ts
 
 
