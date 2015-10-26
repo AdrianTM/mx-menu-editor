@@ -1,3 +1,9 @@
+mx-menu-editor (15.10.1mx15) mx; urgency=medium
+
+  * fixed translations
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 26 Oct 2015 10:16:12 -0400
+
 mx-menu-editor (15.10mx15) mx; urgency=medium
 
   * added new translations 
