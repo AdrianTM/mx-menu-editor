@@ -33,10 +33,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    Output out = runCmd("xfconf-query -c xsettings -p /Net/IconThemeName");
-    QIcon::setThemeName(out.str);
-    a.setWindowIcon(QIcon::fromTheme("edit-copy"));
-
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());
     a.installTranslator(&qtTran);

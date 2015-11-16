@@ -21,10 +21,10 @@ Comment[it]=Modifica facilmente i menu del sistema e dell'utente
 Comment[ja]=システムとユーザーメニューを容易に編集できます
 Comment[nl]=Eenvoudig systeem- en gebruikersmenu's aanpassen
 Comment[ru]=Простой редактор системного и пользовательского меню
-Comment[sv]=Redigera enkelt system och användarmenyerExec=mx-menu-editor
+Comment[sv]=Redigera enkelt system och användarmenyer
 Exec=mx-menu-editor
 Terminal=false
 Type=Application
-Icon=edit-copy
+Icon=mx-menu-editor
 Categories=GNOME;GTK;System;
 NoDisplay=false
