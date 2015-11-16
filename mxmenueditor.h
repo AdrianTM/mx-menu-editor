@@ -54,6 +54,7 @@ public:
     explicit mxmenueditor(QWidget *parent = 0);
     ~mxmenueditor();
 
+    Output runCmd(QString cmd);
     QFile config_file;
     QString getVersion(QString name);
     QString version;
@@ -109,8 +110,6 @@ private:
     AddAppDialog *add;
     QTreeWidgetItem *current_item;
 };
-
-Output runCmd(QString cmd);
 
 #endif // MXSNAPSHOT_H
 

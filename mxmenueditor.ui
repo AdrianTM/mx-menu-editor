@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MX Menu Editor</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../../../usr/share/pixmaps/mx-menu-editor.png</normaloff>../../../../../../../usr/share/pixmaps/mx-menu-editor.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QStackedWidget" name="stackedWidget">

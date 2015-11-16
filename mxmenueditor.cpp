@@ -83,7 +83,7 @@ mxmenueditor::~mxmenueditor()
 }
 
 // util function for getting bash command output and error code
-Output runCmd(QString cmd)
+Output mxmenueditor::runCmd(QString cmd)
 {
     QProcess *proc = new QProcess();
     QEventLoop loop;
@@ -691,6 +691,8 @@ QStringList mxmenueditor::listCategories()
         i.next();
         categories << i.value();
     }
+    categories.removeDuplicates();
+    categories = categories.filter(QRegExp("^(?!<Not>).*$"));
     categories.sort();
     return categories;
 }
