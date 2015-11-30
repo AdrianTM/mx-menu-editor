@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.0">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -88,7 +86,7 @@
     <message>
         <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstart Bekendmaker</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
@@ -150,7 +148,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepaste applicatie toevoegen</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="93"/>
@@ -170,7 +168,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="122"/>
         <source>Notify startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak opstart bekend</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="145"/>
@@ -185,7 +183,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="167"/>
         <source>Restore original item</source>
-        <translation type="unfinished"></translation>
+        <translation>Herstel origineel item</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="178"/>
@@ -286,12 +284,12 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="456"/>
         <source>Select executable file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer uitvoerbaar bestand</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="519"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbeeldingsbestanden (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="706"/>

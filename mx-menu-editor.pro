@@ -44,8 +44,6 @@ TRANSLATIONS += translations/mx-menu-editor_ca.ts \
                 translations/mx-menu-editor_it.ts \
                 translations/mx-menu-editor_ja.ts \
                 translations/mx-menu-editor_nl.ts \
-                translations/mx-menu-editor_pl.ts \
-                translations/mx-menu-editor_ro.ts \
                 translations/mx-menu-editor_ru.ts \
                 translations/mx-menu-editor_sv.ts
 
