@@ -133,7 +133,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="826"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor</translation>
     </message>
@@ -300,8 +300,8 @@
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="717"/>
-        <location filename="../mxmenueditor.cpp" line="831"/>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
@@ -321,42 +321,42 @@
         <translation>Non è possibile salvare il file:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="825"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>About MX Menu Editor</source>
         <translation>Informazioni su MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="826"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>Version: </source>
         <translation>Versione:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="827"/>
+        <location filename="../mxmenueditor.cpp" line="828"/>
         <source>Program for editing Xfce menu</source>
         <translation>Programma per modificare il menu di Xfce</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="829"/>
+        <location filename="../mxmenueditor.cpp" line="830"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="830"/>
+        <location filename="../mxmenueditor.cpp" line="831"/>
         <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save changes?</source>
         <translation>Salvare i cambiamenti?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Do you want to save your edits?</source>
         <translation>Vuoi salvare le tue modifiche?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save</source>
         <translation>Salva</translation>
     </message>

@@ -1,3 +1,9 @@
+mx-menu-editor (15.12mx15) mx; urgency=medium
+
+  * hide GUI when displaying help/license
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 22 Dec 2015 18:46:47 -0500
+
 mx-menu-editor (15.11.1mx15) mx; urgency=medium
 
   * new translations
