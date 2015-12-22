@@ -133,7 +133,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="826"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor </translation>
     </message>
@@ -300,8 +300,8 @@
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="717"/>
-        <location filename="../mxmenueditor.cpp" line="831"/>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -321,42 +321,42 @@
         <translation>No es pot desar el fitxer </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="825"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>About MX Menu Editor</source>
         <translation>Quant al MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="826"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>Version: </source>
         <translation>Versió: </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="827"/>
+        <location filename="../mxmenueditor.cpp" line="828"/>
         <source>Program for editing Xfce menu</source>
         <translation>Programa per editar el menú Xfce </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="829"/>
+        <location filename="../mxmenueditor.cpp" line="830"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="830"/>
+        <location filename="../mxmenueditor.cpp" line="831"/>
         <source>License</source>
         <translation>Llicència</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save changes?</source>
         <translation>Desa els canvis? </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Do you want to save your edits?</source>
         <translation>Voleu desar la vostra edició? </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="861"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save</source>
         <translation>Desa </translation>
     </message>

@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Tue, 22 Dec 2015 18:46:47 -0500
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 15.12mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (15.12mx15) mx; urgency=medium
+ .
+   * hide GUI when displaying help/license
+Checksums-Sha1:
+ 6b4fff2fcab42a1505d082b4d3a485696b02e6e7 1206 mx-menu-editor_15.12mx15.dsc
+ 94c70cbe7fc4d5b2109fcb0f19a3d55db830b6c5 121584 mx-menu-editor_15.12mx15.tar.xz
+ 083dce3bc63034d03454df665f3ff551154b4d75 67340 mx-menu-editor_15.12mx15_amd64.deb
+Checksums-Sha256:
+ fb257bc9c8f246e79b2ee80cd9b042f0d86b1800f9e8947b65affafff4a03db1 1206 mx-menu-editor_15.12mx15.dsc
+ 8acf3f092d02a8062ec084bf75b708d5ce46ab19e6d8a52153e00d40be3fe875 121584 mx-menu-editor_15.12mx15.tar.xz
+ d2dd7b39834130b3282710aa76d554a371753557121a6a8e2737e6e9d291efef 67340 mx-menu-editor_15.12mx15_amd64.deb
+Files:
+ 0857deecd851b9f8c1d0c509acbbff7f 1206 admin optional mx-menu-editor_15.12mx15.dsc
+ 3e99fcf79db636b348d27271748d38d7 121584 admin optional mx-menu-editor_15.12mx15.tar.xz
+ a1c9dffea042af5c33d04851713648b9 67340 admin optional mx-menu-editor_15.12mx15_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJWeeJ0AAoJEHCTjHgGee6YgzkIAIVyy/pR1Gd6v3VQqyC2D+u5
+zI6/JpHn26Mxo5UB0LncQ2ff1RG7mNVpgicdXfqijPksw8rNOJTb41BKGSJq6Usg
+pNGFKu59YJgEcO3XfhLXTxugufbZpfrgCKJZTvRtSHFlGKSX2GIzrGcRxiGKHAdB
+zXPSc7r6gwLEHGDeQECUME31fUwr12rme08ddIv8+mPPHKSD51D6549Q/Wss4pPh
+tOaT4SkR27R38usu19rAfgVfT8NbOutm6VD2i6iYCqgKPYv0jUoKZ9YRNGdomaej
+ZlO0xYgeB9FO6ZC7cAOKWGt6gRlfwypiRl1UC2ep4xsVCOf0sJUww0ztppWZtQo=
+=gN22
+-----END PGP SIGNATURE-----

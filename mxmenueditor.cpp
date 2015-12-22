@@ -821,6 +821,7 @@ void mxmenueditor::on_buttonSave_clicked()
 // About button clicked
 void mxmenueditor::on_buttonAbout_clicked()
 {
+    this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Menu Editor"), "<p align=\"center\"><b><h2>" +
                        tr("MX Menu Editor") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + version + "</p><p align=\"center\"><h3>" +
@@ -832,6 +833,7 @@ void mxmenueditor::on_buttonAbout_clicked()
     if (msgBox.exec() == QMessageBox::AcceptRole) {
         system("xdg-open file:///usr/share/doc/mx-menu-editor/license.html");
     }
+    this->show();
 }
 
 void mxmenueditor::setEnabled(QString)
