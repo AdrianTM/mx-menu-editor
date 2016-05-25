@@ -26,5 +26,5 @@ Exec=mx-menu-editor
 Terminal=false
 Type=Application
 Icon=mx-menu-editor
-Categories=GNOME;GTK;System;
+Categories=GNOME;GTK;System;MX-Maintenance;
 NoDisplay=false

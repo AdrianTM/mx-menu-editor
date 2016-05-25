@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Sun, 22 May 2016 21:34:41 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source i386
+Version: 16.5mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: dolphin <dolphinoracle@gmail.com>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (16.5mx15) mx; urgency=medium
+ .
+   * new desktop file
+Checksums-Sha1:
+ 39e34a7c35b070225725a10a661777b9cdc95caf 678 mx-menu-editor_16.5mx15.dsc
+ af11e857496d6df4ea1ff7ba47219010217caeff 39964 mx-menu-editor_16.5mx15.tar.xz
+ 8367d82a75afb5de7711a26f5541cfa717b78712 68870 mx-menu-editor_16.5mx15_i386.deb
+Checksums-Sha256:
+ d3e22b1f9330b709d24d0fda7b54b65e6f815f996a23414a7809c8443b2b88eb 678 mx-menu-editor_16.5mx15.dsc
+ 5acf92adba4b88a49480aff3541bb8a977b7c49c2807655f4c41ccf55b5b553a 39964 mx-menu-editor_16.5mx15.tar.xz
+ e4b057e8f6b70edd8cc8bf2e0efc57163617bd2274920f1ed2730f17dd7f14fc 68870 mx-menu-editor_16.5mx15_i386.deb
+Files:
+ 3b1abad54f150b85abc69d17b8e203d4 678 admin optional mx-menu-editor_16.5mx15.dsc
+ 8bc75f96bf3261a3bb001727b4ce13ed 39964 admin optional mx-menu-editor_16.5mx15.tar.xz
+ 0ec785e8780f18ce5e6df4948e5b9aa6 68870 admin optional mx-menu-editor_16.5mx15_i386.deb
