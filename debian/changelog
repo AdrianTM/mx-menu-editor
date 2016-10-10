@@ -1,3 +1,9 @@
+mx-menu-editor (16.10mx16) mx; urgency=medium
+
+  * Changed URLs 
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 10 Oct 2016 13:38:17 -0400
+
 mx-menu-editor (16.5mx15) mx; urgency=medium
 
   * new desktop file

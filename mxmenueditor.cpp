@@ -4,7 +4,7 @@
  * Copyright (C) 2015 MX Authors
  *
  * Authors: Adrian
- *          MX & MEPIS Community <http://forum.mepiscommunity.org>
+ *          MX Linux <http://mxlinux.org>
  *
  * This file is part of MX Menu Editor.
  *
@@ -826,7 +826,7 @@ void mxmenueditor::on_buttonAbout_clicked()
                        tr("About MX Menu Editor"), "<p align=\"center\"><b><h2>" +
                        tr("MX Menu Editor") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + version + "</p><p align=\"center\"><h3>" +
                        tr("Program for editing Xfce menu") +
-                       "</h3></p><p align=\"center\"><a href=\"http://www.mepiscommunity.org/mx\">http://www.mepiscommunity.org/mx</a><br /></p><p align=\"center\">" +
+                       "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
     msgBox.addButton(tr("Cancel"), QMessageBox::RejectRole);
@@ -844,7 +844,7 @@ void mxmenueditor::setEnabled(QString)
 // Help button clicked
 void mxmenueditor::on_buttonHelp_clicked()
 {
-    system("xdg-open http://mepiscommunity.org/wiki/help-files/help-mx-menu-editor");
+    system("xdg-open https://mxlinux.org/wiki/help-files/help-mx-menu-editor");
 }
 
 // Cancel button clicked
