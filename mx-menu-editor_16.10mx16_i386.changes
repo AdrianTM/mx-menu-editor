@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 10 Oct 2016 13:38:17 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: i386
+Version: 16.10mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (16.10mx16) mx; urgency=medium
+ .
+   * Changed URLs
+Checksums-Sha1:
+ 92d87644ebe2c00912923f67c978d2f532627860 69014 mx-menu-editor_16.10mx16_i386.deb
+Checksums-Sha256:
+ 637d8022103cc8b469dc74f15abdce1cead6e29a99b589223bfa48c43bd96746 69014 mx-menu-editor_16.10mx16_i386.deb
+Files:
+ 96c91000ffdb37dfe18283cae54ba6f5 69014 admin optional mx-menu-editor_16.10mx16_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJX++p5AAoJEHCTjHgGee6Y2xgIAKj3KUJNDbDNOa6buXICX3pF
+lhaFh4o9+lZpTHdUn49TJKRqVS98Y7rMI9Uh7L2qV6CZu6RY5OK4axu0MpNajHlM
+DQ6n9255scYxbnSmMErd3asskhRfmLfdJzqitPJap3SyzKaq+NF4021C2xwixfUl
+FTlH9RDjJZnYcamhOr4baOefebuVuLMwYxu0v3OV+sfyhrTfOHn/mRKn/OcdGRAX
+TNgjXGUadey0kKcrw/Xi8e6lfhXLw++mLXAqvrsuukHvouBPbe+l5bB+JFK2gxEU
+Lj09QCN6l7+jap3BcqKNGITKFhipCGN6quJC26nJk7MIxXejPb5DVQK54DcNzcQ=
+=TNCL
+-----END PGP SIGNATURE-----
