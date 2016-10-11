@@ -13,20 +13,20 @@ Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 7.0.50~
 Package-List:
  mx-menu-editor deb admin optional arch=any
 Checksums-Sha1:
- 9f48a2450da83d7e668625d6e162a96c831cb80e 39852 mx-menu-editor_16.10mx16.tar.xz
+ 4bf2b5e2f89aa4f3c3d0c4e8e7822c7deb5a4fe8 182144 mx-menu-editor_16.10mx16.tar.xz
 Checksums-Sha256:
- d68cf9f3b8b5550b4df2636446f024864752846a8461f97eaba5efdcf0869360 39852 mx-menu-editor_16.10mx16.tar.xz
+ d63f39f79e14fae418498cf6a8814b8ddc9f5d10b8ba30761526fd0b8df8da23 182144 mx-menu-editor_16.10mx16.tar.xz
 Files:
- 5c51ba43a5d80c38e8254c898b0e98e2 39852 mx-menu-editor_16.10mx16.tar.xz
+ a7ac07ccbfbddeca6305856fb76151ca 182144 mx-menu-editor_16.10mx16.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJX+9MbAAoJEHCTjHgGee6YCZsIAM26mtodcKJ1We/7ViQYDXo5
-w891ve4nVIQYRVSvyBa1qrz8YP3+h/zunfZec5Td1UnWiJdf8uLv7pVVd8FbQPWN
-0V3/tYuDZbpZMLnIw/CUXdlOmxd0DFN84c+DILPTPUXKK1aWuGVYucr+oFJv5K8B
-eOZRTnD1mVrcVXwJ69ySC4ier/zhvrZabgWtEVhKxoAanltlqB4AGNHbiyOlZy6X
-Ss8Oyt6Nk93kcjFyXu7VI2x7S0tKbEBijDXuMK6gQKsWg0mwy1D8RZ/fN2W5XT2I
-SuNBNzyK1nWEnkruLKROKYop9qAJQSLkEm7ZdLXhQYd7WYgCa+LcTc5duHl93mQ=
-=TfHg
+iQEcBAEBAgAGBQJX/OG4AAoJEHCTjHgGee6YlAQH/3ZVXT/v8sgM60SNIfojezfP
+/lcOeSjrJw1D7DnAploo8Ee4+o1eTyJ+THnAGYaPL4R2stP/3W4TuEvicn14yDbK
+5ySXgf8u3e08xdwhyMqTZhrcC6ORxHITCMJ13D2yNAHWQZdawdvgvkRXuy+2WoG1
+/rB6z4vlDHs75xBr9oXskNXQDNkqSMjpQUvVbPSIpa5jY6G2IW8qLYA9svjZ2D6S
+ounXDcxJgQ9WlUBrtryQsdijkgRMEefb+9L6wXPirtW21d0s9x0eGtbYZIlDXcrh
+1Fn51Wn3uVNg1339L9Legua2KcmfeSBv7YkhzuAmw4Z8eLcByT1GFjbJ26Cbamg=
+=J38J
 -----END PGP SIGNATURE-----
