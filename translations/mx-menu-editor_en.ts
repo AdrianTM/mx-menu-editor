@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="en" version="2.0">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="en" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -122,7 +122,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
         <translation>You must run this program as normal user.</translation>
     </message>
@@ -131,153 +131,153 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="824"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="27"/>
+        <location filename="../mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
         <translation>Advanced Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="48"/>
+        <location filename="../mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
         <translation>Categories and applications</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="75"/>
+        <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
         <translation>Add custom application</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="89"/>
+        <location filename="../mxmenueditor.ui" line="93"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="98"/>
+        <location filename="../mxmenueditor.ui" line="102"/>
         <source>Run in terminal</source>
         <translation>Run in terminal</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="108"/>
+        <location filename="../mxmenueditor.ui" line="112"/>
         <source>Hide</source>
         <translation>Hide</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="118"/>
+        <location filename="../mxmenueditor.ui" line="122"/>
         <source>Notify startup</source>
         <translation>Notify startup</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="141"/>
+        <location filename="../mxmenueditor.ui" line="145"/>
         <source>Quick Editor</source>
         <translation>Quick Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="153"/>
+        <location filename="../mxmenueditor.ui" line="157"/>
         <source>Comment:</source>
         <translation>Comment:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="163"/>
+        <location filename="../mxmenueditor.ui" line="167"/>
         <source>Restore original item</source>
         <translation>Restore original item</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="174"/>
+        <location filename="../mxmenueditor.ui" line="178"/>
         <source>Command:</source>
         <translation>Command:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="184"/>
+        <location filename="../mxmenueditor.ui" line="188"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="198"/>
+        <location filename="../mxmenueditor.ui" line="202"/>
         <source>Name:</source>
         <translation>Name:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="219"/>
+        <location filename="../mxmenueditor.ui" line="223"/>
         <source>Icon</source>
         <translation>Icon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="259"/>
+        <location filename="../mxmenueditor.ui" line="263"/>
         <location filename="../mxmenueditor.cpp" line="535"/>
         <source>Change icon</source>
         <translation>Change icon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="273"/>
+        <location filename="../mxmenueditor.ui" line="277"/>
         <source>Categories</source>
         <translation>Categories</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="285"/>
+        <location filename="../mxmenueditor.ui" line="289"/>
         <source>Add</source>
         <translation>Add</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="299"/>
+        <location filename="../mxmenueditor.ui" line="303"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="365"/>
+        <location filename="../mxmenueditor.ui" line="369"/>
         <source>Quit application</source>
         <translation>Quit application</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="368"/>
+        <location filename="../mxmenueditor.ui" line="372"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
+        <location filename="../mxmenueditor.ui" line="379"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="413"/>
+        <location filename="../mxmenueditor.ui" line="417"/>
         <source>Display help</source>
         <translation>Display help</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="416"/>
+        <location filename="../mxmenueditor.ui" line="420"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="423"/>
+        <location filename="../mxmenueditor.ui" line="427"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="442"/>
+        <location filename="../mxmenueditor.ui" line="446"/>
         <source>Save Changes</source>
         <translation>Save Changes</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="449"/>
+        <location filename="../mxmenueditor.ui" line="453"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="484"/>
+        <location filename="../mxmenueditor.ui" line="488"/>
         <source>About this application</source>
         <translation>About this application</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="487"/>
+        <location filename="../mxmenueditor.ui" line="491"/>
         <source>About...</source>
         <translation>About...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
+        <location filename="../mxmenueditor.ui" line="498"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
@@ -292,69 +292,69 @@
         <translation>Image Files (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="704"/>
+        <location filename="../mxmenueditor.cpp" line="706"/>
         <source>Choose category</source>
         <translation>Choose category</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="715"/>
-        <location filename="../mxmenueditor.cpp" line="829"/>
-        <location filename="../mxmenueditor.cpp" line="859"/>
+        <location filename="../mxmenueditor.cpp" line="717"/>
+        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="716"/>
+        <location filename="../mxmenueditor.cpp" line="718"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="806"/>
+        <location filename="../mxmenueditor.cpp" line="808"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="806"/>
+        <location filename="../mxmenueditor.cpp" line="808"/>
         <source>Could not save the file</source>
         <translation>Could not save the file</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="823"/>
+        <location filename="../mxmenueditor.cpp" line="826"/>
         <source>About MX Menu Editor</source>
         <translation>About MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="824"/>
+        <location filename="../mxmenueditor.cpp" line="827"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="825"/>
+        <location filename="../mxmenueditor.cpp" line="828"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program for editing Xfce menu</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="827"/>
+        <location filename="../mxmenueditor.cpp" line="830"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="831"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="859"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save changes?</source>
         <translation>Save changes?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="859"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Do you want to save your edits?</source>
         <translation>Do you want to save your edits?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="859"/>
+        <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save</source>
         <translation>Save</translation>
     </message>
