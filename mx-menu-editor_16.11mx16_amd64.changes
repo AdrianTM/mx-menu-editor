@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 16 Nov 2016 13:17:55 -0500
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 16.11mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (16.11mx16) mx; urgency=medium
+ .
+   * new translations
+Checksums-Sha1:
+ 3ba3f9c0fbf2a96f88738cdbf770bd0d89205083 1203 mx-menu-editor_16.11mx16.dsc
+ 8a8c474331e50ddbcbb784dea65c804baa1b5d09 41420 mx-menu-editor_16.11mx16.tar.xz
+ 1f4f32a74e0f33f3765245a733f9876a22ee467c 68880 mx-menu-editor_16.11mx16_amd64.deb
+Checksums-Sha256:
+ c7716219bfd4337c253e57a1aaa3cee52c343a7e33bc5641c8dd30b340ba0e73 1203 mx-menu-editor_16.11mx16.dsc
+ fea905daeec42211707c6a2b3a7df7fe2e93c07cf84308e529254e51690d29a3 41420 mx-menu-editor_16.11mx16.tar.xz
+ ad5d051a1ed8c1c7e8e06662a5edc9791819ddb5d602f064e0c49beae6eeb117 68880 mx-menu-editor_16.11mx16_amd64.deb
+Files:
+ 27ae0d828963110397cc135fd7bfd7be 1203 admin optional mx-menu-editor_16.11mx16.dsc
+ 1ab906a8598ee580bdbf0d0a570b3287 41420 admin optional mx-menu-editor_16.11mx16.tar.xz
+ c7cf78dd9651dbc4d2b5f619ab1ceabe 68880 admin optional mx-menu-editor_16.11mx16_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJYLKLxAAoJEHCTjHgGee6YkVUIAMkj0dxpDo2//TL+e4CW4FGi
+ZapX8vixwQON0vk+GlCuzeOxmrDAYbFQyFXFcLWFQjK2o3GarHgxSPRu1pR+pKOq
+qFvprf7ruEmgROoDHttVQY3PmEaaYp/QoVEHvDSxwOQyoVIyyFkevvvE48gF6Zl6
+4p286+pbEeFp3+XhBvBIebrZ9OlhHwmdsSTDj9fpf6w+rRIRDUDMvdBqpOWji2uf
+5Z8otefbkbU1sMQ3KqZl64RzuAvwa/mrsPcq2XiJMl5ESMNr+3SmEfl09zT731Y4
+l3of4aYQzFZWGokAz9izy7EB7VB/WcZF3Hj82FYGPE0JjWtWqp3ZFFXPLorSKdw=
+=TR2Y
+-----END PGP SIGNATURE-----
