@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -88,7 +86,7 @@
     <message>
         <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
-        <translation>Notifiant de démarrage</translation>
+        <translation>Notification de démarrage</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
@@ -108,17 +106,17 @@
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
-        <translation>Enregister les modifications?</translation>
+        <translation>Enregistrer les modifications?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation>Désirez-vous enregister les rédactions?</translation>
+        <translation>Désirez-vous enregistrer les éditions ?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save</source>
-        <translation>Sauver</translation>
+        <translation>Sauvegarder</translation>
     </message>
 </context>
 <context>

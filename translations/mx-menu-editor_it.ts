@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -93,7 +91,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Aggiungi applicazione personalizzata</translation>
+        <translation>Aggiungi applicazione personale</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
@@ -150,7 +148,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation>Aggiungi applicazione personalizzata</translation>
+        <translation>Aggiungi applicazione personale</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="93"/>
