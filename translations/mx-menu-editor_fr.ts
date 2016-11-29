@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -78,12 +76,12 @@
         <location filename="../addappdialog.ui" line="212"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
-        <translation>Établir l&apos;icône</translation>
+        <translation>Définir l&apos;icône</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="225"/>
         <source>Run in Terminal</source>
-        <translation>Exécuter en Terminal</translation>
+        <translation>Exécuter dans un Terminal</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="238"/>
@@ -93,7 +91,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Ajouter une application sur commande</translation>
+        <translation>Ajouter une application personnalisée</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
@@ -113,7 +111,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation>Désirez-vous enregistrer les éditions ?</translation>
+        <translation>Souhaitez-vous conserver les changements?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
@@ -150,7 +148,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation>Ajouter une application sur commande</translation>
+        <translation>Ajouter une application personnalisée</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="93"/>
@@ -160,17 +158,17 @@
     <message>
         <location filename="../mxmenueditor.ui" line="102"/>
         <source>Run in terminal</source>
-        <translation>Exécuter en Terminal</translation>
+        <translation>Exécuter dans un Terminal</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="112"/>
         <source>Hide</source>
-        <translation>Cacher</translation>
+        <translation>Masquer</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="122"/>
         <source>Notify startup</source>
-        <translation>Lancement de notification</translation>
+        <translation>Notification au démarrage</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="145"/>
@@ -185,7 +183,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="167"/>
         <source>Restore original item</source>
-        <translation>Rapporter l&apos;article original</translation>
+        <translation>Restaurer les valeurs initiales</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="178"/>
@@ -246,7 +244,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="417"/>
         <source>Display help</source>
-        <translation>Afficher de l&apos;aide</translation>
+        <translation>Afficher l&apos;aide</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="420"/>
@@ -333,7 +331,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="828"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Ce programme permet la rédaction du menu XFCE </translation>
+        <translation>Programme permettant l&apos;édition du menu XFCE </translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="830"/>
@@ -348,17 +346,17 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save changes?</source>
-        <translation>Enregister les modifications?</translation>
+        <translation>Enregistrer les modifications?</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Do you want to save your edits?</source>
-        <translation>Désirez-vous enregister les rédactions?</translation>
+        <translation>Souhaitez-vous conserver les changements?</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="863"/>
         <source>Save</source>
-        <translation>Sauver</translation>
+        <translation>Enregistrer</translation>
     </message>
 </context>
 </TS>
