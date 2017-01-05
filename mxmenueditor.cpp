@@ -36,7 +36,7 @@
 #include <QHashIterator>
 #include <QTextCodec>
 
-//#include <QDebug>
+#include <QDebug>
 
 mxmenueditor::mxmenueditor(QWidget *parent) :
     QDialog(parent),
@@ -734,7 +734,7 @@ void mxmenueditor::addCategory()
     QString str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
     int index = text.indexOf(QRegExp("(^|\n)Categories=[^\n]*(\n|$)"));
-    index = text.indexOf("\n", index + 1);
+    index = text.indexOf(QRegExp("(\n|$)"), index + 1); // find the end of the string
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
             ui->buttonSave->setEnabled(true);
