@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -126,7 +124,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Tem que executar este programa como utilizador normal</translation>
+        <translation>Tem que executar este programa como utilizador normal.</translation>
     </message>
 </context>
 <context>
