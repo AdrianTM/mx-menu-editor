@@ -37,12 +37,14 @@ FORMS    += mxmenueditor.ui \
     addappdialog.ui
 
 TRANSLATIONS += translations/mx-menu-editor_ca.ts \
+                translations/mx-menu-editor_cs.ts \
                 translations/mx-menu-editor_de.ts \
                 translations/mx-menu-editor_el.ts \
                 translations/mx-menu-editor_es.ts \
                 translations/mx-menu-editor_fr.ts \
                 translations/mx-menu-editor_it.ts \
                 translations/mx-menu-editor_ja.ts \
+                translations/mx-menu-editor_lt.ts \
                 translations/mx-menu-editor_nl.ts \
                 translations/mx-menu-editor_pl.ts \
                 translations/mx-menu-editor_pt.ts \
