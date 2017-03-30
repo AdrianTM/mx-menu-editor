@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="lt">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -34,7 +36,7 @@
     <message>
         <location filename="../addappdialog.ui" line="121"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="159"/>
@@ -86,7 +88,7 @@
     <message>
         <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
@@ -168,7 +170,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="122"/>
         <source>Notify startup</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="145"/>
@@ -264,7 +266,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="453"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="488"/>
