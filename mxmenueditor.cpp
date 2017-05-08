@@ -829,7 +829,7 @@ void mxmenueditor::on_buttonAbout_clicked()
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
-    msgBox.addButton(tr("Cancel"), QMessageBox::RejectRole);
+    msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
         system("xdg-open file:///usr/share/doc/mx-menu-editor/license.html");
     }
