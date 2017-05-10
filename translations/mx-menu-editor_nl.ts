@@ -19,74 +19,74 @@
         <translation>Categorie toevoegen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="52"/>
+        <location filename="../addappdialog.ui" line="51"/>
         <source>Delete category</source>
         <translation>Categorie verwijderen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="69"/>
+        <location filename="../addappdialog.ui" line="67"/>
         <source>Command:</source>
         <translation>Commando:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="114"/>
+        <location filename="../addappdialog.ui" line="112"/>
         <source>Save Changes</source>
         <translation>Veranderingen Opslaan</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="122"/>
+        <location filename="../addappdialog.ui" line="120"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="160"/>
+        <location filename="../addappdialog.ui" line="158"/>
         <source>Quit dialog</source>
         <translation>Dialoog beëindigen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="163"/>
+        <location filename="../addappdialog.ui" line="161"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="171"/>
+        <location filename="../addappdialog.ui" line="169"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="186"/>
+        <location filename="../addappdialog.ui" line="184"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="193"/>
+        <location filename="../addappdialog.ui" line="191"/>
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="200"/>
+        <location filename="../addappdialog.ui" line="198"/>
         <source>Comment:</source>
         <translation>Commentaar:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="207"/>
+        <location filename="../addappdialog.ui" line="205"/>
         <source>Icon:</source>
         <translation>Icoon:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="214"/>
+        <location filename="../addappdialog.ui" line="212"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Icoon instellen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="227"/>
+        <location filename="../addappdialog.ui" line="225"/>
         <source>Run in Terminal</source>
         <translation>In terminal uitvoeren</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="240"/>
+        <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
         <translation>Opstart Bekendmaker</translation>
     </message>
@@ -153,133 +153,133 @@
         <translation>Aangepaste applicatie toevoegen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="93"/>
+        <location filename="../mxmenueditor.ui" line="92"/>
         <source>Options</source>
         <translation>Opties</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="102"/>
+        <location filename="../mxmenueditor.ui" line="101"/>
         <source>Run in terminal</source>
         <translation>In terminal uitvoeren</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="112"/>
+        <location filename="../mxmenueditor.ui" line="111"/>
         <source>Hide</source>
         <translation>Verbergen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="122"/>
+        <location filename="../mxmenueditor.ui" line="121"/>
         <source>Notify startup</source>
         <translation>Maak opstart bekend</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="145"/>
+        <location filename="../mxmenueditor.ui" line="144"/>
         <source>Quick Editor</source>
         <translation>Snelle Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="157"/>
+        <location filename="../mxmenueditor.ui" line="156"/>
         <source>Comment:</source>
         <translation>Commentaar:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="167"/>
+        <location filename="../mxmenueditor.ui" line="166"/>
         <source>Restore original item</source>
         <translation>Herstel origineel item</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="178"/>
+        <location filename="../mxmenueditor.ui" line="176"/>
         <source>Command:</source>
         <translation>Commando:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="188"/>
+        <location filename="../mxmenueditor.ui" line="186"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="202"/>
+        <location filename="../mxmenueditor.ui" line="200"/>
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="223"/>
+        <location filename="../mxmenueditor.ui" line="221"/>
         <source>Icon</source>
         <translation>Icoon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="263"/>
+        <location filename="../mxmenueditor.ui" line="261"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
         <translation>Wijzig icoon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="277"/>
+        <location filename="../mxmenueditor.ui" line="274"/>
         <source>Categories</source>
         <translation>Categorieën </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="289"/>
+        <location filename="../mxmenueditor.ui" line="286"/>
         <source>Add</source>
         <translation>Toevoegen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="303"/>
+        <location filename="../mxmenueditor.ui" line="299"/>
         <source>Delete</source>
         <translation>Verwijder</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="369"/>
+        <location filename="../mxmenueditor.ui" line="364"/>
         <source>Quit application</source>
         <translation>Verlaat de applicatie</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
+        <location filename="../mxmenueditor.ui" line="367"/>
         <source>Close</source>
         <translation>Sluiten</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="380"/>
+        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="418"/>
+        <location filename="../mxmenueditor.ui" line="413"/>
         <source>Display help</source>
         <translation>Toon help</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="421"/>
+        <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="429"/>
+        <location filename="../mxmenueditor.ui" line="424"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="448"/>
+        <location filename="../mxmenueditor.ui" line="443"/>
         <source>Save Changes</source>
         <translation>Veranderingen Opslaan</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="456"/>
+        <location filename="../mxmenueditor.ui" line="451"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="491"/>
+        <location filename="../mxmenueditor.ui" line="486"/>
         <source>About this application</source>
         <translation>Over deze toepassing</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
+        <location filename="../mxmenueditor.ui" line="489"/>
         <source>About...</source>
         <translation>Over...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="502"/>
+        <location filename="../mxmenueditor.ui" line="497"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>

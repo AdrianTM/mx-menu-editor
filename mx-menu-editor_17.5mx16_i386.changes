@@ -18,20 +18,20 @@ Changes:
  .
    * update icons
 Checksums-Sha1:
- e5b9860ccd46b3208b808d10469df4d581f89388 72604 mx-menu-editor_17.5mx16_i386.deb
+ f22f23814eb0080ac64ca8e3716283b6498f3cec 69256 mx-menu-editor_17.5mx16_i386.deb
 Checksums-Sha256:
- ac65f6009476a2c268efc1a4714842a2ea2146aadff2b9d8b09453a01ccdbe16 72604 mx-menu-editor_17.5mx16_i386.deb
+ 91a8d2cf71d3fe8c585150f3905a80e2dada22ba7201f433a9cded4c47e9729c 69256 mx-menu-editor_17.5mx16_i386.deb
 Files:
- 63514d362387137c878e89679cb8c672 72604 admin optional mx-menu-editor_17.5mx16_i386.deb
+ 3d0d25a099f3e3c945ba6e2e9acbbba6 69256 admin optional mx-menu-editor_17.5mx16_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJZE1b1AAoJEHCTjHgGee6YP18IANZF3IWFbtHEq6LuC3rVJ0vI
-lK3RIuseqKbjyAMxrUlJHBJuGw0pAbiv/cKgYcloDpI3Lp76OYE/+UvTpZ5/8Mjc
-MXX5no+kwQl2IyOCyy7K2MYCKzXBwlFA3Wl4Ye7XmdGC/7J3Iv+z4aiO22QUjP6F
-+01V/CJXGxGNjQ2W/VLeq9I7lRdJhRjbPNFrkeOCRIDbrXPqsOPgzO/DOFidssLQ
-almkZhe8g4DAK5K9+9tPaIwENwIAvOw1cqXnN62t9AhlhyMBz8r/Eepk48pG+wiS
-rLHHSUPQu568R24htz+ZDbgOGTLzLzXhly8JuOScnLv3MYeHtq3lyYtZokZBDhk=
-=XFGa
+iQEcBAEBAgAGBQJZE38sAAoJEHCTjHgGee6YUPYIAKbdgL2xo13LPERDERAwS4oS
+Ydz7HFVxEvgn6qoBtSDLZI5wEEdoS9U8RIq5euxTdJOVTRDw8grrsIt/Nq9r7wCM
+aWZcY5drMvVxvF9qlbETx9JC9U8Vbj/R+ZV+3SlsxSeToCykn3kix8ytvLZWbxKY
+oxxGQjBUc8SpHPAEbJwfDl9RXA8OzGj0N7WgvNWo5kid5n7N2Jjd5Lk/QLYFaWL7
+jzR69uPU/gzc2gHF3SWQepe3nurmPi2aoy/NgdqS2w2VIL35QhXJN2LJ+ep5K2Rp
+Za1I/+KAD943Rm5X/OhbUsge1m4gc+hLVZiQswf4Dt6zDr62gzmJZjacHG0qciY=
+=oK8s
 -----END PGP SIGNATURE-----

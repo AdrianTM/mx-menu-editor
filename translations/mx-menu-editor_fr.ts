@@ -19,74 +19,74 @@
         <translation>Ajouter une catégorie</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="52"/>
+        <location filename="../addappdialog.ui" line="51"/>
         <source>Delete category</source>
         <translation>Supprimer une catégorie</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="69"/>
+        <location filename="../addappdialog.ui" line="67"/>
         <source>Command:</source>
         <translation>Commande:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="114"/>
+        <location filename="../addappdialog.ui" line="112"/>
         <source>Save Changes</source>
         <translation>Enregistrer les modifications</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="122"/>
+        <location filename="../addappdialog.ui" line="120"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="160"/>
+        <location filename="../addappdialog.ui" line="158"/>
         <source>Quit dialog</source>
         <translation>Quitter le dialogue</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="163"/>
+        <location filename="../addappdialog.ui" line="161"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="171"/>
+        <location filename="../addappdialog.ui" line="169"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="186"/>
+        <location filename="../addappdialog.ui" line="184"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="193"/>
+        <location filename="../addappdialog.ui" line="191"/>
         <source>Name:</source>
         <translation>Nom:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="200"/>
+        <location filename="../addappdialog.ui" line="198"/>
         <source>Comment:</source>
         <translation>Commentaire:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="207"/>
+        <location filename="../addappdialog.ui" line="205"/>
         <source>Icon:</source>
         <translation>Icône:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="214"/>
+        <location filename="../addappdialog.ui" line="212"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Définir l&apos;icône</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="227"/>
+        <location filename="../addappdialog.ui" line="225"/>
         <source>Run in Terminal</source>
         <translation>Exécuter dans un Terminal</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="240"/>
+        <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
         <translation>Notification de démarrage</translation>
     </message>
@@ -153,133 +153,133 @@
         <translation>Ajouter une application personnalisée</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="93"/>
+        <location filename="../mxmenueditor.ui" line="92"/>
         <source>Options</source>
         <translation>Options</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="102"/>
+        <location filename="../mxmenueditor.ui" line="101"/>
         <source>Run in terminal</source>
         <translation>Exécuter dans un Terminal</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="112"/>
+        <location filename="../mxmenueditor.ui" line="111"/>
         <source>Hide</source>
         <translation>Masquer</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="122"/>
+        <location filename="../mxmenueditor.ui" line="121"/>
         <source>Notify startup</source>
         <translation>Notification au démarrage</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="145"/>
+        <location filename="../mxmenueditor.ui" line="144"/>
         <source>Quick Editor</source>
         <translation>Éditeur rapide</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="157"/>
+        <location filename="../mxmenueditor.ui" line="156"/>
         <source>Comment:</source>
         <translation>Commentaire:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="167"/>
+        <location filename="../mxmenueditor.ui" line="166"/>
         <source>Restore original item</source>
         <translation>Restaurer les valeurs initiales</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="178"/>
+        <location filename="../mxmenueditor.ui" line="176"/>
         <source>Command:</source>
         <translation>Commande:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="188"/>
+        <location filename="../mxmenueditor.ui" line="186"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="202"/>
+        <location filename="../mxmenueditor.ui" line="200"/>
         <source>Name:</source>
         <translation>Nom:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="223"/>
+        <location filename="../mxmenueditor.ui" line="221"/>
         <source>Icon</source>
         <translation>Icône</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="263"/>
+        <location filename="../mxmenueditor.ui" line="261"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
         <translation>Changer d&apos;icône</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="277"/>
+        <location filename="../mxmenueditor.ui" line="274"/>
         <source>Categories</source>
         <translation>Catégories</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="289"/>
+        <location filename="../mxmenueditor.ui" line="286"/>
         <source>Add</source>
         <translation>Ajouter</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="303"/>
+        <location filename="../mxmenueditor.ui" line="299"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="369"/>
+        <location filename="../mxmenueditor.ui" line="364"/>
         <source>Quit application</source>
         <translation>Quitter l&apos;application</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
+        <location filename="../mxmenueditor.ui" line="367"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="380"/>
+        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="418"/>
+        <location filename="../mxmenueditor.ui" line="413"/>
         <source>Display help</source>
         <translation>Afficher l&apos;aide</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="421"/>
+        <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
         <translation>Aide </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="429"/>
+        <location filename="../mxmenueditor.ui" line="424"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="448"/>
+        <location filename="../mxmenueditor.ui" line="443"/>
         <source>Save Changes</source>
         <translation>Enregistrer les modifications</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="456"/>
+        <location filename="../mxmenueditor.ui" line="451"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="491"/>
+        <location filename="../mxmenueditor.ui" line="486"/>
         <source>About this application</source>
         <translation>A propos de cette application</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
+        <location filename="../mxmenueditor.ui" line="489"/>
         <source>About...</source>
         <translation>A propos...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="502"/>
+        <location filename="../mxmenueditor.ui" line="497"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>

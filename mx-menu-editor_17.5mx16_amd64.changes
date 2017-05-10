@@ -18,26 +18,26 @@ Changes:
  .
    * update icons
 Checksums-Sha1:
- 11d2d9a4df124b1dc93fb7c0315b8d37c452453a 1176 mx-menu-editor_17.5mx16.dsc
- 3b57796f2ac0a45ad1d6513d9e6ae2050dbac552 183052 mx-menu-editor_17.5mx16.tar.xz
- 55561b0290169976110cfe60e63af7b90e9b0e6a 71096 mx-menu-editor_17.5mx16_amd64.deb
+ 419c51315fa8e7c9f47b134ec3eec5b8c60601d1 1173 mx-menu-editor_17.5mx16.dsc
+ 3e2369edf25f375893e0ad795481b4158c92564b 91188 mx-menu-editor_17.5mx16.tar.xz
+ c674ce69d9064c40b4c9dca24c98208674cd6723 67212 mx-menu-editor_17.5mx16_amd64.deb
 Checksums-Sha256:
- 49317854dd86da2070f8ac9642ee2e94c07996fbfbe90ca96b7a3c1876aff3bd 1176 mx-menu-editor_17.5mx16.dsc
- de2a8a896f680a820f83ea6c8b3de8f75b1a608223ed9bef497cbc7c38e1bf84 183052 mx-menu-editor_17.5mx16.tar.xz
- 0c90d258dd46a51f3037e2921d93575747369759e62c85cc65b2307c2da22240 71096 mx-menu-editor_17.5mx16_amd64.deb
+ 7f51d7ff1ff2a862630c028f6f0293f1d1bd16c986873fbea28288276bfc7c4b 1173 mx-menu-editor_17.5mx16.dsc
+ 4032b9052c2b7cf58517fe8ab43309efa04471e6e1ba3444cdf4d46f38f2e5bf 91188 mx-menu-editor_17.5mx16.tar.xz
+ 5210d017a87162021272fdcadad1eec75f33cdb0b81e15fe5b89bb417fe092b0 67212 mx-menu-editor_17.5mx16_amd64.deb
 Files:
- b3934b8191d2f07aadce569c146c373b 1176 admin optional mx-menu-editor_17.5mx16.dsc
- fd76e1bdb1a75a25a6204a5d9e577dca 183052 admin optional mx-menu-editor_17.5mx16.tar.xz
- dd9364898fd58dc4182eed51888318ee 71096 admin optional mx-menu-editor_17.5mx16_amd64.deb
+ 300f157b4682eb52fea8bdc4212fcb69 1173 admin optional mx-menu-editor_17.5mx16.dsc
+ b5297b71b75b71afe17a77adb5665ca4 91188 admin optional mx-menu-editor_17.5mx16.tar.xz
+ be5afdb7a27a232f792fd04f1e579ac2 67212 admin optional mx-menu-editor_17.5mx16_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJZE1awAAoJEHCTjHgGee6YsYYH/1rB1uJxqlJCDzM+8S++8LXZ
-ETVx63yjMJELVBPKlhgMfvUAcBpSHenjPENLlcpuIJcZ6RkHE2HfKeLpH1zMvWZT
-7W659bNZK9odTTq/YS+tav+Zl0Fo46T6JteVJZbAvpD3Tyt/eTEIQgT+B+Q43yGy
-ifHgq49H8qBFXtktw/1mYjueObjtx1Lt+7RRz1WpE+W9B9SwWfbySmB1opAuMDM+
-LO9D5Ubs+5hDrrxid7Kiann2+Abbaq4OQ1OIIExv6Yeufur40/ipP5UQs1ZL8rn+
-KtCZ9jpuyQT7kNihckvKr439qAWuqtdlrLoi01H2JThVF6r72RTC9TiyRUXjtuM=
-=Mbe8
+iQEcBAEBAgAGBQJZE38GAAoJEHCTjHgGee6YnL8H/1CKP40x/ovLqCuGN2VHnq4b
+XxTfBouG5LKdNJOYJJelJp3vUEYgwvSeSK/mmyrOA8SJOU7LfZjlyuzjsLsTnd8/
+PEg6tehGECFzhEnykBSWn6gdh9Qch+TmC8GTJBCMTadscTk5jt6DWms6sXyb49/l
+cAZj9ElPY5ZQPp994JL7QDGUOWr6dJkQoVLCsvUimh4WxwSCGijJT+/RDi4+fzXP
++xybNwbTla/nRJntB8CwfjJPTDicraTatZZVuddMqvFG0v8Yp2EJcnq01G/HC0xR
+9s07ivgdUo7inexxPTJyQVDW2lKlDHCqVuAqGuKxol4lFd8sST+xkQbaC2rVzy0=
+=2Y3P
 -----END PGP SIGNATURE-----

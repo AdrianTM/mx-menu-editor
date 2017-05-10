@@ -38,8 +38,7 @@
          <string>Add category</string>
         </property>
         <property name="icon">
-         <iconset resource="images.qrc">
-          <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
+         <iconset theme="list-add"/>
         </property>
        </widget>
       </item>
@@ -52,8 +51,7 @@
          <string>Delete category</string>
         </property>
         <property name="icon">
-         <iconset resource="images.qrc">
-          <normaloff>:/icons/remove.png</normaloff>:/icons/remove.png</iconset>
+         <iconset theme="list-remove"/>
         </property>
        </widget>
       </item>
@@ -243,8 +241,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
