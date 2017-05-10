@@ -53,4 +53,7 @@ TRANSLATIONS += translations/mx-menu-editor_ca.ts \
                 translations/mx-menu-editor_sv.ts \
                 translations/mx-menu-editor_tr.ts
 
+RESOURCES += \
+    images.qrc
+
 
