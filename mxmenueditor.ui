@@ -79,8 +79,8 @@
              <string>Add custom application</string>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</iconset>
+             <iconset resource="images.qrc">
+              <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
             </property>
            </widget>
           </item>
@@ -167,8 +167,8 @@
              <string>Restore original item</string>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/redo.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/redo.png</iconset>
+             <iconset resource="images.qrc">
+              <normaloff>:/icons/redo.png</normaloff>:/icons/redo.png</iconset>
             </property>
            </widget>
           </item>
@@ -263,8 +263,8 @@
                 <string>Change icon</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/image.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/image.png</iconset>
+                <iconset resource="images.qrc">
+                 <normaloff>:/icons/image.png</normaloff>:/icons/image.png</iconset>
                </property>
               </widget>
              </item>
@@ -289,8 +289,8 @@
                 <string>Add</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</iconset>
+                <iconset resource="images.qrc">
+                 <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
                </property>
               </widget>
              </item>
@@ -303,8 +303,8 @@
                 <string>Delete</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/remove.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/remove.png</iconset>
+                <iconset resource="images.qrc">
+                 <normaloff>:/icons/remove.png</normaloff>:/icons/remove.png</iconset>
                </property>
               </widget>
              </item>
@@ -372,8 +372,9 @@
         <string>Close</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gtk-cancel.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gtk-cancel.png</iconset>
+        <iconset theme="window-close">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -398,7 +399,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../../../../../usr/share/mx-menu-editor/icons/mxfcelogo.png</pixmap>
+        <pixmap resource="images.qrc">:/icons/logo.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -420,8 +421,9 @@
         <string>Help</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gnome-help.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gnome-help.png</iconset>
+        <iconset theme="help-contents">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+H</string>
@@ -446,8 +448,9 @@
         <string>Save Changes</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/dialog-ok.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/dialog-ok.png</iconset>
+        <iconset theme="dialog-ok">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Ctrl+S</string>
@@ -491,8 +494,9 @@
         <string>About...</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/accessories-text-editor.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/accessories-text-editor.png</iconset>
+        <iconset theme="help-about">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+B</string>
@@ -506,6 +510,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -38,8 +38,8 @@
          <string>Add category</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/add.png</iconset>
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
         </property>
        </widget>
       </item>
@@ -52,8 +52,8 @@
          <string>Delete category</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/remove.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/remove.png</iconset>
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/remove.png</normaloff>:/icons/remove.png</iconset>
         </property>
        </widget>
       </item>
@@ -114,8 +114,9 @@
         <string>Save Changes</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/dialog-ok.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/dialog-ok.png</iconset>
+        <iconset theme="dialog-ok">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Ctrl+S</string>
@@ -162,8 +163,9 @@
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gtk-cancel.png</normaloff>../../../../../../../../usr/share/mx-menu-editor/icons/gtk-cancel.png</iconset>
+        <iconset theme="window-close">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -241,6 +243,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>

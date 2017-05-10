@@ -34,59 +34,59 @@
         <translation>Αποθήκευση Αλλαγών</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="121"/>
+        <location filename="../addappdialog.ui" line="122"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="159"/>
+        <location filename="../addappdialog.ui" line="160"/>
         <source>Quit dialog</source>
         <translation>Κλείστε διαλόγου</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="162"/>
+        <location filename="../addappdialog.ui" line="163"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
+        <location filename="../addappdialog.ui" line="171"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="184"/>
+        <location filename="../addappdialog.ui" line="186"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="191"/>
+        <location filename="../addappdialog.ui" line="193"/>
         <source>Name:</source>
         <translation>Όνομα</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="198"/>
+        <location filename="../addappdialog.ui" line="200"/>
         <source>Comment:</source>
         <translation>Σχόλιο:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="205"/>
+        <location filename="../addappdialog.ui" line="207"/>
         <source>Icon:</source>
         <translation>Εικονίδιο:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="212"/>
+        <location filename="../addappdialog.ui" line="214"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Τοποθετηση εικονίδιο</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="225"/>
+        <location filename="../addappdialog.ui" line="227"/>
         <source>Run in Terminal</source>
         <translation>Εκκίνηση σε ένα τερματικό</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="238"/>
+        <location filename="../addappdialog.ui" line="240"/>
         <source>Startup Notifier</source>
         <translation>Ειδοποιητής Εκκίνησης</translation>
     </message>
@@ -133,7 +133,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="827"/>
+        <location filename="../mxmenueditor.cpp" line="834"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor</translation>
     </message>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="263"/>
-        <location filename="../mxmenueditor.cpp" line="535"/>
+        <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
         <translation>Αλλαγή εικονιδίου</translation>
     </message>
@@ -240,124 +240,124 @@
         <translation>Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="379"/>
+        <location filename="../mxmenueditor.ui" line="380"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="417"/>
+        <location filename="../mxmenueditor.ui" line="418"/>
         <source>Display help</source>
         <translation>Δείτε Βοήθεια</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="420"/>
+        <location filename="../mxmenueditor.ui" line="421"/>
         <source>Help</source>
         <translation>Βοήθεια </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="427"/>
+        <location filename="../mxmenueditor.ui" line="429"/>
         <source>Alt+H</source>
         <translation>Alt+H </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="446"/>
+        <location filename="../mxmenueditor.ui" line="448"/>
         <source>Save Changes</source>
         <translation>Αποθήκευση Αλλαγών</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="453"/>
+        <location filename="../mxmenueditor.ui" line="456"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="488"/>
+        <location filename="../mxmenueditor.ui" line="491"/>
         <source>About this application</source>
         <translation>Περί εφαρμογής.</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="491"/>
+        <location filename="../mxmenueditor.ui" line="494"/>
         <source>About...</source>
         <translation>Περί</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="498"/>
+        <location filename="../mxmenueditor.ui" line="502"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="456"/>
+        <location filename="../mxmenueditor.cpp" line="463"/>
         <source>Select executable file</source>
         <translation>Επιλέξτε εκτελέσιμο αρχείο</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="519"/>
+        <location filename="../mxmenueditor.cpp" line="526"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
         <translation>Αρχεία εικόνας </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="706"/>
+        <location filename="../mxmenueditor.cpp" line="713"/>
         <source>Choose category</source>
         <translation>Επιλογή κατηγορίας</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="717"/>
-        <location filename="../mxmenueditor.cpp" line="832"/>
-        <location filename="../mxmenueditor.cpp" line="863"/>
+        <location filename="../mxmenueditor.cpp" line="724"/>
+        <location filename="../mxmenueditor.cpp" line="839"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="718"/>
+        <location filename="../mxmenueditor.cpp" line="725"/>
         <source>OK</source>
         <translation>Εντάξει</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="808"/>
+        <location filename="../mxmenueditor.cpp" line="815"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="808"/>
+        <location filename="../mxmenueditor.cpp" line="815"/>
         <source>Could not save the file</source>
         <translation>Δεν ήταν δυνατή η αποθήκευση του αρχείου</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="826"/>
+        <location filename="../mxmenueditor.cpp" line="833"/>
         <source>About MX Menu Editor</source>
         <translation>Περί MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="827"/>
+        <location filename="../mxmenueditor.cpp" line="834"/>
         <source>Version: </source>
         <translation>Έκδοση:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="828"/>
+        <location filename="../mxmenueditor.cpp" line="835"/>
         <source>Program for editing Xfce menu</source>
         <translation>Πρόγραμμα για επεξεργασία μενού του Xfce</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="830"/>
+        <location filename="../mxmenueditor.cpp" line="837"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c)  MX Linux </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="831"/>
+        <location filename="../mxmenueditor.cpp" line="838"/>
         <source>License</source>
         <translation>Άδεια</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="863"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save changes?</source>
         <translation>Αποθήκευσε τις αλλαγές;</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="863"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Do you want to save your edits?</source>
         <translation>Θέλετε να αποθηκεύσετε τις αλλαγές σας;</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="863"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save</source>
         <translation>Αποθήκευση</translation>
     </message>

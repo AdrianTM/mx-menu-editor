@@ -45,6 +45,13 @@ mxmenueditor::mxmenueditor(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    if (ui->buttonSave->icon().isNull()) {
+        ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    }
+    if (add->ui->buttonSave->icon().isNull()) {
+        add->ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    }
+
     comboBox = new QComboBox;
     version = getVersion("mx-menu-editor");
 
