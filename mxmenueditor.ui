@@ -79,8 +79,7 @@
              <string>Add custom application</string>
             </property>
             <property name="icon">
-             <iconset resource="images.qrc">
-              <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
+             <iconset theme="list-add"/>
             </property>
            </widget>
           </item>
@@ -167,8 +166,7 @@
              <string>Restore original item</string>
             </property>
             <property name="icon">
-             <iconset resource="images.qrc">
-              <normaloff>:/icons/redo.png</normaloff>:/icons/redo.png</iconset>
+             <iconset theme="edit-undo"/>
             </property>
            </widget>
           </item>
@@ -263,8 +261,7 @@
                 <string>Change icon</string>
                </property>
                <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/icons/image.png</normaloff>:/icons/image.png</iconset>
+                <iconset theme="insert-image"/>
                </property>
               </widget>
              </item>
@@ -289,8 +286,7 @@
                 <string>Add</string>
                </property>
                <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
+                <iconset theme="list-add"/>
                </property>
               </widget>
              </item>
@@ -303,8 +299,7 @@
                 <string>Delete</string>
                </property>
                <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/icons/remove.png</normaloff>:/icons/remove.png</iconset>
+                <iconset theme="list-remove"/>
                </property>
               </widget>
              </item>
