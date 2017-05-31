@@ -50,6 +50,7 @@ TRANSLATIONS += translations/mx-menu-editor_ca.ts \
                 translations/mx-menu-editor_pt.ts \
                 translations/mx-menu-editor_ro.ts \
                 translations/mx-menu-editor_ru.ts \
+                translations/mx-menu-editor_sk.ts \
                 translations/mx-menu-editor_sv.ts \
                 translations/mx-menu-editor_tr.ts
 
