@@ -301,7 +301,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
@@ -346,17 +346,17 @@
         <translation>Licentie</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save changes?</source>
         <translation>Veranderingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Do you want to save your edits?</source>
         <translation>Wilt u uw aanpassingen opslaan?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save</source>
         <translation>Opslaan</translation>
     </message>

@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 10 Nov 2017 10:42:07 -0500
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: i386
+Version: 17.11
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (17.11) mx; urgency=medium
+ .
+   * add FR help
+Checksums-Sha1:
+ b9becf28d12dd5f8043649b1f6bd63067eef8d69 70298 mx-menu-editor_17.11_i386.deb
+Checksums-Sha256:
+ e53245129fa68581cc7a1cae99f393c497200d383aac9d3a24df3b7fb58753a8 70298 mx-menu-editor_17.11_i386.deb
+Files:
+ 2493b122df92cf61a6ce74b823d582ac 70298 admin optional mx-menu-editor_17.11_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJaBclNAAoJEHCTjHgGee6Y2V8H/1v460jA4szrZMKCc/t6j1Oc
+CTr8Nd78Wd5BNDFmNwLLy0J5swxdX05mK5ucRS0Q4srItSu1As+G4hUP5FwUhC2T
+H4G4vU/ksS0IBL/0HXyOI6Ju6N9VFkf/aK/uT4LB2VPbKEn1ilT6/r32t1PeBKxG
+3AwgRak9KF5dSdf9pr3+XRx+2cTbYfep2kuULR0itUiH2h+KJ0OCpn0BlqrqBrTj
+CuMqoTAKGYMcZt0xO1SFRjm55icFk3XHqZrnGxgIFqU9hsIX/BsxzwsYV3wlPDha
+62csob9MmoEvsPE4H4r3BNzn3BSeV+Um2yZjc1rVx9X0SoDV3ATnpC7lfB4V8yM=
+=Dx3f
+-----END PGP SIGNATURE-----

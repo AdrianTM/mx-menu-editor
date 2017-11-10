@@ -851,7 +851,16 @@ void mxmenueditor::setEnabled(QString)
 // Help button clicked
 void mxmenueditor::on_buttonHelp_clicked()
 {
-    system("xdg-open https://mxlinux.org/wiki/help-files/help-mx-menu-editor");
+    QLocale locale;
+    QString lang = locale.bcp47Name();
+
+    QString url = "https://mxlinux.org/wiki/help-files/help-mx-menu-editor";
+
+    if (lang == "fr") {
+        url = "https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu";
+    }
+
+    system("xdg-open " + url.toUtf8());
 }
 
 // Cancel button clicked

@@ -301,7 +301,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -346,17 +346,17 @@
         <translation>ライセンス</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save changes?</source>
         <translation>変更を保存？</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Do you want to save your edits?</source>
         <translation>編集した内容を保存しますか？</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>

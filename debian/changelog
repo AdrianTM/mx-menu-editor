@@ -1,3 +1,9 @@
+mx-menu-editor (17.11) mx; urgency=medium
+
+  * add FR help
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 10 Nov 2017 10:42:07 -0500
+
 mx-menu-editor (17.6mx16) mx; urgency=medium
 
   * updated translations
