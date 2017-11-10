@@ -301,7 +301,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -346,17 +346,17 @@
         <translation>Llicència</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save changes?</source>
         <translation>Desa els canvis? </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Do you want to save your edits?</source>
         <translation>Voleu desar la vostra edició? </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save</source>
         <translation>Desa </translation>
     </message>
