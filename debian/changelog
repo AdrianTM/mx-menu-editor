@@ -1,3 +1,9 @@
+mx-menu-editor (17.11+1) mx; urgency=medium
+
+  * fix LANG detection
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 11 Nov 2017 18:38:58 -0500
+
 mx-menu-editor (17.11) mx; urgency=medium
 
   * add FR help

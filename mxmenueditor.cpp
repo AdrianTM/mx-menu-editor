@@ -856,7 +856,7 @@ void mxmenueditor::on_buttonHelp_clicked()
 
     QString url = "https://mxlinux.org/wiki/help-files/help-mx-menu-editor";
 
-    if (lang == "fr") {
+    if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu";
     }
 
