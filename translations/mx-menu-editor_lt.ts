@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="lt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -36,7 +34,7 @@
     <message>
         <location filename="../addappdialog.ui" line="120"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="158"/>
@@ -88,7 +86,7 @@
     <message>
         <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
@@ -126,7 +124,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Jūs privalote vykdyti šią programą kaip normalus naudotojas.</translation>
+        <translation>Privalote paleisti šią programą kaip normalus naudotojas.</translation>
     </message>
 </context>
 <context>
@@ -135,7 +133,7 @@
         <location filename="../mxmenueditor.ui" line="14"/>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>MX Menu Editor</source>
-        <translation>MX Meniu redaktorius</translation>
+        <translation>MX meniu redaktorius</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="31"/>
@@ -170,7 +168,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="121"/>
         <source>Notify startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="144"/>
@@ -266,7 +264,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="451"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="486"/>
@@ -301,7 +299,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Cancel</source>
         <translation>Atsisakyti</translation>
     </message>
@@ -323,7 +321,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="833"/>
         <source>About MX Menu Editor</source>
-        <translation>Apie MX Meniu redaktorius</translation>
+        <translation>Apie MX meniu redaktorius</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="834"/>
@@ -346,17 +344,17 @@
         <translation>Licencija</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save changes?</source>
         <translation>Įrašyti pakeitimus?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Do you want to save your edits?</source>
         <translation>Ar norite įrašyti savo taisymus?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save</source>
         <translation>Įrašyti</translation>
     </message>
