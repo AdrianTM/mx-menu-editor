@@ -19,74 +19,74 @@
         <translation>Lägg till kategori</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="51"/>
+        <location filename="../addappdialog.ui" line="53"/>
         <source>Delete category</source>
         <translation>Ta bort kategori</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="67"/>
+        <location filename="../addappdialog.ui" line="71"/>
         <source>Command:</source>
         <translation>Kommando:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="112"/>
+        <location filename="../addappdialog.ui" line="116"/>
         <source>Save Changes</source>
         <translation>Spar Ändringar</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="120"/>
+        <location filename="../addappdialog.ui" line="124"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="158"/>
+        <location filename="../addappdialog.ui" line="162"/>
         <source>Quit dialog</source>
         <translation>Avsluta-dialog</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="161"/>
+        <location filename="../addappdialog.ui" line="165"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
+        <location filename="../addappdialog.ui" line="173"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="184"/>
+        <location filename="../addappdialog.ui" line="191"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="191"/>
+        <location filename="../addappdialog.ui" line="198"/>
         <source>Name:</source>
         <translation>Namn:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="198"/>
+        <location filename="../addappdialog.ui" line="205"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="205"/>
+        <location filename="../addappdialog.ui" line="212"/>
         <source>Icon:</source>
         <translation>Ikon:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="212"/>
+        <location filename="../addappdialog.ui" line="219"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Välj ikon</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="225"/>
+        <location filename="../addappdialog.ui" line="232"/>
         <source>Run in Terminal</source>
         <translation>Kör i Terminal</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="238"/>
+        <location filename="../addappdialog.ui" line="245"/>
         <source>Startup Notifier</source>
         <translation>Starta Notifier</translation>
     </message>
@@ -153,133 +153,133 @@
         <translation>Lägg till anpassat program</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="92"/>
+        <location filename="../mxmenueditor.ui" line="94"/>
         <source>Options</source>
         <translation>Valmöjligheter</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="101"/>
+        <location filename="../mxmenueditor.ui" line="103"/>
         <source>Run in terminal</source>
         <translation>Kör i terminal</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="111"/>
+        <location filename="../mxmenueditor.ui" line="113"/>
         <source>Hide</source>
         <translation>Dölj</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="121"/>
+        <location filename="../mxmenueditor.ui" line="123"/>
         <source>Notify startup</source>
         <translation>Meddela start</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="144"/>
+        <location filename="../mxmenueditor.ui" line="146"/>
         <source>Quick Editor</source>
         <translation>Snabb Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="156"/>
+        <location filename="../mxmenueditor.ui" line="158"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="166"/>
+        <location filename="../mxmenueditor.ui" line="168"/>
         <source>Restore original item</source>
         <translation>Återställ orginal-objekt</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="176"/>
+        <location filename="../mxmenueditor.ui" line="180"/>
         <source>Command:</source>
         <translation>Kommando:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="186"/>
+        <location filename="../mxmenueditor.ui" line="190"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="200"/>
+        <location filename="../mxmenueditor.ui" line="204"/>
         <source>Name:</source>
         <translation>Namn:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="221"/>
+        <location filename="../mxmenueditor.ui" line="225"/>
         <source>Icon</source>
         <translation>Ikon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="261"/>
+        <location filename="../mxmenueditor.ui" line="265"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
         <translation>Byt ikon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="274"/>
+        <location filename="../mxmenueditor.ui" line="280"/>
         <source>Categories</source>
         <translation>Kategorier</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="286"/>
+        <location filename="../mxmenueditor.ui" line="292"/>
         <source>Add</source>
         <translation>Lägg till</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="299"/>
+        <location filename="../mxmenueditor.ui" line="307"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="364"/>
+        <location filename="../mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
         <translation>Stäng programmet</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="367"/>
+        <location filename="../mxmenueditor.ui" line="377"/>
         <source>Close</source>
         <translation>Stäng</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
+        <location filename="../mxmenueditor.ui" line="385"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="413"/>
+        <location filename="../mxmenueditor.ui" line="426"/>
         <source>Display help</source>
         <translation>Visa hjälp</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="416"/>
+        <location filename="../mxmenueditor.ui" line="429"/>
         <source>Help</source>
         <translation>Hjälp</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="424"/>
+        <location filename="../mxmenueditor.ui" line="437"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="443"/>
+        <location filename="../mxmenueditor.ui" line="456"/>
         <source>Save Changes</source>
         <translation>Spar Ändringar</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="451"/>
+        <location filename="../mxmenueditor.ui" line="464"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="486"/>
+        <location filename="../mxmenueditor.ui" line="499"/>
         <source>About this application</source>
         <translation>Om detta program</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="489"/>
+        <location filename="../mxmenueditor.ui" line="502"/>
         <source>About...</source>
         <translation>Om...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
+        <location filename="../mxmenueditor.ui" line="510"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
