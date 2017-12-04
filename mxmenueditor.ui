@@ -79,7 +79,9 @@
              <string>Add custom application</string>
             </property>
             <property name="icon">
-             <iconset theme="list-add"/>
+             <iconset theme="list-add">
+              <normaloff/>
+             </iconset>
             </property>
            </widget>
           </item>
@@ -166,7 +168,9 @@
              <string>Restore original item</string>
             </property>
             <property name="icon">
-             <iconset theme="edit-undo"/>
+             <iconset theme="edit-undo">
+              <normaloff/>
+             </iconset>
             </property>
            </widget>
           </item>
@@ -261,7 +265,9 @@
                 <string>Change icon</string>
                </property>
                <property name="icon">
-                <iconset theme="insert-image"/>
+                <iconset theme="insert-image">
+                 <normaloff/>
+                </iconset>
                </property>
               </widget>
              </item>
@@ -286,7 +292,9 @@
                 <string>Add</string>
                </property>
                <property name="icon">
-                <iconset theme="list-add"/>
+                <iconset theme="list-add">
+                 <normaloff/>
+                </iconset>
                </property>
               </widget>
              </item>
@@ -299,7 +307,9 @@
                 <string>Delete</string>
                </property>
                <property name="icon">
-                <iconset theme="list-remove"/>
+                <iconset theme="list-remove">
+                 <normaloff/>
+                </iconset>
                </property>
               </widget>
              </item>
@@ -375,6 +385,9 @@
         <string>Alt+N</string>
        </property>
        <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
         <bool>true</bool>
        </property>
       </widget>
@@ -454,7 +467,7 @@
         <bool>true</bool>
        </property>
        <property name="default">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
