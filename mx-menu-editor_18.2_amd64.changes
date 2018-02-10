@@ -18,26 +18,26 @@ Changes:
  .
    * new translations
 Checksums-Sha1:
- 5bf0cea694397e2c04042be59896e64e2c732e66 1157 mx-menu-editor_18.2.dsc
- c9c27ee66a1d664e7311b776915d3acaf339fef7 42524 mx-menu-editor_18.2.tar.xz
- 8097b4b1ee16eced8d1917c733a16f6e4989e1cd 57576 mx-menu-editor_18.2_amd64.deb
+ 5f49c8410577f91d2a3edafa036bb8dac2f329c8 1157 mx-menu-editor_18.2.dsc
+ 05807de48c2e7bacb4a431003493b5944b435c3d 41320 mx-menu-editor_18.2.tar.xz
+ 4e2d63cd78f45a0e90dc4d64b3e407ec486e10bd 70418 mx-menu-editor_18.2_amd64.deb
 Checksums-Sha256:
- cc5bb27112c0f0e462c2d88961ffb8d66b4bbfb44f55fa4373de5d59676d2fa7 1157 mx-menu-editor_18.2.dsc
- 06f7a8ceb8b5d8ce4fd98ed4f4a0d39ae2e9fb9ef30e0ceaa4a567861f9429d4 42524 mx-menu-editor_18.2.tar.xz
- 03a14548a442904a0ecf4b3a21fd1cf697211cb7acace2d5a66ad412827e787a 57576 mx-menu-editor_18.2_amd64.deb
+ 38cdd61b485359ce6b48ac578de66279d8afae6b30ce9cb559dd3efb8d9caed1 1157 mx-menu-editor_18.2.dsc
+ 4b2407509812bac33262808eb029dfa0dcaa7c3d7c5baabb8fd6b49f1953c433 41320 mx-menu-editor_18.2.tar.xz
+ 230572d9b60738bdf5140a54a3dc38eb5bc919fe49a0058c7ef2286d1ca150fd 70418 mx-menu-editor_18.2_amd64.deb
 Files:
- 1544a06c5c6eee67567aec0edeb5a666 1157 admin optional mx-menu-editor_18.2.dsc
- 41daefb42be2bc05b798772d5bd5e345 42524 admin optional mx-menu-editor_18.2.tar.xz
- 7e8af3e63238bc27dd4221e82842c5cf 57576 admin optional mx-menu-editor_18.2_amd64.deb
+ 36828f1397571451e9713d25f493d231 1157 admin optional mx-menu-editor_18.2.dsc
+ 524a0331f80f02b7ed0d08eadf2c0160 41320 admin optional mx-menu-editor_18.2.tar.xz
+ 86e5c159ddd69503fabedab127840bba 70418 admin optional mx-menu-editor_18.2_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJafpX+AAoJEHCTjHgGee6YpPAIALkoR05oMR4oIqAO7Wcxn57j
-0TqvLj4BvwzlT3ewYrbTNLG7E4tq+SUBro3aQRnfjDL51qv69IUgXsN5bWsA1IxM
-GW+blIEayYeA3C6ixsJnfsyEQiCwXgn1z/Kx8Q8Z3HmgY9NZXvFV0LDi+zm6DZt0
-+W3SjfrtdexU4byR9ov3Hofy9KtTKVvuMOQ4J3B/KCOgZGhKTv0EFo1gWlrOFtyJ
-KeBC5pgIwkWjgWpnocs1GkA5HP6rWSaI2Rmdm/aQMrUrkTv0FtvuoVcdnnir+wxZ
-Xkh3YyS8icp0/f5DQeurcYXjGz6pNYafL32RIAhzD9f2LfZ4OUhwu0ta04C8IJc=
-=k5dZ
+iQEcBAEBAgAGBQJafppCAAoJEHCTjHgGee6YgYUIAJykPN/pvOP4yUh49XGzVGg8
+Ia9naQBDpPK+Wg5wJftRhGkVs7m3FyCOGUan9KeoHp4p6LTAFtE7ENE1dFp5cP/l
+sdK+4pr/d/CzlaoXhnjLtwMrFoQF3N+qcWhfp41hWf1rUNWAU1YH4Xd6q4cggLii
+D7jfY4+XE3nJMqXgDKLZuMdBlo/rrGRho5Nvd8Q/yhGihPbs0tOdRssZJrLYGpuY
+2GKItIQpW1MUWAZT3HdECm7mIQbOxtsMuGI2gDOw2xXusjr9Nqfxd22wayGKd9zh
+YiKLWETK6iu9S5uYTzpp/wTN6aloKf1uxskBIuhjkma+xccx0pd+884DAt3EozY=
+=FOjK
 -----END PGP SIGNATURE-----

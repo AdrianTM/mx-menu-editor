@@ -36,28 +36,28 @@ HEADERS  += mxmenueditor.h \
 FORMS    += mxmenueditor.ui \
     addappdialog.ui
 
-TRANSLATIONS += translations/mx-bootrepair_am.ts \
-                translations/mx-bootrepair_ca.ts \
-                translations/mx-bootrepair_cs.ts \
-                translations/mx-bootrepair_de.ts \
-                translations/mx-bootrepair_el.ts \
-                translations/mx-bootrepair_es.ts \
-                translations/mx-bootrepair_fr.ts \
-                translations/mx-bootrepair_hu.ts \
-                translations/mx-bootrepair_it.ts \
-                translations/mx-bootrepair_ja.ts \
-                translations/mx-bootrepair_kk.ts \
-                translations/mx-bootrepair_lt.ts \
-                translations/mx-bootrepair_nl.ts \
-                translations/mx-bootrepair_pl.ts \
-                translations/mx-bootrepair_pt.ts \
-                translations/mx-bootrepair_pt_BR.ts \
-                translations/mx-bootrepair_ro.ts \
-                translations/mx-bootrepair_ru.ts \
-                translations/mx-bootrepair_sk.ts \
-                translations/mx-bootrepair_sv.ts \
-                translations/mx-bootrepair_tr.ts \
-                translations/mx-bootrepair_uk.ts
+TRANSLATIONS += translations/mx-menu-editor_am.ts \
+                translations/mx-menu-editor_ca.ts \
+                translations/mx-menu-editor_cs.ts \
+                translations/mx-menu-editor_de.ts \
+                translations/mx-menu-editor_el.ts \
+                translations/mx-menu-editor_es.ts \
+                translations/mx-menu-editor_fr.ts \
+                translations/mx-menu-editor_hu.ts \
+                translations/mx-menu-editor_it.ts \
+                translations/mx-menu-editor_ja.ts \
+                translations/mx-menu-editor_kk.ts \
+                translations/mx-menu-editor_lt.ts \
+                translations/mx-menu-editor_nl.ts \
+                translations/mx-menu-editor_pl.ts \
+                translations/mx-menu-editor_pt.ts \
+                translations/mx-menu-editor_pt_BR.ts \
+                translations/mx-menu-editor_ro.ts \
+                translations/mx-menu-editor_ru.ts \
+                translations/mx-menu-editor_sk.ts \
+                translations/mx-menu-editor_sv.ts \
+                translations/mx-menu-editor_tr.ts \
+                translations/mx-menu-editor_uk.ts
 
 RESOURCES += \
     images.qrc
