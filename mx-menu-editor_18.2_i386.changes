@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 10 Feb 2018 01:48:56 -0500
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: i386
+Version: 18.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (18.2) mx; urgency=medium
+ .
+   * new translations
+Checksums-Sha1:
+ 034f6f99b94ad274e9d64f90ea01eeaf7e05983e 58894 mx-menu-editor_18.2_i386.deb
+Checksums-Sha256:
+ c8028570d2fd913036d37802bd51cb29272f1c8455663c30a4b651884194dd50 58894 mx-menu-editor_18.2_i386.deb
+Files:
+ a199c437af50a0a474267b02c725ef06 58894 admin optional mx-menu-editor_18.2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJafpYSAAoJEHCTjHgGee6YZ2kIAItwwrC1sBHvo+aore3VjsmD
+Q+66duVX/iS2CGVEdQsO4TWHhIMchEOfwIJSHC2qVEDaMFlJpvlBwZ2WHvagAgH0
+L9Jr15ejLswxPz+1R4vix/EmF+Mon7K+146Trf0E3X7D7u+A/6sFmIoL/j+bTquA
+n3IMheZ6jZ42ADtM74bbn1mLSChXkKtgJyUiUpD/N6T7QJtAKNMDWixpJNU+SRHd
+QD0HHrvaBq7J8awHUBnYKgfpBCgjgDYmG22HcH88uDqSGe3sIZMY1fQB7JusDwuI
+JgtSULwSe0/Wtc2+gpF2LfkEiXY7kca8T0kBtLlXXGvhy+70EdxVY/DYhCqvOmY=
+=y0y5
+-----END PGP SIGNATURE-----
