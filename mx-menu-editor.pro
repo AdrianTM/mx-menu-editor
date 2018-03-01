@@ -57,7 +57,8 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_sk.ts \
                 translations/mx-menu-editor_sv.ts \
                 translations/mx-menu-editor_tr.ts \
-                translations/mx-menu-editor_uk.ts
+                translations/mx-menu-editor_uk.ts \
+                translations/mx-menu-editor_zh_TW.ts
 
 RESOURCES += \
     images.qrc
