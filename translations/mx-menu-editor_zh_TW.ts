@@ -1,51 +1,51 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_TW" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="../addappdialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="26"/>
         <source>Categories</source>
-        <translation>Categorie</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="38"/>
         <source>Add category</source>
-        <translation>Aggiungi categoria</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="51"/>
         <source>Delete category</source>
-        <translation>Elemina categoria</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="67"/>
         <source>Command:</source>
-        <translation>Comando:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="112"/>
         <source>Save Changes</source>
-        <translation>Salva Cambiamenti</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="120"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="158"/>
         <source>Quit dialog</source>
-        <translation>Chiudi dialogo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="161"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
@@ -60,63 +60,63 @@
     <message>
         <location filename="../addappdialog.ui" line="191"/>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="198"/>
         <source>Comment:</source>
-        <translation>Commento:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="205"/>
         <source>Icon:</source>
-        <translation>Icona:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="212"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
-        <translation>Imposta icona</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="225"/>
         <source>Run in Terminal</source>
-        <translation>Avvia da terminale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
-        <translation>Avvia Notifier</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Aggiungi applicazione personale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation>Non è possibile salvare il file</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
-        <translation>Salvare i cambiamenti?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation>Vuoi salvare le tue modifiche?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save</source>
-        <translation>Salva</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Devi eseguire questo programma come normale utente.</translation>
+        <translation>本程式必須以一般使用者的身份來執行。</translation>
     </message>
 </context>
 <context>
@@ -133,62 +133,62 @@
         <location filename="../mxmenueditor.ui" line="14"/>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>MX Menu Editor</source>
-        <translation>MX Menu Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
-        <translation>Editor Avanzato</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
-        <translation>Categorie e applicazioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation>Aggiungi applicazione personale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="92"/>
         <source>Options</source>
-        <translation>Opzioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="101"/>
         <source>Run in terminal</source>
-        <translation>Avvia da terminale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="111"/>
         <source>Hide</source>
-        <translation>Nascondi</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="121"/>
         <source>Notify startup</source>
-        <translation>Notifica all&apos;avvio</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="144"/>
         <source>Quick Editor</source>
-        <translation>Editor semplice e veloce</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="156"/>
         <source>Comment:</source>
-        <translation>Commento:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="166"/>
         <source>Restore original item</source>
-        <translation>Ripristina elemento originale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="176"/>
         <source>Command:</source>
-        <translation>Comando:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="186"/>
@@ -198,43 +198,43 @@
     <message>
         <location filename="../mxmenueditor.ui" line="200"/>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="221"/>
         <source>Icon</source>
-        <translation>Icona</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="261"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
-        <translation>Cambia Icona</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="274"/>
         <source>Categories</source>
-        <translation>Categorie</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="286"/>
         <source>Add</source>
-        <translation>Aggiungi</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="299"/>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="364"/>
         <source>Quit application</source>
-        <translation> Chiudi l&apos;applicazione</translation>
+        <translation>退出程式</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="367"/>
         <source>Close</source>
-        <translation>Chiudi</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="375"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="../mxmenueditor.ui" line="413"/>
         <source>Display help</source>
-        <translation>Visualizza la guida</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
-        <translation>Aiuto</translation>
+        <translation>說明</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="424"/>
@@ -259,22 +259,22 @@
     <message>
         <location filename="../mxmenueditor.ui" line="443"/>
         <source>Save Changes</source>
-        <translation>Salva Cambiamenti</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="451"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="486"/>
         <source>About this application</source>
-        <translation>Informazioni su questa applicazione</translation>
+        <translation>關於本程式</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="489"/>
         <source>About...</source>
-        <translation>Info...</translation>
+        <translation>關於……</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="497"/>
@@ -284,79 +284,79 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="463"/>
         <source>Select executable file</source>
-        <translation>Seleziona un file eseguibile</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="526"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>File d&apos;immagine (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="713"/>
         <source>Choose category</source>
-        <translation>Scegli categoria</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="725"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="815"/>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="815"/>
         <source>Could not save the file</source>
-        <translation>Non è possibile salvare il file:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="833"/>
         <source>About MX Menu Editor</source>
-        <translation>Informazioni su MX Menu Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>Version: </source>
-        <translation>Versione:</translation>
+        <translation>版本：</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="835"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Programma per modificare il menu di Xfce</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="837"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="838"/>
         <source>License</source>
-        <translation>Licenza</translation>
+        <translation>授權條款</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save changes?</source>
-        <translation>Salvare i cambiamenti?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Do you want to save your edits?</source>
-        <translation>Vuoi salvare le tue modifiche?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save</source>
-        <translation>Salva</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
