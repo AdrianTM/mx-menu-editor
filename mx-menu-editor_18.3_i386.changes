@@ -18,20 +18,20 @@ Changes:
  .
    * new translations
 Checksums-Sha1:
- c29883e99ee7042c500774b9b0df74790fe265ee 72176 mx-menu-editor_18.3_i386.deb
+ dd5c1693a3deda7e39d247b8988180ff225d51cd 72982 mx-menu-editor_18.3_i386.deb
 Checksums-Sha256:
- 80e95ceee3d3fd7865bd0538842565dc9a110f0313e8f5b00c56b3a07375a9a9 72176 mx-menu-editor_18.3_i386.deb
+ 212b681584e7a5d18658411d5acb38b864282d717a11a4f3579f95f3944e5267 72982 mx-menu-editor_18.3_i386.deb
 Files:
- 33de309543ba6e5fbd8aa2fd39e5ed9e 72176 admin optional mx-menu-editor_18.3_i386.deb
+ 94b045b6238c6e18e1bdd77df668f4fa 72982 admin optional mx-menu-editor_18.3_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJamXEHAAoJEHCTjHgGee6YFHkIALrFcHeNmPzUE3PAxe9CQlDY
-DkqmdY3dAIBaR1llbFMHH9XdFD5AeDV9FseHWap5FxL5FV4Aw1Rqr/grvTbsZ7yP
-9RxSeBwLIu4qG82xuhXkj+wp+ucwGoXqrmpn1oaPVwA/mK1NEYt5b9pbucykvn3L
-EG4EmEU9XUkl/y2AA+9PUgKXjvevVkpaomLwpG0IGcq0tuyy1XlqzRa9GQstnPbB
-qnFoIQTOtWfJDmhy7BMRjdpIcjoh8ZASbF2SvN2Olvn0rmCOeDsExfEshXBIJZH6
-PR+tXZFGQCAqRTqLv6nYLtm+ML40gNBzsvMwNcdZeLl/QFoBO6VsNSY1JtxvxbE=
-=t8Ua
+iQEcBAEBAgAGBQJamXxuAAoJEHCTjHgGee6Yl+AH+gIB2a5MHRoE0LQ5ph6IzN35
+NAFPQYDxyt8rx4l6XZzAZcdB920s5IV2KJdyiOYE7kLPTgyi8foe/U1+///UB/+F
+nFEbq32EeVhSTqravTcE4lwh9u6LMyGmPwp0UjQ0C87JFInA4/VFUZsQYLIEztqj
+CnT8n+deujl3eK3HEZDBF1c/G6yH12ednABp5hvLIzY+oXSQRM+4+Vy6OArUHLIV
+ntpNlvhdfz/0FE8ukQHYiBUmhkP+0UzsL4zg1tYbb3M8dUuaZRYYByhesJgv5ojA
+klOnvF7hcNBkdkhyTQsZBdhtbsCQY3CEMAdQET0DriZSPC2AXvTaqvVVz28z/7I=
+=l7pi
 -----END PGP SIGNATURE-----

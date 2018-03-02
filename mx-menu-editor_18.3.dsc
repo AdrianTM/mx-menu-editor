@@ -7,26 +7,26 @@ Binary: mx-menu-editor
 Architecture: any
 Version: 18.3
 Maintainer: Adrian <adrian@mxlinux.org>
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 Vcs-Git: git://github.com/AdrianTM/mx-menu-editor
-Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 7.0.50~)
+Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 9)
 Package-List:
  mx-menu-editor deb admin optional arch=any
 Checksums-Sha1:
- 9e937f181eb618909cb2bcafcba2e2b1c13d6393 41840 mx-menu-editor_18.3.tar.xz
+ fd617e8874d5a07554d3ae42336ac69c0524ec65 41844 mx-menu-editor_18.3.tar.xz
 Checksums-Sha256:
- a44d1a41e1ca03ed2d82b1ea3b4bd292c947b98344cb11404a6778b762b3a6b4 41840 mx-menu-editor_18.3.tar.xz
+ 2b5dc3db8c5f8c0763a9bf72f76aa3ef3dc384d56f632760f52d5f94846adcc2 41844 mx-menu-editor_18.3.tar.xz
 Files:
- dac9683f1dbdfc3d10fc3984641da313 41840 mx-menu-editor_18.3.tar.xz
+ 8ee605717f072c626282cd496678a4a3 41844 mx-menu-editor_18.3.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJamXDuAAoJEHCTjHgGee6Yl+8H/iioMeUZ10iP5HR4oIywkg+N
-hsqqDXv5wQnFhydF3ATDuLm409VrAX+TpF7PC4zMpcV5IMzHztjdMqqAaDy9+98X
-zFAKDreoKU56k3+BAjD0l2cUPYkvzHlsHdtB4Ic54So0P/Ijk3GFuVvunG5iFpgG
-k92xKf+3pdIMm2zbPx/zeUPqS/FHTKfHl0m4ToFy5ezYbuOZvBtlECOK8h7s9mx8
-O5vfeHB6cooZyjErGD2scS63mCB/USTqd4GcsQ8eNyzsf+tpOM5aDJdr1+qDliCD
-wTSA/KWWEB7aOc7+8VVVUmsfBxituAsqnFHb+07UnjP8eOLYdXdj8NiQIk1d+mE=
-=bDIc
+iQEcBAEBAgAGBQJamXwzAAoJEHCTjHgGee6Y8+QH/i0vqiOUA+XRsBBlqvrmOnbg
+zvcjKvUQI6LJsVOE0GW8rk32k9ddi/1t21zM1M1VOhIQ/uqypXXhoEv5b1PYigk1
+AbV6EJW2ZmDqhH8bZcqriHxdjfazHX/5OWtWhRTd4zH873H4xczGyoEvi3wKgx7w
+sK8Rc0MVl/wQHRbRfc2p4O6+v7dEP3ezdkPO1N895n888qVBtLJP0O2qfIXqO3L2
+ZOl5D26I9ScMsxW6X+QzfileBD53VNJUZvz7rJACPF50BJ3Fff2+gTNHSUG4hU/M
+vrrZkSWn/3cDztRHg8ywgYoFMRcxGnWbymdi4CUwfoYrFLXCdNJl/Xqt4Abgz9w=
+=1/Us
 -----END PGP SIGNATURE-----
