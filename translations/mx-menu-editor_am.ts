@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="am">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="am" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -19,74 +17,74 @@
         <translation>ምድብ መጨመሪያ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="53"/>
+        <location filename="../addappdialog.ui" line="51"/>
         <source>Delete category</source>
         <translation>ምድብ ማጥፊያ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="71"/>
+        <location filename="../addappdialog.ui" line="67"/>
         <source>Command:</source>
         <translation>ትእዛዝ:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="116"/>
+        <location filename="../addappdialog.ui" line="112"/>
         <source>Save Changes</source>
         <translation>ለውጥ ማስቀመቻ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="124"/>
+        <location filename="../addappdialog.ui" line="120"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="162"/>
+        <location filename="../addappdialog.ui" line="158"/>
         <source>Quit dialog</source>
         <translation>ንግግር ማጥፊያ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="165"/>
+        <location filename="../addappdialog.ui" line="161"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>መሰረዣ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="173"/>
+        <location filename="../addappdialog.ui" line="169"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="191"/>
+        <location filename="../addappdialog.ui" line="184"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="198"/>
+        <location filename="../addappdialog.ui" line="191"/>
         <source>Name:</source>
         <translation>ስም:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="205"/>
+        <location filename="../addappdialog.ui" line="198"/>
         <source>Comment:</source>
         <translation>አስተያየት:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="212"/>
+        <location filename="../addappdialog.ui" line="205"/>
         <source>Icon:</source>
         <translation>ምልክት</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="219"/>
+        <location filename="../addappdialog.ui" line="212"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>ምልክት ማሰናጃ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="232"/>
+        <location filename="../addappdialog.ui" line="225"/>
         <source>Run in Terminal</source>
         <translation>በ ተርሚናል ውስጥ ማስኬጃ</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="245"/>
+        <location filename="../addappdialog.ui" line="238"/>
         <source>Startup Notifier</source>
         <translation>ማስታወቂያ ማስጀመሪያ</translation>
     </message>
@@ -108,12 +106,12 @@
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
-        <translation type="unfinished"></translation>
+        <translation>ለውጦቹን ላስቀምጣቸው?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"></translation>
+        <translation>እርስዎ ያረሙትን ማስቀመጥ ይፈልጋሉ?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
@@ -126,7 +124,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"></translation>
+        <translation>እርስዎ ይህን ፕሮግራም እንደ መደበኛ ተጠቃሚ ማስኬድ አለብዎት</translation>
     </message>
 </context>
 <context>
@@ -135,173 +133,173 @@
         <location filename="../mxmenueditor.ui" line="14"/>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MX ዝርዝር ማረሚያ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>የረቀቀ የ ማረሚያ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
-        <translation type="unfinished"></translation>
+        <translation>መተግበሪያ እና ምድብ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation type="unfinished"></translation>
+        <translation>መተግበሪያ ማስተካከያ መጨመሪያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="94"/>
+        <location filename="../mxmenueditor.ui" line="92"/>
         <source>Options</source>
         <translation>ምርጫዎች</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="103"/>
+        <location filename="../mxmenueditor.ui" line="101"/>
         <source>Run in terminal</source>
-        <translation type="unfinished"></translation>
+        <translation>በ ተርሚናል ውስጥ ማስኬጃ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="113"/>
+        <location filename="../mxmenueditor.ui" line="111"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>መደበቂያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="123"/>
+        <location filename="../mxmenueditor.ui" line="121"/>
         <source>Notify startup</source>
-        <translation type="unfinished"></translation>
+        <translation>ማስታወቂያ ማስጀመሪያ </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="146"/>
+        <location filename="../mxmenueditor.ui" line="144"/>
         <source>Quick Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>በፍጥነት ማረሚያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="158"/>
+        <location filename="../mxmenueditor.ui" line="156"/>
         <source>Comment:</source>
         <translation>አስተያየት:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="168"/>
+        <location filename="../mxmenueditor.ui" line="166"/>
         <source>Restore original item</source>
-        <translation type="unfinished"></translation>
+        <translation>ዋናውን እቃ እንደ ነበር መመለሻ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="180"/>
+        <location filename="../mxmenueditor.ui" line="176"/>
         <source>Command:</source>
         <translation>ትእዛዝ:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="190"/>
+        <location filename="../mxmenueditor.ui" line="186"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="204"/>
+        <location filename="../mxmenueditor.ui" line="200"/>
         <source>Name:</source>
         <translation>ስም:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="225"/>
+        <location filename="../mxmenueditor.ui" line="221"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ምልክት</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="265"/>
+        <location filename="../mxmenueditor.ui" line="261"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
-        <translation type="unfinished"></translation>
+        <translation>ምልክት መቀየሪያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
+        <location filename="../mxmenueditor.ui" line="274"/>
         <source>Categories</source>
         <translation>ምድቦች</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
+        <location filename="../mxmenueditor.ui" line="286"/>
         <source>Add</source>
         <translation>መጨመሪያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="307"/>
+        <location filename="../mxmenueditor.ui" line="299"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>ማጥፊያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="374"/>
+        <location filename="../mxmenueditor.ui" line="364"/>
         <source>Quit application</source>
         <translation>መተግበሪያ ማጥፊያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="377"/>
+        <location filename="../mxmenueditor.ui" line="367"/>
         <source>Close</source>
         <translation>መዝጊያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="385"/>
+        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
+        <location filename="../mxmenueditor.ui" line="413"/>
         <source>Display help</source>
-        <translation type="unfinished"></translation>
+        <translation>እርዳታ ማሳያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="429"/>
+        <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
         <translation>እርዳታ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="437"/>
+        <location filename="../mxmenueditor.ui" line="424"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="456"/>
+        <location filename="../mxmenueditor.ui" line="443"/>
         <source>Save Changes</source>
-        <translation>ልውጥ ማስቀመቻ</translation>
+        <translation>ለውጥ ማስቀመጫ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="464"/>
+        <location filename="../mxmenueditor.ui" line="451"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="499"/>
+        <location filename="../mxmenueditor.ui" line="486"/>
         <source>About this application</source>
         <translation>ስለዚህ መተግበሪያ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="502"/>
+        <location filename="../mxmenueditor.ui" line="489"/>
         <source>About...</source>
         <translation>ስለ...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="510"/>
+        <location filename="../mxmenueditor.ui" line="497"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="463"/>
         <source>Select executable file</source>
-        <translation type="unfinished"></translation>
+        <translation>የሚፈጸም ፋይል ይምረጡ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="526"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይል ምስል (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="713"/>
         <source>Choose category</source>
-        <translation type="unfinished"></translation>
+        <translation>ምድብ ይምረጡ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Cancel</source>
         <translation>መሰረዣ</translation>
     </message>
@@ -323,7 +321,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="833"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MX ዝርዝር ማረሚያ</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="834"/>
@@ -333,7 +331,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="835"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished"></translation>
+        <translation>የ Xfce ዝርዝር ማረሚያ ፕሮግራም</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="837"/>
@@ -346,17 +344,17 @@
         <translation>ፍቃድ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save changes?</source>
-        <translation type="unfinished"></translation>
+        <translation>ለውጦቹን ላስቀምጣቸው?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"></translation>
+        <translation>እርስዎ ያረሙትን ማስቀመጥ ይፈልጋሉ?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save</source>
         <translation>ማስቀመጫ</translation>
     </message>
