@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="kk" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hi" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -45,7 +45,7 @@
         <location filename="../addappdialog.ui" line="161"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
-        <translation>Бас тарту</translation>
+        <translation>रद्द</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Қате</translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="54"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Save</source>
-        <translation>Сақтау</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Бұл бағдарламаны қалыпты пайдаланушы атынан жөнелтуіңіз керек.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -153,7 +153,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="92"/>
         <source>Options</source>
-        <translation>Опциялар</translation>
+        <translation>विकल्प</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="101"/>
@@ -219,7 +219,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="286"/>
         <source>Add</source>
-        <translation type="unfinished"/>
+        <translation>जोड़ें</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="299"/>
@@ -229,12 +229,12 @@
     <message>
         <location filename="../mxmenueditor.ui" line="364"/>
         <source>Quit application</source>
-        <translation>Қолданба жұмысын аяқтау</translation>
+        <translation>अनुप्रयोग बंद करें</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="367"/>
         <source>Close</source>
-        <translation>Жабу</translation>
+        <translation>बंद करें</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="375"/>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../mxmenueditor.ui" line="416"/>
         <source>Help</source>
-        <translation>Көмек</translation>
+        <translation>सहायता</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="424"/>
@@ -269,12 +269,12 @@
     <message>
         <location filename="../mxmenueditor.ui" line="486"/>
         <source>About this application</source>
-        <translation>Бұл қолданба жөнінде</translation>
+        <translation>इस अनुप्रयोग के बारे में</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="489"/>
         <source>About...</source>
-        <translation>Осы туралы...</translation>
+        <translation>बारे में...</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="497"/>
@@ -301,17 +301,17 @@
         <location filename="../mxmenueditor.cpp" line="839"/>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Cancel</source>
-        <translation>Бас тарту</translation>
+        <translation>रद्द</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="725"/>
         <source>OK</source>
-        <translation>ОК</translation>
+        <translation>ओ.के.</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="815"/>
         <source>Error</source>
-        <translation>Қате</translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="815"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>Version: </source>
-        <translation>Нұсқасы:</translation>
+        <translation>संस्करण :</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="835"/>
@@ -336,12 +336,12 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="837"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>प्रतिलिप्याधिकार (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="838"/>
         <source>License</source>
-        <translation>Лицензиясы</translation>
+        <translation>लाइसेंस</translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="870"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="870"/>
         <source>Save</source>
-        <translation>Сақтау</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
