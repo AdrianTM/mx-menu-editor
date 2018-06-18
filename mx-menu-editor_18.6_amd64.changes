@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 18 Jun 2018 14:48:21 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 18.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (18.6) mx; urgency=medium
+ .
+   * new translations
+Checksums-Sha1:
+ f7a1c44b94ef967c80632c75297daa5ea2168db4 1192 mx-menu-editor_18.6.dsc
+ c9d97b152d876f8234b805e4de9cb44b6d65055d 43560 mx-menu-editor_18.6.tar.xz
+ 8fa3ff2242f790f1c095546611dcbb8bf24fa969 11197 mx-menu-editor_18.6_amd64.buildinfo
+ 398131eb6b4bf50e1d416ee8727ba171c244060e 73630 mx-menu-editor_18.6_amd64.deb
+Checksums-Sha256:
+ 0e15e34a4fb4a3b799e669029a2383ac9f9a6146580b49bb6e05ed5ddfd35566 1192 mx-menu-editor_18.6.dsc
+ 387c49a37d919040e545652c3823e562007766251abe2847b2db397ad17a3dcb 43560 mx-menu-editor_18.6.tar.xz
+ f9a41fce6a50812e7c0f99b6b4581ae3fa60b2eee5709110bb22fa68e6c54d5b 11197 mx-menu-editor_18.6_amd64.buildinfo
+ 3e959085a97254cff03ea2670bb5bf8313146e794065cd978677ff669704bf2d 73630 mx-menu-editor_18.6_amd64.deb
+Files:
+ 6e6e6ffee7d94c8b38a730f4fe4e5a6c 1192 admin optional mx-menu-editor_18.6.dsc
+ 5c648222c843f209e215d2b4d73546ac 43560 admin optional mx-menu-editor_18.6.tar.xz
+ 6ae76d7189484d66015489eef412f5b9 11197 admin optional mx-menu-editor_18.6_amd64.buildinfo
+ 60247be806f9ceb8813af255dba4ce0a 73630 admin optional mx-menu-editor_18.6_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlsoAF4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAgyCACRKTE+Ymz0m+SsNbxE3OzOwIzNmhO2
+TKzD1bxmyWokzoDtGbH5J3z57IZNnS1dvCyoJQgmg8sQDO9KhtdojL68uyiDi7mm
+i4eVWx6SbrA+DUR1qFlBwFIzIwz14OcEIvjzyj/dzvxqTm7kGOA8NT9johLzZHIq
+MAA9DCSl/V1ueF15/xLqEtoXHsLBvpj+zvQrekiwHi2aJF/9V04zQstgLE6AyTpm
+/L7cFN+2TrwsHSHoH7gqVt3eQB9k+Y0TuRhmnNqbtgpKPYMXJsdXpbu2R+gPIqkG
+y36f+V0foqfL8T3WVjc/v6g9ck9/GWyLwnRv2XrmRf5hL4Ky2ThNFWKw
+=AfUi
+-----END PGP SIGNATURE-----

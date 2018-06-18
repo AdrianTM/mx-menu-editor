@@ -1,10 +1,12 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="../addappdialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="26"/>
@@ -17,76 +19,76 @@
         <translation>Lisää kategoria</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="51"/>
+        <location filename="../addappdialog.ui" line="53"/>
         <source>Delete category</source>
         <translation>Poista kategoria</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="67"/>
+        <location filename="../addappdialog.ui" line="71"/>
         <source>Command:</source>
         <translation>Komento:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="112"/>
+        <location filename="../addappdialog.ui" line="116"/>
         <source>Save Changes</source>
         <translation>Tallenna muutokset</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="120"/>
+        <location filename="../addappdialog.ui" line="124"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="158"/>
+        <location filename="../addappdialog.ui" line="162"/>
         <source>Quit dialog</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="161"/>
+        <location filename="../addappdialog.ui" line="165"/>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
+        <location filename="../addappdialog.ui" line="173"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="184"/>
+        <location filename="../addappdialog.ui" line="191"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="191"/>
+        <location filename="../addappdialog.ui" line="198"/>
         <source>Name:</source>
         <translation>Nimi:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="198"/>
+        <location filename="../addappdialog.ui" line="205"/>
         <source>Comment:</source>
         <translation>Kommentti:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="205"/>
+        <location filename="../addappdialog.ui" line="212"/>
         <source>Icon:</source>
         <translation>Kuvake:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="212"/>
+        <location filename="../addappdialog.ui" line="219"/>
         <location filename="../addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Valitse kuvake</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="225"/>
+        <location filename="../addappdialog.ui" line="232"/>
         <source>Run in Terminal</source>
         <translation>Suorita päätteessä</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="238"/>
+        <location filename="../addappdialog.ui" line="245"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="37"/>
@@ -111,7 +113,7 @@
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="102"/>
@@ -133,151 +135,151 @@
         <location filename="../mxmenueditor.ui" line="14"/>
         <location filename="../mxmenueditor.cpp" line="834"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="92"/>
+        <location filename="../mxmenueditor.ui" line="94"/>
         <source>Options</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="101"/>
+        <location filename="../mxmenueditor.ui" line="103"/>
         <source>Run in terminal</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="111"/>
+        <location filename="../mxmenueditor.ui" line="113"/>
         <source>Hide</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="121"/>
+        <location filename="../mxmenueditor.ui" line="123"/>
         <source>Notify startup</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="144"/>
+        <location filename="../mxmenueditor.ui" line="146"/>
         <source>Quick Editor</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="156"/>
+        <location filename="../mxmenueditor.ui" line="158"/>
         <source>Comment:</source>
         <translation>Kommentti:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="166"/>
+        <location filename="../mxmenueditor.ui" line="168"/>
         <source>Restore original item</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="176"/>
+        <location filename="../mxmenueditor.ui" line="180"/>
         <source>Command:</source>
         <translation>Komento:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="186"/>
+        <location filename="../mxmenueditor.ui" line="190"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="200"/>
+        <location filename="../mxmenueditor.ui" line="204"/>
         <source>Name:</source>
         <translation>Nimi:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="221"/>
+        <location filename="../mxmenueditor.ui" line="225"/>
         <source>Icon</source>
         <translation>Kuvake</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="261"/>
+        <location filename="../mxmenueditor.ui" line="265"/>
         <location filename="../mxmenueditor.cpp" line="542"/>
         <source>Change icon</source>
         <translation>Vaihda kuvaketta</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="274"/>
+        <location filename="../mxmenueditor.ui" line="280"/>
         <source>Categories</source>
         <translation>Kategoriat</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="286"/>
+        <location filename="../mxmenueditor.ui" line="292"/>
         <source>Add</source>
         <translation>Lisää</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="299"/>
+        <location filename="../mxmenueditor.ui" line="307"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="364"/>
+        <location filename="../mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
         <translation>Sulje sovellus</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="367"/>
+        <location filename="../mxmenueditor.ui" line="377"/>
         <source>Close</source>
         <translation>Sulje</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
+        <location filename="../mxmenueditor.ui" line="385"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="413"/>
+        <location filename="../mxmenueditor.ui" line="426"/>
         <source>Display help</source>
         <translation>Näytä ohje</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="416"/>
+        <location filename="../mxmenueditor.ui" line="429"/>
         <source>Help</source>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="424"/>
+        <location filename="../mxmenueditor.ui" line="437"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="443"/>
+        <location filename="../mxmenueditor.ui" line="456"/>
         <source>Save Changes</source>
         <translation>Tallenna muutokset</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="451"/>
+        <location filename="../mxmenueditor.ui" line="464"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="486"/>
+        <location filename="../mxmenueditor.ui" line="499"/>
         <source>About this application</source>
         <translation>Tietoja tästä sovelluksesta</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="489"/>
+        <location filename="../mxmenueditor.ui" line="502"/>
         <source>About...</source>
         <translation>Tietoja...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
+        <location filename="../mxmenueditor.ui" line="510"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
@@ -289,17 +291,17 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="526"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="713"/>
         <source>Choose category</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="724"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
@@ -321,7 +323,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="833"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="834"/>
@@ -331,7 +333,7 @@
     <message>
         <location filename="../mxmenueditor.cpp" line="835"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxmenueditor.cpp" line="837"/>
@@ -344,17 +346,17 @@
         <translation>Lisenssi</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save changes?</source>
         <translation>Tallenna muutokset?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="870"/>
+        <location filename="../mxmenueditor.cpp" line="879"/>
         <source>Save</source>
         <translation>Tallenna</translation>
     </message>
