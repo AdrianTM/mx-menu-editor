@@ -54,7 +54,7 @@ public:
     explicit mxmenueditor(QWidget *parent = 0);
     ~mxmenueditor();
 
-    Output runCmd(QString cmd);
+    Output getCmdOut(QString cmd);
     QFile config_file;
     QString getVersion(QString name);
     QString version;

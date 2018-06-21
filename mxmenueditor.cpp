@@ -90,7 +90,7 @@ mxmenueditor::~mxmenueditor()
 }
 
 // util function for getting bash command output and error code
-Output mxmenueditor::runCmd(QString cmd)
+Output mxmenueditor::getCmdOut(QString cmd)
 {
     QProcess *proc = new QProcess();
     QEventLoop loop;
@@ -105,8 +105,7 @@ Output mxmenueditor::runCmd(QString cmd)
 // get version of the program
 QString mxmenueditor::getVersion(QString name)
 {
-    QString cmd = QString("dpkg -l %1 | awk 'NR==6 {print $3}'").arg(name);
-    return runCmd(cmd).str;
+    return getCmdOut("dpkg-query -f '${Version}' -W " + name).str;
 }
 
 // load menu files
@@ -187,7 +186,7 @@ void mxmenueditor::loadMenuFiles()
 QString mxmenueditor::getCatName(QFile *file)
 {
     QString cmd = QString("grep Name= %1").arg(file->fileName());
-    Output out = runCmd(cmd.toUtf8());
+    Output out = getCmdOut(cmd.toUtf8());
     if (out.exit_code == 0) {
         return out.str.remove("Name=");
     } else {
@@ -353,7 +352,7 @@ void mxmenueditor::addToTree(QString file_name)
     QFile file(file_name);
     if (file.exists()) {
         QString cmd = "grep -m1 ^Name= \"" + file_name.toUtf8() + "\"| cut  -d'=' -f2";
-        QString app_name = runCmd(cmd).str;
+        QString app_name = getCmdOut(cmd).str;
         // add item as childItem to treeWidget
         QTreeWidgetItem *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
         if (isHidden(file_name)) {
@@ -372,7 +371,7 @@ QStringList mxmenueditor::listDesktopFiles(QString search_string, QString locati
     QStringList listDesktop;
     if (search_string != "") {
         QString cmd = QString("grep -Elr %1 %2").arg(search_string).arg(location);
-        Output out = runCmd(cmd);
+        Output out = getCmdOut(cmd);
         if (out.str != "") {
             listDesktop = out.str.split("\n");
         }
@@ -397,38 +396,38 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
         QString cmd;
         Output out;
 
-        out = runCmd("cat " + file_name.toUtf8());
+        out = getCmdOut("cat " + file_name.toUtf8());
         ui->advancedEditor->setText(out.str);
         // load categories
-        out = runCmd("grep ^Categories= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep ^Categories= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str.endsWith(";")) {
             out.str.remove(out.str.length() - 1, 1);
         }
         QStringList categories = out.str.split(";");
         ui->listWidgetEditCategories->addItems(categories);
         // load name, command, comment
-        out = runCmd("grep -m1 ^Name= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Name= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditName->setText(out.str);
-        out = runCmd("grep -m1 ^Comment= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Comment= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditComment->setText(out.str);
         ui->lineEditComment->home(false);
-        out = runCmd("grep -m1 ^Exec= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Exec= " + file_name.toUtf8() + " | cut -f2 -d=");
         ui->lineEditCommand->setText(out.str);
         ui->lineEditCommand->home(false);
         // load options
-        out = runCmd("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkNotify->setChecked(true);
         }
-        out = runCmd("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkHide->setChecked(true);
         }
-        out = runCmd("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str == "true") {
             ui->checkRunInTerminal->setChecked(true);
         }
-        out = runCmd("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2 -d=");
         if (out.str != "") {
             QSize size = ui->labelIcon->size();
             QString icon = out.str;
@@ -924,17 +923,17 @@ QString mxmenueditor::findIcon(QString icon_name)
     QStringList extList;
     extList << ".png" << ".svg" << ".xpm";
 
-    out = runCmd("xfconf-query -c xsettings -p /Net/IconThemeName");
+    out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
     if (out.str != "") {
         QString dir = "/usr/share/icons/" + out.str;
         if (QDir(dir).exists()) {
             foreach (QString ext, extList) {
-                out = runCmd("find " + dir + " -iname " + icon_name + ext);
+                out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
                 if (out.str != "") {
                     QStringList files = out.str.split("\n");
                     return findBiggest(files);
                 } else {
-                    out = runCmd("find " + QDir::homePath() + "/.local/share/icons " + "/usr/share/icons /usr/share/pixmaps -iname " + icon_name + ext);
+                    out = getCmdOut("find " + QDir::homePath() + "/.local/share/icons " + "/usr/share/icons /usr/share/pixmaps -iname " + icon_name + ext);
                     if (out.str != "") {
                         QStringList files = out.str.split("\n");
                         return findBiggest(files);
