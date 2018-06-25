@@ -133,7 +133,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="834"/>
+        <location filename="../mxmenueditor.cpp" line="833"/>
         <source>MX Menu Editor</source>
         <translation>MX Menü-Editor</translation>
     </message>
@@ -209,7 +209,7 @@
     </message>
     <message>
         <location filename="../mxmenueditor.ui" line="265"/>
-        <location filename="../mxmenueditor.cpp" line="542"/>
+        <location filename="../mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
         <translation>Symbol ändern</translation>
     </message>
@@ -284,79 +284,89 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="463"/>
+        <location filename="../mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
         <translation>Ausführbare Datei wählen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="526"/>
+        <location filename="../mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
         <translation>Bilddateien (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="713"/>
+        <location filename="../mxmenueditor.cpp" line="712"/>
         <source>Choose category</source>
         <translation>Kategorie Wählen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="724"/>
+        <location filename="../mxmenueditor.cpp" line="723"/>
         <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="900"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="725"/>
+        <location filename="../mxmenueditor.cpp" line="724"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="815"/>
+        <location filename="../mxmenueditor.cpp" line="814"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="815"/>
+        <location filename="../mxmenueditor.cpp" line="814"/>
         <source>Could not save the file</source>
         <translation>Konnte Datei nicht speichern</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="../mxmenueditor.cpp" line="832"/>
         <source>About MX Menu Editor</source>
         <translation>Über MX Menü-Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="834"/>
+        <location filename="../mxmenueditor.cpp" line="833"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="835"/>
+        <location filename="../mxmenueditor.cpp" line="834"/>
         <source>Program for editing Xfce menu</source>
         <translation>Anwendung, um Xfce-Menü zu bearbeiten</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="837"/>
+        <location filename="../mxmenueditor.cpp" line="836"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
+        <location filename="../mxmenueditor.cpp" line="837"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="838"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.cpp" line="854"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mxmenueditor.cpp" line="900"/>
         <source>Save changes?</source>
         <translation>Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="900"/>
         <source>Do you want to save your edits?</source>
         <translation>Wollen Sie Ihre Änderungen speichern?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="879"/>
+        <location filename="../mxmenueditor.cpp" line="900"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
