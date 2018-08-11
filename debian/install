@@ -1,5 +1,6 @@
-mx-menu-editor 		 usr/bin
-mx-menu-editor.desktop	 usr/share/applications
-translations/*.qm 	 usr/share/mx-menu-editor/locale
+mx-menu-editor		usr/bin
+mx-menu-editor.desktop	usr/share/applications
+translations/*.qm	usr/share/mx-menu-editor/locale
 mx-menu-editor.png	usr/share/pixmaps
+mx-menu-editor.png	usr/share/icons/hicolor/48x48/apps
 license.html		usr/share/doc/mx-menu-editor
