@@ -1,35 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="addappdialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Janela de diálogo</translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="26"/>
         <source>Categories</source>
-        <translation>Categorias</translation>
+        <translation>Kategorier</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="38"/>
         <source>Add category</source>
-        <translation>Adicionar categoria</translation>
+        <translation>Tilføj kategori</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="53"/>
         <source>Delete category</source>
-        <translation>Eliminar categoria</translation>
+        <translation>Slet kategori</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="71"/>
         <source>Command:</source>
-        <translation>Comando: </translation>
+        <translation>Kommando:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="116"/>
         <source>Save Changes</source>
-        <translation>salvar alterações</translation>
+        <translation>Gem ændringer</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="124"/>
@@ -39,13 +39,13 @@
     <message>
         <location filename="addappdialog.ui" line="162"/>
         <source>Quit dialog</source>
-        <translation>Fechar janela</translation>
+        <translation>Afslut dialog</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="165"/>
         <location filename="addappdialog.cpp" line="102"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Annuller</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="173"/>
@@ -60,63 +60,63 @@
     <message>
         <location filename="addappdialog.ui" line="198"/>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="205"/>
         <source>Comment:</source>
-        <translation>Comentário:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="212"/>
         <source>Icon:</source>
-        <translation>Ícone:</translation>
+        <translation>Ikon:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="219"/>
         <location filename="addappdialog.cpp" line="121"/>
         <source>Set icon</source>
-        <translation>Aplicar ícone</translation>
+        <translation>Indstil ikon</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="232"/>
         <source>Run in Terminal</source>
-        <translation>Executar em Terminal</translation>
+        <translation>Kør i terminal</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="245"/>
         <source>Startup Notifier</source>
-        <translation>Notificar ao iniciar</translation>
+        <translation>Opstartsnotifikator</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Adicionar outra aplicação</translation>
+        <translation>Tilføj tilpasset program</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation>Não foi possível salvar o arquivo</translation>
+        <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
-        <translation>salvar alterações?</translation>
+        <translation>Gem ændringer?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation>Pretende salvar as alterações?</translation>
+        <translation>Vil du gemme dine redigeringer?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="102"/>
         <source>Save</source>
-        <translation>salvar</translation>
+        <translation>Gem</translation>
     </message>
 </context>
 <context>
@@ -124,7 +124,7 @@
     <message>
         <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Tem que executar este programa como utilizador normal.</translation>
+        <translation>Du skal køre programmet som normal bruger.</translation>
     </message>
 </context>
 <context>
@@ -133,62 +133,62 @@
         <location filename="mxmenueditor.ui" line="14"/>
         <location filename="mxmenueditor.cpp" line="833"/>
         <source>MX Menu Editor</source>
-        <translation>MX-Editor do Menu Iniciar</translation>
+        <translation>MX-menueditor</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
-        <translation>Editor avançado</translation>
+        <translation>Avanceret editor</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
-        <translation>Categorias e aplicações</translation>
+        <translation>Kategorier og programmer</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation>Adicionar outra aplicação</translation>
+        <translation>Tilføj tilpasset program</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="94"/>
         <source>Options</source>
-        <translation>Opções</translation>
+        <translation>Valgmuligheder</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="103"/>
         <source>Run in terminal</source>
-        <translation>Executar em Terminal</translation>
+        <translation>Kør i terminal</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="113"/>
         <source>Hide</source>
-        <translation>Ocultar</translation>
+        <translation>Skjul</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="123"/>
         <source>Notify startup</source>
-        <translation>Notificar ao iniciar</translation>
+        <translation>Notifikation om opstart</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="146"/>
         <source>Quick Editor</source>
-        <translation>Editor rápido</translation>
+        <translation>Hurtigeditor</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="158"/>
         <source>Comment:</source>
-        <translation>Comentário</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="168"/>
         <source>Restore original item</source>
-        <translation>Restaurar o original</translation>
+        <translation>Gendan originalt punkt</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="180"/>
         <source>Command:</source>
-        <translation>Comando:</translation>
+        <translation>Kommando:</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="190"/>
@@ -198,43 +198,43 @@
     <message>
         <location filename="mxmenueditor.ui" line="204"/>
         <source>Name:</source>
-        <translation>Nome:</translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="225"/>
         <source>Icon</source>
-        <translation>Ícone</translation>
+        <translation>Ikon</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="265"/>
         <location filename="mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
-        <translation>Mudar o ícone</translation>
+        <translation>Skift ikon</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="280"/>
         <source>Categories</source>
-        <translation>Categorias</translation>
+        <translation>Katogorier</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="292"/>
         <source>Add</source>
-        <translation>Adicionar</translation>
+        <translation>Tilføj</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="307"/>
         <source>Delete</source>
-        <translation>Eliminar</translation>
+        <translation>Slet</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
-        <translation>Sair da aplicação</translation>
+        <translation>Afslut programmet</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="377"/>
         <source>Close</source>
-        <translation>Fechar</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="385"/>
@@ -244,12 +244,12 @@
     <message>
         <location filename="mxmenueditor.ui" line="426"/>
         <source>Display help</source>
-        <translation>Mostrar a ajuda</translation>
+        <translation>Vis hjælp</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="429"/>
         <source>Help</source>
-        <translation>Ajuda</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="437"/>
@@ -259,7 +259,7 @@
     <message>
         <location filename="mxmenueditor.ui" line="456"/>
         <source>Save Changes</source>
-        <translation>salvar alterações</translation>
+        <translation>Gem ændringer</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="464"/>
@@ -269,12 +269,12 @@
     <message>
         <location filename="mxmenueditor.ui" line="499"/>
         <source>About this application</source>
-        <translation>Sobre esta aplicação</translation>
+        <translation>Om programmet</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="502"/>
         <source>About...</source>
-        <translation>Sobre...</translation>
+        <translation>Om...</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="510"/>
@@ -284,89 +284,89 @@
     <message>
         <location filename="mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation>Seleccionar o arquivo executável</translation>
+        <translation>Vælg eksekverbar fil</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>arquivos de Imagem (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation>Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="712"/>
         <source>Choose category</source>
-        <translation>Escolher categoria</translation>
+        <translation>Vælg kategori</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="723"/>
         <location filename="mxmenueditor.cpp" line="839"/>
         <location filename="mxmenueditor.cpp" line="900"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Annuller</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="724"/>
         <source>OK</source>
-        <translation>Aceitar</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="814"/>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="814"/>
         <source>Could not save the file</source>
-        <translation>Não foi possível salvar o arquivo</translation>
+        <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="832"/>
         <source>About MX Menu Editor</source>
-        <translation>Sobre o MX-Editor do Menu Iniciar</translation>
+        <translation>Om MX-menueditor</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="833"/>
         <source>Version: </source>
-        <translation>Versão:</translation>
+        <translation>Version: </translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="834"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Programa para editar o menu do Xfce</translation>
+        <translation>Program til at redigere Xfce-menu</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="836"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="837"/>
         <source>License</source>
-        <translation>Licença</translation>
+        <translation>Licens</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="838"/>
         <source>Changelog</source>
-        <translation>Relatório de alterações</translation>
+        <translation>Ændringslog</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="854"/>
         <source>&amp;Close</source>
-        <translation>&amp;Fechar</translation>
+        <translation>&amp;Luk</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save changes?</source>
-        <translation>salvar alterações?</translation>
+        <translation>Gem ændringer?</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="900"/>
         <source>Do you want to save your edits?</source>
-        <translation>Pretende salvar as alterações?</translation>
+        <translation>Vil du gemme dine redigeringer?</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save</source>
-        <translation>salvar</translation>
+        <translation>Gem</translation>
     </message>
 </context>
 </TS>
