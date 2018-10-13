@@ -1,122 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="tr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="tr" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
-        <location filename="../addappdialog.ui" line="20"/>
+        <location filename="addappdialog.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="26"/>
+        <location filename="addappdialog.ui" line="26"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategoriler</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="38"/>
+        <location filename="addappdialog.ui" line="38"/>
         <source>Add category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategori ekle</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="53"/>
+        <location filename="addappdialog.ui" line="53"/>
         <source>Delete category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategori sil</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="71"/>
+        <location filename="addappdialog.ui" line="71"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komut:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="116"/>
+        <location filename="addappdialog.ui" line="116"/>
         <source>Save Changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişiklikleri kaydet</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="124"/>
+        <location filename="addappdialog.ui" line="124"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="162"/>
+        <location filename="addappdialog.ui" line="162"/>
         <source>Quit dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="165"/>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="addappdialog.ui" line="165"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="173"/>
+        <location filename="addappdialog.ui" line="173"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="191"/>
+        <location filename="addappdialog.ui" line="191"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="198"/>
+        <location filename="addappdialog.ui" line="198"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ad:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="205"/>
+        <location filename="addappdialog.ui" line="205"/>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="212"/>
+        <location filename="addappdialog.ui" line="212"/>
         <source>Icon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Simge:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="219"/>
-        <location filename="../addappdialog.cpp" line="121"/>
+        <location filename="addappdialog.ui" line="219"/>
+        <location filename="addappdialog.cpp" line="121"/>
         <source>Set icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="232"/>
+        <location filename="addappdialog.ui" line="232"/>
         <source>Run in Terminal</source>
-        <translation type="unfinished"></translation>
+        <translation>Uçbirimde Çalıştır</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="245"/>
+        <location filename="addappdialog.ui" line="245"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel Uygulama Ekle</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişiklikler kaydedilsin mi?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemelerinizi kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
@@ -124,7 +122,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
         <translation>Bu programı normal kullanıcı olarak çalıştırmalısınız.</translation>
     </message>
@@ -132,241 +130,241 @@
 <context>
     <name>mxmenueditor</name>
     <message>
-        <location filename="../mxmenueditor.ui" line="14"/>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="mxmenueditor.ui" line="14"/>
+        <location filename="mxmenueditor.cpp" line="833"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Menü Düzenleyici</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="31"/>
+        <location filename="mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Gelişmiş Düzenleyici</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="52"/>
+        <location filename="mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategoriler ve uygulamalar</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="79"/>
+        <location filename="mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel uygulama ekle</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="94"/>
+        <location filename="mxmenueditor.ui" line="94"/>
         <source>Options</source>
         <translation>Seçenekler</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="103"/>
+        <location filename="mxmenueditor.ui" line="103"/>
         <source>Run in terminal</source>
-        <translation type="unfinished"></translation>
+        <translation>Uçbirimde çalıştır</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="113"/>
+        <location filename="mxmenueditor.ui" line="113"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizle</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="123"/>
+        <location filename="mxmenueditor.ui" line="123"/>
         <source>Notify startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlangıçta bildir</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="146"/>
+        <location filename="mxmenueditor.ui" line="146"/>
         <source>Quick Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Çabuk düzenleyici</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="158"/>
+        <location filename="mxmenueditor.ui" line="158"/>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yorum:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="168"/>
+        <location filename="mxmenueditor.ui" line="168"/>
         <source>Restore original item</source>
-        <translation type="unfinished"></translation>
+        <translation>Özgün öğeyi geri yükle</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="180"/>
+        <location filename="mxmenueditor.ui" line="180"/>
         <source>Command:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komut:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="190"/>
+        <location filename="mxmenueditor.ui" line="190"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="204"/>
+        <location filename="mxmenueditor.ui" line="204"/>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ad:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="225"/>
+        <location filename="mxmenueditor.ui" line="225"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Simge</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="265"/>
-        <location filename="../mxmenueditor.cpp" line="541"/>
+        <location filename="mxmenueditor.ui" line="265"/>
+        <location filename="mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Simgeyi değiştir</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
+        <location filename="mxmenueditor.ui" line="280"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategoriler</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
+        <location filename="mxmenueditor.ui" line="292"/>
         <source>Add</source>
         <translation>Ekle</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="307"/>
+        <location filename="mxmenueditor.ui" line="307"/>
         <source>Delete</source>
         <translation>Sil</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="374"/>
+        <location filename="mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
         <translation>Uygulamadan çık</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="377"/>
+        <location filename="mxmenueditor.ui" line="377"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="385"/>
+        <location filename="mxmenueditor.ui" line="385"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
+        <location filename="mxmenueditor.ui" line="426"/>
         <source>Display help</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardımı görüntüle</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="429"/>
+        <location filename="mxmenueditor.ui" line="429"/>
         <source>Help</source>
         <translation>Yardım</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="437"/>
+        <location filename="mxmenueditor.ui" line="437"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="456"/>
+        <location filename="mxmenueditor.ui" line="456"/>
         <source>Save Changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişiklikleri kaydet</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="464"/>
+        <location filename="mxmenueditor.ui" line="464"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="499"/>
+        <location filename="mxmenueditor.ui" line="499"/>
         <source>About this application</source>
         <translation>Uygulama hakkında</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="502"/>
+        <location filename="mxmenueditor.ui" line="502"/>
         <source>About...</source>
         <translation>Hakkında...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="510"/>
+        <location filename="mxmenueditor.ui" line="510"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="462"/>
+        <location filename="mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalıştırılabilir dosyayı seçin</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="525"/>
+        <location filename="mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Resim Dosyaları  (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="712"/>
+        <location filename="mxmenueditor.cpp" line="712"/>
         <source>Choose category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategori seçin</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="723"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="723"/>
+        <location filename="mxmenueditor.cpp" line="839"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="724"/>
+        <location filename="mxmenueditor.cpp" line="724"/>
         <source>OK</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="mxmenueditor.cpp" line="814"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="mxmenueditor.cpp" line="814"/>
         <source>Could not save the file</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="mxmenueditor.cpp" line="832"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Menü Düzenleyici Hakkında</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="mxmenueditor.cpp" line="833"/>
         <source>Version: </source>
         <translation>Sürüm</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="834"/>
+        <location filename="mxmenueditor.cpp" line="834"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Xfce menüsünü düzenleme programı</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="836"/>
+        <location filename="mxmenueditor.cpp" line="836"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="837"/>
+        <location filename="mxmenueditor.cpp" line="837"/>
         <source>License</source>
         <translation>Ruhsat</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
+        <location filename="mxmenueditor.cpp" line="838"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişim günlüğü</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="854"/>
+        <location filename="mxmenueditor.cpp" line="854"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kapat</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save changes?</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişiklikler kaydedilsin mi?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemelerinizi kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save</source>
         <translation>Kaydet</translation>
     </message>
