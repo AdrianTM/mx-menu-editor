@@ -1,3 +1,9 @@
+mx-menu-editor (18.10) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 14 Oct 2018 19:06:41 -0400
+
 mx-menu-editor (18.8) mx; urgency=medium
 
   * fix icon other themes
