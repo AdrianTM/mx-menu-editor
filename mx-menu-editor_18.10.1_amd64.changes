@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 30 Oct 2018 15:51:12 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 18.10.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (18.10.1) mx; urgency=medium
+ .
+   * fix breaking string on "="
+Checksums-Sha1:
+ 1ee1d012decffa624d8bad0f0e4d94e35342c85d 1204 mx-menu-editor_18.10.1.dsc
+ 917e85f8bcc90bae1284687fdb69e57d127f16b8 44988 mx-menu-editor_18.10.1.tar.xz
+ 2e993809735616c5b3416c78f8fd464ce674ef55 11221 mx-menu-editor_18.10.1_amd64.buildinfo
+ 5a4d6930556add9267708a1c44cd09a5f3175fc4 76534 mx-menu-editor_18.10.1_amd64.deb
+Checksums-Sha256:
+ f9279e67e8c50d7f6d9d8435930a4ce99adaa2d96ae87d3b070a8f0841953b25 1204 mx-menu-editor_18.10.1.dsc
+ 9950eca1538d26ad88b45affbf2ad1ff040440487324b5bc8dc711fec2f7aadc 44988 mx-menu-editor_18.10.1.tar.xz
+ c2fd7478565f88b4fa4f274f8da8dfb8b6c1ae4a21c415ba50293e9424a2c152 11221 mx-menu-editor_18.10.1_amd64.buildinfo
+ 842f0964c0f720e2b7f530a64c4c6f4dad89dc9ba00715e16bf84d443b7b8fb3 76534 mx-menu-editor_18.10.1_amd64.deb
+Files:
+ 3fa4583d9ac0b6dc79047e909e82247f 1204 admin optional mx-menu-editor_18.10.1.dsc
+ 992131d5d22e413d4a42261c1cfb5314 44988 admin optional mx-menu-editor_18.10.1.tar.xz
+ 22ba8a5dde1ac8be2909fab7bdc8ebc8 11221 admin optional mx-menu-editor_18.10.1_amd64.buildinfo
+ e794d2a82a4460331a5cec4921d4fe07 76534 admin optional mx-menu-editor_18.10.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlvYtwYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumK5mB/9BzCyfkGMU7SweldqDVV7FIAnw0CPB
+gjb10MhGvVBAdibkQfm8p4yAjmqlGSXIwh0JEma/tFp8zyK94Tw0AU/laKwv4G1s
+H5wj0bzNLgUoNc+310Rbq4lWar43FYPT+9eic/IFkzbCtTMLRsBxqLMyEeS/uvom
+PtvFT8d47A2JHsS47SkqzDbRYLLjXdOewuja4jk3866dAsbV4VHszYc6IizFO/Ag
+02b72vGayXPtj7GK5EVYOWicrBt44n971mxWa4o/OIb0W3IwciDTQPZIzhGWpNGo
+++e2CN8agcXRDw3F7li7swHLqzMDUxVbe1G1n+L6gtBteh17CdmE/TUa
+=xu+5
+-----END PGP SIGNATURE-----

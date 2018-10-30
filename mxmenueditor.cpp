@@ -399,35 +399,35 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
         out = getCmdOut("cat " + file_name.toUtf8());
         ui->advancedEditor->setText(out.str);
         // load categories
-        out = getCmdOut("grep ^Categories= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep ^Categories= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (out.str.endsWith(";")) {
             out.str.remove(out.str.length() - 1, 1);
         }
         QStringList categories = out.str.split(";");
         ui->listWidgetEditCategories->addItems(categories);
         // load name, command, comment
-        out = getCmdOut("grep -m1 ^Name= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Name= " + file_name.toUtf8() + " | cut -f2- -d=");
         ui->lineEditName->setText(out.str);
-        out = getCmdOut("grep -m1 ^Comment= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Comment= " + file_name.toUtf8() + " | cut -f2- -d=");
         ui->lineEditComment->setText(out.str);
         ui->lineEditComment->home(false);
-        out = getCmdOut("grep -m1 ^Exec= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Exec= " + file_name.toUtf8() + " | cut -f2- -d=");
         ui->lineEditCommand->setText(out.str);
         ui->lineEditCommand->home(false);
         // load options
-        out = getCmdOut("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (out.str == "true") {
             ui->checkNotify->setChecked(true);
         }
-        out = getCmdOut("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (out.str == "true") {
             ui->checkHide->setChecked(true);
         }
-        out = getCmdOut("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (out.str == "true") {
             ui->checkRunInTerminal->setChecked(true);
         }
-        out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2 -d=");
+        out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (out.str != "") {
             QSize size = ui->labelIcon->size();
             QString icon = out.str;
