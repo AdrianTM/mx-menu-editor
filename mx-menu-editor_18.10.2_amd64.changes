@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 31 Oct 2018 15:16:22 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 18.10.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (18.10.2) mx; urgency=medium
+ .
+   * fix add custom window hiding
+Checksums-Sha1:
+ ee742bb927ba9d74d0daab8e913e5d852153f5d1 1204 mx-menu-editor_18.10.2.dsc
+ 4382de7c0b2a9b1ec526c8dbebcfafb93aedeb8d 44804 mx-menu-editor_18.10.2.tar.xz
+ ca289f21502bcc3dc796bd2c5ffca6b8d5c70e3a 76846 mx-menu-editor_18.10.2_amd64.deb
+Checksums-Sha256:
+ b27f5a3d98bf2af0aa212374c86632f7795033a3401cb4e5fc045405882d2fe3 1204 mx-menu-editor_18.10.2.dsc
+ aa19ff6b3f82667e7199b446403b1e0fc08456e9a491a6dd2123609f121c389d 44804 mx-menu-editor_18.10.2.tar.xz
+ 9ebe2dcec74d3126aa6ea6ac8528e004ee19094dca97c193b8e99520fb9ce1fb 76846 mx-menu-editor_18.10.2_amd64.deb
+Files:
+ 8a8cfef6b0e8d23c28b78eaf8e0a4038 1204 admin optional mx-menu-editor_18.10.2.dsc
+ 48891ecd7190ab00aef2df34a275f3f8 44804 admin optional mx-menu-editor_18.10.2.tar.xz
+ ff217d95b6a228478612f0760d837f90 76846 admin optional mx-menu-editor_18.10.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlvaAZETHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumA7FB/0bvFyhKCmmREMImWkI9mmZGLjkK/4r
+NkfaDNllYo0OHOBNc3gDeuEAWpTo9tmXtziJVvJZ67KmuzxkCfOe99xYKVoY8DEz
+kqfzRlwV/YwRnk2hmZ6gLgpEY/TbbHxoR8ftASgxsqvhK4BrdWdU1ws+xLzO+5B8
+koVV4VOBtM7U3TG1r6fkrW4MalKp7o6pU/WDnKGpSaj7kYONNdJKGMO1/ypt34mc
+sMdeh1ycfO6Khpsj4NUYf0dCPjt3u0WkZ1xWuBTA+xmtjqVfQZ2pP/aEODVrjU6s
+IWrxlM11WBcViMEYmPLM5rse+yTUhkN2xjjpcYgii/IBE5WNmQbBGxaI
+=ZPCU
+-----END PGP SIGNATURE-----

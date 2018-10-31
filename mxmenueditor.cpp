@@ -708,7 +708,7 @@ void mxmenueditor::addCategoryMsgBox()
 {
     QStringList categories = listCategories();
 
-    QWidget *window = new QWidget(this, Qt::Dialog);
+    QWidget *window = new QWidget(add, Qt::Dialog);
     window->setWindowTitle(tr("Choose category"));
     window->resize(250, 80);
 
