@@ -1,3 +1,9 @@
+mx-menu-editor (18.10.2) mx; urgency=medium
+
+  * fix add custom window hiding
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 31 Oct 2018 15:16:22 -0400
+
 mx-menu-editor (18.10.1) mx; urgency=medium
 
   * fix breaking string on "="
