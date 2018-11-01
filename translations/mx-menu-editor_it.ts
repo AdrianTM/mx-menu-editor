@@ -45,7 +45,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
@@ -76,7 +76,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="121"/>
+        <location filename="../addappdialog.cpp" line="122"/>
         <source>Set icon</source>
         <translation>Imposta icona</translation>
     </message>
@@ -106,17 +106,17 @@
         <translation>Non è possibile salvare il file</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
         <translation>Salvare i cambiamenti?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
         <translation>Vuoi salvare le tue modifiche?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save</source>
         <translation>Salva</translation>
     </message>

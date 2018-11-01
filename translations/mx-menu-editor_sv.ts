@@ -45,7 +45,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
@@ -76,7 +76,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="121"/>
+        <location filename="../addappdialog.cpp" line="122"/>
         <source>Set icon</source>
         <translation>Välj ikon</translation>
     </message>
@@ -106,17 +106,17 @@
         <translation>Kunde inte spara filen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
         <translation>Spara ändringar?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
         <translation>Vill du spara dina redigeringar?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save</source>
         <translation>Spara</translation>
     </message>

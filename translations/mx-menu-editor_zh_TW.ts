@@ -45,7 +45,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -76,7 +76,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="121"/>
+        <location filename="../addappdialog.cpp" line="122"/>
         <source>Set icon</source>
         <translation>設定圖示</translation>
     </message>
@@ -106,17 +106,17 @@
         <translation>無法儲存檔案</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
         <translation>儲存變更？</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
         <translation>你要儲存這些變更嗎？</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="102"/>
+        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save</source>
         <translation>儲存</translation>
     </message>

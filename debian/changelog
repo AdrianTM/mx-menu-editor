@@ -1,3 +1,9 @@
+mx-menu-editor (18.10.3) mx; urgency=medium
+
+  * added Type=application for new custom entries 
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 31 Oct 2018 20:11:43 -0400
+
 mx-menu-editor (18.10.2) mx; urgency=medium
 
   * fix add custom window hiding
