@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 31 Oct 2018 20:11:43 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 18.10.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (18.10.3) mx; urgency=medium
+ .
+   * added Type=application for new custom entries
+Checksums-Sha1:
+ 9739f991b087f027fbe3dd9cc6af62eafd6a80e4 1204 mx-menu-editor_18.10.3.dsc
+ 17028ea0e62febcbf574c829bac6f7a449c6407d 44820 mx-menu-editor_18.10.3.tar.xz
+ 90751bf4cb2b8e7caf89b00e92cdc65496989ad0 76994 mx-menu-editor_18.10.3_amd64.deb
+Checksums-Sha256:
+ 0a2e0271c10b6573e6efd1214b6118bd2b467147476676b3b12160297b6bbf2a 1204 mx-menu-editor_18.10.3.dsc
+ 9bcd8f81ef01c40f32f4ee9f09ee156d142148df8914c3d8758c8c723f5d4605 44820 mx-menu-editor_18.10.3.tar.xz
+ 3cff73b3bc9da3102b2015cd4218decb38a334693b065901c422596af8b61668 76994 mx-menu-editor_18.10.3_amd64.deb
+Files:
+ 810d50a084a7e2d749902810d0c367d2 1204 admin optional mx-menu-editor_18.10.3.dsc
+ 2e37322784395174fe3cac673e866449 44820 admin optional mx-menu-editor_18.10.3.tar.xz
+ ded9666af4a30a53f7076f8ef5871993 76994 admin optional mx-menu-editor_18.10.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlvaReATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLuOB/4iN+LSqYlkHqOfFzTUC8SH5Ow6C7w8
+1w+vEHGT2ch5YtJA/m4beW+Rlk0+6G9mEdOhiQbF0UKqYwYN8S6mGldFy+U4D1Ti
+bDP0u7vFveOT8rJIN9gYS1hVg2ZPWVRisbAVUecHieSK+bDWLCGJl0RqY8nOt4gL
+MbJajWlC62vhA+IXP5PeWTMSMmSTnYqn8p3LkrbUicATjtgGTApaC6DNv2m/CAGi
+QTgx5cIP+ax6S9ppSJvtCGI9A7wv6WFDPQGR5cvuXqtlBZIy1JRuZhJWV5xk2xbS
+D67vMPLbjEOZ4KPRFaoBfcH7fVBmDuV6N8DUAWkPzRXNr+vUgbehqUbe
+=jRrr
+-----END PGP SIGNATURE-----

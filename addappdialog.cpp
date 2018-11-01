@@ -70,6 +70,7 @@ void AddAppDialog::on_buttonSave_clicked()
     } else {
         output.append("Terminal=false\n");
     }
+    output.append("Type=Application\n");
     QString categories = "Categories=";
     for(int i = 0; i < ui->listWidgetCategories->count(); ++i)
     {
