@@ -48,6 +48,7 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_hi.ts \
                 translations/mx-menu-editor_hr.ts \
                 translations/mx-menu-editor_hu.ts \
+                translations/mx-menu-editor_is.ts \
                 translations/mx-menu-editor_it.ts \
                 translations/mx-menu-editor_ja.ts \
                 translations/mx-menu-editor_kk.ts \
@@ -59,6 +60,7 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_ro.ts \
                 translations/mx-menu-editor_ru.ts \
                 translations/mx-menu-editor_sk.ts \
+                translations/mx-menu-editor_sq.ts \
                 translations/mx-menu-editor_sv.ts \
                 translations/mx-menu-editor_tr.ts \
                 translations/mx-menu-editor_uk.ts \
