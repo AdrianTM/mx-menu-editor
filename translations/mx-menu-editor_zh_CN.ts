@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="hi" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -45,12 +45,12 @@
         <location filename="addappdialog.ui" line="165"/>
         <location filename="addappdialog.cpp" line="102"/>
         <source>Cancel</source>
-        <translation>रद्द</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="173"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="191"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
@@ -153,7 +153,7 @@
     <message>
         <location filename="mxmenueditor.ui" line="94"/>
         <source>Options</source>
-        <translation>विकल्प</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="103"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="mxmenueditor.ui" line="113"/>
         <source>Hide</source>
-        <translation type="unfinished"/>
+        <translation>隐藏</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="123"/>
@@ -219,7 +219,7 @@
     <message>
         <location filename="mxmenueditor.ui" line="292"/>
         <source>Add</source>
-        <translation>जोड़ें</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="307"/>
@@ -229,17 +229,17 @@
     <message>
         <location filename="mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
-        <translation>अनुप्रयोग बंद करें</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="377"/>
         <source>Close</source>
-        <translation>बंद करें</translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="385"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="426"/>
@@ -249,12 +249,12 @@
     <message>
         <location filename="mxmenueditor.ui" line="429"/>
         <source>Help</source>
-        <translation>सहायता</translation>
+        <translation>帮助(_H)</translation>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="437"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="456"/>
@@ -269,17 +269,17 @@
     <message>
         <location filename="mxmenueditor.ui" line="499"/>
         <source>About this application</source>
-        <translation>इस अनुप्रयोग के बारे में</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="502"/>
         <source>About...</source>
-        <translation>बारे में...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.ui" line="510"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="462"/>
@@ -301,17 +301,17 @@
         <location filename="mxmenueditor.cpp" line="839"/>
         <location filename="mxmenueditor.cpp" line="900"/>
         <source>Cancel</source>
-        <translation>रद्द</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="724"/>
         <source>OK</source>
-        <translation>ओ.के.</translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="814"/>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="814"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="mxmenueditor.cpp" line="833"/>
         <source>Version: </source>
-        <translation>संस्करण :</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="834"/>
@@ -336,12 +336,12 @@
     <message>
         <location filename="mxmenueditor.cpp" line="836"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>प्रतिलिप्याधिकार (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="837"/>
         <source>License</source>
-        <translation>लाइसेंस</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mxmenueditor.cpp" line="838"/>
