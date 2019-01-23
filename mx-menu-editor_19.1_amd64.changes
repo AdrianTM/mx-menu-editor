@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 23 Jan 2019 10:08:21 -0500
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 19.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (19.1) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ 7a8960f1c00f74a3621f1404d184c92c16c6a071 1192 mx-menu-editor_19.1.dsc
+ 4d29497248f0f78e753dfda8f05ec6603c0d906b 47780 mx-menu-editor_19.1.tar.xz
+ 990befc762413af4ba39b1ecb570a1225390cc51 610424 mx-menu-editor-dbgsym_19.1_amd64.deb
+ 5566de9302292415a51637eb534d16021af9cdd8 11623 mx-menu-editor_19.1_amd64.buildinfo
+ d1b0b2a33f92b32443c4e4f1576ac3144f0c002e 79462 mx-menu-editor_19.1_amd64.deb
+Checksums-Sha256:
+ 46abe28c56933e2ac9c0341b12f6218345c14a69b53ee88a740494f59e6f7b61 1192 mx-menu-editor_19.1.dsc
+ 15ad5fbdafd7f7ef9c668ab0686f1048c1a6f94dd0ee44d1ea4bfeb158304b34 47780 mx-menu-editor_19.1.tar.xz
+ 56b0750931656302ddc32baec2698356a1572c2d67e3f0a5a1f52dfdc00db079 610424 mx-menu-editor-dbgsym_19.1_amd64.deb
+ 6059b075d32856134e01e4801751b46f46c628f3be7a687333bfeb9911874add 11623 mx-menu-editor_19.1_amd64.buildinfo
+ 67e8331277accbe4d2b8f19e8400090def2f5a8e5a1631ad390d386e23c2d546 79462 mx-menu-editor_19.1_amd64.deb
+Files:
+ 3de79028510b1d0eb40e84f1a3d6f9d3 1192 admin optional mx-menu-editor_19.1.dsc
+ d313e97e9012b6874a969a6b76c2b4a0 47780 admin optional mx-menu-editor_19.1.tar.xz
+ 4baa8d01d9a174bc117d3cb699531a88 610424 debug optional mx-menu-editor-dbgsym_19.1_amd64.deb
+ e292e8393c603444c161fb782936f65a 11623 admin optional mx-menu-editor_19.1_amd64.buildinfo
+ 4d62cbcc6db64ad848519256e062935d 79462 admin optional mx-menu-editor_19.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxIhHsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumE+xB/0WlQRfCkvjHDgBXhOBZ9Gd9grZPt+G
+Eg7aSRC+QQWYd4vJgIjOAyUimpLSiAQ7/lP0mjfhPD6PSdCIbIdc+wNs1NOJp1xJ
+APwuX/IakZdLjoKj4uXjl3+SSeboZ37pLEETaQg4nTd9qXoIs7QzB1+2db7igv73
+Rk3BCg7kdLtdD4bIWWgFhIw5aDOUJNypoInH392w4cfOaxz1aXRlZ4wr8DC8jKMW
+fK9KHVTIopFxv8aR0FCVrlWjNHGm3XrJZ0/Le8TnZ6/TgLHA9HzymEJs4jtOuq1I
+SdRc+Z1O9neG+vago9tIjeilfszY7cuiAt+ZwdudSfOjP5q91K7DPAmM
+=Xzh3
+-----END PGP SIGNATURE-----
