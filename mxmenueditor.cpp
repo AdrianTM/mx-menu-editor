@@ -116,7 +116,7 @@ void mxmenueditor::loadMenuFiles()
     QStringList menu_files = listMenuFiles();
 
     // process each menu_file
-    foreach (QString file_name, menu_files) {
+    for (QString file_name : menu_files) {
         QFile file(file_name);
         if (file.open(QIODevice::ReadOnly)) {
             QTextStream in(&file);
@@ -218,7 +218,7 @@ void mxmenueditor::displayList(QStringList menu_items) {
     ui->treeWidget->setHeaderLabel("");
     ui->treeWidget->setSortingEnabled(true);
     menu_items.removeDuplicates();
-    foreach(QString item, menu_items) {
+    for (const QString &item : menu_items) {
         topLevelItem = new QTreeWidgetItem(ui->treeWidget, QStringList(item));
         // topLevelItem look
         QFont font;
@@ -260,14 +260,14 @@ void mxmenueditor::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        foreach (QString file, includes) {
+        for (const QString &file : includes) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        foreach (QString category, categories) {
+        for (const QString &category : categories) {
             if (search_string == "") {
                 search_string = "Categories=.*\"" + category + "\"";
             } else {
@@ -284,27 +284,27 @@ void mxmenueditor::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        foreach (QString base_name, excludes) {
+        for (const QString &base_name : excludes) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
         }
-        foreach (QString base_name, excludes) {
+        for (const QString &base_name : excludes) {
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
         }
 
         // list of names without path
         QStringList local_base_names;
-        foreach (QString local_name, all_local_desktop_files) {
+        for (const QString &local_name : all_local_desktop_files) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        foreach (QString usr_name, all_usr_desktop_files) {
+        for (const QString &usr_name : all_usr_desktop_files) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
-        foreach (QString local_name, local_desktop_files) {
+        for (const QString &local_name : local_desktop_files) {
             QFileInfo fi_local(local_name);
             addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -321,7 +321,7 @@ void mxmenueditor::loadApps()
         }
 
         // parse usr .desktop files
-        foreach (QString file, usr_desktop_files) {
+        for (const QString &file : usr_desktop_files) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -949,7 +949,7 @@ QString mxmenueditor::findIcon(QString icon_name)
     if (out.str != "") {
         QString dir = "/usr/share/icons/" + out.str;
         if (QDir(dir).exists()) {
-            foreach (QString ext, extList) {
+            for (const QString &ext : extList) {
                 out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
                 if (out.str != "") {
                     QStringList files = out.str.split("\n");
@@ -972,7 +972,7 @@ QString mxmenueditor::findBiggest(QStringList files)
 {
     int max = 0;
     QString name_biggest;
-    foreach (QString file, files) {
+    for (const QString &file : files) {
         QFile f(file);
         int size = f.size();
         if (size >= max) {

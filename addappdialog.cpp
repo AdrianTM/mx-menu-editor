@@ -72,7 +72,7 @@ void AddAppDialog::on_buttonSave_clicked()
     }
     output.append("Type=Application\n");
     QString categories = "Categories=";
-    for(int i = 0; i < ui->listWidgetCategories->count(); ++i)
+    for (int i = 0; i < ui->listWidgetCategories->count(); ++i)
     {
         QListWidgetItem* item = ui->listWidgetCategories->item(i);
         categories += item->text() + ";";
