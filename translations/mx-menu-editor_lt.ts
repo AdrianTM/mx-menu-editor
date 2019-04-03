@@ -1,122 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="lt">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
-        <location filename="../addappdialog.ui" line="23"/>
+        <location filename="addappdialog.ui" line="20"/>
         <source>Dialog</source>
         <translation>Dialogas</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="33"/>
+        <location filename="addappdialog.ui" line="26"/>
         <source>Categories</source>
         <translation>Kategorijos</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="45"/>
+        <location filename="addappdialog.ui" line="38"/>
         <source>Add category</source>
         <translation>Pridėti kategoriją</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="59"/>
+        <location filename="addappdialog.ui" line="53"/>
         <source>Delete category</source>
         <translation>Ištrinti kategoriją</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="76"/>
+        <location filename="addappdialog.ui" line="71"/>
         <source>Command:</source>
         <translation>Komanda:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="121"/>
+        <location filename="addappdialog.ui" line="116"/>
         <source>Save Changes</source>
         <translation>Įrašyti pakeitimus</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="128"/>
+        <location filename="addappdialog.ui" line="124"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="166"/>
+        <location filename="addappdialog.ui" line="162"/>
         <source>Quit dialog</source>
         <translation>Išeiti iš dialogo</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.ui" line="165"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Cancel</source>
         <translation>Atsisakyti</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="176"/>
+        <location filename="addappdialog.ui" line="173"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="194"/>
+        <location filename="addappdialog.ui" line="191"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="201"/>
+        <location filename="addappdialog.ui" line="198"/>
         <source>Name:</source>
         <translation>Pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="208"/>
+        <location filename="addappdialog.ui" line="205"/>
         <source>Comment:</source>
         <translation>Komentaras:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="215"/>
+        <location filename="addappdialog.ui" line="212"/>
         <source>Icon:</source>
         <translation>Piktograma:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="122"/>
+        <location filename="addappdialog.ui" line="219"/>
+        <location filename="addappdialog.cpp" line="121"/>
         <source>Set icon</source>
         <translation>Nustatyti piktogramą</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="235"/>
+        <location filename="addappdialog.ui" line="232"/>
         <source>Run in Terminal</source>
         <translation>Vykdyti terminale</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="248"/>
+        <location filename="addappdialog.ui" line="245"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
         <translation>Pridėti tinkintą programą</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
         <translation>Nepavyko įrašyti failo</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Save changes?</source>
         <translation>Įrašyti pakeitimus?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Do you want to save your edits?</source>
         <translation>Ar norite įrašyti savo taisymus?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="102"/>
         <source>Save</source>
         <translation>Įrašyti</translation>
     </message>
@@ -124,7 +122,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
         <translation>Privalote paleisti šią programą kaip normalus naudotojas.</translation>
     </message>
@@ -132,241 +130,241 @@
 <context>
     <name>mxmenueditor</name>
     <message>
-        <location filename="../mxmenueditor.ui" line="17"/>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="mxmenueditor.ui" line="14"/>
+        <location filename="mxmenueditor.cpp" line="833"/>
         <source>MX Menu Editor</source>
         <translation>MX meniu redaktorius</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="34"/>
+        <location filename="mxmenueditor.ui" line="31"/>
         <source>Advanced Editor</source>
         <translation>Išplėstinis redaktorius</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="55"/>
+        <location filename="mxmenueditor.ui" line="52"/>
         <source>Categories and applications</source>
         <translation>Kategorijos ir programos</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="82"/>
+        <location filename="mxmenueditor.ui" line="79"/>
         <source>Add custom application</source>
         <translation>Pridėti tinkintą programą</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="96"/>
+        <location filename="mxmenueditor.ui" line="94"/>
         <source>Options</source>
         <translation>Parametrai</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="105"/>
+        <location filename="mxmenueditor.ui" line="103"/>
         <source>Run in terminal</source>
         <translation>Vykdyti terminale</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="115"/>
+        <location filename="mxmenueditor.ui" line="113"/>
         <source>Hide</source>
         <translation>Slėpti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="125"/>
+        <location filename="mxmenueditor.ui" line="123"/>
         <source>Notify startup</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="148"/>
+        <location filename="mxmenueditor.ui" line="146"/>
         <source>Quick Editor</source>
         <translation>Spartusis redaktorius</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="160"/>
+        <location filename="mxmenueditor.ui" line="158"/>
         <source>Comment:</source>
         <translation>Komentaras:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="170"/>
+        <location filename="mxmenueditor.ui" line="168"/>
         <source>Restore original item</source>
         <translation>Atkurti pradinį elementą</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="181"/>
+        <location filename="mxmenueditor.ui" line="180"/>
         <source>Command:</source>
         <translation>Komanda:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="191"/>
+        <location filename="mxmenueditor.ui" line="190"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="205"/>
+        <location filename="mxmenueditor.ui" line="204"/>
         <source>Name:</source>
         <translation>Pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="226"/>
+        <location filename="mxmenueditor.ui" line="225"/>
         <source>Icon</source>
         <translation>Piktograma</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="266"/>
-        <location filename="../mxmenueditor.cpp" line="541"/>
+        <location filename="mxmenueditor.ui" line="265"/>
+        <location filename="mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
         <translation>Pakeisti piktogramą</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
+        <location filename="mxmenueditor.ui" line="280"/>
         <source>Categories</source>
         <translation>Kategorijos</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
+        <location filename="mxmenueditor.ui" line="292"/>
         <source>Add</source>
         <translation>Pridėti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="306"/>
+        <location filename="mxmenueditor.ui" line="307"/>
         <source>Delete</source>
         <translation>Ištrinti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
+        <location filename="mxmenueditor.ui" line="374"/>
         <source>Quit application</source>
         <translation>Išeiti iš programos</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
+        <location filename="mxmenueditor.ui" line="377"/>
         <source>Close</source>
         <translation>Užverti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="382"/>
+        <location filename="mxmenueditor.ui" line="385"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="423"/>
+        <location filename="mxmenueditor.ui" line="426"/>
         <source>Display help</source>
         <translation>Rodyti žinyną</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
+        <location filename="mxmenueditor.ui" line="429"/>
         <source>Help</source>
         <translation>Žinynas</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="433"/>
+        <location filename="mxmenueditor.ui" line="437"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="452"/>
+        <location filename="mxmenueditor.ui" line="456"/>
         <source>Save Changes</source>
         <translation>Įrašyti pakeitimus</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="459"/>
+        <location filename="mxmenueditor.ui" line="464"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
+        <location filename="mxmenueditor.ui" line="499"/>
         <source>About this application</source>
         <translation>Apie šią programą</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
+        <location filename="mxmenueditor.ui" line="502"/>
         <source>About...</source>
         <translation>Apie...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="504"/>
+        <location filename="mxmenueditor.ui" line="510"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="462"/>
+        <location filename="mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
         <translation>Pasirinkite vykdomąjį failą</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="525"/>
+        <location filename="mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
         <translation>Paveikslo failai (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="712"/>
+        <location filename="mxmenueditor.cpp" line="712"/>
         <source>Choose category</source>
         <translation>Pasirinkite kategoriją</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="723"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="723"/>
+        <location filename="mxmenueditor.cpp" line="839"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Cancel</source>
         <translation>Atsisakyti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="724"/>
+        <location filename="mxmenueditor.cpp" line="724"/>
         <source>OK</source>
         <translation>Gerai</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="mxmenueditor.cpp" line="814"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="mxmenueditor.cpp" line="814"/>
         <source>Could not save the file</source>
         <translation>Nepavyko įrašyti failo</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="mxmenueditor.cpp" line="832"/>
         <source>About MX Menu Editor</source>
         <translation>Apie MX meniu redaktorius</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="mxmenueditor.cpp" line="833"/>
         <source>Version: </source>
         <translation>Versija: </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="834"/>
+        <location filename="mxmenueditor.cpp" line="834"/>
         <source>Program for editing Xfce menu</source>
         <translation>Programa, skirta Xfce meniu taisymui</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="836"/>
+        <location filename="mxmenueditor.cpp" line="836"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Autorių teisės (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="837"/>
+        <location filename="mxmenueditor.cpp" line="837"/>
         <source>License</source>
         <translation>Licencija</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
+        <location filename="mxmenueditor.cpp" line="838"/>
         <source>Changelog</source>
         <translation>Keitinių žurnalas</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="854"/>
+        <location filename="mxmenueditor.cpp" line="854"/>
         <source>&amp;Close</source>
         <translation>&amp;Užverti</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save changes?</source>
         <translation>Įrašyti pakeitimus?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Do you want to save your edits?</source>
         <translation>Ar norite įrašyti savo taisymus?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="mxmenueditor.cpp" line="900"/>
         <source>Save</source>
         <translation>Įrašyti</translation>
     </message>
