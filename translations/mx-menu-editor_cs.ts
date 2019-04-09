@@ -133,7 +133,7 @@
     <name>mxmenueditor</name>
     <message>
         <location filename="../mxmenueditor.ui" line="17"/>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor</translation>
     </message>
@@ -294,79 +294,79 @@
         <translation>Obrazové soubory (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="712"/>
+        <location filename="../mxmenueditor.cpp" line="718"/>
         <source>Choose category</source>
         <translation>Zvolte kategorii</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="723"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="../mxmenueditor.cpp" line="729"/>
+        <location filename="../mxmenueditor.cpp" line="845"/>
+        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="724"/>
+        <location filename="../mxmenueditor.cpp" line="730"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="814"/>
+        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Could not save the file</source>
         <translation>Soubor nelze uložit</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="832"/>
+        <location filename="../mxmenueditor.cpp" line="838"/>
         <source>About MX Menu Editor</source>
         <translation>O programu MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="833"/>
+        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>Version: </source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="834"/>
+        <location filename="../mxmenueditor.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program pro editaci nabídky Xfce</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="836"/>
+        <location filename="../mxmenueditor.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Vlastnická práva (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="837"/>
+        <location filename="../mxmenueditor.cpp" line="843"/>
         <source>License</source>
         <translation>Licence</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
+        <location filename="../mxmenueditor.cpp" line="844"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="854"/>
+        <location filename="../mxmenueditor.cpp" line="860"/>
         <source>&amp;Close</source>
         <translation>&amp;Zavřít</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save changes?</source>
         <translation>Uložit změny?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
         <translation>Přejete si uložit změny?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="900"/>
+        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>

@@ -1,3 +1,9 @@
+mx-menu-editor (19.4.1) mx; urgency=medium
+
+  * fix: hide item with multiple Exec= lines
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 09 Apr 2019 17:47:31 -0400
+
 mx-menu-editor (19.4) mx; urgency=medium
 
   * updated translations
