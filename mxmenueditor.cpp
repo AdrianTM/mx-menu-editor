@@ -666,14 +666,14 @@ void mxmenueditor::changeHide(bool checked)
     if (text.contains("NoDisplay=")) {
         text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
-        QStringList new_text;
+        QString new_text;
         for (const QString &line : text.split("\n")) {
-            new_text << line;
+            new_text.append(line + "\n");
             if (line.startsWith("Exec=")) {
-                new_text.append("NoDisplay=" + str);
+                new_text.append("NoDisplay=" + str + "\n");
             }
         }
-        text = new_text.join("\n");
+        text = new_text;
     }
     ui->advancedEditor->setText(text);
 }
