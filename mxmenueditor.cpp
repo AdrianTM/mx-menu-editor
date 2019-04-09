@@ -661,13 +661,19 @@ void mxmenueditor::changeNotify(bool checked)
 void mxmenueditor::changeHide(bool checked)
 {
     ui->buttonSave->setEnabled(true);
-    QString text = ui->advancedEditor->toPlainText();
+    QString text = ui->advancedEditor->toPlainText().trimmed();
     QString str = QString(checked ? "true" : "false");
     if (text.contains("NoDisplay=")) {
         text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
-        text.trimmed();
-        text.append("\nNoDisplay=" + str);
+        QStringList new_text;
+        for (const QString &line : text.split("\n")) {
+            new_text << line;
+            if (line.startsWith("Exec=")) {
+                new_text.append("NoDisplay=" + str);
+            }
+        }
+        text = new_text.join("\n");
     }
     ui->advancedEditor->setText(text);
 }
