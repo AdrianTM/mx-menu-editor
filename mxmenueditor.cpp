@@ -90,7 +90,7 @@ mxmenueditor::~mxmenueditor()
 }
 
 // util function for getting bash command output and error code
-Output mxmenueditor::getCmdOut(QString cmd)
+Output mxmenueditor::getCmdOut(const QString &cmd)
 {
     QProcess *proc = new QProcess();
     QEventLoop loop;
@@ -103,7 +103,7 @@ Output mxmenueditor::getCmdOut(QString cmd)
 }
 
 // get version of the program
-QString mxmenueditor::getVersion(QString name)
+QString mxmenueditor::getVersion(const QString &name)
 {
     return getCmdOut("dpkg-query -f '${Version}' -W " + name).str;
 }
@@ -113,7 +113,7 @@ void mxmenueditor::loadMenuFiles()
 {
     QString home_path = QDir::homePath();
     QStringList menu_items;
-    QStringList menu_files = listMenuFiles();
+    const QStringList menu_files = listMenuFiles();
 
     // process each menu_file
     for (QString file_name : menu_files) {
@@ -183,7 +183,7 @@ void mxmenueditor::loadMenuFiles()
 }
 
 // get Name= from .directory file
-QString mxmenueditor::getCatName(QFile *file)
+QString mxmenueditor::getCatName(const QFile *file)
 {
     QString cmd = QString("grep Name= %1").arg(file->fileName());
     Output out = getCmdOut(cmd.toUtf8());
@@ -218,7 +218,7 @@ void mxmenueditor::displayList(QStringList menu_items) {
     ui->treeWidget->setHeaderLabel("");
     ui->treeWidget->setSortingEnabled(true);
     menu_items.removeDuplicates();
-    for (const QString &item : menu_items) {
+    for (const QString &item : qAsConst(menu_items)) {
         topLevelItem = new QTreeWidgetItem(ui->treeWidget, QStringList(item));
         // topLevelItem look
         QFont font;
@@ -230,7 +230,7 @@ void mxmenueditor::displayList(QStringList menu_items) {
 }
 
 
-void mxmenueditor::loadApps(QTreeWidgetItem* item)
+void mxmenueditor::loadApps(QTreeWidgetItem *item)
 {
     ui->treeWidget->setCurrentItem(item);
 }
@@ -260,14 +260,14 @@ void mxmenueditor::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        for (const QString &file : includes) {
+        for (const QString &file : qAsConst(includes)) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        for (const QString &category : categories) {
+        for (const QString &category : qAsConst(categories)) {
             if (search_string == "") {
                 search_string = "Categories=.*\"" + category + "\"";
             } else {
@@ -284,27 +284,27 @@ void mxmenueditor::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        for (const QString &base_name : excludes) {
+        for (const QString &base_name : qAsConst(excludes)) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
         }
-        for (const QString &base_name : excludes) {
+        for (const QString &base_name : qAsConst(excludes)) {
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
         }
 
         // list of names without path
         QStringList local_base_names;
-        for (const QString &local_name : all_local_desktop_files) {
+        for (const QString &local_name : qAsConst(all_local_desktop_files)) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        for (const QString &usr_name : all_usr_desktop_files) {
+        for (const QString &usr_name : qAsConst(all_usr_desktop_files)) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
-        for (const QString &local_name : local_desktop_files) {
+        for (const QString &local_name : qAsConst(local_desktop_files)) {
             QFileInfo fi_local(local_name);
             addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -321,7 +321,7 @@ void mxmenueditor::loadApps()
         }
 
         // parse usr .desktop files
-        for (const QString &file : usr_desktop_files) {
+        for (const QString &file : qAsConst(usr_desktop_files)) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -366,7 +366,7 @@ void mxmenueditor::addToTree(QString file_name)
 }
 
 // list .desktop files
-QStringList mxmenueditor::listDesktopFiles(QString search_string, QString location)
+QStringList mxmenueditor::listDesktopFiles(const QString &search_string, const QString &location)
 {
     QStringList listDesktop;
     if (search_string != "") {
@@ -449,7 +449,7 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
 }
 
 // check if the item is hidden
-bool mxmenueditor::isHidden(QString file_name)
+bool mxmenueditor::isHidden(const QString &file_name)
 {
     QString cmd = "grep -q NoDisplay=true \"" + file_name + "\"";
     return !system(cmd.toUtf8());
@@ -667,7 +667,7 @@ void mxmenueditor::changeHide(bool checked)
         text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
-        for (const QString &line : text.split("\n")) {
+        for (const QString &line : qAsConst(text).split("\n")) {
             new_text.append(line + "\n");
             if (line.startsWith("Exec=")) {
                 new_text.append("NoDisplay=" + str + "\n");
@@ -945,11 +945,10 @@ void mxmenueditor::findReloadItem(QString base_name)
 }
 
 // find icon file location using the icon name form .desktop file
-QString mxmenueditor::findIcon(QString icon_name)
+QString mxmenueditor::findIcon(const QString &icon_name)
 {
     Output out;
-    QStringList extList;
-    extList << ".png" << ".svg" << ".xpm";
+    const QStringList extList({".png", ".svg", ".xpm"});
 
     out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
     if (out.str != "") {
@@ -974,7 +973,7 @@ QString mxmenueditor::findIcon(QString icon_name)
 }
 
 // find largest icon
-QString mxmenueditor::findBiggest(QStringList files)
+QString mxmenueditor::findBiggest(const QStringList &files)
 {
     int max = 0;
     QString name_biggest;
