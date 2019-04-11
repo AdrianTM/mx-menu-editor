@@ -54,9 +54,9 @@ public:
     explicit mxmenueditor(QWidget *parent = 0);
     ~mxmenueditor();
 
-    Output getCmdOut(QString cmd);
+    Output getCmdOut(const QString &cmd);
     QFile config_file;
-    QString getVersion(QString name);
+    QString getVersion(const QString &name);
     QString version;
     QStringList all_usr_desktop_files;
     QStringList all_local_desktop_files;
@@ -68,13 +68,13 @@ public:
     void displayList(QStringList menu_items);
     void addToTree(QString file_name);
     void findReloadItem(QString base_name);
-    bool isHidden(QString file_name);
+    bool isHidden(const QString &file_name);
     bool save();
-    QString getCatName(QFile *file);
-    QString findIcon(QString icon_name);
-    QString findBiggest(QStringList files);
+    QString getCatName(const QFile *file);
+    QString findIcon(const QString &icon_name);
+    QString findBiggest(const QStringList &files);
     QStringList listCategories();
-    QStringList listDesktopFiles(QString search_category, QString location);
+    QStringList listDesktopFiles(const QString &search_category, const QString &location);
     QStringList listMenuFiles();
 
 public slots:
