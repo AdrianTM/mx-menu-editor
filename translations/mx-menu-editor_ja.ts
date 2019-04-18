@@ -122,6 +122,248 @@
     </message>
 </context>
 <context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.ui" line="17"/>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>MX Menu Editor</source>
+        <translation type="unfinished">MX メニューエディタ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="34"/>
+        <source>Advanced Editor</source>
+        <translation type="unfinished">高度エディタ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="55"/>
+        <source>Categories and applications</source>
+        <translation type="unfinished">カテゴリ・アプリケーション</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="82"/>
+        <source>Add custom application</source>
+        <translation type="unfinished">カスタムアプリの追加</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="96"/>
+        <source>Options</source>
+        <translation type="unfinished">オプション</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="105"/>
+        <source>Run in terminal</source>
+        <translation type="unfinished">ターミナルを実行</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="115"/>
+        <source>Hide</source>
+        <translation type="unfinished">非表示</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="125"/>
+        <source>Notify startup</source>
+        <translation type="unfinished">起動時の通知</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="148"/>
+        <source>Quick Editor</source>
+        <translation type="unfinished">簡易エディタ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="160"/>
+        <source>Comment:</source>
+        <translation type="unfinished">コメント:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="170"/>
+        <source>Restore original item</source>
+        <translation type="unfinished">元の項目を復旧</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="181"/>
+        <source>Command:</source>
+        <translation type="unfinished">コマンド:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="191"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="205"/>
+        <source>Name:</source>
+        <translation type="unfinished">名前:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="226"/>
+        <source>Icon</source>
+        <translation type="unfinished">アイコン</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="266"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <source>Change icon</source>
+        <translation type="unfinished">アイコンを変更</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="280"/>
+        <source>Categories</source>
+        <translation type="unfinished">カテゴリ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="292"/>
+        <source>Add</source>
+        <translation type="unfinished">追加</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="306"/>
+        <source>Delete</source>
+        <translation type="unfinished">削除</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="372"/>
+        <source>Quit application</source>
+        <translation type="unfinished">アプリケーションの終了</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="375"/>
+        <source>Close</source>
+        <translation type="unfinished">閉じる</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="382"/>
+        <source>Alt+N</source>
+        <translation type="unfinished">Alt+N</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="423"/>
+        <source>Display help</source>
+        <translation type="unfinished">ヘルプを表示</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="426"/>
+        <source>Help</source>
+        <translation type="unfinished">ヘルプ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="433"/>
+        <source>Alt+H</source>
+        <translation type="unfinished">Alt+H</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="452"/>
+        <source>Save Changes</source>
+        <translation type="unfinished">変更を保存</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="459"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="494"/>
+        <source>About this application</source>
+        <translation type="unfinished">このアプリケーションについて</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="497"/>
+        <source>About...</source>
+        <translation type="unfinished">About...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="504"/>
+        <source>Alt+B</source>
+        <translation type="unfinished">Alt+B</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="462"/>
+        <source>Select executable file</source>
+        <translation type="unfinished">実行ファイルを選択</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
+        <translation type="unfinished">画像ファイル (*.png *.jpg *.bmp *.xpm)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="718"/>
+        <source>Choose category</source>
+        <translation type="unfinished">カテゴリを選択</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="729"/>
+        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Cancel</source>
+        <translation type="unfinished">キャンセル</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="730"/>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Error</source>
+        <translation type="unfinished">エラー</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Could not save the file</source>
+        <translation type="unfinished">ファイルを保存できません</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="838"/>
+        <source>About MX Menu Editor</source>
+        <translation type="unfinished">MX メニューエディタについて</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>Version: </source>
+        <translation type="unfinished">Version: </translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="840"/>
+        <source>Program for editing Xfce menu</source>
+        <translation type="unfinished">Xfce メニューを編集するプログラム</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="842"/>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="unfinished">Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="843"/>
+        <source>License</source>
+        <translation type="unfinished">ライセンス</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="844"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="860"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished">閉じる(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save changes?</source>
+        <translation type="unfinished">変更を保存？</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Do you want to save your edits?</source>
+        <translation type="unfinished">編集した内容を保存しますか？</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save</source>
+        <translation type="unfinished">保存</translation>
+    </message>
+</context>
+<context>
     <name>QApplication</name>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -132,243 +374,188 @@
 <context>
     <name>mxmenueditor</name>
     <message>
-        <location filename="../mxmenueditor.ui" line="17"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>MX Menu Editor</source>
-        <translation>MX メニューエディタ</translation>
+        <translation type="vanished">MX メニューエディタ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation>高度エディタ</translation>
+        <translation type="vanished">高度エディタ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>カテゴリ・アプリケーション</translation>
+        <translation type="vanished">カテゴリ・アプリケーション</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="82"/>
         <source>Add custom application</source>
-        <translation>カスタムアプリの追加</translation>
+        <translation type="vanished">カスタムアプリの追加</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="96"/>
         <source>Options</source>
-        <translation>オプション</translation>
+        <translation type="vanished">オプション</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation>ターミナルを実行</translation>
+        <translation type="vanished">ターミナルを実行</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="115"/>
         <source>Hide</source>
-        <translation>非表示</translation>
+        <translation type="vanished">非表示</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="125"/>
         <source>Notify startup</source>
-        <translation>起動時の通知</translation>
+        <translation type="vanished">起動時の通知</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation>簡易エディタ</translation>
+        <translation type="vanished">簡易エディタ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="160"/>
         <source>Comment:</source>
-        <translation>コメント:</translation>
+        <translation type="vanished">コメント:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="170"/>
         <source>Restore original item</source>
-        <translation>元の項目を復旧</translation>
+        <translation type="vanished">元の項目を復旧</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="181"/>
         <source>Command:</source>
-        <translation>コマンド:</translation>
+        <translation type="vanished">コマンド:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="191"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="205"/>
         <source>Name:</source>
-        <translation>名前:</translation>
+        <translation type="vanished">名前:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="226"/>
         <source>Icon</source>
-        <translation>アイコン</translation>
+        <translation type="vanished">アイコン</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="266"/>
-        <location filename="../mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
-        <translation>アイコンを変更</translation>
+        <translation type="vanished">アイコンを変更</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
         <source>Categories</source>
-        <translation>カテゴリ</translation>
+        <translation type="vanished">カテゴリ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
         <source>Add</source>
-        <translation>追加</translation>
+        <translation type="vanished">追加</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="306"/>
         <source>Delete</source>
-        <translation>削除</translation>
+        <translation type="vanished">削除</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
         <source>Quit application</source>
-        <translation>アプリケーションの終了</translation>
+        <translation type="vanished">アプリケーションの終了</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation type="vanished">閉じる</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="382"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="vanished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="423"/>
         <source>Display help</source>
-        <translation>ヘルプを表示</translation>
+        <translation type="vanished">ヘルプを表示</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
         <source>Help</source>
-        <translation>ヘルプ</translation>
+        <translation type="vanished">ヘルプ</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="433"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="vanished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="452"/>
         <source>Save Changes</source>
-        <translation>変更を保存</translation>
+        <translation type="vanished">変更を保存</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="459"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="vanished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
         <source>About this application</source>
-        <translation>このアプリケーションについて</translation>
+        <translation type="vanished">このアプリケーションについて</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation type="vanished">About...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="504"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="vanished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation>実行ファイルを選択</translation>
+        <translation type="vanished">実行ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>画像ファイル (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">画像ファイル (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="718"/>
         <source>Choose category</source>
-        <translation>カテゴリを選択</translation>
+        <translation type="vanished">カテゴリを選択</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="729"/>
-        <location filename="../mxmenueditor.cpp" line="845"/>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation type="vanished">キャンセル</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="730"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="vanished">OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Could not save the file</source>
-        <translation>ファイルを保存できません</translation>
+        <translation type="vanished">ファイルを保存できません</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
         <source>About MX Menu Editor</source>
-        <translation>MX メニューエディタについて</translation>
+        <translation type="vanished">MX メニューエディタについて</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation type="vanished">Version: </translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Xfce メニューを編集するプログラム</translation>
+        <translation type="vanished">Xfce メニューを編集するプログラム</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="vanished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="843"/>
         <source>License</source>
-        <translation>ライセンス</translation>
+        <translation type="vanished">ライセンス</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="844"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.cpp" line="860"/>
         <source>&amp;Close</source>
-        <translation>閉じる(&amp;C)</translation>
+        <translation type="vanished">閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save changes?</source>
-        <translation>変更を保存？</translation>
+        <translation type="vanished">変更を保存？</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
-        <translation>編集した内容を保存しますか？</translation>
+        <translation type="vanished">編集した内容を保存しますか？</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="vanished">保存</translation>
     </message>
 </context>
 </TS>

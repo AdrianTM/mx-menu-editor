@@ -122,6 +122,248 @@
     </message>
 </context>
 <context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.ui" line="17"/>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>MX Menu Editor</source>
+        <translation type="unfinished">MX uređivač izbornika</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="34"/>
+        <source>Advanced Editor</source>
+        <translation type="unfinished">Napredni uređivač</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="55"/>
+        <source>Categories and applications</source>
+        <translation type="unfinished">Kategorije i aplikacije</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="82"/>
+        <source>Add custom application</source>
+        <translation type="unfinished">Dodaj prilagođenu aplikaciju</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="96"/>
+        <source>Options</source>
+        <translation type="unfinished">Opcije</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="105"/>
+        <source>Run in terminal</source>
+        <translation type="unfinished">Pokreni u terminalu</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="115"/>
+        <source>Hide</source>
+        <translation type="unfinished">Sakrij</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="125"/>
+        <source>Notify startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="148"/>
+        <source>Quick Editor</source>
+        <translation type="unfinished">Brzi uređivač</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="160"/>
+        <source>Comment:</source>
+        <translation type="unfinished">Komentar:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="170"/>
+        <source>Restore original item</source>
+        <translation type="unfinished">Obnovi izvornu stavku</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="181"/>
+        <source>Command:</source>
+        <translation type="unfinished">Naredba:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="191"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="205"/>
+        <source>Name:</source>
+        <translation type="unfinished">Ime:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="226"/>
+        <source>Icon</source>
+        <translation type="unfinished">Ikona</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="266"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <source>Change icon</source>
+        <translation type="unfinished">Promjeni ikonu</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="280"/>
+        <source>Categories</source>
+        <translation type="unfinished">Kategorije</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="292"/>
+        <source>Add</source>
+        <translation type="unfinished">Dodaj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="306"/>
+        <source>Delete</source>
+        <translation type="unfinished">Izbriši</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="372"/>
+        <source>Quit application</source>
+        <translation type="unfinished">Zatvori aplikaciju</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="375"/>
+        <source>Close</source>
+        <translation type="unfinished">Zatvori</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="382"/>
+        <source>Alt+N</source>
+        <translation type="unfinished">Alt+N</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="423"/>
+        <source>Display help</source>
+        <translation type="unfinished">Prikaži pomoć</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="426"/>
+        <source>Help</source>
+        <translation type="unfinished">Pomoć</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="433"/>
+        <source>Alt+H</source>
+        <translation type="unfinished">Alt+H</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="452"/>
+        <source>Save Changes</source>
+        <translation type="unfinished">Spremi izmjene</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="459"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="494"/>
+        <source>About this application</source>
+        <translation type="unfinished">O ovoj aplikaciji</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="497"/>
+        <source>About...</source>
+        <translation type="unfinished">O programu...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="504"/>
+        <source>Alt+B</source>
+        <translation type="unfinished">Alt+B</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="462"/>
+        <source>Select executable file</source>
+        <translation type="unfinished">Odaberite izvršnu datoteku</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
+        <translation type="unfinished">Slikovne datoteke (*.png *.jpg *.bmp *.xpm)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="718"/>
+        <source>Choose category</source>
+        <translation type="unfinished">Odaberite kategoriju</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="729"/>
+        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Otkaži</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="730"/>
+        <source>OK</source>
+        <translation type="unfinished">U redu</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Error</source>
+        <translation type="unfinished">Greška</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Could not save the file</source>
+        <translation type="unfinished">Ne mogu spremiti datoteku</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="838"/>
+        <source>About MX Menu Editor</source>
+        <translation type="unfinished">O MX uređivaču izbornika</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>Version: </source>
+        <translation type="unfinished">Inačica:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="840"/>
+        <source>Program for editing Xfce menu</source>
+        <translation type="unfinished">Program za uređivanje Xfce izbornika</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="842"/>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="unfinished">Autorska prava (c) MX Linux</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="843"/>
+        <source>License</source>
+        <translation type="unfinished">Licenca</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="844"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="860"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished">&amp;Zatvori</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save changes?</source>
+        <translation type="unfinished">Spremiti izmjene?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Do you want to save your edits?</source>
+        <translation type="unfinished">Želite li spremiti vaša uređivanja?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save</source>
+        <translation type="unfinished">Spremi</translation>
+    </message>
+</context>
+<context>
     <name>QApplication</name>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -132,243 +374,184 @@
 <context>
     <name>mxmenueditor</name>
     <message>
-        <location filename="../mxmenueditor.ui" line="17"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>MX Menu Editor</source>
-        <translation>MX uređivač izbornika</translation>
+        <translation type="vanished">MX uređivač izbornika</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation>Napredni uređivač</translation>
+        <translation type="vanished">Napredni uređivač</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>Kategorije i aplikacije</translation>
+        <translation type="vanished">Kategorije i aplikacije</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="82"/>
         <source>Add custom application</source>
-        <translation>Dodaj prilagođenu aplikaciju</translation>
+        <translation type="vanished">Dodaj prilagođenu aplikaciju</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="96"/>
         <source>Options</source>
-        <translation>Opcije</translation>
+        <translation type="vanished">Opcije</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation>Pokreni u terminalu</translation>
+        <translation type="vanished">Pokreni u terminalu</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="115"/>
         <source>Hide</source>
-        <translation>Sakrij</translation>
+        <translation type="vanished">Sakrij</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="125"/>
-        <source>Notify startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation>Brzi uređivač</translation>
+        <translation type="vanished">Brzi uređivač</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="160"/>
         <source>Comment:</source>
-        <translation>Komentar:</translation>
+        <translation type="vanished">Komentar:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="170"/>
         <source>Restore original item</source>
-        <translation>Obnovi izvornu stavku</translation>
+        <translation type="vanished">Obnovi izvornu stavku</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="181"/>
         <source>Command:</source>
-        <translation>Naredba:</translation>
+        <translation type="vanished">Naredba:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="191"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="205"/>
         <source>Name:</source>
-        <translation>Ime:</translation>
+        <translation type="vanished">Ime:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="226"/>
         <source>Icon</source>
-        <translation>Ikona</translation>
+        <translation type="vanished">Ikona</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="266"/>
-        <location filename="../mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
-        <translation>Promjeni ikonu</translation>
+        <translation type="vanished">Promjeni ikonu</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
         <source>Categories</source>
-        <translation>Kategorije</translation>
+        <translation type="vanished">Kategorije</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
         <source>Add</source>
-        <translation>Dodaj</translation>
+        <translation type="vanished">Dodaj</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="306"/>
         <source>Delete</source>
-        <translation>Izbriši</translation>
+        <translation type="vanished">Izbriši</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
         <source>Quit application</source>
-        <translation>Zatvori aplikaciju</translation>
+        <translation type="vanished">Zatvori aplikaciju</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Close</source>
-        <translation>Zatvori</translation>
+        <translation type="vanished">Zatvori</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="382"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="vanished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="423"/>
         <source>Display help</source>
-        <translation>Prikaži pomoć</translation>
+        <translation type="vanished">Prikaži pomoć</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
         <source>Help</source>
-        <translation>Pomoć</translation>
+        <translation type="vanished">Pomoć</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="433"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="vanished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="452"/>
         <source>Save Changes</source>
-        <translation>Spremi izmjene</translation>
+        <translation type="vanished">Spremi izmjene</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="459"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="vanished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
         <source>About this application</source>
-        <translation>O ovoj aplikaciji</translation>
+        <translation type="vanished">O ovoj aplikaciji</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
         <source>About...</source>
-        <translation>O programu...</translation>
+        <translation type="vanished">O programu...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="504"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="vanished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation>Odaberite izvršnu datoteku</translation>
+        <translation type="vanished">Odaberite izvršnu datoteku</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>Slikovne datoteke (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">Slikovne datoteke (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="718"/>
         <source>Choose category</source>
-        <translation>Odaberite kategoriju</translation>
+        <translation type="vanished">Odaberite kategoriju</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="729"/>
-        <location filename="../mxmenueditor.cpp" line="845"/>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Cancel</source>
-        <translation>Otkaži</translation>
+        <translation type="vanished">Otkaži</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="730"/>
         <source>OK</source>
-        <translation>U redu</translation>
+        <translation type="vanished">U redu</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Could not save the file</source>
-        <translation>Ne mogu spremiti datoteku</translation>
+        <translation type="vanished">Ne mogu spremiti datoteku</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
         <source>About MX Menu Editor</source>
-        <translation>O MX uređivaču izbornika</translation>
+        <translation type="vanished">O MX uređivaču izbornika</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>Version: </source>
-        <translation>Inačica:</translation>
+        <translation type="vanished">Inačica:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Program za uređivanje Xfce izbornika</translation>
+        <translation type="vanished">Program za uređivanje Xfce izbornika</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Autorska prava (c) MX Linux</translation>
+        <translation type="vanished">Autorska prava (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="843"/>
         <source>License</source>
-        <translation>Licenca</translation>
+        <translation type="vanished">Licenca</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="844"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mxmenueditor.cpp" line="860"/>
         <source>&amp;Close</source>
-        <translation>&amp;Zatvori</translation>
+        <translation type="vanished">&amp;Zatvori</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save changes?</source>
-        <translation>Spremiti izmjene?</translation>
+        <translation type="vanished">Spremiti izmjene?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
-        <translation>Želite li spremiti vaša uređivanja?</translation>
+        <translation type="vanished">Želite li spremiti vaša uređivanja?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save</source>
-        <translation>Spremi</translation>
+        <translation type="vanished">Spremi</translation>
     </message>
 </context>
 </TS>

@@ -122,6 +122,248 @@
     </message>
 </context>
 <context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.ui" line="17"/>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>MX Menu Editor</source>
+        <translation type="unfinished">MX Meny Editor</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="34"/>
+        <source>Advanced Editor</source>
+        <translation type="unfinished">Avancerad Editor</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="55"/>
+        <source>Categories and applications</source>
+        <translation type="unfinished">Kategorier och program</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="82"/>
+        <source>Add custom application</source>
+        <translation type="unfinished">Lägg till anpassat program</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="96"/>
+        <source>Options</source>
+        <translation type="unfinished">Valmöjligheter</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="105"/>
+        <source>Run in terminal</source>
+        <translation type="unfinished">Kör i terminal</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="115"/>
+        <source>Hide</source>
+        <translation type="unfinished">Dölj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="125"/>
+        <source>Notify startup</source>
+        <translation type="unfinished">Meddela start</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="148"/>
+        <source>Quick Editor</source>
+        <translation type="unfinished">Snabb Editor</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="160"/>
+        <source>Comment:</source>
+        <translation type="unfinished">Kommentar:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="170"/>
+        <source>Restore original item</source>
+        <translation type="unfinished">Återställ orginal-objekt</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="181"/>
+        <source>Command:</source>
+        <translation type="unfinished">Kommando:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="191"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="205"/>
+        <source>Name:</source>
+        <translation type="unfinished">Namn:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="226"/>
+        <source>Icon</source>
+        <translation type="unfinished">Ikon</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="266"/>
+        <location filename="../mainwindow.cpp" line="541"/>
+        <source>Change icon</source>
+        <translation type="unfinished">Byt ikon</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="280"/>
+        <source>Categories</source>
+        <translation type="unfinished">Kategorier</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="292"/>
+        <source>Add</source>
+        <translation type="unfinished">Lägg till</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="306"/>
+        <source>Delete</source>
+        <translation type="unfinished">Ta bort</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="372"/>
+        <source>Quit application</source>
+        <translation type="unfinished">Stäng programmet</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="375"/>
+        <source>Close</source>
+        <translation type="unfinished">Stäng</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="382"/>
+        <source>Alt+N</source>
+        <translation type="unfinished">Alt+N</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="423"/>
+        <source>Display help</source>
+        <translation type="unfinished">Visa hjälp</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="426"/>
+        <source>Help</source>
+        <translation type="unfinished">Hjälp</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="433"/>
+        <source>Alt+H</source>
+        <translation type="unfinished">Alt+H</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="452"/>
+        <source>Save Changes</source>
+        <translation type="unfinished">Spar Ändringar</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="459"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished">Ctrl+S</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="494"/>
+        <source>About this application</source>
+        <translation type="unfinished">Om detta program</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="497"/>
+        <source>About...</source>
+        <translation type="unfinished">Om...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="504"/>
+        <source>Alt+B</source>
+        <translation type="unfinished">Alt+B</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="462"/>
+        <source>Select executable file</source>
+        <translation type="unfinished">Välj körbar fil</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
+        <translation type="unfinished">Bildfiler (*.png *.jpg *.bmp *.xpm)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="718"/>
+        <source>Choose category</source>
+        <translation type="unfinished">Välj kategori</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="729"/>
+        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="730"/>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Error</source>
+        <translation type="unfinished">Fel</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="820"/>
+        <source>Could not save the file</source>
+        <translation type="unfinished">Kunde inte spara filen</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="838"/>
+        <source>About MX Menu Editor</source>
+        <translation type="unfinished">Om MX Meny Editor</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="839"/>
+        <source>Version: </source>
+        <translation type="unfinished">Version:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="840"/>
+        <source>Program for editing Xfce menu</source>
+        <translation type="unfinished">Program för att redigera Xfce meny</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="842"/>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="unfinished">Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="843"/>
+        <source>License</source>
+        <translation type="unfinished">Licens</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="844"/>
+        <source>Changelog</source>
+        <translation type="unfinished">Ändringslogg</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="860"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished">&amp;Close</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save changes?</source>
+        <translation type="unfinished">Spara ändringar?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Do you want to save your edits?</source>
+        <translation type="unfinished">Vill du spara dina redigeringar?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>Save</source>
+        <translation type="unfinished">Spara</translation>
+    </message>
+</context>
+<context>
     <name>QApplication</name>
     <message>
         <location filename="../main.cpp" line="51"/>
@@ -132,243 +374,192 @@
 <context>
     <name>mxmenueditor</name>
     <message>
-        <location filename="../mxmenueditor.ui" line="17"/>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>MX Menu Editor</source>
-        <translation>MX Meny Editor</translation>
+        <translation type="vanished">MX Meny Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation>Avancerad Editor</translation>
+        <translation type="vanished">Avancerad Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>Kategorier och program</translation>
+        <translation type="vanished">Kategorier och program</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="82"/>
         <source>Add custom application</source>
-        <translation>Lägg till anpassat program</translation>
+        <translation type="vanished">Lägg till anpassat program</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="96"/>
         <source>Options</source>
-        <translation>Valmöjligheter</translation>
+        <translation type="vanished">Valmöjligheter</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation>Kör i terminal</translation>
+        <translation type="vanished">Kör i terminal</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="115"/>
         <source>Hide</source>
-        <translation>Dölj</translation>
+        <translation type="vanished">Dölj</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="125"/>
         <source>Notify startup</source>
-        <translation>Meddela start</translation>
+        <translation type="vanished">Meddela start</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation>Snabb Editor</translation>
+        <translation type="vanished">Snabb Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="160"/>
         <source>Comment:</source>
-        <translation>Kommentar:</translation>
+        <translation type="vanished">Kommentar:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="170"/>
         <source>Restore original item</source>
-        <translation>Återställ orginal-objekt</translation>
+        <translation type="vanished">Återställ orginal-objekt</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="181"/>
         <source>Command:</source>
-        <translation>Kommando:</translation>
+        <translation type="vanished">Kommando:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="191"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="205"/>
         <source>Name:</source>
-        <translation>Namn:</translation>
+        <translation type="vanished">Namn:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="226"/>
         <source>Icon</source>
-        <translation>Ikon</translation>
+        <translation type="vanished">Ikon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="266"/>
-        <location filename="../mxmenueditor.cpp" line="541"/>
         <source>Change icon</source>
-        <translation>Byt ikon</translation>
+        <translation type="vanished">Byt ikon</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="280"/>
         <source>Categories</source>
-        <translation>Kategorier</translation>
+        <translation type="vanished">Kategorier</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="292"/>
         <source>Add</source>
-        <translation>Lägg till</translation>
+        <translation type="vanished">Lägg till</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="306"/>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation type="vanished">Ta bort</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="372"/>
         <source>Quit application</source>
-        <translation>Stäng programmet</translation>
+        <translation type="vanished">Stäng programmet</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="375"/>
         <source>Close</source>
-        <translation>Stäng</translation>
+        <translation type="vanished">Stäng</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="382"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="vanished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="423"/>
         <source>Display help</source>
-        <translation>Visa hjälp</translation>
+        <translation type="vanished">Visa hjälp</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="426"/>
         <source>Help</source>
-        <translation>Hjälp</translation>
+        <translation type="vanished">Hjälp</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="433"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="vanished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="452"/>
         <source>Save Changes</source>
-        <translation>Spar Ändringar</translation>
+        <translation type="vanished">Spar Ändringar</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="459"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="vanished">Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="494"/>
         <source>About this application</source>
-        <translation>Om detta program</translation>
+        <translation type="vanished">Om detta program</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="497"/>
         <source>About...</source>
-        <translation>Om...</translation>
+        <translation type="vanished">Om...</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.ui" line="504"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="vanished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation>Välj körbar fil</translation>
+        <translation type="vanished">Välj körbar fil</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>Bildfiler (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">Bildfiler (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="718"/>
         <source>Choose category</source>
-        <translation>Välj kategori</translation>
+        <translation type="vanished">Välj kategori</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="729"/>
-        <location filename="../mxmenueditor.cpp" line="845"/>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation type="vanished">Avbryt</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="730"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="vanished">OK</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Error</source>
-        <translation>Fel</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="820"/>
         <source>Could not save the file</source>
-        <translation>Kunde inte spara filen</translation>
+        <translation type="vanished">Kunde inte spara filen</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="838"/>
         <source>About MX Menu Editor</source>
-        <translation>Om MX Meny Editor</translation>
+        <translation type="vanished">Om MX Meny Editor</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="839"/>
         <source>Version: </source>
-        <translation>Version:</translation>
+        <translation type="vanished">Version:</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Program för att redigera Xfce meny</translation>
+        <translation type="vanished">Program för att redigera Xfce meny</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="vanished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="843"/>
         <source>License</source>
-        <translation>Licens</translation>
+        <translation type="vanished">Licens</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="844"/>
         <source>Changelog</source>
-        <translation>Ändringslogg</translation>
+        <translation type="vanished">Ändringslogg</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="860"/>
         <source>&amp;Close</source>
-        <translation>&amp;Close</translation>
+        <translation type="vanished">&amp;Close</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save changes?</source>
-        <translation>Spara ändringar?</translation>
+        <translation type="vanished">Spara ändringar?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
-        <translation>Vill du spara dina redigeringar?</translation>
+        <translation type="vanished">Vill du spara dina redigeringar?</translation>
     </message>
     <message>
-        <location filename="../mxmenueditor.cpp" line="906"/>
         <source>Save</source>
-        <translation>Spara</translation>
+        <translation type="vanished">Spara</translation>
     </message>
 </context>
 </TS>

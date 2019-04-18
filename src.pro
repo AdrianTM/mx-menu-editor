@@ -21,7 +21,7 @@
 # **********************************************************************/
 
 QT       += core gui widgets
-CONFIG   += c++11
+CONFIG   += c++14
 
 TARGET = mx-menu-editor
 TEMPLATE = app
