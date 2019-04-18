@@ -28,14 +28,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mxmenueditor.cpp \
-    addappdialog.cpp
+    addappdialog.cpp \
+    mainwindow.cpp
 
-HEADERS  += mxmenueditor.h \
-    addappdialog.h
+HEADERS  += \
+    addappdialog.h \
+    mainwindow.h
 
-FORMS    += mxmenueditor.ui \
-    addappdialog.ui
+FORMS    += \
+    addappdialog.ui \
+    mainwindow.ui
 
 TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_ar.ts \

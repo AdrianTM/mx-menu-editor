@@ -23,7 +23,7 @@
  **********************************************************************/
 
 #include <QApplication>
-#include "mxmenueditor.h"
+#include "mainwindow.h"
 #include <qtranslator.h>
 #include <qlocale.h>
 #include <unistd.h>
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTran);
 
     if (getuid() != 0) {
-        mxmenueditor w;
+        MainWindow w;
         w.show();
         return a.exec();
     } else {
