@@ -1,5 +1,5 @@
 /**********************************************************************
- *  mxmenueditor.cpp
+ *  mainwindow.cpp
  **********************************************************************
  * Copyright (C) 2015 MX Authors
  *
@@ -22,8 +22,8 @@
  * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#include "mxmenueditor.h"
-#include "ui_mxmenueditor.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "ui_addappdialog.h"
 
 #include <QProcess>
@@ -38,9 +38,9 @@
 
 #include <QDebug>
 
-mxmenueditor::mxmenueditor(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::mxmenueditor),
+    ui(new Ui::MainWindow),
     add(new AddAppDialog)
 {
     ui->setupUi(this);
@@ -84,13 +84,13 @@ mxmenueditor::mxmenueditor(QWidget *parent) :
 
 }
 
-mxmenueditor::~mxmenueditor()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
 
 // util function for getting bash command output and error code
-Output mxmenueditor::getCmdOut(const QString &cmd)
+Output MainWindow::getCmdOut(const QString &cmd)
 {
     QProcess *proc = new QProcess();
     QEventLoop loop;
@@ -103,13 +103,13 @@ Output mxmenueditor::getCmdOut(const QString &cmd)
 }
 
 // get version of the program
-QString mxmenueditor::getVersion(const QString &name)
+QString MainWindow::getVersion(const QString &name)
 {
     return getCmdOut("dpkg-query -f '${Version}' -W " + name).str;
 }
 
 // load menu files
-void mxmenueditor::loadMenuFiles()
+void MainWindow::loadMenuFiles()
 {
     QString home_path = QDir::homePath();
     QStringList menu_items;
@@ -183,7 +183,7 @@ void mxmenueditor::loadMenuFiles()
 }
 
 // get Name= from .directory file
-QString mxmenueditor::getCatName(const QFile *file)
+QString MainWindow::getCatName(const QFile *file)
 {
     QString cmd = QString("grep Name= %1").arg(file->fileName());
     Output out = getCmdOut(cmd.toUtf8());
@@ -195,7 +195,7 @@ QString mxmenueditor::getCatName(const QFile *file)
 }
 
 // return a list of .menu files
-QStringList mxmenueditor::listMenuFiles() {
+QStringList MainWindow::listMenuFiles() {
     QString home_path = QDir::homePath();
     QStringList menu_files("/etc/xdg/menus/xfce-applications.menu");
     QDir user_dir;
@@ -213,7 +213,7 @@ QStringList mxmenueditor::listMenuFiles() {
 }
 
 // display sorted list of menu items in the treeWidget
-void mxmenueditor::displayList(QStringList menu_items) {
+void MainWindow::displayList(QStringList menu_items) {
     QTreeWidgetItem *topLevelItem = 0;
     ui->treeWidget->setHeaderLabel("");
     ui->treeWidget->setSortingEnabled(true);
@@ -230,13 +230,13 @@ void mxmenueditor::displayList(QStringList menu_items) {
 }
 
 
-void mxmenueditor::loadApps(QTreeWidgetItem *item)
+void MainWindow::loadApps(QTreeWidgetItem *item)
 {
     ui->treeWidget->setCurrentItem(item);
 }
 
 // load the applications in the selected category
-void mxmenueditor::loadApps()
+void MainWindow::loadApps()
 {
     // execute if topLevel item is selected
     if (!ui->treeWidget->currentItem()->parent()) {
@@ -347,7 +347,7 @@ void mxmenueditor::loadApps()
 }
 
 // add .desktop item to treeWidget
-void mxmenueditor::addToTree(QString file_name)
+void MainWindow::addToTree(QString file_name)
 {
     QFile file(file_name);
     if (file.exists()) {
@@ -366,7 +366,7 @@ void mxmenueditor::addToTree(QString file_name)
 }
 
 // list .desktop files
-QStringList mxmenueditor::listDesktopFiles(const QString &search_string, const QString &location)
+QStringList MainWindow::listDesktopFiles(const QString &search_string, const QString &location)
 {
     QStringList listDesktop;
     if (search_string != "") {
@@ -380,7 +380,7 @@ QStringList mxmenueditor::listDesktopFiles(const QString &search_string, const Q
 }
 
 // load selected item to be edited
-void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
+void MainWindow::loadItem(QTreeWidgetItem *item, int)
 {
     // execute if not topLevel item is selected
     if (item->parent()) {
@@ -449,14 +449,14 @@ void mxmenueditor::loadItem(QTreeWidgetItem *item, int)
 }
 
 // check if the item is hidden
-bool mxmenueditor::isHidden(const QString &file_name)
+bool MainWindow::isHidden(const QString &file_name)
 {
     QString cmd = "grep -q NoDisplay=true \"" + file_name + "\"";
     return !system(cmd.toUtf8());
 }
 
 // select command to be used
-void mxmenueditor::selectCommand()
+void MainWindow::selectCommand()
 {
     QFileDialog dialog;
     QString selected = dialog.getOpenFileName(this, tr("Select executable file"), "/usr/bin");
@@ -472,7 +472,7 @@ void mxmenueditor::selectCommand()
 }
 
 // clear selection and reset GUI components
-void mxmenueditor::resetInterface()
+void MainWindow::resetInterface()
 {
     ui->listWidgetEditCategories->clear();
     ui->advancedEditor->clear();
@@ -500,7 +500,7 @@ void mxmenueditor::resetInterface()
 }
 
 // enable buttons to edit item
-void mxmenueditor::enableEdit()
+void MainWindow::enableEdit()
 {
     ui->checkNotify->setEnabled(true);
     ui->checkHide->setEnabled(true);
@@ -516,7 +516,7 @@ void mxmenueditor::enableEdit()
 }
 
 // change the icon of the application
-void mxmenueditor::changeIcon()
+void MainWindow::changeIcon()
 {
     QFileDialog dialog;
     QString selected;
@@ -544,7 +544,7 @@ void mxmenueditor::changeIcon()
 }
 
 // change the name of the entry
-void mxmenueditor::changeName()
+void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         ui->buttonSave->setEnabled(true);
@@ -568,7 +568,7 @@ void mxmenueditor::changeName()
 }
 
 // change the command string
-void mxmenueditor::changeCommand()
+void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         ui->buttonSave->setEnabled(true);
@@ -589,7 +589,7 @@ void mxmenueditor::changeCommand()
 }
 
 // change the comment string
-void mxmenueditor::changeComment()
+void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         ui->buttonSave->setEnabled(true);
@@ -610,13 +610,13 @@ void mxmenueditor::changeComment()
 }
 
 // enable delete button for category
-void mxmenueditor::enableDelete()
+void MainWindow::enableDelete()
 {
     ui->pushDelete->setEnabled(true);
 }
 
 // delete selected category
-void mxmenueditor::delCategory()
+void MainWindow::delCategory()
 {
     int row;
     if (ui->lineEditCommand->isEnabled()) { // started from editor
@@ -643,7 +643,7 @@ void mxmenueditor::delCategory()
 }
 
 // change startup notify
-void mxmenueditor::changeNotify(bool checked)
+void MainWindow::changeNotify(bool checked)
 {
     ui->buttonSave->setEnabled(true);
     QString text = ui->advancedEditor->toPlainText();
@@ -658,7 +658,7 @@ void mxmenueditor::changeNotify(bool checked)
 }
 
 // hide or show the item in the menu
-void mxmenueditor::changeHide(bool checked)
+void MainWindow::changeHide(bool checked)
 {
     ui->buttonSave->setEnabled(true);
     QString text = ui->advancedEditor->toPlainText().trimmed();
@@ -679,7 +679,7 @@ void mxmenueditor::changeHide(bool checked)
 }
 
 // change "run in terminal" setting
-void mxmenueditor::changeTerminal(bool checked)
+void MainWindow::changeTerminal(bool checked)
 {
     ui->buttonSave->setEnabled(true);
     QString text = ui->advancedEditor->toPlainText();
@@ -695,7 +695,7 @@ void mxmenueditor::changeTerminal(bool checked)
 
 
 // list categories of the displayed items
-QStringList mxmenueditor::listCategories()
+QStringList MainWindow::listCategories()
 {
     QStringList categories;
     QHashIterator<QString, QString> i(hashCategories);
@@ -710,7 +710,7 @@ QStringList mxmenueditor::listCategories()
 }
 
 // display add category message box
-void mxmenueditor::addCategoryMsgBox()
+void MainWindow::addCategoryMsgBox()
 {
     QStringList categories = listCategories();
 
@@ -741,7 +741,7 @@ void mxmenueditor::addCategoryMsgBox()
 }
 
 // add selected categorory to the .desktop file
-void mxmenueditor::addCategory()
+void MainWindow::addCategory()
 {
     QString str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
@@ -773,7 +773,7 @@ void mxmenueditor::addCategory()
 }
 
 // display add application message box
-void mxmenueditor::addAppMsgBox()
+void MainWindow::addAppMsgBox()
 {
     QStringList categories;
     QTreeWidgetItemIterator it(ui->treeWidget);
@@ -808,7 +808,7 @@ void mxmenueditor::addAppMsgBox()
 
 
 // Save button clicked
-void mxmenueditor::on_buttonSave_clicked()
+void MainWindow::on_buttonSave_clicked()
 {
     QDir dir;
     QString file_name = current_item->text(1).remove("\"");
@@ -831,7 +831,7 @@ void mxmenueditor::on_buttonSave_clicked()
 }
 
 // About button clicked
-void mxmenueditor::on_buttonAbout_clicked()
+void MainWindow::on_buttonAbout_clicked()
 {
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
@@ -870,13 +870,13 @@ void mxmenueditor::on_buttonAbout_clicked()
     this->show();
 }
 
-void mxmenueditor::setEnabled(QString)
+void MainWindow::setEnabled(QString)
 {
     ui->buttonSave->setEnabled(true);
 }
 
 // Help button clicked
-void mxmenueditor::on_buttonHelp_clicked()
+void MainWindow::on_buttonHelp_clicked()
 {
     QLocale locale;
     QString lang = locale.bcp47Name();
@@ -891,7 +891,7 @@ void mxmenueditor::on_buttonHelp_clicked()
 }
 
 // Cancel button clicked
-void mxmenueditor::on_buttonCancel_clicked()
+void MainWindow::on_buttonCancel_clicked()
 {
     if (ui->buttonSave->isEnabled()) {
         save();
@@ -900,7 +900,7 @@ void mxmenueditor::on_buttonCancel_clicked()
 }
 
 // ask whether to save edits or not
-bool mxmenueditor::save()
+bool MainWindow::save()
 {
     if (ui->buttonSave->isEnabled()) {
         int ans = QMessageBox::question(0, tr("Save changes?"), tr("Do you want to save your edits?"), tr("Save"), tr("Cancel"));
@@ -914,7 +914,7 @@ bool mxmenueditor::save()
 }
 
 // delete .local file and reload files
-void mxmenueditor::on_pushRestoreApp_clicked()
+void MainWindow::on_pushRestoreApp_clicked()
 {
     QString file_name = current_item->text(1);
     file_name.remove("\"");
@@ -928,7 +928,7 @@ void mxmenueditor::on_pushRestoreApp_clicked()
 }
 
 // find and reload item
-void mxmenueditor::findReloadItem(QString base_name)
+void MainWindow::findReloadItem(QString base_name)
 {
     base_name.remove("\"");
     ui->treeWidget->setCurrentItem(current_item); // change current item back to original selection
@@ -945,7 +945,7 @@ void mxmenueditor::findReloadItem(QString base_name)
 }
 
 // find icon file location using the icon name form .desktop file
-QString mxmenueditor::findIcon(const QString &icon_name)
+QString MainWindow::findIcon(const QString &icon_name)
 {
     Output out;
     const QStringList extList({".png", ".svg", ".xpm"});
@@ -973,7 +973,7 @@ QString mxmenueditor::findIcon(const QString &icon_name)
 }
 
 // find largest icon
-QString mxmenueditor::findBiggest(const QStringList &files)
+QString MainWindow::findBiggest(const QStringList &files)
 {
     int max = 0;
     QString name_biggest;

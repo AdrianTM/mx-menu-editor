@@ -1,5 +1,5 @@
 /**********************************************************************
- *  mxmenueditor.h
+ *  mainwindow.h
  **********************************************************************
  * Copyright (C) 2015 MX Authors
  *
@@ -22,8 +22,8 @@
  * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#ifndef MXMENUEDITOR_H
-#define MXMENUEDITOR_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QMessageBox>
 #include <QFile>
@@ -33,7 +33,7 @@
 #include "addappdialog.h"
 
 namespace Ui {
-class mxmenueditor;
+class MainWindow;
 }
 
 // struct for outputing both the exit code and the strings when running a command
@@ -43,7 +43,7 @@ struct Output {
 };
 
 
-class mxmenueditor : public QDialog
+class MainWindow : public QDialog
 {
     Q_OBJECT
 
@@ -51,8 +51,8 @@ protected:
     QComboBox *comboBox;
 
 public:
-    explicit mxmenueditor(QWidget *parent = 0);
-    ~mxmenueditor();
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
     Output getCmdOut(const QString &cmd);
     QFile config_file;
@@ -106,10 +106,10 @@ private slots:
     void on_pushRestoreApp_clicked();
 
 private:
-    Ui::mxmenueditor *ui;
+    Ui::MainWindow *ui;
     AddAppDialog *add;
     QTreeWidgetItem *current_item;
 };
 
-#endif // MXSNAPSHOT_H
+#endif // MAINWINDOW_H
 
