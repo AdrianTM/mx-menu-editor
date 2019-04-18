@@ -26,6 +26,7 @@
 #include "ui_mainwindow.h"
 #include "ui_addappdialog.h"
 
+#include <utility>
 #include <QProcess>
 #include <QFileDialog>
 #include <QTextStream>
@@ -63,24 +64,24 @@ MainWindow::MainWindow(QWidget *parent) :
     resetInterface();
     loadMenuFiles();
 
-    connect(ui->treeWidget, SIGNAL(itemSelectionChanged()), SLOT(loadApps()));
-    connect(ui->treeWidget, SIGNAL(itemExpanded(QTreeWidgetItem*)), SLOT(loadApps(QTreeWidgetItem*)));
-    connect(ui->toolButtonCommand, SIGNAL(clicked()), SLOT(selectCommand()));
-    connect(ui->lineEditName, SIGNAL(editingFinished()), SLOT(changeName()));
-    connect(ui->lineEditCommand, SIGNAL(editingFinished()), SLOT(changeCommand()));
-    connect(ui->lineEditComment, SIGNAL(editingFinished()), SLOT(changeComment()));
-    connect(ui->listWidgetEditCategories, SIGNAL(itemSelectionChanged()), SLOT(enableDelete()));
-    connect(ui->pushDelete, SIGNAL(clicked()), SLOT(delCategory()));
-    connect(ui->pushAdd, SIGNAL(clicked()), SLOT(addCategoryMsgBox()));
-    connect(ui->pushChangeIcon, SIGNAL(clicked()), SLOT(changeIcon()));
-    connect(ui->checkNotify, SIGNAL(clicked(bool)), SLOT(changeNotify(bool)));
-    connect(ui->checkHide, SIGNAL(clicked(bool)), SLOT(changeHide(bool)));
-    connect(ui->checkRunInTerminal, SIGNAL(clicked(bool)), SLOT(changeTerminal(bool)));
-    connect(ui->advancedEditor, SIGNAL(undoAvailable(bool)), ui->buttonSave, SLOT(setEnabled(bool)));
-    connect(ui->pushAddApp  , SIGNAL(clicked()), SLOT(addAppMsgBox()));
-    connect(ui->lineEditName, SIGNAL(textEdited(QString)), SLOT(setEnabled(QString)));
-    connect(ui->lineEditCommand, SIGNAL(textEdited(QString)), SLOT(setEnabled(QString)));
-    connect(ui->lineEditComment, SIGNAL(textEdited(QString)), SLOT(setEnabled(QString)));
+    connect(ui->treeWidget, &QTreeWidget::itemSelectionChanged, this, static_cast<void (MainWindow::*)()>(&MainWindow::loadApps));
+    connect(ui->treeWidget, &QTreeWidget::itemExpanded, this, static_cast<void (MainWindow::*)(QTreeWidgetItem*)>(&MainWindow::loadApps));
+    connect(ui->toolButtonCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
+    connect(ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
+    connect(ui->lineEditCommand, &QLineEdit::editingFinished, this, &MainWindow::changeCommand);
+    connect(ui->lineEditComment, &QLineEdit::editingFinished, this, &MainWindow::changeComment);
+    connect(ui->listWidgetEditCategories, &QListWidget::itemSelectionChanged, this, &MainWindow::enableDelete);
+    connect(ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
+    connect(ui->pushAdd, &QPushButton::clicked, this, &MainWindow::addCategoryMsgBox);
+    connect(ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
+    connect(ui->checkNotify, &QCheckBox::clicked, this, &MainWindow::changeNotify);
+    connect(ui->checkHide, &QCheckBox::clicked, this, &MainWindow::changeHide);
+    connect(ui->checkRunInTerminal, &QCheckBox::clicked, this, &MainWindow::changeTerminal);
+    connect(ui->advancedEditor, &QTextEdit::undoAvailable, ui->buttonSave, &QPushButton::setEnabled);
+    connect(ui->pushAddApp, &QPushButton::clicked, this, &MainWindow::addAppMsgBox);
+    connect(ui->lineEditName, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
+    connect(ui->lineEditCommand, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
+    connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
 
 }
 
@@ -218,7 +219,7 @@ void MainWindow::displayList(QStringList menu_items) {
     ui->treeWidget->setHeaderLabel("");
     ui->treeWidget->setSortingEnabled(true);
     menu_items.removeDuplicates();
-    for (const QString &item : qAsConst(menu_items)) {
+    for (const QString &item : menu_items) {
         topLevelItem = new QTreeWidgetItem(ui->treeWidget, QStringList(item));
         // topLevelItem look
         QFont font;
@@ -260,14 +261,14 @@ void MainWindow::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        for (const QString &file : qAsConst(includes)) {
+        for (const QString &file : includes) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        for (const QString &category : qAsConst(categories)) {
+        for (const QString &category : categories) {
             if (search_string == "") {
                 search_string = "Categories=.*\"" + category + "\"";
             } else {
@@ -284,27 +285,27 @@ void MainWindow::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        for (const QString &base_name : qAsConst(excludes)) {
+        for (const QString &base_name : excludes) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
         }
-        for (const QString &base_name : qAsConst(excludes)) {
+        for (const QString &base_name : excludes) {
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
         }
 
         // list of names without path
         QStringList local_base_names;
-        for (const QString &local_name : qAsConst(all_local_desktop_files)) {
+        for (const QString &local_name : all_local_desktop_files) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        for (const QString &usr_name : qAsConst(all_usr_desktop_files)) {
+        for (const QString &usr_name : all_usr_desktop_files) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
-        for (const QString &local_name : qAsConst(local_desktop_files)) {
+        for (const QString &local_name : local_desktop_files) {
             QFileInfo fi_local(local_name);
             addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -321,7 +322,7 @@ void MainWindow::loadApps()
         }
 
         // parse usr .desktop files
-        for (const QString &file : qAsConst(usr_desktop_files)) {
+        for (const QString &file : usr_desktop_files) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -667,7 +668,7 @@ void MainWindow::changeHide(bool checked)
         text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
-        for (const QString &line : qAsConst(text).split("\n")) {
+        for (const QString &line : text.split("\n")) {
             new_text.append(line + "\n");
             if (line.startsWith("Exec=")) {
                 new_text.append("NoDisplay=" + str + "\n");
@@ -728,9 +729,9 @@ void MainWindow::addCategoryMsgBox()
     // because we want to display the buttons in reverse order we use counter-intuitive roles.
     buttonBox->addButton(tr("Cancel"), QDialogButtonBox::AcceptRole);
     buttonBox->addButton(tr("OK"), QDialogButtonBox::RejectRole);
-    connect(buttonBox, SIGNAL(accepted()), window, SLOT(close()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(addCategory()));
-    connect(buttonBox, SIGNAL(rejected()), window, SLOT(close()));
+    connect(buttonBox, &QDialogButtonBox::accepted, window, &QWidget::close);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &MainWindow::addCategory);
+    connect(buttonBox, &QDialogButtonBox::rejected, window, &QWidget::close);
 
     QFormLayout *layout = new QFormLayout;
     layout->addRow(comboBox);
@@ -797,13 +798,13 @@ void MainWindow::addAppMsgBox()
     disconnect(add->ui->lineEditComment, 0, 0, 0);
     disconnect(add->ui->pushAdd, 0, 0, 0);
     disconnect(add->ui->pushDelete, 0, 0, 0);
-    connect(add->ui->selectCommand, SIGNAL(clicked()), SLOT(selectCommand()));
-    connect(add->ui->pushChangeIcon, SIGNAL(clicked()), SLOT(changeIcon()));
-    connect(add->ui->lineEditName, SIGNAL(editingFinished()), SLOT(changeName()));
-    connect(add->ui->lineEditCommand, SIGNAL(editingFinished()), SLOT(changeCommand()));
-    connect(add->ui->lineEditComment, SIGNAL(editingFinished()), SLOT(changeComment()));
-    connect(add->ui->pushAdd, SIGNAL(clicked()), SLOT(addCategoryMsgBox()));
-    connect(add->ui->pushDelete, SIGNAL(clicked()), SLOT(delCategory()));
+    connect(add->ui->selectCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
+    connect(add->ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
+    connect(add->ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
+    connect(add->ui->lineEditCommand, &QLineEdit::editingFinished, this, &MainWindow::changeCommand);
+    connect(add->ui->lineEditComment, &QLineEdit::editingFinished, this, &MainWindow::changeComment);
+    connect(add->ui->pushAdd, &QPushButton::clicked, this, &MainWindow::addCategoryMsgBox);
+    connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
 }
 
 

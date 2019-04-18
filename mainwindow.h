@@ -78,24 +78,24 @@ public:
     QStringList listMenuFiles();
 
 public slots:
+    void addAppMsgBox();
+    void addCategory();
+    void addCategoryMsgBox();
+    void changeCommand();
+    void changeComment();
+    void changeHide(bool);
+    void changeIcon();
+    void changeName();
+    void changeNotify(bool);
+    void changeTerminal(bool);
+    void delCategory();
+    void enableDelete();
+    void enableEdit();
     void loadApps();
     void loadApps(QTreeWidgetItem *item);
     void loadItem(QTreeWidgetItem *item, int);
-    void selectCommand();
-    void changeName();
-    void changeCommand();
-    void changeComment();
     void resetInterface();
-    void enableEdit();
-    void enableDelete();
-    void delCategory();
-    void addCategory();
-    void addCategoryMsgBox();
-    void addAppMsgBox();
-    void changeIcon();
-    void changeNotify(bool);
-    void changeHide(bool);
-    void changeTerminal(bool);
+    void selectCommand();
     void setEnabled(QString);
 
 private slots:
