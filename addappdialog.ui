@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>335</width>
+    <width>362</width>
     <height>441</height>
    </rect>
   </property>
@@ -191,7 +191,7 @@
    <item row="2" column="3">
     <widget class="QToolButton" name="selectCommand">
      <property name="text">
-      <string>select...</string>
+      <string>Select...</string>
      </property>
     </widget>
    </item>
