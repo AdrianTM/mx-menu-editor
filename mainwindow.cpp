@@ -26,7 +26,6 @@
 #include "ui_mainwindow.h"
 #include "ui_addappdialog.h"
 
-#include <utility>
 #include <QProcess>
 #include <QFileDialog>
 #include <QTextStream>
@@ -219,7 +218,7 @@ void MainWindow::displayList(QStringList menu_items) {
     ui->treeWidget->setHeaderLabel("");
     ui->treeWidget->setSortingEnabled(true);
     menu_items.removeDuplicates();
-    for (const QString &item : menu_items) {
+    foreach (const QString &item, menu_items) {
         topLevelItem = new QTreeWidgetItem(ui->treeWidget, QStringList(item));
         // topLevelItem look
         QFont font;
@@ -261,14 +260,14 @@ void MainWindow::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        for (const QString &file : includes) {
+        foreach (const QString &file, includes) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        for (const QString &category : categories) {
+        foreach (const QString &category, categories) {
             if (search_string == "") {
                 search_string = "Categories=.*\"" + category + "\"";
             } else {
@@ -285,27 +284,27 @@ void MainWindow::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        for (const QString &base_name : excludes) {
+        foreach (const QString &base_name, excludes) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
         }
-        for (const QString &base_name : excludes) {
+        foreach (const QString &base_name, excludes) {
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
         }
 
         // list of names without path
         QStringList local_base_names;
-        for (const QString &local_name : all_local_desktop_files) {
+        foreach (const QString &local_name, all_local_desktop_files) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        for (const QString &usr_name : all_usr_desktop_files) {
+        foreach (const QString &usr_name, all_usr_desktop_files) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
-        for (const QString &local_name : local_desktop_files) {
+        foreach (const QString &local_name, local_desktop_files) {
             QFileInfo fi_local(local_name);
             addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -322,7 +321,7 @@ void MainWindow::loadApps()
         }
 
         // parse usr .desktop files
-        for (const QString &file : usr_desktop_files) {
+        foreach (const QString &file, usr_desktop_files) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -668,7 +667,7 @@ void MainWindow::changeHide(bool checked)
         text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
-        for (const QString &line : text.split("\n")) {
+        foreach (const QString &line, text.split("\n")) {
             new_text.append(line + "\n");
             if (line.startsWith("Exec=")) {
                 new_text.append("NoDisplay=" + str + "\n");
@@ -955,7 +954,7 @@ QString MainWindow::findIcon(const QString &icon_name)
     if (out.str != "") {
         QString dir = "/usr/share/icons/" + out.str;
         if (QDir(dir).exists()) {
-            for (const QString &ext : extList) {
+            foreach (const QString &ext, extList) {
                 out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
                 if (out.str != "") {
                     QStringList files = out.str.split("\n");
