@@ -191,7 +191,7 @@
    <item row="2" column="3">
     <widget class="QToolButton" name="selectCommand">
      <property name="text">
-      <string>...</string>
+      <string>select...</string>
      </property>
     </widget>
    </item>
