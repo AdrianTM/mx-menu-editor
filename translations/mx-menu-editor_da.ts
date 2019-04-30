@@ -1,126 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="da">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
-        <location filename="../addappdialog.ui" line="23"/>
+        <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="33"/>
+        <location filename="addappdialog.ui" line="33"/>
         <source>Categories</source>
         <translation>Kategorier</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="45"/>
+        <location filename="addappdialog.ui" line="45"/>
         <source>Add category</source>
         <translation>Tilføj kategori</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="59"/>
+        <location filename="addappdialog.ui" line="59"/>
         <source>Delete category</source>
         <translation>Slet kategori</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="76"/>
+        <location filename="addappdialog.ui" line="76"/>
         <source>Command:</source>
         <translation>Kommando:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="121"/>
+        <location filename="addappdialog.ui" line="121"/>
         <source>Save Changes</source>
         <translation>Gem ændringer</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="128"/>
+        <location filename="addappdialog.ui" line="128"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="166"/>
+        <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
         <translation>Afslut dialog</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.ui" line="169"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="176"/>
+        <location filename="addappdialog.ui" line="176"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="194"/>
-        <source>select...</source>
-        <translation type="unfinished"></translation>
+        <location filename="addappdialog.ui" line="194"/>
+        <source>Select...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
-        <location filename="../addappdialog.ui" line="201"/>
+        <location filename="addappdialog.ui" line="201"/>
         <source>Name:</source>
         <translation>Navn:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="208"/>
+        <location filename="addappdialog.ui" line="208"/>
         <source>Comment:</source>
         <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="215"/>
+        <location filename="addappdialog.ui" line="215"/>
         <source>Icon:</source>
         <translation>Ikon:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="122"/>
+        <location filename="addappdialog.ui" line="222"/>
+        <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
         <translation>Indstil ikon</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="235"/>
+        <location filename="addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
         <translation>Kør i terminal</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="248"/>
+        <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
         <translation>Opstartsnotifikator</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
         <translation>Tilføj tilpasset program</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
         <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
         <translation>Gem ændringer?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
         <translation>Vil du gemme dine redigeringer?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Save</source>
         <translation>Gem</translation>
     </message>
@@ -128,446 +122,251 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="mainwindow.ui" line="17"/>
+        <location filename="mainwindow.cpp" line="839"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished">MX Menuredigering</translation>
+        <translation>MX Menuredigering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="34"/>
+        <location filename="mainwindow.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished">Avanceret editor</translation>
+        <translation>Avanceret editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="55"/>
+        <location filename="mainwindow.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation type="unfinished">Kategorier og programmer</translation>
+        <translation>Kategorier og programmer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="82"/>
+        <location filename="mainwindow.ui" line="82"/>
         <source>Add custom application</source>
-        <translation type="unfinished">Tilføj tilpasset program</translation>
+        <translation>Tilføj tilpasset program</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="96"/>
+        <location filename="mainwindow.ui" line="96"/>
         <source>Options</source>
-        <translation type="unfinished">Valgmuligheder</translation>
+        <translation>Valgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="105"/>
+        <location filename="mainwindow.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation type="unfinished">Kør i terminal</translation>
+        <translation>Kør i terminal</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="115"/>
+        <location filename="mainwindow.ui" line="115"/>
         <source>Hide</source>
-        <translation type="unfinished">Skjul</translation>
+        <translation>Skjul</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="125"/>
+        <location filename="mainwindow.ui" line="125"/>
         <source>Notify startup</source>
-        <translation type="unfinished">Notifikation om opstart</translation>
+        <translation>Notifikation om opstart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
+        <location filename="mainwindow.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation type="unfinished">Hurtig editor</translation>
+        <translation>Hurtig editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="160"/>
+        <location filename="mainwindow.ui" line="160"/>
         <source>Comment:</source>
-        <translation type="unfinished">Kommentar:</translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="170"/>
+        <location filename="mainwindow.ui" line="170"/>
         <source>Restore original item</source>
-        <translation type="unfinished">Gendan originale punkt</translation>
+        <translation>Gendan originale punkt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="181"/>
+        <location filename="mainwindow.ui" line="181"/>
         <source>Command:</source>
-        <translation type="unfinished">Kommando:</translation>
+        <translation>Kommando:</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
+        <location filename="mainwindow.ui" line="191"/>
+        <source>Select...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
-        <source>select...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="205"/>
+        <location filename="mainwindow.ui" line="205"/>
         <source>Name:</source>
-        <translation type="unfinished">Navn:</translation>
+        <translation>Navn:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="226"/>
+        <location filename="mainwindow.ui" line="226"/>
         <source>Icon</source>
-        <translation type="unfinished">Ikon</translation>
+        <translation>Ikon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="mainwindow.ui" line="266"/>
+        <location filename="mainwindow.cpp" line="541"/>
         <source>Change icon</source>
-        <translation type="unfinished">Skift ikon</translation>
+        <translation>Skift ikon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="280"/>
+        <location filename="mainwindow.ui" line="280"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Katogorier</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="292"/>
+        <location filename="mainwindow.ui" line="292"/>
         <source>Add</source>
-        <translation type="unfinished">Tilføj</translation>
+        <translation>Tilføj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="306"/>
+        <location filename="mainwindow.ui" line="306"/>
         <source>Delete</source>
-        <translation type="unfinished">Slet</translation>
+        <translation>Slet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="372"/>
+        <location filename="mainwindow.ui" line="372"/>
         <source>Quit application</source>
-        <translation type="unfinished">Afslut programmet</translation>
+        <translation>Afslut programmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="375"/>
+        <location filename="mainwindow.ui" line="375"/>
         <source>Close</source>
-        <translation type="unfinished">Luk</translation>
+        <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="382"/>
+        <location filename="mainwindow.ui" line="382"/>
         <source>Alt+N</source>
-        <translation type="unfinished">Alt+N</translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="423"/>
+        <location filename="mainwindow.ui" line="423"/>
         <source>Display help</source>
-        <translation type="unfinished">Vis hjælp</translation>
+        <translation>Vis hjælp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="426"/>
+        <location filename="mainwindow.ui" line="426"/>
         <source>Help</source>
-        <translation type="unfinished">Hjælp</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="433"/>
+        <location filename="mainwindow.ui" line="433"/>
         <source>Alt+H</source>
-        <translation type="unfinished">Alt+H</translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="452"/>
+        <location filename="mainwindow.ui" line="452"/>
         <source>Save Changes</source>
-        <translation type="unfinished">Gem ændringer</translation>
+        <translation>Gem ændringer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="459"/>
+        <location filename="mainwindow.ui" line="459"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="494"/>
+        <location filename="mainwindow.ui" line="494"/>
         <source>About this application</source>
-        <translation type="unfinished">Om programmet</translation>
+        <translation>Om programmet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="497"/>
+        <location filename="mainwindow.ui" line="497"/>
         <source>About...</source>
-        <translation type="unfinished">Om...</translation>
+        <translation>Om...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="504"/>
+        <location filename="mainwindow.ui" line="504"/>
         <source>Alt+B</source>
-        <translation type="unfinished">Alt+B</translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
+        <location filename="mainwindow.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation type="unfinished">Vælg eksekverbar fil</translation>
+        <translation>Vælg eksekverbar fil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="mainwindow.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished">Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation>Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="mainwindow.cpp" line="718"/>
         <source>Choose category</source>
-        <translation type="unfinished">Vælg kategori</translation>
+        <translation>Vælg kategori</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="730"/>
-        <location filename="../mainwindow.cpp" line="846"/>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="729"/>
+        <location filename="mainwindow.cpp" line="845"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuller</translation>
+        <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="731"/>
+        <location filename="mainwindow.cpp" line="730"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="mainwindow.cpp" line="820"/>
         <source>Error</source>
-        <translation type="unfinished">Fejl</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="mainwindow.cpp" line="820"/>
         <source>Could not save the file</source>
-        <translation type="unfinished">Kunne ikke gemme filen</translation>
+        <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="mainwindow.cpp" line="838"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished">Om MX Menuredigering</translation>
+        <translation>Om MX Menuredigering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="mainwindow.cpp" line="839"/>
         <source>Version: </source>
-        <translation type="unfinished">Version: </translation>
+        <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="841"/>
+        <location filename="mainwindow.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished">Program til at redigere Xfce-menu</translation>
+        <translation>Program til at redigere Xfce-menu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="mainwindow.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished">Ophavsret (c) MX Linux</translation>
+        <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="mainwindow.cpp" line="843"/>
         <source>License</source>
-        <translation type="unfinished">Licens</translation>
+        <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="mainwindow.cpp" line="844"/>
         <source>Changelog</source>
-        <translation type="unfinished">Ændringslog</translation>
+        <translation>Ændringslog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="861"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Luk</translation>
+        <translation>&amp;Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Save changes?</source>
-        <translation type="unfinished">Gem ændringer?</translation>
+        <translation>Gem ændringer?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished">Vil du gemme dine redigeringer?</translation>
+        <translation>Vil du gemme dine redigeringer?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Save</source>
-        <translation type="unfinished">Gem</translation>
+        <translation>Gem</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
         <translation>Du skal køre programmet som normal bruger.</translation>
-    </message>
-</context>
-<context>
-    <name>mxmenueditor</name>
-    <message>
-        <source>MX Menu Editor</source>
-        <translation type="vanished">MX Menuredigering</translation>
-    </message>
-    <message>
-        <source>Advanced Editor</source>
-        <translation type="vanished">Avanceret editor</translation>
-    </message>
-    <message>
-        <source>Categories and applications</source>
-        <translation type="vanished">Kategorier og programmer</translation>
-    </message>
-    <message>
-        <source>Add custom application</source>
-        <translation type="vanished">Tilføj tilpasset program</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Valgmuligheder</translation>
-    </message>
-    <message>
-        <source>Run in terminal</source>
-        <translation type="vanished">Kør i terminal</translation>
-    </message>
-    <message>
-        <source>Hide</source>
-        <translation type="vanished">Skjul</translation>
-    </message>
-    <message>
-        <source>Notify startup</source>
-        <translation type="vanished">Notifikation om opstart</translation>
-    </message>
-    <message>
-        <source>Quick Editor</source>
-        <translation type="vanished">Hurtig editor</translation>
-    </message>
-    <message>
-        <source>Comment:</source>
-        <translation type="vanished">Kommentar:</translation>
-    </message>
-    <message>
-        <source>Restore original item</source>
-        <translation type="vanished">Gendan originale punkt</translation>
-    </message>
-    <message>
-        <source>Command:</source>
-        <translation type="vanished">Kommando:</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Navn:</translation>
-    </message>
-    <message>
-        <source>Icon</source>
-        <translation type="vanished">Ikon</translation>
-    </message>
-    <message>
-        <source>Change icon</source>
-        <translation type="vanished">Skift ikon</translation>
-    </message>
-    <message>
-        <source>Categories</source>
-        <translation type="vanished">Katogorier</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="vanished">Tilføj</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Slet</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation type="vanished">Afslut programmet</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Luk</translation>
-    </message>
-    <message>
-        <source>Alt+N</source>
-        <translation type="vanished">Alt+N</translation>
-    </message>
-    <message>
-        <source>Display help</source>
-        <translation type="vanished">Vis hjælp</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="vanished">Hjælp</translation>
-    </message>
-    <message>
-        <source>Alt+H</source>
-        <translation type="vanished">Alt+H</translation>
-    </message>
-    <message>
-        <source>Save Changes</source>
-        <translation type="vanished">Gem ændringer</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="vanished">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>About this application</source>
-        <translation type="vanished">Om programmet</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="vanished">Om...</translation>
-    </message>
-    <message>
-        <source>Alt+B</source>
-        <translation type="vanished">Alt+B</translation>
-    </message>
-    <message>
-        <source>Select executable file</source>
-        <translation type="vanished">Vælg eksekverbar fil</translation>
-    </message>
-    <message>
-        <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="vanished">Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
-    </message>
-    <message>
-        <source>Choose category</source>
-        <translation type="vanished">Vælg kategori</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Annuller</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="vanished">OK</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Fejl</translation>
-    </message>
-    <message>
-        <source>Could not save the file</source>
-        <translation type="vanished">Kunne ikke gemme filen</translation>
-    </message>
-    <message>
-        <source>About MX Menu Editor</source>
-        <translation type="vanished">Om MX Menuredigering</translation>
-    </message>
-    <message>
-        <source>Version: </source>
-        <translation type="vanished">Version: </translation>
-    </message>
-    <message>
-        <source>Program for editing Xfce menu</source>
-        <translation type="vanished">Program til at redigere Xfce-menu</translation>
-    </message>
-    <message>
-        <source>Copyright (c) MX Linux</source>
-        <translation type="vanished">Ophavsret (c) MX Linux</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Licens</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">Ændringslog</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Luk</translation>
-    </message>
-    <message>
-        <source>Save changes?</source>
-        <translation type="vanished">Gem ændringer?</translation>
-    </message>
-    <message>
-        <source>Do you want to save your edits?</source>
-        <translation type="vanished">Vil du gemme dine redigeringer?</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Gem</translation>
     </message>
 </context>
 </TS>
