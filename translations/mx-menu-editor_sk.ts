@@ -1,126 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sk" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
-        <location filename="../addappdialog.ui" line="23"/>
+        <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
         <translation>Dialóg</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="33"/>
+        <location filename="addappdialog.ui" line="33"/>
         <source>Categories</source>
         <translation>Kategórie</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="45"/>
+        <location filename="addappdialog.ui" line="45"/>
         <source>Add category</source>
         <translation>Pridať kategóriu</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="59"/>
+        <location filename="addappdialog.ui" line="59"/>
         <source>Delete category</source>
         <translation>Zmazať kategóriu</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="76"/>
+        <location filename="addappdialog.ui" line="76"/>
         <source>Command:</source>
         <translation>Príkaz:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="121"/>
+        <location filename="addappdialog.ui" line="121"/>
         <source>Save Changes</source>
         <translation>Uložiť zmeny</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="128"/>
+        <location filename="addappdialog.ui" line="128"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="166"/>
+        <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
         <translation>Ukončiť dialóg</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.ui" line="169"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="176"/>
+        <location filename="addappdialog.ui" line="176"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="194"/>
-        <source>select...</source>
-        <translation type="unfinished"></translation>
+        <location filename="addappdialog.ui" line="194"/>
+        <source>Select...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
-        <location filename="../addappdialog.ui" line="201"/>
+        <location filename="addappdialog.ui" line="201"/>
         <source>Name:</source>
         <translation>Názov:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="208"/>
+        <location filename="addappdialog.ui" line="208"/>
         <source>Comment:</source>
         <translation>Komentár:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="215"/>
+        <location filename="addappdialog.ui" line="215"/>
         <source>Icon:</source>
         <translation>Ikona:</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="122"/>
+        <location filename="addappdialog.ui" line="222"/>
+        <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
         <translation>Nastaviť ikonu</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="235"/>
+        <location filename="addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
         <translation>Spustiť v Termináli</translation>
     </message>
     <message>
-        <location filename="../addappdialog.ui" line="248"/>
+        <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
         <translation>Ohlásenie pri štarte</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
         <translation>Pridať vlastnú aplikáciu</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
         <translation>Súbor nejde uložiť</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
         <translation>Uložiť zmeny?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
         <translation>Chcete uložiť zmeny?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="addappdialog.cpp" line="103"/>
         <source>Save</source>
         <translation>Uložiť</translation>
     </message>
@@ -128,446 +122,251 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="mainwindow.ui" line="17"/>
+        <location filename="mainwindow.cpp" line="839"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished">MX Menu Editor</translation>
+        <translation>MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="34"/>
+        <location filename="mainwindow.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished">Pokročilý Editor</translation>
+        <translation>Pokročilý Editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="55"/>
+        <location filename="mainwindow.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation type="unfinished">Kategórie a aplikácie</translation>
+        <translation>Kategórie a aplikácie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="82"/>
+        <location filename="mainwindow.ui" line="82"/>
         <source>Add custom application</source>
-        <translation type="unfinished">Pridať vlastnú aplikáciu</translation>
+        <translation>Pridať vlastnú aplikáciu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="96"/>
+        <location filename="mainwindow.ui" line="96"/>
         <source>Options</source>
-        <translation type="unfinished">Nastavenia</translation>
+        <translation>Nastavenia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="105"/>
+        <location filename="mainwindow.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation type="unfinished">Spustiť v Termináli</translation>
+        <translation>Spustiť v Termináli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="115"/>
+        <location filename="mainwindow.ui" line="115"/>
         <source>Hide</source>
-        <translation type="unfinished">Skryť</translation>
+        <translation>Skryť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="125"/>
+        <location filename="mainwindow.ui" line="125"/>
         <source>Notify startup</source>
-        <translation type="unfinished">Ohlásiť pri štarte</translation>
+        <translation>Ohlásiť pri štarte</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="148"/>
+        <location filename="mainwindow.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation type="unfinished">Rýchly Editor</translation>
+        <translation>Rýchly Editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="160"/>
+        <location filename="mainwindow.ui" line="160"/>
         <source>Comment:</source>
-        <translation type="unfinished">Komentár:</translation>
+        <translation>Komentár:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="170"/>
+        <location filename="mainwindow.ui" line="170"/>
         <source>Restore original item</source>
-        <translation type="unfinished">Obnoviť pôvodnú položku</translation>
+        <translation>Obnoviť pôvodnú položku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="181"/>
+        <location filename="mainwindow.ui" line="181"/>
         <source>Command:</source>
-        <translation type="unfinished">Príkaz:</translation>
+        <translation>Príkaz:</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
+        <location filename="mainwindow.ui" line="191"/>
+        <source>Select...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="191"/>
-        <source>select...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="205"/>
+        <location filename="mainwindow.ui" line="205"/>
         <source>Name:</source>
-        <translation type="unfinished">Názov:</translation>
+        <translation>Názov:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="226"/>
+        <location filename="mainwindow.ui" line="226"/>
         <source>Icon</source>
-        <translation type="unfinished">Ikona</translation>
+        <translation>Ikona</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="mainwindow.ui" line="266"/>
+        <location filename="mainwindow.cpp" line="541"/>
         <source>Change icon</source>
-        <translation type="unfinished">Zmeniť ikonu</translation>
+        <translation>Zmeniť ikonu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="280"/>
+        <location filename="mainwindow.ui" line="280"/>
         <source>Categories</source>
-        <translation type="unfinished">Kategórie</translation>
+        <translation>Kategórie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="292"/>
+        <location filename="mainwindow.ui" line="292"/>
         <source>Add</source>
-        <translation type="unfinished">Pridať</translation>
+        <translation>Pridať</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="306"/>
+        <location filename="mainwindow.ui" line="306"/>
         <source>Delete</source>
-        <translation type="unfinished">Zmazať</translation>
+        <translation>Zmazať</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="372"/>
+        <location filename="mainwindow.ui" line="372"/>
         <source>Quit application</source>
-        <translation type="unfinished">Zatvoriť aplikáciu</translation>
+        <translation>Zatvoriť aplikáciu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="375"/>
+        <location filename="mainwindow.ui" line="375"/>
         <source>Close</source>
-        <translation type="unfinished">Zatvoriť</translation>
+        <translation>Zavrieť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="382"/>
+        <location filename="mainwindow.ui" line="382"/>
         <source>Alt+N</source>
-        <translation type="unfinished">Alt+N</translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="423"/>
+        <location filename="mainwindow.ui" line="423"/>
         <source>Display help</source>
-        <translation type="unfinished">Zobraziť nápovedu</translation>
+        <translation>Zobraziť nápovedu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="426"/>
+        <location filename="mainwindow.ui" line="426"/>
         <source>Help</source>
-        <translation type="unfinished">Pomocník</translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="433"/>
+        <location filename="mainwindow.ui" line="433"/>
         <source>Alt+H</source>
-        <translation type="unfinished">Alt+H</translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="452"/>
+        <location filename="mainwindow.ui" line="452"/>
         <source>Save Changes</source>
-        <translation type="unfinished">Uložiť zmeny</translation>
+        <translation>Uložiť zmeny</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="459"/>
+        <location filename="mainwindow.ui" line="459"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S</translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="494"/>
+        <location filename="mainwindow.ui" line="494"/>
         <source>About this application</source>
-        <translation type="unfinished">O tejto aplikácii</translation>
+        <translation>O tejto aplikácii</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="497"/>
+        <location filename="mainwindow.ui" line="497"/>
         <source>About...</source>
-        <translation type="unfinished">O Programe</translation>
+        <translation>O Programe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="504"/>
+        <location filename="mainwindow.ui" line="504"/>
         <source>Alt+B</source>
-        <translation type="unfinished">Alt+B</translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="463"/>
+        <location filename="mainwindow.cpp" line="462"/>
         <source>Select executable file</source>
-        <translation type="unfinished">Vyberte spustiteľný súbor</translation>
+        <translation>Vyberte spustiteľný súbor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="mainwindow.cpp" line="525"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished">Súbory obrázkov (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation>Súbory obrázkov (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="mainwindow.cpp" line="718"/>
         <source>Choose category</source>
-        <translation type="unfinished">Vybrať kategóriu</translation>
+        <translation>Vybrať kategóriu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="730"/>
-        <location filename="../mainwindow.cpp" line="846"/>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="729"/>
+        <location filename="mainwindow.cpp" line="845"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušiť</translation>
+        <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="731"/>
+        <location filename="mainwindow.cpp" line="730"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="mainwindow.cpp" line="820"/>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="mainwindow.cpp" line="820"/>
         <source>Could not save the file</source>
-        <translation type="unfinished">Súbor nejde uložiť</translation>
+        <translation>Súbor nejde uložiť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="mainwindow.cpp" line="838"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished">O programe MX Menu Editor</translation>
+        <translation>O programe MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="mainwindow.cpp" line="839"/>
         <source>Version: </source>
-        <translation type="unfinished">Verzia:</translation>
+        <translation>Verzia:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="841"/>
+        <location filename="mainwindow.cpp" line="840"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished">Program na editáciu Xfce ponuky</translation>
+        <translation>Program na editáciu Xfce ponuky</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="mainwindow.cpp" line="842"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished">Copyright (c) MX Linux</translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="mainwindow.cpp" line="843"/>
         <source>License</source>
-        <translation type="unfinished">Licencia</translation>
+        <translation>Licencia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="845"/>
+        <location filename="mainwindow.cpp" line="844"/>
         <source>Changelog</source>
-        <translation type="unfinished">História zmien</translation>
+        <translation>História zmien</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="861"/>
+        <location filename="mainwindow.cpp" line="860"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Zatvoriť</translation>
+        <translation>&amp;Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Save changes?</source>
-        <translation type="unfinished">Uložiť zmeny?</translation>
+        <translation>Uložiť zmeny?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished">Chcete uložiť zmeny?</translation>
+        <translation>Chcete uložiť zmeny?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="mainwindow.cpp" line="906"/>
         <source>Save</source>
-        <translation type="unfinished">Uložiť</translation>
+        <translation>Uložiť</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
         <translation>Tento program musíte spustiť ako normálny užívateľ.</translation>
-    </message>
-</context>
-<context>
-    <name>mxmenueditor</name>
-    <message>
-        <source>MX Menu Editor</source>
-        <translation type="vanished">MX Menu Editor</translation>
-    </message>
-    <message>
-        <source>Advanced Editor</source>
-        <translation type="vanished">Pokročilý Editor</translation>
-    </message>
-    <message>
-        <source>Categories and applications</source>
-        <translation type="vanished">Kategórie a aplikácie</translation>
-    </message>
-    <message>
-        <source>Add custom application</source>
-        <translation type="vanished">Pridať vlastnú aplikáciu</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Nastavenia</translation>
-    </message>
-    <message>
-        <source>Run in terminal</source>
-        <translation type="vanished">Spustiť v Termináli</translation>
-    </message>
-    <message>
-        <source>Hide</source>
-        <translation type="vanished">Skryť</translation>
-    </message>
-    <message>
-        <source>Notify startup</source>
-        <translation type="vanished">Ohlásiť pri štarte</translation>
-    </message>
-    <message>
-        <source>Quick Editor</source>
-        <translation type="vanished">Rýchly Editor</translation>
-    </message>
-    <message>
-        <source>Comment:</source>
-        <translation type="vanished">Komentár:</translation>
-    </message>
-    <message>
-        <source>Restore original item</source>
-        <translation type="vanished">Obnoviť pôvodnú položku</translation>
-    </message>
-    <message>
-        <source>Command:</source>
-        <translation type="vanished">Príkaz:</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Názov:</translation>
-    </message>
-    <message>
-        <source>Icon</source>
-        <translation type="vanished">Ikona</translation>
-    </message>
-    <message>
-        <source>Change icon</source>
-        <translation type="vanished">Zmeniť ikonu</translation>
-    </message>
-    <message>
-        <source>Categories</source>
-        <translation type="vanished">Kategórie</translation>
-    </message>
-    <message>
-        <source>Add</source>
-        <translation type="vanished">Pridať</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Zmazať</translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation type="vanished">Zatvoriť aplikáciu</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Zatvoriť</translation>
-    </message>
-    <message>
-        <source>Alt+N</source>
-        <translation type="vanished">Alt+N</translation>
-    </message>
-    <message>
-        <source>Display help</source>
-        <translation type="vanished">Zobraziť nápovedu</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="vanished">Pomocník</translation>
-    </message>
-    <message>
-        <source>Alt+H</source>
-        <translation type="vanished">Alt+H</translation>
-    </message>
-    <message>
-        <source>Save Changes</source>
-        <translation type="vanished">Uložiť zmeny</translation>
-    </message>
-    <message>
-        <source>Ctrl+S</source>
-        <translation type="vanished">Ctrl+S</translation>
-    </message>
-    <message>
-        <source>About this application</source>
-        <translation type="vanished">O tejto aplikácii</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="vanished">O Programe</translation>
-    </message>
-    <message>
-        <source>Alt+B</source>
-        <translation type="vanished">Alt+B</translation>
-    </message>
-    <message>
-        <source>Select executable file</source>
-        <translation type="vanished">Vyberte spustiteľný súbor</translation>
-    </message>
-    <message>
-        <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="vanished">Súbory obrázkov (*.png *.jpg *.bmp *.xpm)</translation>
-    </message>
-    <message>
-        <source>Choose category</source>
-        <translation type="vanished">Vybrať kategóriu</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Zrušiť</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="vanished">OK</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Chyba</translation>
-    </message>
-    <message>
-        <source>Could not save the file</source>
-        <translation type="vanished">Súbor nejde uložiť</translation>
-    </message>
-    <message>
-        <source>About MX Menu Editor</source>
-        <translation type="vanished">O programe MX Menu Editor</translation>
-    </message>
-    <message>
-        <source>Version: </source>
-        <translation type="vanished">Verzia:</translation>
-    </message>
-    <message>
-        <source>Program for editing Xfce menu</source>
-        <translation type="vanished">Program na editáciu Xfce ponuky</translation>
-    </message>
-    <message>
-        <source>Copyright (c) MX Linux</source>
-        <translation type="vanished">Copyright (c) MX Linux</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Licencia</translation>
-    </message>
-    <message>
-        <source>Changelog</source>
-        <translation type="vanished">História zmien</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Zatvoriť</translation>
-    </message>
-    <message>
-        <source>Save changes?</source>
-        <translation type="vanished">Uložiť zmeny?</translation>
-    </message>
-    <message>
-        <source>Do you want to save your edits?</source>
-        <translation type="vanished">Chcete uložiť zmeny?</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Uložiť</translation>
     </message>
 </context>
 </TS>
