@@ -903,8 +903,8 @@ void MainWindow::on_buttonCancel_clicked()
 bool MainWindow::save()
 {
     if (ui->buttonSave->isEnabled()) {
-        int ans = QMessageBox::question(0, tr("Save changes?"), tr("Do you want to save your edits?"), tr("Save"), tr("Cancel"));
-        if (ans == 0) {
+        int ans = QMessageBox::question(0, tr("Save changes?"), tr("Do you want to save your edits?"), QMessageBox::Save, QMessageBox::Cancel);
+        if (ans == QMessageBox::Save) {
             on_buttonSave_clicked();
             return true;
         }
