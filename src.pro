@@ -33,7 +33,8 @@ SOURCES += main.cpp\
 
 HEADERS  += \
     addappdialog.h \
-    mainwindow.h
+    mainwindow.h \
+    version.h
 
 FORMS    += \
     addappdialog.ui \

@@ -25,6 +25,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ui_addappdialog.h"
+#include "version.h"
 
 #include <QProcess>
 #include <QFileDialog>
@@ -43,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     add(new AddAppDialog)
 {
+    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
 
     if (ui->buttonSave->icon().isNull()) {
@@ -53,7 +55,6 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     comboBox = new QComboBox;
-    version = getVersion("mx-menu-editor");
 
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
@@ -100,12 +101,6 @@ Output MainWindow::getCmdOut(const QString &cmd)
     Output out = {proc->exitCode(), proc->readAll().trimmed()};
     delete proc;
     return out;
-}
-
-// get version of the program
-QString MainWindow::getVersion(const QString &name)
-{
-    return getCmdOut("dpkg-query -f '${Version}' -W " + name).str;
 }
 
 // load menu files
@@ -836,7 +831,7 @@ void MainWindow::on_buttonAbout_clicked()
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Menu Editor"), "<p align=\"center\"><b><h2>" +
-                       tr("MX Menu Editor") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + version + "</p><p align=\"center\"><h3>" +
+                       tr("MX Menu Editor") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for editing Xfce menu") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);

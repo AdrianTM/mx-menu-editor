@@ -56,8 +56,6 @@ public:
 
     Output getCmdOut(const QString &cmd);
     QFile config_file;
-    QString getVersion(const QString &name);
-    QString version;
     QStringList all_usr_desktop_files;
     QStringList all_local_desktop_files;
     QHash<QString, QString> hashCategories;
