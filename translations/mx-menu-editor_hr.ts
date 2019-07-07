@@ -125,7 +125,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="835"/>
         <source>MX Menu Editor</source>
         <translation>MX uređivač izbornika</translation>
     </message>
@@ -201,7 +201,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="541"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Change icon</source>
         <translation>Promjeni ikonu</translation>
     </message>
@@ -276,91 +276,89 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="462"/>
+        <location filename="../mainwindow.cpp" line="458"/>
         <source>Select executable file</source>
         <translation>Odaberite izvršnu datoteku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="525"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
         <translation>Slikovne datoteke (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="714"/>
         <source>Choose category</source>
         <translation>Odaberite kategoriju</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="729"/>
-        <location filename="../mainwindow.cpp" line="845"/>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="725"/>
+        <location filename="../mainwindow.cpp" line="841"/>
         <source>Cancel</source>
         <translation>Otkaži</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="730"/>
+        <location filename="../mainwindow.cpp" line="726"/>
         <source>OK</source>
         <translation>U redu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="820"/>
+        <location filename="../mainwindow.cpp" line="816"/>
         <source>Error</source>
         <translation>Greška</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="820"/>
+        <location filename="../mainwindow.cpp" line="816"/>
         <source>Could not save the file</source>
         <translation>Ne mogu spremiti datoteku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="838"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>About MX Menu Editor</source>
         <translation>O MX uređivaču izbornika</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="835"/>
         <source>Version: </source>
         <translation>Inačica:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="../mainwindow.cpp" line="836"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program za uređivanje Xfce izbornika</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="842"/>
+        <location filename="../mainwindow.cpp" line="838"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Autorska prava (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="839"/>
         <source>License</source>
         <translation>Licenca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="../mainwindow.cpp" line="840"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="860"/>
+        <location filename="../mainwindow.cpp" line="856"/>
         <source>&amp;Close</source>
         <translation>&amp;Zatvori</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="902"/>
         <source>Save changes?</source>
         <translation>Spremiti izmjene?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="902"/>
         <source>Do you want to save your edits?</source>
         <translation>Želite li spremiti vaša uređivanja?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="906"/>
         <source>Save</source>
-        <translation>Spremi</translation>
+        <translation type="vanished">Spremi</translation>
     </message>
 </context>
 <context>

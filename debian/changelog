@@ -1,3 +1,9 @@
+mx-menu-editor (19.7) mx; urgency=medium
+
+  * fix window buttons for Buster
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 07 Jul 2019 13:54:34 -0400
+
 mx-menu-editor (19.5) mx; urgency=medium
 
   * add "Select" to clarify button role
