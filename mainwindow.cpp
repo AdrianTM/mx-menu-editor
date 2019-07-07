@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
+    setWindowFlags(Qt::Window); // for the close, min and max buttons
 
     if (ui->buttonSave->icon().isNull()) {
         ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
