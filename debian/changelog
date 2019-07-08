@@ -1,3 +1,9 @@
+mx-menu-editor (19.7.1) mx; urgency=medium
+
+  * update icon
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 08 Jul 2019 12:55:13 -0400
+
 mx-menu-editor (19.7) mx; urgency=medium
 
   * fix window buttons for Buster

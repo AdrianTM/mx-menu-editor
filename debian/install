@@ -1,6 +1,5 @@
 license.html		usr/share/doc/mx-menu-editor
 mx-menu-editor		usr/bin
 mx-menu-editor.desktop	usr/share/applications
-mx-menu-editor.png	usr/share/icons/hicolor/48x48/apps
-mx-menu-editor.png	usr/share/pixmaps
+mx-menu-editor.svg	usr/share/icons/hicolor/scalable/apps
 translations/*.qm	usr/share/mx-menu-editor/locale

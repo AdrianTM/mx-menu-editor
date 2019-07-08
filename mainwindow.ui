@@ -17,8 +17,7 @@
    <string>MX Menu Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../../../../../../../usr/share/pixmaps/mx-menu-editor.png</normaloff>../../../../../../../usr/share/pixmaps/mx-menu-editor.png</iconset>
+   <iconset theme="mx-menu-editor"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
