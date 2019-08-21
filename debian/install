@@ -1,3 +1,4 @@
+help				usr/share/doc/mx-menu-editor
 license.html			usr/share/doc/mx-menu-editor
 mx-menu-editor			usr/bin
 mx-menu-editor.desktop		usr/share/applications

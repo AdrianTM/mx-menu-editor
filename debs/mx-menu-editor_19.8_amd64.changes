@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 21 Aug 2019 14:09:20 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 19.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (19.8) mx; urgency=medium
+ .
+   * added offline help file
+Checksums-Sha1:
+ fba45396b54db72de11586f13896664f7a191a0d 1192 mx-menu-editor_19.8.dsc
+ b484cb87636750c3956e3d4caac8b477575a3409 49852 mx-menu-editor_19.8.tar.xz
+ 69517b711e5aed4d37c8a10284399f48ff7fea94 78874 mx-menu-editor_19.8_amd64.deb
+Checksums-Sha256:
+ 4912b5b10ae1b3c5125158cd0f8b9c6abf8971bdc458761828a281d36c57fc54 1192 mx-menu-editor_19.8.dsc
+ 44164079a0c76e8b474eb78df7d44c54caadedbc810b691131e6b36affb2938f 49852 mx-menu-editor_19.8.tar.xz
+ d40a2a300f15ea8dc708778aafcf87ccf752536ad9ec736cf8494355f071910f 78874 mx-menu-editor_19.8_amd64.deb
+Files:
+ 1e49cd3c5484b89ff20b86414b737392 1192 admin optional mx-menu-editor_19.8.dsc
+ 6fed5d1c07ce10f5638d8fae2c7ceaa7 49852 admin optional mx-menu-editor_19.8.tar.xz
+ 1e7c06cfe336e5010c5c376b57bddd9d 78874 admin optional mx-menu-editor_19.8_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1diQATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDuKB/wOnm/KgTv0XPxvzL4kFnIGOnRfVxp2
+FsWWV0IVaN6d+xH6vVaLFxOIQv1dgDnH89oMsOlFpmIGOs6QFKpMvVzj/bZJQY5s
+O5FuwLPobBPfkSbF1qLtlyl8Ayanm4aCGPHPGU9SheT/SMpS+bcj9EAkPOoRyAeJ
+HeFsytYLkPB3Nznyupuf7Bb8E/6Nq8Dg5m7niKLDOubeRlUMP79sIPjvUhP6Vu4E
+sjF0wg7MfbWAww7hVcKnBDNbwfYqSkZ1vyudzxZ3DgdYAj2MZjqf4Nx6a9nIK2zz
+XgWWNjKrl2owPluz8cGSIwEYmGhof9T+fo8pYGB9zd6n4C1p31z6zmDw
+=20qt
+-----END PGP SIGNATURE-----

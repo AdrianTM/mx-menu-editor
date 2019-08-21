@@ -877,7 +877,7 @@ void MainWindow::on_buttonHelp_clicked()
     QLocale locale;
     QString lang = locale.bcp47Name();
 
-    QString url = "https://mxlinux.org/wiki/help-files/help-mx-menu-editor";
+    QString url = "/usr/share/doc/mx-menu-editor/help/mx-menu-editor.html";
 
     if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu";
