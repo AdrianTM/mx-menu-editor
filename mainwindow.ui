@@ -17,7 +17,8 @@
    <string>MX Menu Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="mx-menu-editor"/>
+   <iconset theme="mx-menu-editor">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -349,11 +350,11 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>183</width>
+         <width>100</width>
          <height>20</height>
         </size>
        </property>
@@ -471,7 +472,7 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
