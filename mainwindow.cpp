@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     add(new AddAppDialog)
 {
-    qDebug() << "Program Version:" << VERSION;
+    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
 
@@ -95,7 +95,6 @@ MainWindow::~MainWindow()
 Output MainWindow::getCmdOut(const QString &cmd)
 {
     QProcess *proc = new QProcess();
-    QEventLoop loop;
     proc->setReadChannelMode(QProcess::MergedChannels);
     proc->start("/bin/bash", QStringList() << "-c" << cmd);
     proc->waitForFinished();
