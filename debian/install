@@ -1,7 +1,7 @@
 help				usr/share/doc/mx-menu-editor
+icons/mx-menu-editor.png	usr/share/icons/hicolor/48x48/apps
+icons/mx-menu-editor.svg	usr/share/icons/hicolor/scalable/apps
 license.html			usr/share/doc/mx-menu-editor
 mx-menu-editor			usr/bin
 mx-menu-editor.desktop		usr/share/applications
-icons/mx-menu-editor.svg	usr/share/icons/hicolor/scalable/apps
-icons/mx-menu-editor.png	usr/share/icons/hicolor/48x48/apps
 translations/*.qm		usr/share/mx-menu-editor/locale
