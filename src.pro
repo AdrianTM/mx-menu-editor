@@ -67,6 +67,7 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_ko.ts \
                 translations/mx-menu-editor_lt.ts \
                 translations/mx-menu-editor_mk.ts \
+                translations/mx-menu-editor_mr.ts \
                 translations/mx-menu-editor_nb.ts \
                 translations/mx-menu-editor_nl.ts \
                 translations/mx-menu-editor_pl.ts \

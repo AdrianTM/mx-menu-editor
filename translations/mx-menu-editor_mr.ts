@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="id" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="mr" version="2.1">
 <context>
     <name>AddAppDialog</name>
     <message>
@@ -45,7 +45,7 @@
         <location filename="addappdialog.ui" line="169"/>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Cancel</source>
-        <translation>Batal</translation>
+        <translation>रद्द करा</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="176"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Galat</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="mainwindow.ui" line="95"/>
         <source>Options</source>
-        <translation>Pilihan</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="104"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="mainwindow.ui" line="291"/>
         <source>Add</source>
-        <translation>Tambahkan</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="305"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Close</source>
-        <translation>Tutup</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="381"/>
@@ -241,7 +241,7 @@
     <message>
         <location filename="mainwindow.ui" line="425"/>
         <source>Help</source>
-        <translation>Bantuan</translation>
+        <translation>मदत</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="432"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="mainwindow.ui" line="493"/>
         <source>About this application</source>
-        <translation>Tentang aplikasi ini</translation>
+        <translation>या अनुप्रयोगाबद्दल</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="496"/>
         <source>About...</source>
-        <translation>Tentang</translation>
+        <translation>विषयी</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="503"/>
@@ -292,17 +292,17 @@
         <location filename="mainwindow.cpp" line="725"/>
         <location filename="mainwindow.cpp" line="841"/>
         <source>Cancel</source>
-        <translation>Batal</translation>
+        <translation>रद्द करा</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="726"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation> ठीक आहे</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Error</source>
-        <translation>Galat</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="816"/>
@@ -317,7 +317,7 @@
     <message>
         <location filename="mainwindow.cpp" line="835"/>
         <source>Version: </source>
-        <translation>Versi:</translation>
+        <translation>आवृत्ती</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="836"/>
@@ -327,22 +327,22 @@
     <message>
         <location filename="mainwindow.cpp" line="838"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="839"/>
         <source>License</source>
-        <translation>Lisensi</translation>
+        <translation>परवाना</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="840"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation>बदल सूची</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="856"/>
         <source>&amp;Close</source>
-        <translation>&amp;Tutup</translation>
+        <translation>बंद</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>

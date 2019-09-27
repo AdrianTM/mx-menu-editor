@@ -4,42 +4,42 @@
     <message>
         <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="33"/>
         <source>Categories</source>
-        <translation type="unfinished"/>
+        <translation>Kategorije</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="45"/>
         <source>Add category</source>
-        <translation type="unfinished"/>
+        <translation>Dodaj kategorijo</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="59"/>
         <source>Delete category</source>
-        <translation type="unfinished"/>
+        <translation>Izbriši kategorijo</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="76"/>
         <source>Command:</source>
-        <translation type="unfinished"/>
+        <translation>Ukaz:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="121"/>
         <source>Save Changes</source>
-        <translation type="unfinished"/>
+        <translation>Shrani spremembe</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="128"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation>Dialog za dokončanje</translation>
+        <translation>Zapri dialog</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="169"/>
@@ -55,43 +55,43 @@
     <message>
         <location filename="addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation type="unfinished"/>
+        <translation>Izberi...</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="201"/>
         <source>Name:</source>
-        <translation type="unfinished"/>
+        <translation>Ime:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="208"/>
         <source>Comment:</source>
-        <translation type="unfinished"/>
+        <translation>Komentar:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="215"/>
         <source>Icon:</source>
-        <translation type="unfinished"/>
+        <translation>Ikona:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="222"/>
         <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
-        <translation type="unfinished"/>
+        <translation>Določi ikono</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
-        <translation type="unfinished"/>
+        <translation>Zaženi v terminalu</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"/>
+        <translation>Opozorilo ob zagonu</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation type="unfinished"/>
+        <translation>Dodaj aplikacijo po želji</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
@@ -101,22 +101,22 @@
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation type="unfinished"/>
+        <translation>Shranjevanje ni uspelo</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
-        <translation type="unfinished"/>
+        <translation>Shranim spremembe?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"/>
+        <translation>Ali želite shraniti svoje urejanje?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save</source>
-        <translation type="unfinished"/>
+        <translation>Shrani</translation>
     </message>
 </context>
 <context>
@@ -125,22 +125,22 @@
         <location filename="mainwindow.ui" line="17"/>
         <location filename="mainwindow.cpp" line="835"/>
         <source>MX Menu Editor</source>
-        <translation type="unfinished"/>
+        <translation>MX Urejevalnik menijev</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="33"/>
         <source>Advanced Editor</source>
-        <translation type="unfinished"/>
+        <translation>Napreden urejevalnik</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="54"/>
         <source>Categories and applications</source>
-        <translation type="unfinished"/>
+        <translation>Kategorije in aplikacije</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="81"/>
         <source>Add custom application</source>
-        <translation type="unfinished"/>
+        <translation>Dodaj aplikacijo po želji</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="95"/>
@@ -150,7 +150,7 @@
     <message>
         <location filename="mainwindow.ui" line="104"/>
         <source>Run in terminal</source>
-        <translation type="unfinished"/>
+        <translation>Zaženi v terminalu</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="114"/>
@@ -160,53 +160,53 @@
     <message>
         <location filename="mainwindow.ui" line="124"/>
         <source>Notify startup</source>
-        <translation type="unfinished"/>
+        <translation>Zagonsko opozorilo</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="147"/>
         <source>Quick Editor</source>
-        <translation type="unfinished"/>
+        <translation>Hitri urejevalnik</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="159"/>
         <source>Comment:</source>
-        <translation type="unfinished"/>
+        <translation>Komentar:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="169"/>
         <source>Restore original item</source>
-        <translation type="unfinished"/>
+        <translation>Obnovi izvirnik</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
         <source>Command:</source>
-        <translation type="unfinished"/>
+        <translation>Ukaz:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="190"/>
         <source>Select...</source>
-        <translation type="unfinished"/>
+        <translation>Izberi...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="204"/>
         <source>Name:</source>
-        <translation type="unfinished"/>
+        <translation>Ime:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="225"/>
         <source>Icon</source>
-        <translation type="unfinished"/>
+        <translation>Ikona</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="265"/>
         <location filename="mainwindow.cpp" line="537"/>
         <source>Change icon</source>
-        <translation type="unfinished"/>
+        <translation>Zamenjaj ikono</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="279"/>
         <source>Categories</source>
-        <translation type="unfinished"/>
+        <translation>Kategorije</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="291"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="mainwindow.ui" line="305"/>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Izbriši</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="371"/>
@@ -236,7 +236,7 @@
     <message>
         <location filename="mainwindow.ui" line="422"/>
         <source>Display help</source>
-        <translation type="unfinished"/>
+        <translation>Prikaži pomoč</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="425"/>
@@ -251,12 +251,12 @@
     <message>
         <location filename="mainwindow.ui" line="451"/>
         <source>Save Changes</source>
-        <translation type="unfinished"/>
+        <translation>Shrani spremembe</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="458"/>
         <source>Ctrl+S</source>
-        <translation type="unfinished"/>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="493"/>
@@ -276,17 +276,17 @@
     <message>
         <location filename="mainwindow.cpp" line="458"/>
         <source>Select executable file</source>
-        <translation type="unfinished"/>
+        <translation>Izberi izvršljivo datoteko</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="521"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="unfinished"/>
+        <translation>Slike (*.png *.jpg *.jpeg *.xpm)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="714"/>
         <source>Choose category</source>
-        <translation type="unfinished"/>
+        <translation>Izberi kaotegorijo</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="725"/>
@@ -307,12 +307,12 @@
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Could not save the file</source>
-        <translation type="unfinished"/>
+        <translation>Shranjevanje ni uspelo</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="834"/>
         <source>About MX Menu Editor</source>
-        <translation type="unfinished"/>
+        <translation>O programu MX Urejevalnik menijev</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="835"/>
@@ -322,7 +322,7 @@
     <message>
         <location filename="mainwindow.cpp" line="836"/>
         <source>Program for editing Xfce menu</source>
-        <translation type="unfinished"/>
+        <translation>Program za urejanje Xfce menijev</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="838"/>
@@ -347,12 +347,12 @@
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Save changes?</source>
-        <translation type="unfinished"/>
+        <translation>Posnamem spremembe?</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Do you want to save your edits?</source>
-        <translation type="unfinished"/>
+        <translation>Ali želite shraniti svoje urejanje?</translation>
     </message>
 </context>
 <context>
@@ -360,7 +360,7 @@
     <message>
         <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation type="unfinished"/>
+        <translation>Ta program morate zagnati kor navaden uporabnik.</translation>
     </message>
 </context>
 </TS>

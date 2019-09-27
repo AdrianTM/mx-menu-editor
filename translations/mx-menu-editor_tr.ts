@@ -4,7 +4,7 @@
     <message>
         <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation type="unfinished"/>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="33"/>
@@ -39,7 +39,7 @@
     <message>
         <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation type="unfinished"/>
+        <translation>Diyaloğu Sonlandır</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="169"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation type="unfinished"/>
+        <translation>Seç...</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="201"/>
@@ -76,7 +76,7 @@
         <location filename="addappdialog.ui" line="222"/>
         <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
-        <translation type="unfinished"/>
+        <translation>Simge ayarla</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="235"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation type="unfinished"/>
+        <translation>Başlangıç Bildirimi</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="37"/>
@@ -185,7 +185,7 @@
     <message>
         <location filename="mainwindow.ui" line="190"/>
         <source>Select...</source>
-        <translation type="unfinished"/>
+        <translation>Seç...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="204"/>
@@ -317,7 +317,7 @@
     <message>
         <location filename="mainwindow.cpp" line="835"/>
         <source>Version: </source>
-        <translation>Sürüm</translation>
+        <translation>Sürüm:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="836"/>
