@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 29 Sep 2019 14:36:13 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 19.9
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (19.9) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ f6a74891375f2aac411a8ed7b3a1278bde55927a 1181 mx-menu-editor_19.9.dsc
+ 5c8741a700b4845cc870690ac9da754c919a7c4c 50116 mx-menu-editor_19.9.tar.xz
+ 31f730aa04412eb1eab372bdba764e798459e44b 741792 mx-menu-editor-dbgsym_19.9_amd64.deb
+ 35af69f2702cabce5f2ecd0c827b5ac96154d738 11299 mx-menu-editor_19.9_amd64.buildinfo
+ 155b5d4717594a45ff5303dff4e24abe3606f574 76836 mx-menu-editor_19.9_amd64.deb
+Checksums-Sha256:
+ 11328de52399fdb0963fd276ee13bc19b925c51d4915e912c39ac4f06068afa9 1181 mx-menu-editor_19.9.dsc
+ 737397ec47e8421f7f0491d39d1ff52ecb08653c835f85ec3e22755a52fdebc5 50116 mx-menu-editor_19.9.tar.xz
+ b83e1a2cf0462215104a619f4a8dc84aaad0663f008127395feb50d378073d8f 741792 mx-menu-editor-dbgsym_19.9_amd64.deb
+ 3abfd0dd9381512d9af686792e36de247b2426221f81e140c124c71ef4c615fb 11299 mx-menu-editor_19.9_amd64.buildinfo
+ e1d019ef397687cf9067b5e4e1a564239fbfa1b5fc606f3ed6a3fc4a77fb81c0 76836 mx-menu-editor_19.9_amd64.deb
+Files:
+ 975d43112915df64854d1fef2d662a99 1181 admin optional mx-menu-editor_19.9.dsc
+ 3fd13dac7531ab716ffae49839f7d2a0 50116 admin optional mx-menu-editor_19.9.tar.xz
+ ffeefa81fc6e83c3f441ebd2fa9066ae 741792 debug optional mx-menu-editor-dbgsym_19.9_amd64.deb
+ 833ed90a5bafc7a7e8342b9d7ea69e20 11299 admin optional mx-menu-editor_19.9_amd64.buildinfo
+ 4aaca4a56b4b13df96f7adbfe7c55fd1 76836 admin optional mx-menu-editor_19.9_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl2Q+v4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPiaCAC/VEpsQP0YNNywfjiqqOg9+6SOUeYh
+WOfkwZ0G+mreWe5I9Lg34o974FX6ujTO01BXu13wnfiBOBuH5lRjyzWlmkEEs69A
+CYjSNrL0YH20+fsQ8h4UrVj6umcC5wtJHnsWXmldnoYW7huy2OZMRoqWB9LOuLTD
+GCMDeRoVc/5bEExgZ4uU/gnW+wPdId9o/EgUjKnSGMNJ0eN2s6YV6QWykbdn+U6+
++5d7shHCbvCpLFcHXVIxXQs0MVOzkRgzvvcAegLV3+t5SUQqqenNhkK90uZcxN0z
+wq21YpfWkmZ1PYDwTrvcxC7PQ+p7Xd9fY+jHxX8petLCy5gL298z+RYE
+=qf2l
+-----END PGP SIGNATURE-----
