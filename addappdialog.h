@@ -37,7 +37,7 @@ class AddAppDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit AddAppDialog(QWidget *parent = 0);
+    explicit AddAppDialog(QWidget *parent = nullptr);
     ~AddAppDialog();
     Ui::AddAppDialog *ui;
     QString icon_path;

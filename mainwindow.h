@@ -51,7 +51,7 @@ protected:
     QComboBox *comboBox;
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     Output getCmdOut(const QString &cmd);
