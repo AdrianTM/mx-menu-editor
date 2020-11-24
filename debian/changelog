@@ -1,3 +1,9 @@
+mx-menu-editor (20.6) mx; urgency=medium
+
+  * run application as normal user
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 28 Jun 2020 17:09:40 -0400
+
 mx-menu-editor (19.9) mx; urgency=medium
 
   * updated translations
