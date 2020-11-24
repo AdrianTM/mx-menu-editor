@@ -51,12 +51,12 @@ void AddAppDialog::on_buttonSave_clicked()
     QString out_name = dir.homePath() + "/.local/share/applications/" + file_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::critical(0, tr("Error"), tr("Could not save the file"));
+        QMessageBox::critical(nullptr, tr("Error"), tr("Could not save the file"));
     }
     output = "[Desktop Entry]\n";
     output.append("Name=" + ui->lineEditName->text() + "\n");
     output.append("Exec=" + ui->lineEditCommand->text() + "\n");
-    if (ui->lineEditComment->text() != 0) {
+    if (!ui->lineEditComment->text().isEmpty()) {
         output.append("Comment=" + ui->lineEditComment->text() + "\n");
     }
     if (icon_path != "") {
@@ -100,7 +100,7 @@ void AddAppDialog::on_buttonCancel_clicked()
 void AddAppDialog::saveOrNot()
 {
     if (ui->buttonSave->isEnabled()) {
-        int ans = QMessageBox::question(0, tr("Save changes?"), tr("Do you want to save your edits?"), tr("Save"), tr("Cancel"));
+        int ans = QMessageBox::question(nullptr, tr("Save changes?"), tr("Do you want to save your edits?"), tr("Save"), tr("Cancel"));
         if (ans == 0) {
             on_buttonSave_clicked();
         } else {
