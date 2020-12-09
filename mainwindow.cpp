@@ -547,8 +547,10 @@ void MainWindow::changeName()
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
             QRegularExpression regex("(^|\n)Name=[^\n]*(\n|$)");
-            int index = text.indexOf(regex, 0);
-            int length = regex.match(text).capturedLength();
+            QRegularExpressionMatch regex_match = regex.match(text);
+            int index = regex_match.capturedStart();
+            int length = regex_match.capturedLength();
+
             if (index != -1) {
                 text.replace(index, length, "\nName=" + new_name + "\n"); // replace only first match
                 ui->advancedEditor->setText(text);
