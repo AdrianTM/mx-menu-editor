@@ -527,7 +527,7 @@ void MainWindow::changeIcon()
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
             ui->buttonSave->setEnabled(true);
-            text.replace(QRegExp("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
+            text.replace(QRegularExpression("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
             ui->advancedEditor->setText(text);
             ui->labelIcon->setPixmap(QPixmap(selected));
         } else { // if running command from add-custom-app window
@@ -546,10 +546,11 @@ void MainWindow::changeName()
         QString new_name = ui->lineEditName->text();
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            QRegExp regex("(^|\n)Name=[^\n]*(\n|$)");
+            QRegularExpression regex("(^|\n)Name=[^\n]*(\n|$)");
             int index = text.indexOf(regex, 0);
+            int length = regex.match(text).capturedLength();
             if (index != -1) {
-                text.replace(index, regex.matchedLength(), "\nName=" + new_name + "\n");
+                text.replace(index, length, "\nName=" + new_name + "\n"); // replace only first match
                 ui->advancedEditor->setText(text);
             }
         }
@@ -570,7 +571,7 @@ void MainWindow::changeCommand()
         QString new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            text.replace(QRegExp("(^|\n)Exec=[^\n]*(\n|$)"), "\nExec=" + new_command + "\n");
+            text.replace(QRegularExpression("(^|\n)Exec=[^\n]*(\n|$)"), "\nExec=" + new_command + "\n");
             ui->advancedEditor->setText(text);
         }
     } else { // if running command from add-custom-app window
@@ -592,13 +593,13 @@ void MainWindow::changeComment()
         QString new_comment = ui->lineEditComment->text();
         if (!new_comment.isEmpty()) {
             if (text.contains("Comment=")) {
-                text.replace(QRegExp("(^|\n)Comment=[^\n]*(\n|$)"), "\nComment=" + new_comment + "\n");
+                text.replace(QRegularExpression("(^|\n)Comment=[^\n]*(\n|$)"), "\nComment=" + new_comment + "\n");
             } else {
                 text = text.trimmed();
                 text.append("\nComment=" + new_comment + "\n");
             }
         } else {
-            text.remove(QRegExp("(^|\n)Comment=[^\n]*(\n|$)"));
+            text.remove(QRegularExpression("(^|\n)Comment=[^\n]*(\n|$)"));
         }
         ui->advancedEditor->setText(text);
     }
@@ -619,7 +620,7 @@ void MainWindow::delCategory()
         row = ui->listWidgetEditCategories->currentRow();
         QListWidgetItem *item = ui->listWidgetEditCategories->takeItem(row);
         QString text = ui->advancedEditor->toPlainText();
-        int indexCategory = text.indexOf(QRegExp("(^|\n)Categories=[^\n]*(\n|$)"));
+        int indexCategory = text.indexOf(QRegularExpression("(^|\n)Categories=[^\n]*(\n|$)"));
         int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
         text.remove(indexToDelete, item->text().length() + 1);
         ui->advancedEditor->setText(text);
@@ -644,7 +645,7 @@ void MainWindow::changeNotify(bool checked)
     QString text = ui->advancedEditor->toPlainText();
     QString str = QString(checked ? "true" : "false");
     if (text.contains("StartupNotify=")) {
-        text.replace(QRegExp("(^|\n)StartupNotify=[^\n]*(\n|$)"), "\nStartupNotify=" + str + "\n");
+        text.replace(QRegularExpression("(^|\n)StartupNotify=[^\n]*(\n|$)"), "\nStartupNotify=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nStartupNotify=" + str);
@@ -659,7 +660,7 @@ void MainWindow::changeHide(bool checked)
     QString text = ui->advancedEditor->toPlainText().trimmed();
     QString str = QString(checked ? "true" : "false");
     if (text.contains("NoDisplay=")) {
-        text.replace(QRegExp("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
+        text.replace(QRegularExpression("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
         foreach (const QString &line, text.split("\n")) {
@@ -680,7 +681,7 @@ void MainWindow::changeTerminal(bool checked)
     QString text = ui->advancedEditor->toPlainText();
     QString str = QString(checked ? "true" : "false");
     if (text.contains("Terminal=")) {
-        text.replace(QRegExp("(^|\n)Terminal=[^\n]*(\n|$)"), "\nTerminal=" + str + "\n");
+        text.replace(QRegularExpression("(^|\n)Terminal=[^\n]*(\n|$)"), "\nTerminal=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nTerminal=" + str);
@@ -699,7 +700,7 @@ QStringList MainWindow::listCategories()
         categories << i.value();
     }
     categories.removeDuplicates();
-    categories = categories.filter(QRegExp("^(?!<Not>).*$"));
+    categories = categories.filter(QRegularExpression("^(?!<Not>).*$"));
     categories.sort();
     return categories;
 }
@@ -740,8 +741,8 @@ void MainWindow::addCategory()
 {
     QString str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
-    int index = text.indexOf(QRegExp("(^|\n)Categories=[^\n]*(\n|$)"));
-    index = text.indexOf(QRegExp("(\n|$)"), index + 1); // find the end of the string
+    int index = text.indexOf(QRegularExpression("(^|\n)Categories=[^\n]*(\n|$)"));
+    index = text.indexOf(QRegularExpression("(\n|$)"), index + 1); // find the end of the string
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
             ui->buttonSave->setEnabled(true);
@@ -785,13 +786,13 @@ void MainWindow::addAppMsgBox()
     add->show();
     resetInterface();
     ui->treeWidget->collapseAll();
-    disconnect(add->ui->selectCommand, 0, 0, 0);
-    disconnect(add->ui->pushChangeIcon, 0, 0, 0);
-    disconnect(add->ui->lineEditName, 0, 0, 0);
-    disconnect(add->ui->lineEditCommand, 0, 0, 0);
-    disconnect(add->ui->lineEditComment, 0, 0, 0);
-    disconnect(add->ui->pushAdd, 0, 0, 0);
-    disconnect(add->ui->pushDelete, 0, 0, 0);
+    disconnect(add->ui->selectCommand);
+    disconnect(add->ui->pushChangeIcon);
+    disconnect(add->ui->lineEditName);
+    disconnect(add->ui->lineEditCommand);
+    disconnect(add->ui->lineEditComment);
+    disconnect(add->ui->pushAdd);
+    disconnect(add->ui->pushDelete);
     connect(add->ui->selectCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
     connect(add->ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
     connect(add->ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
