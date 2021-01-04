@@ -1,4 +1,4 @@
-help				usr/share/doc/mx-menu-editor
+help/*				usr/share/doc/mx-menu-editor
 icons/mx-menu-editor.png	usr/share/icons/hicolor/48x48/apps
 icons/mx-menu-editor.svg	usr/share/icons/hicolor/scalable/apps
 mx-menu-editor			usr/bin
