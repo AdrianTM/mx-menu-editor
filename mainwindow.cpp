@@ -48,12 +48,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
 
-    if (ui->buttonSave->icon().isNull()) {
-        ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
-    }
-    if (add->ui->buttonSave->icon().isNull()) {
-        add->ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
-    }
+    if (ui->buttonSave->icon().isNull()) ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    if (add->ui->buttonSave->icon().isNull()) add->ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
 
     comboBox = new QComboBox;
 
@@ -88,6 +84,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    delete add;
     delete ui;
 }
 
@@ -111,7 +108,7 @@ void MainWindow::loadMenuFiles()
     const QStringList menu_files = listMenuFiles();
 
     // process each menu_file
-    for (QString file_name : menu_files) {
+    for (const QString &file_name : menu_files) {
         QFile file(file_name);
         if (file.open(QIODevice::ReadOnly)) {
             QTextStream in(&file);
@@ -125,31 +122,24 @@ void MainWindow::loadMenuFiles()
                         line = in.readLine();
                         if (line.contains("<Directory>")) {
                             line = line.remove("<Directory>").remove("</Directory>").trimmed();
-                            QString file_name = home_path + "/.local/share/desktop-directories/" + line;
-                            QFile *file = new QFile(file_name);
-                            if (!file->exists()) { // use /usr if the file is not present in ~/.local
-                                QString file_name = "/usr/share/desktop-directories/" + line;
-                                file->setFileName(file_name);
-                            }
-                            name = getCatName(file); // get the Name= from .directory file
-                            if (!name.isEmpty() && name != "Other" && name != "Wine") {
+                            QString f_name = home_path + "/.local/share/desktop-directories/" + line;
+                            if (!QFileInfo::exists(f_name)) // use /usr if the file is not present in ~/.local
+                                f_name = "/usr/share/desktop-directories/" + line;
+                            name = getCatName(f_name); // get the Name= from .directory file
+                            if (!name.isEmpty() && name != "Other" && name != "Wine")
                                 menu_items << name;
-                            }
-                            delete file;
                             // Find <Category> and <Filename> and add them in hashCategory and hashInclude
                             while (!(in.atEnd() || line.contains("</Include>"))) {
                                 line = in.readLine();
                                 if (line.contains("<Category>")) {
                                     line = line.remove("<Category>").remove("</Category>").trimmed();
-                                    if (!hashCategories.values(name).contains(line)) {
+                                    if (!hashCategories.values(name).contains(line))
                                         hashCategories.insertMulti(name, line); //each menu category displays a number of categories
-                                    }
                                 }
                                 if (line.contains("<Filename>")) {
                                     line = line.remove("<Filename>").remove("</Filename>").trimmed();
-                                    if (!hashInclude.values(name).contains(line)) {
+                                    if (!hashInclude.values(name).contains(line))
                                         hashInclude.insertMulti(name, line); //each menu category contains a number of files
-                                    }
                                 }
                             }
                             // find <Exludes> and add them in hashExclude
@@ -160,9 +150,8 @@ void MainWindow::loadMenuFiles()
                                         line = in.readLine();
                                         if(line.contains("<Filename>")) {
                                             line = line.remove("<Filename>").remove("</Filename>").trimmed();
-                                            if (!hashExclude.values(name).contains(line)) {
+                                            if (!hashExclude.values(name).contains(line))
                                                 hashExclude.insertMulti(name, line); //each menu category contains a number of files
-                                            }
                                         }
                                     }
                                 }
@@ -178,15 +167,13 @@ void MainWindow::loadMenuFiles()
 }
 
 // get Name= from .directory file
-QString MainWindow::getCatName(const QFile *file)
+QString MainWindow::getCatName(const QString &file_name)
 {
-    QString cmd = QString("grep Name= %1").arg(file->fileName());
+    QString cmd = QString("grep Name= %1").arg(file_name);
     Output out = getCmdOut(cmd.toUtf8());
-    if (out.exit_code == 0) {
+    if (out.exit_code == 0)
         return out.str.remove("Name=");
-    } else {
-        return "";
-    }
+    return QString();
 }
 
 // return a list of .menu files
@@ -200,9 +187,8 @@ QStringList MainWindow::listMenuFiles() {
     QDirIterator it(user_dir, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         QString item = it.next();
-        if (item.endsWith(".menu")) {
+        if (item.endsWith(".menu"))
             menu_files << item;
-        }
     }
     return menu_files;
 }
@@ -235,11 +221,8 @@ void MainWindow::loadApps()
 {
     // execute if topLevel item is selected
     if (!ui->treeWidget->currentItem()->parent()) {
-        if (ui->buttonSave->isEnabled()) {
-            if (save()) {
-                return;
-            }
-        }
+        if (ui->buttonSave->isEnabled() && save())
+            return;
         QTreeWidgetItem *item = ui->treeWidget->currentItem();
         item->takeChildren();
         resetInterface();
@@ -263,11 +246,10 @@ void MainWindow::loadApps()
         // determine search string for all categories to be listead under menu category
         QString search_string;
         for (const QString &category : categories) {
-            if (search_string.isEmpty()) {
+            if (search_string.isEmpty())
                 search_string = "Categories=.*\"" + category + "\"";
-            } else {
+            else
                 search_string += "\\|Categories=.*\"" + category + "\"";
-            }
         }
 
         // list .desktop files from /usr and .local
@@ -281,7 +263,6 @@ void MainWindow::loadApps()
         // exclude files
         for (const QString &base_name : excludes)
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
-
         for (const QString &base_name : excludes)
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
 
@@ -306,9 +287,8 @@ void MainWindow::loadApps()
                 // find item and set restore flag
                 QTreeWidgetItemIterator it(item);
                 while (*it) {
-                    if ((*it)->text(1).contains(local_name)) {
+                    if ((*it)->text(1).contains(local_name))
                         (*it)->setText(2, "restore");
-                    }
                     ++it;
                 }
             }
@@ -325,9 +305,8 @@ void MainWindow::loadApps()
                 // find item and set restore flag
                 QTreeWidgetItemIterator it(item);
                 while (*it) {
-                    if ((*it)->text(1).contains(base_name)) {
+                    if ((*it)->text(1).contains(base_name))
                         (*it)->setText(2, "restore");
-                    }
                     ++it;
                 }
             }
@@ -343,15 +322,13 @@ void MainWindow::loadApps()
 // add .desktop item to treeWidget
 void MainWindow::addToTree(QString file_name)
 {
-    QFile file(file_name);
-    if (file.exists()) {
+    if (QFileInfo::exists(file_name)) {
         QString cmd = "grep -m1 ^Name= \"" + file_name.toUtf8() + "\"| cut  -d'=' -f2";
         QString app_name = getCmdOut(cmd).str;
         // add item as childItem to treeWidget
         QTreeWidgetItem *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
-        if (isHidden(file_name)) {
+        if (isHidden(file_name))
             childItem->setForeground(0, QBrush(Qt::gray));
-        }
         file_name.insert(0, "\"");
         file_name.append("\"");
         childItem->setText(0, app_name);
@@ -366,9 +343,8 @@ QStringList MainWindow::listDesktopFiles(const QString &search_string, const QSt
     if (!search_string.isEmpty()) {
         QString cmd = QString("grep -Elr %1 %2").arg(search_string).arg(location);
         Output out = getCmdOut(cmd);
-        if (!out.str.isEmpty()) {
+        if (!out.str.isEmpty())
             listDesktop = out.str.split("\n");
-        }
     }
     return listDesktop;
 }
@@ -378,11 +354,8 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
 {
     // execute if not topLevel item is selected
     if (item->parent()) {
-        if (ui->buttonSave->isEnabled()) {
-            if (save()) {
-                return;
-            }
-        }
+        if (ui->buttonSave->isEnabled() && save())
+            return;
         QString file_name = ui->treeWidget->currentItem()->text(1);
         resetInterface();
         enableEdit();
@@ -394,9 +367,8 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         ui->advancedEditor->setText(out.str);
         // load categories
         out = getCmdOut("grep ^Categories= " + file_name.toUtf8() + " | cut -f2- -d=");
-        if (out.str.endsWith(";")) {
+        if (out.str.endsWith(";"))
             out.str.remove(out.str.length() - 1, 1);
-        }
         QStringList categories = out.str.split(";");
         ui->listWidgetEditCategories->addItems(categories);
         // load name, command, comment
@@ -410,34 +382,29 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         ui->lineEditCommand->home(false);
         // load options
         out = getCmdOut("grep -m1 ^StartupNotify= " + file_name.toUtf8() + " | cut -f2- -d=");
-        if (out.str == "true") {
+        if (out.str == "true")
             ui->checkNotify->setChecked(true);
-        }
         out = getCmdOut("grep -m1 ^NoDisplay= " + file_name.toUtf8() + " | cut -f2- -d=");
-        if (out.str == "true") {
+        if (out.str == "true")
             ui->checkHide->setChecked(true);
-        }
         out = getCmdOut("grep -m1 ^Terminal= " + file_name.toUtf8() + " | cut -f2- -d=");
-        if (out.str == "true") {
+        if (out.str == "true")
             ui->checkRunInTerminal->setChecked(true);
-        }
         out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (!out.str.isEmpty()) {
             QSize size = ui->labelIcon->size();
             QString icon = out.str;
-            if (QFile(icon).exists()) {
+            if (QFile(icon).exists())
                 ui->labelIcon->setPixmap(QPixmap(icon).scaled(size));
-            } else {
+            else
                 ui->labelIcon->setPixmap(QPixmap(findIcon(icon)).scaled(size));
-            }
         }
 
         // enable RestoreApp button if flag is set up for item
-        if (ui->treeWidget->currentItem()->text(2) == "restore") {
+        if (ui->treeWidget->currentItem()->text(2) == "restore")
             ui->pushRestoreApp->setEnabled(true);
-        } else {
+        else
             ui->pushRestoreApp->setEnabled(false);
-        }
         current_item = ui->treeWidget->currentItem(); // remember the current_item in case user selects another item before saving
     }
 }
@@ -506,7 +473,6 @@ void MainWindow::enableEdit()
     ui->lineEditCommand->setEnabled(true);
     ui->lineEditComment->setEnabled(true);
     ui->lineEditName->setEnabled(true);
-    ui->pushChangeIcon->setEnabled(true);
 }
 
 // change the icon of the application
@@ -559,11 +525,12 @@ void MainWindow::changeName()
             }
         }
     } else { // if running command from add-custom-app window
-        if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty() && add->ui->listWidgetCategories->count() != 0) {
+        if (not add->ui->lineEditName->text().isEmpty()
+                and not add->ui->lineEditCommand->text().isEmpty()
+                and add->ui->listWidgetCategories->count() != 0)
             add->ui->buttonSave->setEnabled(true);
-        } else {
+        else
             add->ui->buttonSave->setEnabled(false);
-        }
     }
 }
 
@@ -580,11 +547,12 @@ void MainWindow::changeCommand()
         }
     } else { // if running command from add-custom-app window
         QString new_command = add->ui->lineEditCommand->text();
-        if (!new_command.isEmpty() && !add->ui->lineEditName->text().isEmpty() && add->ui->listWidgetCategories->count() != 0) {
+        if (not new_command.isEmpty()
+                and not add->ui->lineEditName->text().isEmpty()
+                and add->ui->listWidgetCategories->count() != 0)
             add->ui->buttonSave->setEnabled(true);
-        } else {
+        else
             add->ui->buttonSave->setEnabled(false);
-        }
     }
 }
 
@@ -669,9 +637,8 @@ void MainWindow::changeHide(bool checked)
         QString new_text;
         for (const QString &line : text.split("\n")) {
             new_text.append(line + "\n");
-            if (line.startsWith("Exec=")) {
+            if (line.startsWith("Exec="))
                 new_text.append("NoDisplay=" + str + "\n");
-            }
         }
         text = new_text;
     }
@@ -754,20 +721,20 @@ void MainWindow::addCategory()
             ui->listWidgetEditCategories->addItem(str);
             ui->advancedEditor->setText(text);
             ui->pushDelete->setEnabled(true);
-            if (ui->listWidgetEditCategories->count() == 0) {
+            if (ui->listWidgetEditCategories->count() == 0)
                 ui->buttonSave->setDisabled(true);
-            }
         }
     } else { // if running command from add-custom-app window
         if (add->ui->listWidgetCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
             text.insert(index, str + ";");
             add->ui->listWidgetCategories->addItem(str);
             add->ui->pushDelete->setEnabled(true);
-            if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty() && add->ui->listWidgetCategories->count() != 0) {
+            if (not add->ui->lineEditName->text().isEmpty()
+                    and not add->ui->lineEditCommand->text().isEmpty()
+                    and add->ui->listWidgetCategories->count() != 0)
                 add->ui->buttonSave->setEnabled(true);
-            } else {
+            else
                 add->ui->buttonSave->setEnabled(false);
-            }
         }
     }
 }
@@ -782,11 +749,8 @@ void MainWindow::addAppMsgBox()
         categories << (*it)->text(0);
         ++it;
     }
-    if (ui->buttonSave->isEnabled()) {
-        if (save()) {
-            return;
-        }
-    }
+    if (ui->buttonSave->isEnabled() && save())
+        return;
     add->show();
     resetInterface();
     ui->treeWidget->collapseAll();
@@ -816,16 +780,14 @@ void MainWindow::on_buttonSave_clicked()
     QString base_name = fi.fileName();
     QString out_name = dir.homePath() + "/.local/share/applications/" + base_name;
     QFile out(out_name);
-    if (!out.open(QFile::WriteOnly | QFile::Text)) {
+    if (!out.open(QFile::WriteOnly | QFile::Text))
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
-    }
     all_local_desktop_files << out_name;
     out.write(ui->advancedEditor->toPlainText().toUtf8());
     out.flush();
     out.close();
-    if (system("pgrep xfce4-panel") == 0) {
+    if (system("pgrep xfce4-panel") == 0)
         system("xfce4-panel --restart");
-    }
     ui->buttonSave->setDisabled(true);
     findReloadItem(base_name);
 }
@@ -883,9 +845,8 @@ void MainWindow::on_buttonHelp_clicked()
 
     QString url = "/usr/share/doc/mx-menu-editor/mx-menu-editor.html";
 
-    if (lang.startsWith("fr")) {
+    if (lang.startsWith("fr"))
         url = "https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu";
-    }
 
     system("xdg-open " + url.toUtf8());
 }
@@ -893,9 +854,8 @@ void MainWindow::on_buttonHelp_clicked()
 // Cancel button clicked
 void MainWindow::on_buttonCancel_clicked()
 {
-    if (ui->buttonSave->isEnabled()) {
+    if (ui->buttonSave->isEnabled())
         save();
-    }
     qApp->quit();
 }
 
@@ -903,8 +863,10 @@ void MainWindow::on_buttonCancel_clicked()
 bool MainWindow::save()
 {
     if (ui->buttonSave->isEnabled()) {
-        int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"), QMessageBox::Save, QMessageBox::Cancel);
-        if (ans == QMessageBox::Save) {
+        if (QMessageBox::Save == QMessageBox::question(this,
+                                                       tr("Save changes?"),
+                                                       tr("Do you want to save your edits?"),
+                                                       QMessageBox::Save, QMessageBox::Cancel)) {
             on_buttonSave_clicked();
             return true;
         }
@@ -969,7 +931,7 @@ QString MainWindow::findIcon(const QString &icon_name)
             }
         }
     }
-    return "";
+    return QString();
 }
 
 // find largest icon

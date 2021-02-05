@@ -27,8 +27,6 @@
 #include "addappdialog.h"
 #include "ui_addappdialog.h"
 
-//#include <QDebug>
-
 AddAppDialog::AddAppDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddAppDialog)
@@ -45,35 +43,28 @@ AddAppDialog::~AddAppDialog()
 // Save button clicked
 void AddAppDialog::on_buttonSave_clicked()
 {
-    QDir dir;
     QString output;
     QString file_name = ui->lineEditName->text().replace(" ", "-") + ".desktop";
-    QString out_name = dir.homePath() + "/.local/share/applications/" + file_name;
+    QString out_name = QDir::homePath() + "/.local/share/applications/" + file_name;
     QFile out(out_name);
-    if (!out.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::critical(nullptr, tr("Error"), tr("Could not save the file"));
-    }
+    if (!out.open(QFile::WriteOnly | QFile::Text))
+        QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
     output = "[Desktop Entry]\n";
     output.append("Name=" + ui->lineEditName->text() + "\n");
     output.append("Exec=" + ui->lineEditCommand->text() + "\n");
-    if (!ui->lineEditComment->text().isEmpty()) {
+    if (!ui->lineEditComment->text().isEmpty())
         output.append("Comment=" + ui->lineEditComment->text() + "\n");
-    }
-    if (icon_path != "") {
+    if (!icon_path.isEmpty())
         output.append("Icon=" + icon_path + "\n");
-    }
-    if (ui->checkStartup->checkState()) {
+    if (ui->checkStartup->checkState())
         output.append("StartupNotify=true\n");
-    }
-    if (ui->checkTerminal->checkState()) {
+    if (ui->checkTerminal->checkState())
         output.append("Terminal=true\n");
-    } else {
+    else
         output.append("Terminal=false\n");
-    }
     output.append("Type=Application\n");
     QString categories = "Categories=";
-    for (int i = 0; i < ui->listWidgetCategories->count(); ++i)
-    {
+    for (int i = 0; i < ui->listWidgetCategories->count(); ++i) {
         QListWidgetItem* item = ui->listWidgetCategories->item(i);
         categories += item->text() + ";";
     }
@@ -89,9 +80,8 @@ void AddAppDialog::on_buttonSave_clicked()
 // Cancel button clicked
 void AddAppDialog::on_buttonCancel_clicked()
 {
-    if (ui->buttonSave->isEnabled()) {
+    if (ui->buttonSave->isEnabled())
         saveOrNot();
-    }
     resetInterface();
     this->close();
 }
@@ -100,12 +90,11 @@ void AddAppDialog::on_buttonCancel_clicked()
 void AddAppDialog::saveOrNot()
 {
     if (ui->buttonSave->isEnabled()) {
-        int ans = QMessageBox::question(nullptr, tr("Save changes?"), tr("Do you want to save your edits?"), tr("Save"), tr("Cancel"));
-        if (ans == 0) {
+        int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"), QMessageBox::Save, QMessageBox::Cancel);
+        if (ans == QMessageBox::Save)
             on_buttonSave_clicked();
-        } else {
+        else
             ui->buttonSave->setDisabled(true);
-        }
     }
 }
 
