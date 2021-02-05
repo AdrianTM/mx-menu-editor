@@ -349,6 +349,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
 
         QString cmd;
         Output out;
+        QSize size = ui->labelIcon->size();
 
         out = getCmdOut("cat " + file_name.toUtf8());
         ui->advancedEditor->setText(out.str);
@@ -379,12 +380,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
             ui->checkRunInTerminal->setChecked(true);
         out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2- -d=");
         if (!out.str.isEmpty()) {
-            QSize size = ui->labelIcon->size();
-            QString icon = out.str;
-            if (QFileInfo::exists(icon))
-                ui->labelIcon->setPixmap(QPixmap(icon).scaled(size));
-            else
-                ui->labelIcon->setPixmap(QPixmap(findIcon(icon)).scaled(size));
+            ui->labelIcon->setPixmap(QPixmap(findIcon(out.str)).scaled(size));
         }
 
         // enable RestoreApp button if flag is set up for item
@@ -896,12 +892,19 @@ void MainWindow::findReloadItem(QString base_name)
 }
 
 // find icon file location using the icon name form .desktop file
-QString MainWindow::findIcon(const QString &icon_name)
+QString MainWindow::findIcon(QString icon_name)
 {
-    Output out;
-    const QStringList extList({".png", ".svg", ".xpm"});
+    if (icon_name.isEmpty())
+        return QString();
+    if (QFileInfo::exists(icon_name))
+        return icon_name;
 
-    out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
+    icon_name = icon_name.remove(QRegularExpression("\\.png$|\\.svg$|\\.xpm$"));
+
+    const QStringList extList({".svg", ".png", ".xpm"});
+
+    // Find icon in current theme
+    Output out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
     if (!out.str.isEmpty()) {
         QString dir = "/usr/share/icons/" + out.str;
         if (QFileInfo::exists(dir)) {
@@ -909,32 +912,46 @@ QString MainWindow::findIcon(const QString &icon_name)
                 out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
                 if (!out.str.isEmpty()) {
                     QStringList files = out.str.split("\n");
-                    return findBiggest(files);
-                } else {
-                    out = getCmdOut("find " + QDir::homePath() + "/.local/share/icons " + "/usr/share/icons /usr/share/pixmaps -iname " + icon_name + ext);
-                    if (!out.str.isEmpty()) {
-                        QStringList files = out.str.split("\n");
-                        return findBiggest(files);
-                    }
+                    if (!files.isEmpty())
+                        return findLargest(files);
                 }
             }
         }
+    }
+
+    // Look in other themes
+    for (const QString &ext : extList) {
+        out = getCmdOut("find /usr/share/icons -iname " + icon_name + ext);
+        if (!out.str.isEmpty()) {
+            QStringList files = out.str.split("\n");
+            if (!files.isEmpty())
+                return findLargest(files);
+        }
+    }
+
+    // Fallback if previous doesn't find the icon search in other places
+    QString local_path = (QFileInfo::exists(QDir::homePath() + "/.local/share/icons")) ? QDir::homePath() + "/.local/share/icons " : QString();
+    for (const QString &ext : extList) {
+        if (QFileInfo::exists("/usr/share/pixmaps/" + icon_name + ext))
+            return "/usr/share/pixmaps/" + icon_name + ext;
+        if (!local_path.isEmpty() && QFileInfo::exists(local_path + icon_name + ext))
+            return local_path + icon_name + ext;
     }
     return QString();
 }
 
 // find largest icon
-QString MainWindow::findBiggest(const QStringList &files)
+QString MainWindow::findLargest(const QStringList &files)
 {
     qint64 max = 0;
-    QString name_biggest;
+    QString largest;
     for (const QString &file : files) {
         QFile f(file);
         qint64 size = f.size();
         if (size >= max) {
-            name_biggest = file;
+            largest = file;
             max = size;
         }
     }
-    return name_biggest;
+    return largest;
 }
