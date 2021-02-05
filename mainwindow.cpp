@@ -22,22 +22,22 @@
  * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
+#include <QComboBox>
+#include <QDebug>
+#include <QDialogButtonBox>
+#include <QDirIterator>
+#include <QFileDialog>
+#include <QFormLayout>
+#include <QHashIterator>
+#include <QProcess>
+#include <QTextCodec>
+#include <QTextStream>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ui_addappdialog.h"
 #include "version.h"
 
-#include <QProcess>
-#include <QFileDialog>
-#include <QTextStream>
-#include <QFormLayout>
-#include <QComboBox>
-#include <QDialogButtonBox>
-#include <QDirIterator>
-#include <QHashIterator>
-#include <QTextCodec>
-
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
@@ -517,7 +517,7 @@ void MainWindow::changeIcon()
     QString selected;
     dialog.setFilter(QDir::Hidden);
     dialog.setFileMode(QFileDialog::ExistingFile);
-    dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm)"));
+    dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm *.svg)"));
     dialog.setDirectory("/usr/share/icons");
     if (dialog.exec()) {
         QStringList selected_list = dialog.selectedFiles();
@@ -527,7 +527,10 @@ void MainWindow::changeIcon()
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
             ui->buttonSave->setEnabled(true);
-            text.replace(QRegularExpression("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
+            if (text.contains(QRegularExpression("(^|\n)Icon=")))
+                text.replace(QRegularExpression("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
+            else
+                text.append("\nIcon=" + selected + "\n");
             ui->advancedEditor->setText(text);
             ui->labelIcon->setPixmap(QPixmap(selected));
         } else { // if running command from add-custom-app window
