@@ -69,8 +69,8 @@ public:
     bool isHidden(const QString &file_name);
     bool save();
     QString getCatName(const QString &file_name);
-    QString findIcon(const QString &icon_name);
-    QString findBiggest(const QStringList &files);
+    QString findIcon(QString icon_name);
+    QString findLargest(const QStringList &files);
     QStringList listCategories();
     QStringList listDesktopFiles(const QString &search_category, const QString &location);
     QStringList listMenuFiles();
