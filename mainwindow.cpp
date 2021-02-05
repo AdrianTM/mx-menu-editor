@@ -381,7 +381,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         if (!out.str.isEmpty()) {
             QSize size = ui->labelIcon->size();
             QString icon = out.str;
-            if (QFile(icon).exists())
+            if (QFileInfo::exists(icon))
                 ui->labelIcon->setPixmap(QPixmap(icon).scaled(size));
             else
                 ui->labelIcon->setPixmap(QPixmap(findIcon(icon)).scaled(size));
@@ -904,7 +904,7 @@ QString MainWindow::findIcon(const QString &icon_name)
     out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
     if (!out.str.isEmpty()) {
         QString dir = "/usr/share/icons/" + out.str;
-        if (QDir(dir).exists()) {
+        if (QFileInfo::exists(dir)) {
             for (const QString &ext : extList) {
                 out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
                 if (!out.str.isEmpty()) {
