@@ -285,7 +285,7 @@ void MainWindow::loadApps()
             app = addToTree(local_name);
             all_local_desktop_files << local_name;
             if (usr_base_names.contains(fi_local.fileName()))
-                app->setData(0, Qt::UserRole, "restore");
+                if (app) app->setData(0, Qt::UserRole, "restore");
         }
 
         // parse usr .desktop files
