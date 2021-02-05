@@ -13,20 +13,20 @@ Build-Depends: debhelper (>= 9), qtbase5-dev, qttools5-dev-tools
 Package-List:
  mx-menu-editor deb admin optional arch=any
 Checksums-Sha1:
- cc12555b5a9d6312eb2757bd819c24dc904b46fa 50224 mx-menu-editor_21.2.tar.xz
+ 89ad9f85c3bbae4050ebf336cbbbe6efc95b6eeb 50224 mx-menu-editor_21.2.tar.xz
 Checksums-Sha256:
- c0cd2cbca7c1a8a240827f2d747471b940427b00d8d3f3fd20190daf4d206728 50224 mx-menu-editor_21.2.tar.xz
+ 448d40b339763a61775382808cd8ba48fd7d1fca53d28022733220648f394e57 50224 mx-menu-editor_21.2.tar.xz
 Files:
- c13c685afcac8686c9320aefda866e3f 50224 mx-menu-editor_21.2.tar.xz
+ 88afb547b6f6b36c0638d54ff7bd91b2 50224 mx-menu-editor_21.2.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAc9ZoTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAoNCADXGgLe6AVszJ9is4JrGiWdqlY6BWGi
-T+rNESBNEHN0uydRMFPt+3O4Ulvu5T9q5fGYfPb/jdNvPdvgP5pJvGLEyuZyth4H
-3O9Jcehus4jpKSHI7uQA3l+efCSWy4ba8LHx+VjLNpRFQVtbv1cjEB98VnCmNKVv
-7/yIJGS+0uUztq2KbuhRQaJiDPkSNd8JassKVUBorx867OKNmtSmmfvb4KSyROXK
-2Q/bHAXvA3N/RK0ZEUMUVOoppi96E8PnxXgnS/sk1gmrS2VYqjOEHDf/VodjpCK6
-9FEFKSzNQ5E0lLIOu2WDpwThO0Bwa6jPw3ZF6giMkpRMefB8DEFsI/yu
-=oSPX
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAc+8sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMf+B/0cG9zZaTt6ny7RX2+z2/2Gdk88EqXO
+vPaxEX9N/A/sKPJG3yhP9lwFuPDeqkPP4pZMmCYIL5M/b9/S7MFTLO6FdaClzrMp
+x63TYR/hVAY8uVpzHz30VrNKUT5XOGO4ecrTNfV90ByRINA8QzSdM2EqIZCOfkhI
+QA3rrikD8ZOL4JKSxFWwXy0I1yvS3PlUilHW+lieEm6kUMbrDt4Svg3kZvqEi/yc
+x2isjo6wnblArXlITi6G5AjBp9QbrWG1mqTwGnuwyZhr7otNgPt5cVwhI3kCWuLF
+lWEkR8CGZ5RKwjDGgzPRf3am0Ca6pxCRGex5P/g8nhLYFmJc3EoGjSQc
+=g/oK
 -----END PGP SIGNATURE-----
