@@ -23,6 +23,8 @@
  **********************************************************************/
 
 #include <QApplication>
+#include <QLibraryInfo>
+
 #include "mainwindow.h"
 #include <qtranslator.h>
 #include <qlocale.h>
@@ -31,20 +33,25 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
 
     QTranslator qtTran;
-    qtTran.load(QString("qt_") + QLocale::system().name());
-    a.installTranslator(&qtTran);
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtTran);
+
+    QTranslator qtBaseTran;
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    appTran.load(QString("mx-menu-editor_") + QLocale::system().name(), "/usr/share/mx-menu-editor/locale");
-    a.installTranslator(&appTran);
+    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
+        app.installTranslator(&appTran);
 
     if (getuid() != 0) {
         MainWindow w;
         w.show();
-        return a.exec();
+        return app.exec();
     } else {
         QApplication::beep();
         QMessageBox::critical(nullptr, QString::null,
