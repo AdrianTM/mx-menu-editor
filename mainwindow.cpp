@@ -279,19 +279,13 @@ void MainWindow::loadApps()
         }
 
         // parse local .desktop files
+        QTreeWidgetItem *app;
         for (const QString &local_name : local_desktop_files) {
             QFileInfo fi_local(local_name);
-            addToTree(local_name);
+            app = addToTree(local_name);
             all_local_desktop_files << local_name;
-            if (usr_base_names.contains(fi_local.fileName())) {
-                // find item and set restore flag
-                QTreeWidgetItemIterator it(item);
-                while (*it) {
-                    if ((*it)->text(1).contains(local_name))
-                        (*it)->setText(2, "restore");
-                    ++it;
-                }
-            }
+            if (usr_base_names.contains(fi_local.fileName()))
+                app->setData(0, Qt::UserRole, "restore");
         }
 
         // parse usr .desktop files
@@ -299,17 +293,8 @@ void MainWindow::loadApps()
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
-            if (!local_base_names.contains(base_name)) {
+            if (!local_base_names.contains(base_name))
                 addToTree(file);
-            } else {
-                // find item and set restore flag
-                QTreeWidgetItemIterator it(item);
-                while (*it) {
-                    if ((*it)->text(1).contains(base_name))
-                        (*it)->setText(2, "restore");
-                    ++it;
-                }
-            }
         }
         item->sortChildren(true, Qt::AscendingOrder);
         item->setExpanded(true);
@@ -320,7 +305,7 @@ void MainWindow::loadApps()
 }
 
 // add .desktop item to treeWidget
-void MainWindow::addToTree(QString file_name)
+QTreeWidgetItem* MainWindow::addToTree(QString file_name)
 {
     if (QFileInfo::exists(file_name)) {
         QString cmd = "grep -m1 ^Name= \"" + file_name.toUtf8() + "\"| cut  -d'=' -f2";
@@ -333,7 +318,9 @@ void MainWindow::addToTree(QString file_name)
         file_name.append("\"");
         childItem->setText(0, app_name);
         childItem->setText(1, file_name);
+        return childItem;
     }
+    return nullptr;
 }
 
 // list .desktop files
@@ -401,7 +388,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         }
 
         // enable RestoreApp button if flag is set up for item
-        if (ui->treeWidget->currentItem()->text(2) == "restore")
+        if (ui->treeWidget->currentItem()->data(0, Qt::UserRole) == "restore")
             ui->pushRestoreApp->setEnabled(true);
         else
             ui->pushRestoreApp->setEnabled(false);
