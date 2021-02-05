@@ -64,7 +64,7 @@ public:
 
     void loadMenuFiles();
     void displayList(QStringList menu_items);
-    void addToTree(QString file_name);
+    QTreeWidgetItem* addToTree(QString file_name);
     void findReloadItem(QString base_name);
     bool isHidden(const QString &file_name);
     bool save();
