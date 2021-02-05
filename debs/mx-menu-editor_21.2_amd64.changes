@@ -18,20 +18,20 @@ Changes:
    * improve icon search
    * save and restore window geometry
 Checksums-Sha1:
- cfc39911b84bd72ed57fc3b921c73eb0b615748d 619 mx-menu-editor_21.2.dsc
- 4919ffe488625d24737691f448b495d165e344e5 50604 mx-menu-editor_21.2.tar.xz
- caa59c77c4d7a6b974cee957fa07f8c19355644f 754136 mx-menu-editor-dbgsym_21.2_amd64.deb
- 124c72c809c4a30143069850ae35846cc773dc1a 10153 mx-menu-editor_21.2_amd64.buildinfo
- e37cfcbf7efbc5ed16b09c2d1a254b5fd4da5e57 77096 mx-menu-editor_21.2_amd64.deb
+ 13e2b9ceaee157270e95e23679504ba7446c9708 619 mx-menu-editor_21.2.dsc
+ 7f844c0fa47d5cc391fc91e05a1bf88ae90b4d29 50812 mx-menu-editor_21.2.tar.xz
+ b7339a167cc51bcd3ac51f1e587489202217836c 756192 mx-menu-editor-dbgsym_21.2_amd64.deb
+ 77d7cb7002f12f4d4d4a99f8ac0be35b5f3eccb7 10153 mx-menu-editor_21.2_amd64.buildinfo
+ 62bc4c25360cc9f8a819f038f282304c52d70d6c 77426 mx-menu-editor_21.2_amd64.deb
 Checksums-Sha256:
- 91d3611bfe2e5a7e8e2fa43b5c842d6c9a2d9ffa26008a3558ec59a044f6793e 619 mx-menu-editor_21.2.dsc
- 956ccfc4b5a586d235fa6608160ff2ec0dd8abdc2166b01b637fc1e82ac8e6a4 50604 mx-menu-editor_21.2.tar.xz
- 8bbf494810bbbdde789ac5f600a8f90b6bd25987eb6dd89f41dd48e264ebdb21 754136 mx-menu-editor-dbgsym_21.2_amd64.deb
- ae59fa3c64f95c18af5ac2796ba015decab9857aaa43cde07df286a2636417b9 10153 mx-menu-editor_21.2_amd64.buildinfo
- d11d23a64f58ad6d8d9d705f06edfd8306c60f59b4bd75a4402c9dc855ff3916 77096 mx-menu-editor_21.2_amd64.deb
+ 363a8870c19fab80af1cc804e233faba305ffa8bd669b6ee81d150425acd7ff2 619 mx-menu-editor_21.2.dsc
+ b7ba37d1ae668e476107b2f5f5686838834a228b2f20ab0b5cbee97304641256 50812 mx-menu-editor_21.2.tar.xz
+ 4fd7aeb2313287eadd4aaa6dfef6c0418cf91ff1fc63b73c5da44817ddfa8a62 756192 mx-menu-editor-dbgsym_21.2_amd64.deb
+ bd0f3905b77edca38e8a0d3ce067440e325f7d46533329e7accd477800f958f2 10153 mx-menu-editor_21.2_amd64.buildinfo
+ 05c9432ea6d57757e3077baee4adc7e94ddc0f9a8addfb27cafad32337a03b22 77426 mx-menu-editor_21.2_amd64.deb
 Files:
- 92d561da9b86770b99f30724dea970dc 619 admin optional mx-menu-editor_21.2.dsc
- 63bdeb994be7421eb8bcf6d21d9822f2 50604 admin optional mx-menu-editor_21.2.tar.xz
- e13d695a0d33a5037ebbfb6ec15bd012 754136 debug extra mx-menu-editor-dbgsym_21.2_amd64.deb
- 94514aef4cf9589cbde1663e7d433472 10153 admin optional mx-menu-editor_21.2_amd64.buildinfo
- 458d984c6c2b9794f9ae3807ef7956a7 77096 admin optional mx-menu-editor_21.2_amd64.deb
+ 28a6b0970de71aa1e327aae3f863e97d 619 admin optional mx-menu-editor_21.2.dsc
+ f59d2c8b6420cfd75a6f5ba728f03f90 50812 admin optional mx-menu-editor_21.2.tar.xz
+ 37ec6895a4d8a27d5059709728937501 756192 debug extra mx-menu-editor-dbgsym_21.2_amd64.deb
+ 4913354554f670aacb99833760fc5586 10153 admin optional mx-menu-editor_21.2_amd64.buildinfo
+ be1cd0d884a9be47fd9ac881b51ef23d 77426 admin optional mx-menu-editor_21.2_amd64.deb

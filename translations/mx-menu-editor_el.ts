@@ -123,7 +123,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="826"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor</translation>
     </message>
@@ -200,7 +200,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="519"/>
         <source>Change icon</source>
         <translation>Αλλαγή εικονιδίου</translation>
     </message>
@@ -275,7 +275,7 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Select executable file</source>
         <translation>Επιλέξτε εκτελέσιμο αρχείο</translation>
     </message>
@@ -284,78 +284,78 @@
         <translation type="vanished">Αρχεία εικόνας </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="500"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="687"/>
+        <location filename="../mainwindow.cpp" line="700"/>
         <source>Choose category</source>
         <translation>Επιλογή κατηγορίας</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="698"/>
-        <location filename="../mainwindow.cpp" line="819"/>
+        <location filename="../mainwindow.cpp" line="711"/>
+        <location filename="../mainwindow.cpp" line="832"/>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="699"/>
+        <location filename="../mainwindow.cpp" line="712"/>
         <source>OK</source>
         <translation>Εντάξει</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Could not save the file</source>
         <translation>Δεν ήταν δυνατή η αποθήκευση του αρχείου</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="812"/>
+        <location filename="../mainwindow.cpp" line="825"/>
         <source>About MX Menu Editor</source>
         <translation>Περί MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="826"/>
         <source>Version: </source>
         <translation>Έκδοση:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="814"/>
+        <location filename="../mainwindow.cpp" line="827"/>
         <source>Program for editing Xfce menu</source>
         <translation>Πρόγραμμα για επεξεργασία μενού του Xfce</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="816"/>
+        <location filename="../mainwindow.cpp" line="829"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Πνευματικά δικαιώματα (c)  MX Linux </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="817"/>
+        <location filename="../mainwindow.cpp" line="830"/>
         <source>License</source>
         <translation>Άδεια</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
+        <location filename="../mainwindow.cpp" line="831"/>
         <source>Changelog</source>
         <translation>Καταγραφή</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="847"/>
         <source>&amp;Close</source>
         <translation>&amp;Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="879"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <source>Save changes?</source>
         <translation>Αποθήκευσε τις αλλαγές;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source>Do you want to save your edits?</source>
         <translation>Θέλετε να αποθηκεύσετε τις αλλαγές σας;</translation>
     </message>
