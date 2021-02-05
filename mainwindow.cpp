@@ -24,12 +24,14 @@
 
 #include <QComboBox>
 #include <QDebug>
+#include <QDesktopWidget>
 #include <QDialogButtonBox>
 #include <QDirIterator>
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QHashIterator>
 #include <QProcess>
+#include <QSettings>
 #include <QTextCodec>
 #include <QTextStream>
 
@@ -45,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
     add(new AddAppDialog)
 {
     qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
+    connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::saveSettings);
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
 
@@ -79,6 +82,16 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->lineEditName, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditCommand, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
+
+    QSize size = this->size();
+    QSettings settings(qApp->applicationName());
+    if (settings.contains("geometry")) {
+        restoreGeometry(settings.value("geometry").toByteArray());
+        if (this->isMaximized()) { // add option to resize if maximized
+            this->resize(size);
+            centerWindow();
+        }
+    }
 
 }
 
@@ -443,6 +456,12 @@ void MainWindow::resetInterface()
     ui->labelIcon->setPixmap(QPixmap());
 }
 
+void MainWindow::saveSettings()
+{
+    QSettings settings(qApp->applicationName());
+    settings.setValue("geometry", saveGeometry());
+}
+
 // enable buttons to edit item
 void MainWindow::enableEdit()
 {
@@ -688,6 +707,14 @@ void MainWindow::addCategoryMsgBox()
 
     window->setLayout(layout);
     window->show();
+}
+
+void MainWindow::centerWindow()
+{
+    QRect screenGeometry = QApplication::desktop()->screenGeometry();
+    int x = (screenGeometry.width()-this->width()) / 2;
+    int y = (screenGeometry.height()-this->height()) / 2;
+    this->move(x, y);
 }
 
 // add selected categorory to the .desktop file

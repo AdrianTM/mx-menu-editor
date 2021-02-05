@@ -79,6 +79,7 @@ public slots:
     void addAppMsgBox();
     void addCategory();
     void addCategoryMsgBox();
+    void centerWindow();
     void changeCommand();
     void changeComment();
     void changeHide(bool);
@@ -93,6 +94,7 @@ public slots:
     void loadApps(QTreeWidgetItem *item);
     void loadItem(QTreeWidgetItem *item, int);
     void resetInterface();
+    void saveSettings();
     void selectCommand();
     void setEnabled(QString);
 
