@@ -123,7 +123,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="826"/>
         <source>MX Menu Editor</source>
         <translation>MX 選單編輯工具</translation>
     </message>
@@ -199,7 +199,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="519"/>
         <source>Change icon</source>
         <translation>更換圖示</translation>
     </message>
@@ -274,7 +274,7 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="419"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Select executable file</source>
         <translation>選擇可執行檔</translation>
     </message>
@@ -283,78 +283,78 @@
         <translation type="vanished">圖形檔（*.png *.jpg *.bmp *.xpm）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="487"/>
+        <location filename="../mainwindow.cpp" line="500"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="687"/>
+        <location filename="../mainwindow.cpp" line="700"/>
         <source>Choose category</source>
         <translation>選擇類別</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="698"/>
-        <location filename="../mainwindow.cpp" line="819"/>
+        <location filename="../mainwindow.cpp" line="711"/>
+        <location filename="../mainwindow.cpp" line="832"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="699"/>
+        <location filename="../mainwindow.cpp" line="712"/>
         <source>OK</source>
         <translation>確定</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Could not save the file</source>
         <translation>無法儲存檔案</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="812"/>
+        <location filename="../mainwindow.cpp" line="825"/>
         <source>About MX Menu Editor</source>
         <translation>關於 MX 選單編輯工具</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="826"/>
         <source>Version: </source>
         <translation>版本：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="814"/>
+        <location filename="../mainwindow.cpp" line="827"/>
         <source>Program for editing Xfce menu</source>
         <translation>本程式可用來編輯 Xfce 選單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="816"/>
+        <location filename="../mainwindow.cpp" line="829"/>
         <source>Copyright (c) MX Linux</source>
         <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="817"/>
+        <location filename="../mainwindow.cpp" line="830"/>
         <source>License</source>
         <translation>授權條款</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
+        <location filename="../mainwindow.cpp" line="831"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="847"/>
         <source>&amp;Close</source>
         <translation>關閉（&amp;C）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="879"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <source>Save changes?</source>
         <translation>儲存變更？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source>Do you want to save your edits?</source>
         <translation>你要儲存這些變更嗎？</translation>
     </message>
