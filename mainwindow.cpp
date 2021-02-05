@@ -189,6 +189,19 @@ QString MainWindow::getCatName(const QString &file_name)
     return QString();
 }
 
+// try to return the right size icon from a list of icons givien the size that needs to be displayed
+QString MainWindow::pickIcon(const QStringList &icons, const QSize &size)
+{
+    const QString size_str = QString::number(size.width()) + "x" + QString::number(size.height());
+    const QRegularExpression re("[0-9]+x[0-9]+");
+    for (QString icon : icons) {
+        QRegularExpressionMatch match = re.match(icon);
+        if ((match.hasMatch() && match.captured() == size_str))
+            return icon;
+    }
+    return QString();
+}
+
 // return a list of .menu files
 QStringList MainWindow::listMenuFiles() {
     QString home_path = QDir::homePath();
@@ -206,7 +219,7 @@ QStringList MainWindow::listMenuFiles() {
     return menu_files;
 }
 
-// display sorted list of menu items in the treeWidget
+// Display sorted list of menu items in the treeWidget
 void MainWindow::displayList(QStringList menu_items) {
     QTreeWidgetItem *topLevelItem = nullptr;
     ui->treeWidget->setHeaderLabel("");
@@ -362,7 +375,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
 
         QString cmd;
         Output out;
-        QSize size = ui->labelIcon->size();
+        const QSize size = ui->labelIcon->size();
 
         out = getCmdOut("cat " + file_name.toUtf8());
         ui->advancedEditor->setText(out.str);
@@ -923,7 +936,7 @@ QString MainWindow::findIcon(QString icon_name)
 {
     if (icon_name.isEmpty())
         return QString();
-    if (QFileInfo::exists(icon_name))
+    if (QFileInfo::exists("/" + icon_name))
         return icon_name;
 
     icon_name = icon_name.remove(QRegularExpression("\\.png$|\\.svg$|\\.xpm$"));
@@ -931,16 +944,19 @@ QString MainWindow::findIcon(QString icon_name)
     const QStringList extList({".svg", ".png", ".xpm"});
 
     // Find icon in current theme
-    Output out = getCmdOut("xfconf-query -c xsettings -p /Net/IconThemeName");
-    if (!out.str.isEmpty()) {
-        QString dir = "/usr/share/icons/" + out.str;
-        if (QFileInfo::exists(dir)) {
-            for (const QString &ext : extList) {
-                out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
-                if (!out.str.isEmpty()) {
-                    QStringList files = out.str.split("\n");
-                    if (!files.isEmpty())
-                        return findLargest(files);
+    QString theme = QIcon::themeName();
+    QString dir = "/usr/share/icons/" + theme;
+    Output out;
+    if (QFileInfo::exists(dir)) {
+        for (const QString &ext : extList) {
+            out = getCmdOut("find " + dir + " -iname " + icon_name + ext);
+            if (!out.str.isEmpty()) {
+                QStringList files = out.str.split("\n");
+                if (!files.isEmpty()) {
+                    QString icon = pickIcon(files, QSize(48, 48));
+                    if (!icon.isEmpty())
+                        return icon;
+                    return findLargest(files);
                 }
             }
         }
@@ -951,8 +967,12 @@ QString MainWindow::findIcon(QString icon_name)
         out = getCmdOut("find /usr/share/icons -iname " + icon_name + ext);
         if (!out.str.isEmpty()) {
             QStringList files = out.str.split("\n");
-            if (!files.isEmpty())
+            if (!files.isEmpty()) {
+                QString icon = pickIcon(files, QSize(48, 48));
+                if (!icon.isEmpty())
+                    return icon;
                 return findLargest(files);
+            }
         }
     }
 
@@ -970,6 +990,9 @@ QString MainWindow::findIcon(QString icon_name)
 // find largest icon
 QString MainWindow::findLargest(const QStringList &files)
 {
+    if (files.size() == 0) return QString();
+    if (files.size() == 1) return files.at(0);
+
     qint64 max = 0;
     QString largest;
     for (const QString &file : files) {

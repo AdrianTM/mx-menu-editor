@@ -56,24 +56,25 @@ public:
 
     Output getCmdOut(const QString &cmd);
     QFile config_file;
-    QStringList all_usr_desktop_files;
-    QStringList all_local_desktop_files;
     QHash<QString, QString> hashCategories;
-    QHash<QString, QString> hashInclude;
     QHash<QString, QString> hashExclude;
+    QHash<QString, QString> hashInclude;
+    QStringList all_local_desktop_files;
+    QStringList all_usr_desktop_files;
 
-    void loadMenuFiles();
-    void displayList(QStringList menu_items);
-    QTreeWidgetItem* addToTree(QString file_name);
-    void findReloadItem(QString base_name);
-    bool isHidden(const QString &file_name);
-    bool save();
-    QString getCatName(const QString &file_name);
     QString findIcon(QString icon_name);
     QString findLargest(const QStringList &files);
+    QString getCatName(const QString &file_name);
+    QString pickIcon(const QStringList &icons, const QSize &size);
     QStringList listCategories();
     QStringList listDesktopFiles(const QString &search_category, const QString &location);
     QStringList listMenuFiles();
+    QTreeWidgetItem* addToTree(QString file_name);
+    bool isHidden(const QString &file_name);
+    bool save();
+    void displayList(QStringList menu_items);
+    void findReloadItem(QString base_name);
+    void loadMenuFiles();
 
 public slots:
     void addAppMsgBox();
@@ -99,10 +100,10 @@ public slots:
     void setEnabled(QString);
 
 private slots:
-    void on_buttonSave_clicked();
     void on_buttonAbout_clicked();
-    void on_buttonHelp_clicked();
     void on_buttonCancel_clicked();
+    void on_buttonHelp_clicked();
+    void on_buttonSave_clicked();
     void on_pushRestoreApp_clicked();
 
 private:
