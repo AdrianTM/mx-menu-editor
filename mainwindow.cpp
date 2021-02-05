@@ -778,6 +778,8 @@ void MainWindow::on_buttonSave_clicked()
     QString file_name = current_item->text(1).remove("\"");
     QFileInfo fi(file_name);
     QString base_name = fi.fileName();
+    if (!QFileInfo::exists(dir.homePath() + "/.local/share/applications/"))
+        dir.mkpath(dir.homePath() + "/.local/share/applications/");
     QString out_name = dir.homePath() + "/.local/share/applications/" + base_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text))

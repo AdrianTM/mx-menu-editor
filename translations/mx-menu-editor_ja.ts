@@ -45,7 +45,6 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -76,7 +75,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="122"/>
+        <location filename="../addappdialog.cpp" line="111"/>
         <source>Set icon</source>
         <translation>アイコンを設定</translation>
     </message>
@@ -91,41 +90,40 @@
         <translation>起動時の通知</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="../addappdialog.cpp" line="35"/>
         <source>Add Custom Application</source>
         <translation>カスタムアプリを追加</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="../addappdialog.cpp" line="51"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="../addappdialog.cpp" line="51"/>
         <source>Could not save the file</source>
         <translation>ファイルを保存できません</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="../addappdialog.cpp" line="93"/>
         <source>Save changes?</source>
         <translation>変更を保存？</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="../addappdialog.cpp" line="93"/>
         <source>Do you want to save your edits?</source>
         <translation>編集した内容を保存しますか？</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="vanished">保存</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>MX Menu Editor</source>
         <translation>MX メニューエディタ</translation>
     </message>
@@ -201,7 +199,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Change icon</source>
         <translation>アイコンを変更</translation>
     </message>
@@ -276,83 +274,87 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="457"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>Select executable file</source>
         <translation>実行ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>画像ファイル (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">画像ファイル (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="485"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Choose category</source>
         <translation>カテゴリを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="724"/>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="725"/>
+        <location filename="../mainwindow.cpp" line="697"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="815"/>
+        <location filename="../mainwindow.cpp" line="784"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="815"/>
+        <location filename="../mainwindow.cpp" line="784"/>
         <source>Could not save the file</source>
         <translation>ファイルを保存できません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="833"/>
+        <location filename="../mainwindow.cpp" line="800"/>
         <source>About MX Menu Editor</source>
         <translation>MX メニューエディタについて</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="802"/>
         <source>Program for editing Xfce menu</source>
         <translation>Xfce メニューを編集するプログラム</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="837"/>
+        <location filename="../mainwindow.cpp" line="804"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="838"/>
+        <location filename="../mainwindow.cpp" line="805"/>
         <source>License</source>
         <translation>ライセンス</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="806"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="855"/>
+        <location filename="../mainwindow.cpp" line="822"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="867"/>
         <source>Save changes?</source>
         <translation>変更を保存？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Do you want to save your edits?</source>
         <translation>編集した内容を保存しますか？</translation>
     </message>
@@ -360,7 +362,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="58"/>
         <source>You must run this program as normal user.</source>
         <translation>このプログラムは通常ユーザーで実行して下さい。</translation>
     </message>

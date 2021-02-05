@@ -45,7 +45,6 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
-        <location filename="../addappdialog.cpp" line="103"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
@@ -76,7 +75,7 @@
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
-        <location filename="../addappdialog.cpp" line="122"/>
+        <location filename="../addappdialog.cpp" line="111"/>
         <source>Set icon</source>
         <translation>Indstil ikon</translation>
     </message>
@@ -91,41 +90,40 @@
         <translation>Opstartsunderretter</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="37"/>
+        <location filename="../addappdialog.cpp" line="35"/>
         <source>Add Custom Application</source>
         <translation>Tilføj tilpasset program</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="../addappdialog.cpp" line="51"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="54"/>
+        <location filename="../addappdialog.cpp" line="51"/>
         <source>Could not save the file</source>
         <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="../addappdialog.cpp" line="93"/>
         <source>Save changes?</source>
         <translation>Gem ændringer?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
+        <location filename="../addappdialog.cpp" line="93"/>
         <source>Do you want to save your edits?</source>
         <translation>Vil du gemme dine redigeringer?</translation>
     </message>
     <message>
-        <location filename="../addappdialog.cpp" line="103"/>
         <source>Save</source>
-        <translation>Gem</translation>
+        <translation type="vanished">Gem</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="17"/>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>MX Menu Editor</source>
         <translation>MX Menuredigering</translation>
     </message>
@@ -201,7 +199,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="504"/>
         <source>Change icon</source>
         <translation>Skift ikon</translation>
     </message>
@@ -276,83 +274,87 @@
         <translation>Alt+O</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="457"/>
+        <location filename="../mainwindow.cpp" line="423"/>
         <source>Select executable file</source>
         <translation>Vælg eksekverbar fil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">Billedfiler (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="485"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Choose category</source>
         <translation>Vælg kategori</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="724"/>
-        <location filename="../mainwindow.cpp" line="840"/>
+        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="725"/>
+        <location filename="../mainwindow.cpp" line="697"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="815"/>
+        <location filename="../mainwindow.cpp" line="784"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="815"/>
+        <location filename="../mainwindow.cpp" line="784"/>
         <source>Could not save the file</source>
         <translation>Kunne ikke gemme filen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="833"/>
+        <location filename="../mainwindow.cpp" line="800"/>
         <source>About MX Menu Editor</source>
         <translation>Om MX Menuredigering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="802"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program til at redigere Xfce-menu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="837"/>
+        <location filename="../mainwindow.cpp" line="804"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="838"/>
+        <location filename="../mainwindow.cpp" line="805"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="806"/>
         <source>Changelog</source>
         <translation>Ændringslog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="855"/>
+        <location filename="../mainwindow.cpp" line="822"/>
         <source>&amp;Close</source>
         <translation>&amp;Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="867"/>
         <source>Save changes?</source>
         <translation>Gem ændringer?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Do you want to save your edits?</source>
         <translation>Vil du gemme dine redigeringer?</translation>
     </message>
@@ -360,7 +362,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="58"/>
         <source>You must run this program as normal user.</source>
         <translation>Du skal køre programmet som normal bruger.</translation>
     </message>
