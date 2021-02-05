@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.8
 Date: Thu, 04 Feb 2021 22:59:48 -0500
 Source: mx-menu-editor
@@ -19,33 +16,22 @@ Changes:
    * fix: add icon if Icon= is missing from .desktop file
    * allow selecting .svg icons
    * improve icon search
+   * save and restore window geometry
 Checksums-Sha1:
- fa519f8b80e64a9f639b8baedfa80c12eb31f95d 1181 mx-menu-editor_21.2.dsc
- 83f7712ed9c3ebcfb08e6b421a741c7d38512097 50360 mx-menu-editor_21.2.tar.xz
- b84bd3dc8b1586dca1f14a7ecb9ce0e3a124c8b7 750912 mx-menu-editor-dbgsym_21.2_amd64.deb
- a4a03f7dc0c1d18c91fb76b5442224e9f769e59d 10718 mx-menu-editor_21.2_amd64.buildinfo
- cd976e61681ed44bc3f4819b4a9f57898536ca82 75938 mx-menu-editor_21.2_amd64.deb
+ cfc39911b84bd72ed57fc3b921c73eb0b615748d 619 mx-menu-editor_21.2.dsc
+ 4919ffe488625d24737691f448b495d165e344e5 50604 mx-menu-editor_21.2.tar.xz
+ caa59c77c4d7a6b974cee957fa07f8c19355644f 754136 mx-menu-editor-dbgsym_21.2_amd64.deb
+ 124c72c809c4a30143069850ae35846cc773dc1a 10153 mx-menu-editor_21.2_amd64.buildinfo
+ e37cfcbf7efbc5ed16b09c2d1a254b5fd4da5e57 77096 mx-menu-editor_21.2_amd64.deb
 Checksums-Sha256:
- f44bb8c5c2c4a97177ab0f289b18ed9dbdc6d5237687d526531bf50594ac7ebd 1181 mx-menu-editor_21.2.dsc
- cf0e3f0d5f042d12c9ca0c6f0a5319e55e1b5891985dd9266574c586a0386455 50360 mx-menu-editor_21.2.tar.xz
- a8dc7231f98e1ea301ebb117a72399d039aa78644aab7aacac9bb82dea8fe3b9 750912 mx-menu-editor-dbgsym_21.2_amd64.deb
- 3a5dc4da96a6d3474183d244f18cad608bd87ebfe72734cb6c8b46285f7d6134 10718 mx-menu-editor_21.2_amd64.buildinfo
- 7331583ea3a7b6a50c44dc81c20680c0b6009d00855236c293e65dc0160fed5d 75938 mx-menu-editor_21.2_amd64.deb
+ 91d3611bfe2e5a7e8e2fa43b5c842d6c9a2d9ffa26008a3558ec59a044f6793e 619 mx-menu-editor_21.2.dsc
+ 956ccfc4b5a586d235fa6608160ff2ec0dd8abdc2166b01b637fc1e82ac8e6a4 50604 mx-menu-editor_21.2.tar.xz
+ 8bbf494810bbbdde789ac5f600a8f90b6bd25987eb6dd89f41dd48e264ebdb21 754136 mx-menu-editor-dbgsym_21.2_amd64.deb
+ ae59fa3c64f95c18af5ac2796ba015decab9857aaa43cde07df286a2636417b9 10153 mx-menu-editor_21.2_amd64.buildinfo
+ d11d23a64f58ad6d8d9d705f06edfd8306c60f59b4bd75a4402c9dc855ff3916 77096 mx-menu-editor_21.2_amd64.deb
 Files:
- 6108e21b3b3a340086d9f3e70cb48afc 1181 admin optional mx-menu-editor_21.2.dsc
- c93db25f66ebc5cb565cde4320410ff0 50360 admin optional mx-menu-editor_21.2.tar.xz
- c926b0bf37eaf969962ea8ca1c9e7d05 750912 debug extra mx-menu-editor-dbgsym_21.2_amd64.deb
- 6ab65cdba2eb19101c8a8e5466be6c52 10718 admin optional mx-menu-editor_21.2_amd64.buildinfo
- 06ed9afee684d0f15da9ad3c05d721f4 75938 admin optional mx-menu-editor_21.2_amd64.deb
-
------BEGIN PGP SIGNATURE-----
-
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAdbLETHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLEXCADDCAwOXodOdWb10uK8J35qVfQheNU6
-2ghVg+QiLwXWKaOjtvnL2JyZnBtwt0ldb2YSHD2jud7k5IU20+6KTgVxFi0LAku8
-J/d3HVUHw1vtN6rvMLVoDdm12IvVHR0ho//ntjG2N9w9EKCtv0aykOiEBaKuaexd
-ZLqDhKAtS/98QAej2HWdwI2OAT3pJuvzCoUyuG7apkJYQ7qVmST4TDJtAtutij+R
-Q/H1sOnUi62AQChvblYx/MujMgwuhZZ4qsQO2K3+m/UZJpPbQcuXrRvYssM2rF3g
-HD0FBX5Pitz/gKD3hh/LYuRPqNjs3AbmjHOYYD76yt+XGxveoPsabnIH
-=9YWo
------END PGP SIGNATURE-----
+ 92d561da9b86770b99f30724dea970dc 619 admin optional mx-menu-editor_21.2.dsc
+ 63bdeb994be7421eb8bcf6d21d9822f2 50604 admin optional mx-menu-editor_21.2.tar.xz
+ e13d695a0d33a5037ebbfb6ec15bd012 754136 debug extra mx-menu-editor-dbgsym_21.2_amd64.deb
+ 94514aef4cf9589cbde1663e7d433472 10153 admin optional mx-menu-editor_21.2_amd64.buildinfo
+ 458d984c6c2b9794f9ae3807ef7956a7 77096 admin optional mx-menu-editor_21.2_amd64.deb
