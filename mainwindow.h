@@ -68,7 +68,7 @@ public:
     void findReloadItem(QString base_name);
     bool isHidden(const QString &file_name);
     bool save();
-    QString getCatName(const QFile *file);
+    QString getCatName(const QString &file_name);
     QString findIcon(const QString &icon_name);
     QString findBiggest(const QStringList &files);
     QStringList listCategories();
