@@ -405,9 +405,8 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         if (out.str == "true")
             ui->checkRunInTerminal->setChecked(true);
         out = getCmdOut("grep -m1 ^Icon= " + file_name.toUtf8() + " | cut -f2- -d=");
-        if (!out.str.isEmpty()) {
+        if (!out.str.isEmpty())
             ui->labelIcon->setPixmap(QPixmap(findIcon(out.str)).scaled(size));
-        }
 
         // enable RestoreApp button if flag is set up for item
         if (ui->treeWidget->currentItem()->data(0, Qt::UserRole) == "restore")
@@ -944,8 +943,7 @@ QString MainWindow::findIcon(QString icon_name)
     const QStringList extList({".svg", ".png", ".xpm"});
 
     // Find icon in current theme
-    QString theme = QIcon::themeName();
-    QString dir = "/usr/share/icons/" + theme;
+    QString dir = "/usr/share/icons/" + QIcon::themeName();;
     Output out;
     if (QFileInfo::exists(dir)) {
         for (const QString &ext : extList) {
