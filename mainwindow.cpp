@@ -161,7 +161,7 @@ void MainWindow::loadMenuFiles()
                                 if (line.contains("<Exclude>")) {
                                     while (!(in.atEnd() || line.contains("</Exclude>"))) {
                                         line = in.readLine();
-                                        if(line.contains("<Filename>")) {
+                                        if (line.contains("<Filename>")) {
                                             line = line.remove("<Filename>").remove("</Filename>").trimmed();
                                             if (!hashExclude.values(name).contains(line))
                                                 hashExclude.insertMulti(name, line); //each menu category contains a number of files
