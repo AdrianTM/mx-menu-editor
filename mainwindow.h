@@ -63,9 +63,7 @@ public:
     QStringList all_usr_desktop_files;
 
     QString findIcon(QString icon_name);
-    QString findLargest(const QStringList &files);
     QString getCatName(const QString &file_name);
-    QString pickIcon(const QStringList &icons, const QSize &size);
     QStringList listCategories();
     QStringList listDesktopFiles(const QString &search_category, const QString &location);
     QStringList listMenuFiles();
