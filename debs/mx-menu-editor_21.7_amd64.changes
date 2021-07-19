@@ -18,29 +18,29 @@ Changes:
  .
    * Faster icon search
 Checksums-Sha1:
- ec93d9f9700520ef6497bda04b2f1eca308e2b88 1182 mx-menu-editor_21.7.dsc
- d36dcb82209f94496143a3cf910f76fc36e50b31 50564 mx-menu-editor_21.7.tar.xz
- 10115dbd9fafd8c73e10eb6c4de9d9ad3b42dff0 10444 mx-menu-editor_21.7_amd64.buildinfo
- 0d809d864fed3babd44f1623fa22e3517c671445 76850 mx-menu-editor_21.7_amd64.deb
+ 983bb2bc7a4b156f91ffd25f920515d1a90ed5b4 1182 mx-menu-editor_21.7.dsc
+ 272c850929bece0ba9902865d92ed9dbea687fe3 50568 mx-menu-editor_21.7.tar.xz
+ cacb918232a095f42ae70bc0106e4326f67b91ad 10444 mx-menu-editor_21.7_amd64.buildinfo
+ b1e805476d034a1a33393e940b72352a93fec6c6 76836 mx-menu-editor_21.7_amd64.deb
 Checksums-Sha256:
- f830fe11bc35ee52d8c49ee6c1d6884e3875cde733438a49296eec59b87bb1ca 1182 mx-menu-editor_21.7.dsc
- 300dfea8b1abde6039d9251efb0724a9cb3ed6e5fdf42e9f74d6c225f7bd6d66 50564 mx-menu-editor_21.7.tar.xz
- 995e11e028e2e8594f77d917a8379315e6b34dc5370d919d9c9b76cb84abbcad 10444 mx-menu-editor_21.7_amd64.buildinfo
- d4d90d7075bf6189e9e25fd4c4ffd7580f317bdc84ce874359d742cfcc5693fa 76850 mx-menu-editor_21.7_amd64.deb
+ 8fdf97edd6b816d98a943fc91b9b4fcfd44fdc0aa1f30f3bc557217e11d98fbc 1182 mx-menu-editor_21.7.dsc
+ 6941776c0a22b6285c28f0646b0d73550f1fae86fd87b41ae2c6bd033d08f164 50568 mx-menu-editor_21.7.tar.xz
+ 58ac12b365535b7dd831bd27ae90372dc6b8147358fc5e1ce4fbcba3d1f89ff9 10444 mx-menu-editor_21.7_amd64.buildinfo
+ 0004da75f959b175a9e32df5b96a6adc16396e65198b23abd3ce0bad3a3df8c6 76836 mx-menu-editor_21.7_amd64.deb
 Files:
- 2ed4ace9883b6f1b21db564a24187a90 1182 admin optional mx-menu-editor_21.7.dsc
- 2be38dd50263196678c0a8959716e6f6 50564 admin optional mx-menu-editor_21.7.tar.xz
- 847883b8aa994f0523ef626b3431682e 10444 admin optional mx-menu-editor_21.7_amd64.buildinfo
- 0ca77b9f60aff56d2bcc132cb7b74705 76850 admin optional mx-menu-editor_21.7_amd64.deb
+ 76163725dc09c5639a32a3788316cf86 1182 admin optional mx-menu-editor_21.7.dsc
+ 6f47996b0725f90f3cb15824487f43d2 50568 admin optional mx-menu-editor_21.7.tar.xz
+ 8b33ad1063a593ba246c3ce0ae684fdd 10444 admin optional mx-menu-editor_21.7_amd64.buildinfo
+ f43059145fa13d0e630957f9cdec56af 76836 admin optional mx-menu-editor_21.7_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD0zV0THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLdmCACsBE7Q8PtNK44Y1uN/Ua9YDJYRmv0M
-PoLPpyL8Pw5jb+Gf+xelwg0ZxjaZjuZosUqo9YyPv79WPK9y7YpTZTpxwL6e0esC
-BHcKlv+cRMwQmsPFp12RDx59kL+I4/dkTra8lDy+2eoUsG3B2I9GUv/kaEcaPJzq
-Jh55iZpmIIrXthaqr35XyHKMvaPJP/Zg7lm0rCyaNtkZxFW1Sw8i11GrHHfxTMcK
-oM3QuY47vix2dFaQdItv5MO0XhymesDhAxDhbqyoib/c5i2sIOpGIY92Xv9eJaMk
-53ttN6qPktB9tuNhUjG/djr4lkH8mbkfXgx5hJE44QgBVcrixL+YoP/N
-=/PW1
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD0z7sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFTlCACpV2Pbi0gvgVtD3DkGARG9WDAlkqhI
+XnPxkxWSIn59T6JiDxM34zkiHiYnyOXa3biDM+GDMJgUlvK6FaGk2y6cfIpkvYCr
+024Iq2p8ssv0IPC4rYgzXQgUInqOYTRpAhh6TDGGcGWH6Xv+70DhTpKRU8rgFp9z
+0XGqrPZt4c2TqnMJZNLjcnz3VGLY8UUsoQd4KfTBA8jHF8E2QMml+Ty8fK/dCB4Y
+3dXxrs61SV7x9r6f3jUzj7Ej2wkhT/JkKFmX6dp9FPjfohtZc+lOnftNpashY7lO
+vaasYRSqKAV8oTPvsh5/yRWONew5Yj9aQaAzdplfuSzF5Jir8npztlfR
+=mvZn
 -----END PGP SIGNATURE-----
