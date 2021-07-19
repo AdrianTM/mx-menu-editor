@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 18 Jul 2021 20:53:32 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: i386
+Version: 21.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (21.7) mx; urgency=medium
+ .
+   * Faster icon search
+Checksums-Sha1:
+ d5f033adbc2115f4fba27d1bb63ba3560b1d5073 10141 mx-menu-editor_21.7_i386.buildinfo
+ 4e105dc4a97cbf2078064913dacbd5092e2d9029 80846 mx-menu-editor_21.7_i386.deb
+Checksums-Sha256:
+ 9b25d583a5ecf4c460876a403c2266dd9585b1f065813065642c637c8f869e90 10141 mx-menu-editor_21.7_i386.buildinfo
+ 8322022de14ba7dc3e13e53fb68bbfa0281e3dcb598cbc0a7a88cdda8818ffd7 80846 mx-menu-editor_21.7_i386.deb
+Files:
+ ba3560f13e8d6da7b069a53018689709 10141 admin optional mx-menu-editor_21.7_i386.buildinfo
+ ca90b9a3043a4ae4d803f35ca031af71 80846 admin optional mx-menu-editor_21.7_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD0zV0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLm4CACw6asoMPtlaHzPCSd64ZdSVx/vHR3a
+Puh8KDoRk7FbhjKhUuuwzSSV1/UjuUd2yNSDFg5yHIylYUtabODz6mBddQjrCgJe
+FzgcK4QNxQr2wiRCfoWs/RanATxMd+IotuOC7+SapVV9KGHaJEhOrZPaxAU9NbG8
+hW0SduiIIPtu/1ij7A0373KgQZbaKmitNBKBObs8Kkj3WhRDNEnlmcl2PkI79sFS
+d0KW1I/X47+G3QSu3UOzSySpOqYiH9gTPCnw+ZUiWWOFxq/rcucHsWhICenYLNtn
+12+lfn3QmdUcyo3J4nvXPguuqTNHF6VOpFAMQvMglWFfiahPQCIAZ/Gi
+=IqUO
+-----END PGP SIGNATURE-----

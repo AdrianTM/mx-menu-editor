@@ -1,3 +1,9 @@
+mx-menu-editor (21.7) mx; urgency=medium
+
+  * Faster icon search
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 18 Jul 2021 20:53:32 -0400
+
 mx-menu-editor (21.2) mx; urgency=medium
 
   * fix: add icon if Icon= is missing from .desktop file
