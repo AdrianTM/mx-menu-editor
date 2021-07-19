@@ -18,23 +18,23 @@ Changes:
  .
    * Faster icon search
 Checksums-Sha1:
- f8033e4a62d447206a28e30820029b17dcce6e79 10141 mx-menu-editor_21.7_i386.buildinfo
- a14d318f3ab582474171808a0ca36230f3607b21 80914 mx-menu-editor_21.7_i386.deb
+ 8a95a5bcbb131cd1448e77dedab6aecac4c6defc 10141 mx-menu-editor_21.7_i386.buildinfo
+ 96de9eda3feff484ee92ca3bdfe59c8c87161751 80780 mx-menu-editor_21.7_i386.deb
 Checksums-Sha256:
- c4349c3852a49f0502792c3219357e2ef1990885ec6b0dd0e3295bfadac8c1f4 10141 mx-menu-editor_21.7_i386.buildinfo
- e93794b2e6f86227b5c17ec783ecd37dd356782ecd500e67cc673f91660818a5 80914 mx-menu-editor_21.7_i386.deb
+ cd0a6240579a21a85b821ac991deb92546558c0ed64b1ba8899f2e7cd1e695c1 10141 mx-menu-editor_21.7_i386.buildinfo
+ 8df0d3849ad0a2535fb25a7b95134b5c48f4e3d823dbc6728f5c809bb57d0f10 80780 mx-menu-editor_21.7_i386.deb
 Files:
- b86fa4462f800584e8436fba9def9dd5 10141 admin optional mx-menu-editor_21.7_i386.buildinfo
- 2e9e94f626bfc578c8636f3688ec6c5e 80914 admin optional mx-menu-editor_21.7_i386.deb
+ 032006acd6e5af230d9222eed6757534 10141 admin optional mx-menu-editor_21.7_i386.buildinfo
+ 0042c03fa6c4e8d1a6c3772c2154e601 80780 admin optional mx-menu-editor_21.7_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD0z7sTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBDmB/9WCB2hP99FiiB7fs4kA8ZpfzXEaZv3
-aBXozL9Gx1kxtbQnmvCzscpnLaV6mayVkmn9cvXSnbdcoMsX/5bldYCH8iajj24Y
-PvysDngbn2VPRxFKZkLhNzSbPU68lEaaZ/Xga6DyUskoZu09Y/NA41QPe28q+2M9
-7Ktv45ZEyCYQeyGpiUoR+cNPZpfgRC8z4KbHGCp8jsSLJY/z+xtEljU9gNI/2PkV
-Os5JLoj0IqWzehjfFnwf4FmTHmixViFjxO6RSerfJRUzOjGEg+ru1VKaFd9cIA+3
-a6hB3uzYZIeYqVaLFLe+IeHmVpVOg7u/g0DK26Awiu3P7ArK85SlI+sw
-=OKyy
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD1jiATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDSBB/9b/zOwVbzShenXQRI6b/OATFrk11yc
+kTlKt4PHUq4TKD3lzffY5uxmjk/XcdeCcD5xoJusIlX1V+ycfBtv7HvkqvViaaVD
+yRfPfDZnG2tQjZS54l7T8DB3Ku0ZtBxqrSNYAejdTgOK1X+mJb/o29csiJA5lVl5
+GQy5+y75NIS1PnfKxIvP+iEcGJTAgrAW8yPsMJV7txAMgdUNu8QANuYyi1EPhsIl
+bgj5qLSLvfP0u1dWgC/3uuikrXh5Ns02SP21JV9+0KOolW6EUzLPivcP4L6t0B1z
+ThOgPUAGavorJBZoDhVpvWLfLscxFF60/oPXD+QJC8MFGNLwETIKQ0Yx
+=d0av
 -----END PGP SIGNATURE-----
