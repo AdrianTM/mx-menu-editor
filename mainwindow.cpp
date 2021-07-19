@@ -84,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
 
     QSize size = this->size();
-    QSettings settings(qApp->applicationName());
+    QSettings settings(qApp->organizationName(), qApp->applicationName());
     if (settings.contains("geometry")) {
         restoreGeometry(settings.value("geometry").toByteArray());
         if (this->isMaximized()) { // add option to resize if maximized
@@ -457,7 +457,7 @@ void MainWindow::resetInterface()
 
 void MainWindow::saveSettings()
 {
-    QSettings settings(qApp->applicationName());
+    QSettings settings(qApp->organizationName(), qApp->applicationName());
     settings.setValue("geometry", saveGeometry());
 }
 
