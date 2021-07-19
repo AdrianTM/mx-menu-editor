@@ -62,7 +62,7 @@ public:
     QStringList all_local_desktop_files;
     QStringList all_usr_desktop_files;
 
-    QString findIcon(QString icon_name);
+    QPixmap findIcon(QString icon_name, const QSize &size);
     QString getCatName(const QString &file_name);
     QStringList listCategories();
     QStringList listDesktopFiles(const QString &search_category, const QString &location);
