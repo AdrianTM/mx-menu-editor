@@ -1,3 +1,9 @@
+mx-menu-editor (21.7.01) mx; urgency=medium
+
+  * Fix icon search
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 19 Jul 2021 10:37:36 -0400
+
 mx-menu-editor (21.7) mx; urgency=medium
 
   * Faster icon search

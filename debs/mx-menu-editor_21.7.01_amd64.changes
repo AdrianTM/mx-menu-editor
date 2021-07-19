@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 19 Jul 2021 10:37:36 -0400
+Source: mx-menu-editor
+Binary: mx-menu-editor
+Architecture: source amd64
+Version: 21.7.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-menu-editor - MX Menu Editor
+Changes:
+ mx-menu-editor (21.7.01) mx; urgency=medium
+ .
+   * Fix icon search
+Checksums-Sha1:
+ ca1b1c81e74cd13f7ee169d54df4d32a60ed997e 1194 mx-menu-editor_21.7.01.dsc
+ 71083f7da92447d631fbef6bd39b54b109c31db2 50632 mx-menu-editor_21.7.01.tar.xz
+ a85dc25d5710f3ad04adaebbdc050b2c33204ee7 10468 mx-menu-editor_21.7.01_amd64.buildinfo
+ 132c26a85fc83022390cc0646aef149e60ecde22 76912 mx-menu-editor_21.7.01_amd64.deb
+Checksums-Sha256:
+ 5aea7cfe6bca3afaef3377dd0dee3e4558b480b8c6da4db54f654ee3bca7e1fd 1194 mx-menu-editor_21.7.01.dsc
+ c72c77a6fabc32c0456696e0981c15c66672d0de1c80dffaba2cfe3317c9762a 50632 mx-menu-editor_21.7.01.tar.xz
+ c77a3e808e3df4ff83cdb22d1868c7d691597019e5c87dc4c03921e2adde9f20 10468 mx-menu-editor_21.7.01_amd64.buildinfo
+ eeb3a1716f6adcfe839ba650ea88d300ce3eed03ac1190aee0ee73d095994068 76912 mx-menu-editor_21.7.01_amd64.deb
+Files:
+ fb3be669f9fc7c88e0b338c021f007d5 1194 admin optional mx-menu-editor_21.7.01.dsc
+ 595d50d77dce87a25cc23013bffd1518 50632 admin optional mx-menu-editor_21.7.01.tar.xz
+ acabe0223c9fed3cb6df16794cf2bd58 10468 admin optional mx-menu-editor_21.7.01_amd64.buildinfo
+ 10e6a777388d4f32a4c9d122b3440031 76912 admin optional mx-menu-editor_21.7.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmD1jnYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumITNB/9azBaFYTBNJe4yg516pLViNy5vfZQA
+6p0LPdkHEEzlu4gN2ctjxyUssg6VyrDj9nt4xvZfne5dtvU01SuJ+AyadygvPh90
+gS679bcVVCtseV2MzP5cLoUImI/2tyrr7FIvSJOustFHNKoMCV0C/hLpRw0PsMxx
+p8B2e/fVF4dX8yPlgI7WssgVIiDP+2EhNrT6SYzsPv+h51vc+1/x0S4jYTvWBFbf
+C9j6+5CVwtq0B1MJ6K8bVa3SYEzzU33Dtdix5rAbpQjpWKjbL8KSCvBlRPExnl3r
+BQy7sbYHTxiIJKl/xPy9sYeHs7c1U2VNAmW4E9EF6mg5I09cYCHHTfzr
+=VIT0
+-----END PGP SIGNATURE-----
