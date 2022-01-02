@@ -25,23 +25,18 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMessageBox>
-#include <QFile>
-#include <QTreeWidget>
 #include <QComboBox>
+#include <QFile>
+#include <QMessageBox>
+#include <QProcess>
+#include <QSettings>
+#include <QTreeWidget>
 
 #include "addappdialog.h"
 
 namespace Ui {
 class MainWindow;
 }
-
-// struct for outputing both the exit code and the strings when running a command
-struct Output {
-    int exit_code;
-    QString str;
-};
-
 
 class MainWindow : public QDialog
 {
@@ -54,16 +49,14 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    Output getCmdOut(const QString &cmd);
     QFile config_file;
-    QHash<QString, QString> hashCategories;
-    QHash<QString, QString> hashExclude;
-    QHash<QString, QString> hashInclude;
-    QStringList all_local_desktop_files;
-    QStringList all_usr_desktop_files;
-
+    QMultiHash<QString, QString> hashCategories;
+    QMultiHash<QString, QString> hashExclude;
+    QMultiHash<QString, QString> hashInclude;
     QPixmap findIcon(QString icon_name, const QSize &size);
     QString getCatName(const QString &file_name);
+    QStringList all_local_desktop_files;
+    QStringList all_usr_desktop_files;
     QStringList listCategories();
     QStringList listDesktopFiles(const QString &search_category, const QString &location);
     QStringList listMenuFiles();
@@ -108,6 +101,8 @@ private:
     Ui::MainWindow *ui;
     AddAppDialog *add;
     QTreeWidgetItem *current_item;
+    QProcess proc;
+    QSettings settings;
 };
 
 #endif // MAINWINDOW_H
