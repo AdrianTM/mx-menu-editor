@@ -90,7 +90,8 @@ void AddAppDialog::on_buttonCancel_clicked()
 void AddAppDialog::saveOrNot()
 {
     if (ui->buttonSave->isEnabled()) {
-        int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"), QMessageBox::Save, QMessageBox::Cancel);
+        int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
+                                        QMessageBox::Save, QMessageBox::Cancel);
         if (ans == QMessageBox::Save)
             on_buttonSave_clicked();
         else
@@ -101,10 +102,10 @@ void AddAppDialog::saveOrNot()
 // clear all the GUI items
 void AddAppDialog::resetInterface()
 {
-    icon_path = "";
-    ui->lineEditName->setText("");
-    ui->lineEditCommand->setText("");
-    ui->lineEditComment->setText("");
+    icon_path.clear();
+    ui->lineEditName->clear();
+    ui->lineEditCommand->clear();
+    ui->lineEditComment->clear();
     ui->checkStartup->setChecked(false);
     ui->checkTerminal->setChecked(false);
     ui->pushChangeIcon->setIcon(QIcon());
