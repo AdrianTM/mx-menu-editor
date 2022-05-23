@@ -229,14 +229,14 @@ void MainWindow::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        for (const QString &file : includes) {
+        for (const QString &file : qAsConst(includes)) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        for (const QString &category : categories) {
+        for (const QString &category : qAsConst(categories)) {
             if (search_string.isEmpty())
                 search_string = "Categories=.*" + category;
             else
@@ -252,26 +252,26 @@ void MainWindow::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        for (const QString &base_name : excludes)
+        for (const QString &base_name : qAsConst(excludes)) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
-        for (const QString &base_name : excludes)
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
+        }
 
         // list of names without path
         QStringList local_base_names;
-        for (const QString &local_name : all_local_desktop_files) {
+        for (const QString &local_name : qAsConst(all_local_desktop_files)) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        for (const QString &usr_name : all_usr_desktop_files) {
+        for (const QString &usr_name : qAsConst(all_usr_desktop_files)) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
         QTreeWidgetItem *app;
-        for (const QString &local_name : local_desktop_files) {
+        for (const QString &local_name : qAsConst(local_desktop_files)) {
             QFileInfo fi_local(local_name);
             app = addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -280,7 +280,7 @@ void MainWindow::loadApps()
         }
 
         // parse usr .desktop files
-        for (const QString &file : usr_desktop_files) {
+        for (const QString &file : qAsConst(usr_desktop_files)) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -344,7 +344,6 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         resetInterface();
         enableEdit();
 
-        QString cmd;
         const QSize size = ui->labelIcon->size();
 
         QFile file(file_name);
