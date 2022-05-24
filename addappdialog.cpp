@@ -41,7 +41,7 @@ AddAppDialog::~AddAppDialog()
 }
 
 // Save button clicked
-void AddAppDialog::on_buttonSave_clicked()
+void AddAppDialog::pushSave_clicked()
 {
     QString output;
     QString file_name = ui->lineEditName->text().replace(" ", "-") + ".desktop";
@@ -78,9 +78,9 @@ void AddAppDialog::on_buttonSave_clicked()
 }
 
 // Cancel button clicked
-void AddAppDialog::on_buttonCancel_clicked()
+void AddAppDialog::pushCancel_clicked()
 {
-    if (ui->buttonSave->isEnabled())
+    if (ui->pushSave->isEnabled())
         saveOrNot();
     resetInterface();
     this->close();
@@ -89,13 +89,13 @@ void AddAppDialog::on_buttonCancel_clicked()
 // ask whether to save edits or not
 void AddAppDialog::saveOrNot()
 {
-    if (ui->buttonSave->isEnabled()) {
+    if (ui->pushSave->isEnabled()) {
         int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
                                         QMessageBox::Save, QMessageBox::Cancel);
         if (ans == QMessageBox::Save)
-            on_buttonSave_clicked();
+            pushSave_clicked();
         else
-            ui->buttonSave->setDisabled(true);
+            ui->pushSave->setDisabled(true);
     }
 }
 
@@ -110,6 +110,12 @@ void AddAppDialog::resetInterface()
     ui->checkTerminal->setChecked(false);
     ui->pushChangeIcon->setIcon(QIcon());
     ui->pushChangeIcon->setText(tr("Set icon"));
-    ui->buttonSave->setDisabled(true);
+    ui->pushSave->setDisabled(true);
     ui->listWidgetCategories->clear();
+}
+
+void AddAppDialog::setConnections()
+{
+    connect(ui->pushSave, &QPushButton::clicked, this, &AddAppDialog::pushSave_clicked);
+    connect(ui->pushCancel, &QPushButton::clicked, this, &AddAppDialog::pushCancel_clicked);
 }

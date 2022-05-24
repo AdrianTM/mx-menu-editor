@@ -98,7 +98,7 @@
       <number>5</number>
      </property>
      <item row="0" column="2">
-      <widget class="QPushButton" name="buttonSave">
+      <widget class="QPushButton" name="pushSave">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -149,7 +149,7 @@
       </spacer>
      </item>
      <item row="0" column="3" colspan="2">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>

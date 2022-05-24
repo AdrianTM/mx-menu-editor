@@ -44,9 +44,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::saveSettings);
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
+    setConnections();
 
-    if (ui->buttonSave->icon().isNull()) ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
-    if (add->ui->buttonSave->icon().isNull()) add->ui->buttonSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    if (ui->pushSave->icon().isNull()) ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    if (add->ui->pushSave->icon().isNull()) add->ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
 
     comboBox = new QComboBox;
 
@@ -71,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->checkNotify, &QCheckBox::clicked, this, &MainWindow::changeNotify);
     connect(ui->checkHide, &QCheckBox::clicked, this, &MainWindow::changeHide);
     connect(ui->checkRunInTerminal, &QCheckBox::clicked, this, &MainWindow::changeTerminal);
-    connect(ui->advancedEditor, &QTextEdit::undoAvailable, ui->buttonSave, &QPushButton::setEnabled);
+    connect(ui->advancedEditor, &QTextEdit::undoAvailable, ui->pushSave, &QPushButton::setEnabled);
     connect(ui->pushAddApp, &QPushButton::clicked, this, &MainWindow::addAppMsgBox);
     connect(ui->lineEditName, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditCommand, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
@@ -157,6 +158,14 @@ void MainWindow::loadMenuFiles()
     displayList(menu_items);
 }
 
+void MainWindow::setConnections()
+{
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
+    connect(ui->pushCancel, &QPushButton::clicked, this, &MainWindow::pushCancel_clicked);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
+    connect(ui->pushSave, &QPushButton::clicked, this, &MainWindow::pushSave_clicked);
+}
+
 // get Name= from .directory file
 QString MainWindow::getCatName(const QString &file_name)
 {
@@ -212,7 +221,7 @@ void MainWindow::loadApps()
 {
     // execute if topLevel item is selected
     if (!ui->treeWidget->currentItem()->parent()) {
-        if (ui->buttonSave->isEnabled() && save())
+        if (ui->pushSave->isEnabled() && save())
             return;
         QTreeWidgetItem *item = ui->treeWidget->currentItem();
         item->takeChildren();
@@ -338,7 +347,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
 {
     // execute if not topLevel item is selected
     if (item->parent()) {
-        if (ui->buttonSave->isEnabled() && save())
+        if (ui->pushSave->isEnabled() && save())
             return;
         QString file_name = ui->treeWidget->currentItem()->text(1).trimmed();
         resetInterface();
@@ -387,7 +396,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
                 ui->checkRunInTerminal->setChecked(true);
             } else if (line.startsWith("Icon=")) {
                 line = line.section("=", 1).trimmed();
-                if (!line.isEmpty() && ui->labelIcon->pixmap() == nullptr) // some .desktop files have multiple Icon= display first
+                if (!line.isEmpty() && !ui->labelIcon->pixmap(Qt::ReturnByValue)) // some .desktop files have multiple Icon= display first
                     ui->labelIcon->setPixmap(findIcon(line, size).scaled(size));
             }
         }
@@ -417,7 +426,7 @@ void MainWindow::selectCommand()
     if (!selected.isEmpty()) {
         if (ui->lineEditCommand->isEnabled()) {
             ui->lineEditCommand->setText(selected);
-            ui->buttonSave->setEnabled(true);
+            ui->pushSave->setEnabled(true);
         } else { // if running command from add-custom-app window
             add->ui->lineEditCommand->setText(selected);
         }
@@ -449,7 +458,7 @@ void MainWindow::resetInterface()
     ui->lineEditName->setDisabled(true);
     ui->pushChangeIcon->setDisabled(true);
     ui->pushRestoreApp->setDisabled(true);
-    ui->buttonSave->setDisabled(true);
+    ui->pushSave->setDisabled(true);
     ui->labelIcon->setPixmap(QPixmap());
 }
 
@@ -489,7 +498,7 @@ void MainWindow::changeIcon()
     if (!selected.isEmpty()) {
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
-            ui->buttonSave->setEnabled(true);
+            ui->pushSave->setEnabled(true);
             if (text.contains(QRegularExpression("(^|\n)Icon=")))
                 text.replace(QRegularExpression("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
             else
@@ -508,7 +517,7 @@ void MainWindow::changeIcon()
 void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        ui->buttonSave->setEnabled(true);
+        ui->pushSave->setEnabled(true);
         const QString &new_name = ui->lineEditName->text();
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
@@ -526,9 +535,9 @@ void MainWindow::changeName()
         if (!add->ui->lineEditName->text().isEmpty()
                 && !add->ui->lineEditCommand->text().isEmpty()
                 && add->ui->listWidgetCategories->count() != 0)
-            add->ui->buttonSave->setEnabled(true);
+            add->ui->pushSave->setEnabled(true);
         else
-            add->ui->buttonSave->setEnabled(false);
+            add->ui->pushSave->setEnabled(false);
     }
 }
 
@@ -536,7 +545,7 @@ void MainWindow::changeName()
 void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        ui->buttonSave->setEnabled(true);
+        ui->pushSave->setEnabled(true);
         const QString &new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
@@ -548,9 +557,9 @@ void MainWindow::changeCommand()
         if (!new_command.isEmpty()
                 && !add->ui->lineEditName->text().isEmpty()
                 && add->ui->listWidgetCategories->count() != 0)
-            add->ui->buttonSave->setEnabled(true);
+            add->ui->pushSave->setEnabled(true);
         else
-            add->ui->buttonSave->setEnabled(false);
+            add->ui->pushSave->setEnabled(false);
     }
 }
 
@@ -558,7 +567,7 @@ void MainWindow::changeCommand()
 void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        ui->buttonSave->setEnabled(true);
+        ui->pushSave->setEnabled(true);
         const QString &new_comment = ui->lineEditComment->text();
         QString text = ui->advancedEditor->toPlainText();
         if (!new_comment.isEmpty()) {
@@ -586,7 +595,7 @@ void MainWindow::delCategory()
 {
     int row;
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        ui->buttonSave->setEnabled(true);
+        ui->pushSave->setEnabled(true);
         row = ui->listWidgetEditCategories->currentRow();
         QListWidgetItem *item = ui->listWidgetEditCategories->takeItem(row);
         QString text = ui->advancedEditor->toPlainText();
@@ -596,14 +605,14 @@ void MainWindow::delCategory()
         ui->advancedEditor->setText(text);
         if (ui->listWidgetEditCategories->count() == 0) {
             ui->pushDelete->setDisabled(true);
-            ui->buttonSave->setDisabled(true);
+            ui->pushSave->setDisabled(true);
         }
     } else { // if running command from add-custom-app window
         row = add->ui->listWidgetCategories->currentRow();
         add->ui->listWidgetCategories->takeItem(row);
         if (add->ui->listWidgetCategories->count() == 0) {
             add->ui->pushDelete->setDisabled(true);
-            add->ui->buttonSave->setDisabled(true);
+            add->ui->pushSave->setDisabled(true);
         }
     }
 }
@@ -611,7 +620,7 @@ void MainWindow::delCategory()
 // change startup notify
 void MainWindow::changeNotify(bool checked)
 {
-    ui->buttonSave->setEnabled(true);
+    ui->pushSave->setEnabled(true);
     const QString &str = QString(checked ? "true" : "false");
     QString text = ui->advancedEditor->toPlainText();
     if (text.contains("StartupNotify=")) {
@@ -626,7 +635,7 @@ void MainWindow::changeNotify(bool checked)
 // hide or show the item in the menu
 void MainWindow::changeHide(bool checked)
 {
-    ui->buttonSave->setEnabled(true);
+    ui->pushSave->setEnabled(true);
     const QString &str = QString(checked ? "true" : "false");
     QString text = ui->advancedEditor->toPlainText().trimmed();
     if (text.contains("NoDisplay=")) {
@@ -646,7 +655,7 @@ void MainWindow::changeHide(bool checked)
 // change "run in terminal" setting
 void MainWindow::changeTerminal(bool checked)
 {
-    ui->buttonSave->setEnabled(true);
+    ui->pushSave->setEnabled(true);
     const QString &str = QString(checked ? "true" : "false");
     QString text = ui->advancedEditor->toPlainText();
     if (text.contains("Terminal=")) {
@@ -722,13 +731,13 @@ void MainWindow::addCategory()
     index = text.indexOf(QRegularExpression("(\n|$)"), index + 1); // find the end of the string
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
-            ui->buttonSave->setEnabled(true);
+            ui->pushSave->setEnabled(true);
             text.insert(index, str + ";");
             ui->listWidgetEditCategories->addItem(str);
             ui->advancedEditor->setText(text);
             ui->pushDelete->setEnabled(true);
             if (ui->listWidgetEditCategories->count() == 0)
-                ui->buttonSave->setDisabled(true);
+                ui->pushSave->setDisabled(true);
         }
     } else { // if running command from add-custom-app window
         if (add->ui->listWidgetCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
@@ -738,9 +747,9 @@ void MainWindow::addCategory()
             if (!add->ui->lineEditName->text().isEmpty()
                     && !add->ui->lineEditCommand->text().isEmpty()
                     && add->ui->listWidgetCategories->count() != 0)
-                add->ui->buttonSave->setEnabled(true);
+                add->ui->pushSave->setEnabled(true);
             else
-                add->ui->buttonSave->setEnabled(false);
+                add->ui->pushSave->setEnabled(false);
         }
     }
 }
@@ -755,7 +764,7 @@ void MainWindow::addAppMsgBox()
         categories << (*it)->text(0);
         ++it;
     }
-    if (ui->buttonSave->isEnabled() && save())
+    if (ui->pushSave->isEnabled() && save())
         return;
     add->show();
     resetInterface();
@@ -778,7 +787,7 @@ void MainWindow::addAppMsgBox()
 
 
 // Save button clicked
-void MainWindow::on_buttonSave_clicked()
+void MainWindow::pushSave_clicked()
 {
     QDir dir;
     QString file_name = current_item->text(1);
@@ -796,12 +805,12 @@ void MainWindow::on_buttonSave_clicked()
     out.close();
     if (system("pgrep xfce4-panel") == 0)
         system("xfce4-panel --restart");
-    ui->buttonSave->setDisabled(true);
+    ui->pushSave->setDisabled(true);
     findReloadItem(base_name);
 }
 
 // About button clicked
-void MainWindow::on_buttonAbout_clicked()
+void MainWindow::pushAbout_clicked()
 {
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
@@ -810,9 +819,9 @@ void MainWindow::on_buttonAbout_clicked()
                        "</p><p align=\"center\"><h3>" + tr("Program for editing Xfce menu") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
-    QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    QPushButton *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    QPushButton *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
+    auto btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
+    auto btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
+    auto btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     btnCancel->setIcon(QIcon::fromTheme("window-close"));
 
     msgBox.exec();
@@ -820,10 +829,10 @@ void MainWindow::on_buttonAbout_clicked()
     if (msgBox.clickedButton() == btnLicense) {
         system("xdg-open file:///usr/share/doc/mx-menu-editor/license.html");
     } else if (msgBox.clickedButton() == btnChangelog) {
-        QDialog *changelog = new QDialog(this);
+        auto changelog = new QDialog(this);
         changelog->resize(600, 500);
 
-        QTextEdit *text = new QTextEdit;
+        auto text = new QTextEdit;
         text->setReadOnly(true);
         proc.start("zless", QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"});
         proc.waitForFinished();
@@ -831,11 +840,11 @@ void MainWindow::on_buttonAbout_clicked()
             return;
         text->setText(proc.readAllStandardOutput());
 
-        QPushButton *btnClose = new QPushButton(tr("&Close"));
+        auto btnClose = new QPushButton(tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
         connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
 
-        QVBoxLayout *layout = new QVBoxLayout;
+        auto layout = new QVBoxLayout;
         layout->addWidget(text);
         layout->addWidget(btnClose);
         changelog->setLayout(layout);
@@ -846,14 +855,14 @@ void MainWindow::on_buttonAbout_clicked()
 
 void MainWindow::setEnabled(QString)
 {
-    ui->buttonSave->setEnabled(true);
+    ui->pushSave->setEnabled(true);
 }
 
 // Help button clicked
-void MainWindow::on_buttonHelp_clicked()
+void MainWindow::pushHelp_clicked()
 {
     QLocale locale;
-    QString lang = locale.bcp47Name();
+    const QString lang = locale.bcp47Name();
 
     QString url = "/usr/share/doc/mx-menu-editor/mx-menu-editor.html";
 
@@ -864,9 +873,9 @@ void MainWindow::on_buttonHelp_clicked()
 }
 
 // Cancel button clicked
-void MainWindow::on_buttonCancel_clicked()
+void MainWindow::pushCancel_clicked()
 {
-    if (ui->buttonSave->isEnabled())
+    if (ui->pushSave->isEnabled())
         save();
     qApp->quit();
 }
@@ -874,19 +883,19 @@ void MainWindow::on_buttonCancel_clicked()
 // ask whether to save edits or not
 bool MainWindow::save()
 {
-    if (ui->buttonSave->isEnabled()) {
+    if (ui->pushSave->isEnabled()) {
         if (QMessageBox::Save == QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
                                                        QMessageBox::Save, QMessageBox::Cancel)) {
-            on_buttonSave_clicked();
+            pushSave_clicked();
             return true;
         }
     }
-    ui->buttonSave->setDisabled(true);
+    ui->pushSave->setDisabled(true);
     return false;
 }
 
 // delete .local file and reload files
-void MainWindow::on_pushRestoreApp_clicked()
+void MainWindow::pushRestoreApp_clicked()
 {
     QString file_name = current_item->text(1);
     QFileInfo fi(file_name);

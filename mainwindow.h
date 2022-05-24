@@ -66,6 +66,7 @@ public:
     void displayList(QStringList menu_items);
     void findReloadItem(QString base_name);
     void loadMenuFiles();
+    void setConnections();
 
 public slots:
     void addAppMsgBox();
@@ -91,11 +92,11 @@ public slots:
     void setEnabled(QString);
 
 private slots:
-    void on_buttonAbout_clicked();
-    void on_buttonCancel_clicked();
-    void on_buttonHelp_clicked();
-    void on_buttonSave_clicked();
-    void on_pushRestoreApp_clicked();
+    void pushAbout_clicked();
+    void pushCancel_clicked();
+    void pushHelp_clicked();
+    void pushSave_clicked();
+    void pushRestoreApp_clicked();
 
 private:
     Ui::MainWindow *ui;

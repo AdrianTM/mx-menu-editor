@@ -42,13 +42,14 @@ public:
     Ui::AddAppDialog *ui;
     QString icon_path;
     void resetInterface();
+    void setConnections();
 
 public slots:
     void saveOrNot();
 
 private slots:
-    void on_buttonSave_clicked();
-    void on_buttonCancel_clicked();
+    void pushSave_clicked();
+    void pushCancel_clicked();
 
 private:
 
