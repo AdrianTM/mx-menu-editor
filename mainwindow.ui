@@ -361,7 +361,7 @@
       </spacer>
      </item>
      <item row="0" column="9">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -390,7 +390,7 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QLabel" name="labelMX">
+      <widget class="QLabel" name="labelLogo">
        <property name="maximumSize">
         <size>
          <width>32</width>
@@ -412,7 +412,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="buttonHelp">
+      <widget class="QPushButton" name="pushHelp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -435,7 +435,7 @@
       </widget>
      </item>
      <item row="0" column="7">
-      <widget class="QPushButton" name="buttonSave">
+      <widget class="QPushButton" name="pushSave">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -483,7 +483,7 @@
       </spacer>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="buttonAbout">
+      <widget class="QPushButton" name="pushAbout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
