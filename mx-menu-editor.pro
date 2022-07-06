@@ -53,6 +53,7 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_da.ts \
                 translations/mx-menu-editor_de.ts \
                 translations/mx-menu-editor_el.ts \
+                translations/mx-menu-editor_en.ts \
                 translations/mx-menu-editor_es.ts \
                 translations/mx-menu-editor_et.ts \
                 translations/mx-menu-editor_eu.ts \
