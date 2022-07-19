@@ -1,122 +1,122 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nl_BE">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="33"/>
         <source>Categories</source>
-        <translation>Kategorien</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="45"/>
         <source>Add category</source>
-        <translation>Kategorie hinzufügen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="59"/>
         <source>Delete category</source>
-        <translation>Kategorie löschen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="76"/>
         <source>Command:</source>
-        <translation>Befehl:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="121"/>
         <source>Save Changes</source>
-        <translation>Änderungen speichern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="128"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation>Dialog beenden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="169"/>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="176"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation>Auswählen...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="201"/>
         <source>Name:</source>
-        <translation>Name</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="208"/>
         <source>Comment:</source>
-        <translation>Kommentar:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="215"/>
         <source>Icon:</source>
-        <translation>Symbol:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="222"/>
         <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
-        <translation>Wählen Sie ein Symbol</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
-        <translation>In einem Terminal ausführen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation>Start-Anmelder</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Benutzerdefinierte Anwendung hinzufügen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation>Konnte Datei nicht speichern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
-        <translation>Änderungen speichern?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
-        <translation>Wollen Sie Ihre Änderungen speichern?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save</source>
-        <translation>Speichern</translation>
+        <translation>Opslaan</translation>
     </message>
 </context>
 <context>
@@ -125,174 +125,174 @@
         <location filename="mainwindow.ui" line="17"/>
         <location filename="mainwindow.cpp" line="835"/>
         <source>MX Menu Editor</source>
-        <translation>MX Menü-Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="33"/>
         <source>Advanced Editor</source>
-        <translation>Erweiterter Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="54"/>
         <source>Categories and applications</source>
-        <translation>Kategorien und Anwendungen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="81"/>
         <source>Add custom application</source>
-        <translation>Benutzerdefinierte Anwendung hinzufügen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="95"/>
         <source>Options</source>
-        <translation>Einstellungen</translation>
+        <translation>Opties</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="104"/>
         <source>Run in terminal</source>
-        <translation>In einem Terminal ausführen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="114"/>
         <source>Hide</source>
-        <translation>Verstecken</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="124"/>
         <source>Notify startup</source>
-        <translation>Start-Anmelder</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="147"/>
         <source>Quick Editor</source>
-        <translation>Schnell-Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="159"/>
         <source>Comment:</source>
-        <translation>Kommentar:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="169"/>
         <source>Restore original item</source>
-        <translation>Ursprünglichen Artikel wiederherstellen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
         <source>Command:</source>
-        <translation>Befehl:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="190"/>
         <source>Select...</source>
-        <translation>Auswählen...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="204"/>
         <source>Name:</source>
-        <translation>Name</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="225"/>
         <source>Icon</source>
-        <translation>Symbol</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="265"/>
         <location filename="mainwindow.cpp" line="537"/>
         <source>Change icon</source>
-        <translation>Symbol ändern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="279"/>
         <source>Categories</source>
-        <translation>Kategorien</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="291"/>
         <source>Add</source>
-        <translation>Hinzufügen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="305"/>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="371"/>
         <source>Quit application</source>
-        <translation>Anwendung beenden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="381"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="422"/>
         <source>Display help</source>
-        <translation>Hilfe anzeigen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="425"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="432"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="451"/>
         <source>Save Changes</source>
-        <translation>Änderungen speichern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="458"/>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="493"/>
         <source>About this application</source>
-        <translation>Über diese Anwendung</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="496"/>
         <source>About...</source>
-        <translation>Über...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="503"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="458"/>
         <source>Select executable file</source>
-        <translation>Ausführbare Datei wählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="521"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>Bilddateien (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="714"/>
         <source>Choose category</source>
-        <translation>Kategorie Wählen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="725"/>
         <location filename="mainwindow.cpp" line="841"/>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="726"/>
@@ -302,57 +302,57 @@
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Could not save the file</source>
-        <translation>Konnte Datei nicht speichern</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="834"/>
         <source>About MX Menu Editor</source>
-        <translation>Über MX Menü-Editor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="835"/>
         <source>Version: </source>
-        <translation>Version:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="836"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Anwendung, um Xfce-Menü zu bearbeiten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="838"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="839"/>
         <source>License</source>
-        <translation>Lizenz</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="840"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="856"/>
         <source>&amp;Close</source>
-        <translation>&amp;Close</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Save changes?</source>
-        <translation>Änderungen speichern?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Do you want to save your edits?</source>
-        <translation>Wollen Sie Ihre Änderungen speichern?</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -360,7 +360,7 @@
     <message>
         <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Diese Anwendung muss als normaler Benutzer ausgeführt werden.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
