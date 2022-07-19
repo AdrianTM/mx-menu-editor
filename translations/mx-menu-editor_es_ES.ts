@@ -1,35 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es_ES">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="33"/>
         <source>Categories</source>
-        <translation>Kategorien</translation>
+        <translation>Categorías</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="45"/>
         <source>Add category</source>
-        <translation>Kategorie hinzufügen</translation>
+        <translation>Añadir categorías</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="59"/>
         <source>Delete category</source>
-        <translation>Kategorie löschen</translation>
+        <translation>Borrar categorías</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="76"/>
         <source>Command:</source>
-        <translation>Befehl:</translation>
+        <translation>Orden:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="121"/>
         <source>Save Changes</source>
-        <translation>Änderungen speichern</translation>
+        <translation>Guardar cambios</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="128"/>
@@ -39,13 +39,13 @@
     <message>
         <location filename="addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation>Dialog beenden</translation>
+        <translation>Cerrar diálogo</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="169"/>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="176"/>
@@ -55,68 +55,68 @@
     <message>
         <location filename="addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation>Auswählen...</translation>
+        <translation>Seleccionar...</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="201"/>
         <source>Name:</source>
-        <translation>Name</translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="208"/>
         <source>Comment:</source>
-        <translation>Kommentar:</translation>
+        <translation>Comentario:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="215"/>
         <source>Icon:</source>
-        <translation>Symbol:</translation>
+        <translation>Ícono:</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="222"/>
         <location filename="addappdialog.cpp" line="122"/>
         <source>Set icon</source>
-        <translation>Wählen Sie ein Symbol</translation>
+        <translation>Establecer ícono</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
-        <translation>In einem Terminal ausführen</translation>
+        <translation>Ejecutar en terminal</translation>
     </message>
     <message>
         <location filename="addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation>Start-Anmelder</translation>
+        <translation>Nortificador de inicio</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="37"/>
         <source>Add Custom Application</source>
-        <translation>Benutzerdefinierte Anwendung hinzufügen</translation>
+        <translation>Añadir aplicaciones personalizadas</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="54"/>
         <source>Could not save the file</source>
-        <translation>Konnte Datei nicht speichern</translation>
+        <translation>No se pudo guardar el archivo</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save changes?</source>
-        <translation>Änderungen speichern?</translation>
+        <translation>¿Guardar los cambios?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Do you want to save your edits?</source>
-        <translation>Wollen Sie Ihre Änderungen speichern?</translation>
+        <translation>¿Desea guardar sus cambios?</translation>
     </message>
     <message>
         <location filename="addappdialog.cpp" line="103"/>
         <source>Save</source>
-        <translation>Speichern</translation>
+        <translation>Guardar</translation>
     </message>
 </context>
 <context>
@@ -125,108 +125,108 @@
         <location filename="mainwindow.ui" line="17"/>
         <location filename="mainwindow.cpp" line="835"/>
         <source>MX Menu Editor</source>
-        <translation>MX Menü-Editor</translation>
+        <translation>MX Editor de Menú</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="33"/>
         <source>Advanced Editor</source>
-        <translation>Erweiterter Editor</translation>
+        <translation>Editor avanzado</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="54"/>
         <source>Categories and applications</source>
-        <translation>Kategorien und Anwendungen</translation>
+        <translation>Categorías y aplicaciones</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="81"/>
         <source>Add custom application</source>
-        <translation>Benutzerdefinierte Anwendung hinzufügen</translation>
+        <translation>Añadir aplicacion personalizada</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="95"/>
         <source>Options</source>
-        <translation>Einstellungen</translation>
+        <translation>Opciones</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="104"/>
         <source>Run in terminal</source>
-        <translation>In einem Terminal ausführen</translation>
+        <translation>Ejecutar en terminal</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="114"/>
         <source>Hide</source>
-        <translation>Verstecken</translation>
+        <translation>Ocultar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="124"/>
         <source>Notify startup</source>
-        <translation>Start-Anmelder</translation>
+        <translation>Notificar inicio</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="147"/>
         <source>Quick Editor</source>
-        <translation>Schnell-Editor</translation>
+        <translation>Editor rápido</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="159"/>
         <source>Comment:</source>
-        <translation>Kommentar:</translation>
+        <translation>Comentario:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="169"/>
         <source>Restore original item</source>
-        <translation>Ursprünglichen Artikel wiederherstellen</translation>
+        <translation>Restaurar elemento original</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
         <source>Command:</source>
-        <translation>Befehl:</translation>
+        <translation>Orden:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="190"/>
         <source>Select...</source>
-        <translation>Auswählen...</translation>
+        <translation>Seleccionar...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="204"/>
         <source>Name:</source>
-        <translation>Name</translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="225"/>
         <source>Icon</source>
-        <translation>Symbol</translation>
+        <translation>Ícono</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="265"/>
         <location filename="mainwindow.cpp" line="537"/>
         <source>Change icon</source>
-        <translation>Symbol ändern</translation>
+        <translation>Cambiar ícono</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="279"/>
         <source>Categories</source>
-        <translation>Kategorien</translation>
+        <translation>Categorías</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="291"/>
         <source>Add</source>
-        <translation>Hinzufügen</translation>
+        <translation>Añadir</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="305"/>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="371"/>
         <source>Quit application</source>
-        <translation>Anwendung beenden</translation>
+        <translation>Salir de la aplicación</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Close</source>
-        <translation>Schließen</translation>
+        <translation>Cerrar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="381"/>
@@ -236,12 +236,12 @@
     <message>
         <location filename="mainwindow.ui" line="422"/>
         <source>Display help</source>
-        <translation>Hilfe anzeigen</translation>
+        <translation>Mostrar ayuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="425"/>
         <source>Help</source>
-        <translation>Hilfe</translation>
+        <translation>Ayuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="432"/>
@@ -251,7 +251,7 @@
     <message>
         <location filename="mainwindow.ui" line="451"/>
         <source>Save Changes</source>
-        <translation>Änderungen speichern</translation>
+        <translation>Guardar cambios</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="458"/>
@@ -261,12 +261,12 @@
     <message>
         <location filename="mainwindow.ui" line="493"/>
         <source>About this application</source>
-        <translation>Über diese Anwendung</translation>
+        <translation>Acerca de esta aplicación</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="496"/>
         <source>About...</source>
-        <translation>Über...</translation>
+        <translation>Acerca de...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="503"/>
@@ -276,23 +276,23 @@
     <message>
         <location filename="mainwindow.cpp" line="458"/>
         <source>Select executable file</source>
-        <translation>Ausführbare Datei wählen</translation>
+        <translation>Seleccionar archivo ejecutable</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="521"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation>Bilddateien (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation>Archivos de imagen (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="714"/>
         <source>Choose category</source>
-        <translation>Kategorie Wählen</translation>
+        <translation>Elegir categoría</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="725"/>
         <location filename="mainwindow.cpp" line="841"/>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="726"/>
@@ -302,27 +302,27 @@
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Error</source>
-        <translation>Fehler</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="816"/>
         <source>Could not save the file</source>
-        <translation>Konnte Datei nicht speichern</translation>
+        <translation>No se pudo guardar el archivo</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="834"/>
         <source>About MX Menu Editor</source>
-        <translation>Über MX Menü-Editor</translation>
+        <translation>Acerca del MX Editor de Menú</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="835"/>
         <source>Version: </source>
-        <translation>Version:</translation>
+        <translation>Versión: </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="836"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Anwendung, um Xfce-Menü zu bearbeiten</translation>
+        <translation>Programa para editar el menú de Xfce</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="838"/>
@@ -332,27 +332,27 @@
     <message>
         <location filename="mainwindow.cpp" line="839"/>
         <source>License</source>
-        <translation>Lizenz</translation>
+        <translation>Licencia</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="840"/>
         <source>Changelog</source>
-        <translation>Changelog</translation>
+        <translation>Registro de cambios</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="856"/>
         <source>&amp;Close</source>
-        <translation>&amp;Close</translation>
+        <translation>&amp;Cerrar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Save changes?</source>
-        <translation>Änderungen speichern?</translation>
+        <translation>¿Guardar los cambios?</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="902"/>
         <source>Do you want to save your edits?</source>
-        <translation>Wollen Sie Ihre Änderungen speichern?</translation>
+        <translation>¿Desea guardar sus cambios?</translation>
     </message>
 </context>
 <context>
@@ -360,7 +360,7 @@
     <message>
         <location filename="main.cpp" line="51"/>
         <source>You must run this program as normal user.</source>
-        <translation>Diese Anwendung muss als normaler Benutzer ausgeführt werden.</translation>
+        <translation>Debe ejecutar este programa como usuario normal.</translation>
     </message>
 </context>
 </TS>
