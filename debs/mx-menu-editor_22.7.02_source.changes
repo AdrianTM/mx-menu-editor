@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 23 Jul 2022 11:29:34 -0400
+Source: mx-menu-editor
+Architecture: source
+Version: 22.7.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Changes:
+ mx-menu-editor (22.7.02) mx; urgency=medium
+ .
+   * translation refresh
+Checksums-Sha1:
+ debb08ed6771d0ea79cce83f99435baba0e9ea6f 1194 mx-menu-editor_22.7.02.dsc
+ 093c3db00376d83cb9164346340fdde5625f8b4a 57416 mx-menu-editor_22.7.02.tar.xz
+ 24f64e3fbdf9eb7df5bde1a02f17110cbc97e51c 10673 mx-menu-editor_22.7.02_amd64.buildinfo
+Checksums-Sha256:
+ 78927d603fd43186e94dd8bca19e14c78580b5290c7fa1bb195697e468c8e3c1 1194 mx-menu-editor_22.7.02.dsc
+ 4b3545d2af323f570fbd12c29c3a4380456b87e8b107c7bf23bd0f58d7f6cd9a 57416 mx-menu-editor_22.7.02.tar.xz
+ 1112750d0f51e5c6c6f2c0e25265f939035e3f801fea0e5671debee8765abb5f 10673 mx-menu-editor_22.7.02_amd64.buildinfo
+Files:
+ f652ae7a8477370c1e1c696c20f3842f 1194 admin optional mx-menu-editor_22.7.02.dsc
+ e81289546d275571ba3331f76d067dd8 57416 admin optional mx-menu-editor_22.7.02.tar.xz
+ 5a71658568ecb038e61ef4526ecca614 10673 admin optional mx-menu-editor_22.7.02_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmLcQiYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEcyB/sFT9IYp3JGvOMpL3gzHtfXrMHliKl1
+PvSptXgfxfcIOaiDxdCNI9YEWVSAr92FB9XyzuVSJzu80CBllSD9JRj8795BMvOS
+T0B9dGFnqLhhqfmC6PFq0hxOBfyDSh1I2ORvXlpFF445dwBi2R8p39I8z7bw0Qne
+aYJAb7aujl1bntNwPk0OAO8YKG71XhS9qhgffqmowh22mnePQ8CCz+/p33VZ593Q
+/1gQlkbeCngwWieLWcsqQaABk6iHKjQ6RfsXdH/VS5ZKR9M54PFUWJ9SuYi8cL0Y
+E85dA8QUZ7ZqLEIUPx4YclaFuEUzIaBgm6rFDJn+GYIh0H4g3LXH8dys
+=vtSO
+-----END PGP SIGNATURE-----
