@@ -1,3 +1,9 @@
+mx-menu-editor (22.7.02) mx; urgency=medium
+
+  * translation refresh
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 23 Jul 2022 11:29:34 -0400
+
 mx-menu-editor (21.7.01) mx; urgency=medium
 
   * Fix icon search
