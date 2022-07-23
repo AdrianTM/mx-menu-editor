@@ -396,7 +396,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
                 ui->checkRunInTerminal->setChecked(true);
             } else if (line.startsWith("Icon=")) {
                 line = line.section("=", 1).trimmed();
-                if (!line.isEmpty() && !ui->labelIcon->pixmap(Qt::ReturnByValue)) // some .desktop files have multiple Icon= display first
+                if (!line.isEmpty() && !ui->labelIcon->pixmap()) // some .desktop files have multiple Icon= display first
                     ui->labelIcon->setPixmap(findIcon(line, size).scaled(size));
             }
         }
