@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
     add(new AddAppDialog)
 {
     qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
-    connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::saveSettings);
+    connect(QApplication::instance(), &QApplication::aboutToQuit, this, &MainWindow::saveSettings);
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setConnections();
@@ -53,8 +53,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
-    all_local_desktop_files = listDesktopFiles("", QDir::homePath() + "/.local/share/applications");
-    all_usr_desktop_files = listDesktopFiles("", "/usr/share/applications");
+    all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
+    all_usr_desktop_files = listDesktopFiles(QLatin1String(""), QStringLiteral("/usr/share/applications"));
 
     resetInterface();
     loadMenuFiles();
@@ -79,8 +79,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
 
     QSize size = this->size();
-    if (settings.contains("geometry")) {
-        restoreGeometry(settings.value("geometry").toByteArray());
+    if (settings.contains(QStringLiteral("geometry"))) {
+        restoreGeometry(settings.value(QStringLiteral("geometry")).toByteArray());
         if (this->isMaximized()) { // add option to resize if maximized
             this->resize(size);
             centerWindow();
@@ -94,7 +94,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// load menu files
 void MainWindow::loadMenuFiles()
 {
     const QString &home_path = QDir::homePath();
@@ -109,39 +108,39 @@ void MainWindow::loadMenuFiles()
             while (!in.atEnd()) {
                 QString line = in.readLine();
                 QString name;
-                if (line.contains("<Name>") ) {
+                if (line.contains(QLatin1String("<Name>")) ) {
                     if (!in.atEnd()) {
                         line = in.readLine();
-                        if (line.contains("<Directory>")) {
-                            line = line.remove("<Directory>").remove("</Directory>").trimmed();
+                        if (line.contains(QLatin1String("<Directory>"))) {
+                            line = line.remove(QStringLiteral("<Directory>")).remove(QStringLiteral("</Directory>")).trimmed();
                             QString f_name = home_path + "/.local/share/desktop-directories/" + line;
                             if (!QFileInfo::exists(f_name)) // use /usr if the file is not present in ~/.local
                                 f_name = "/usr/share/desktop-directories/" + line;
                             name = getCatName(f_name); // get the Name= from .directory file
-                            if (!name.isEmpty() && name != "Other" && name != "Wine")
+                            if (!name.isEmpty() && name != QLatin1String("Other") && name != QLatin1String("Wine"))
                                 menu_items << name;
                             // Find <Category> and <Filename> and add them in hashCategory and hashInclude
-                            while (!(in.atEnd() || line.contains("</Include>"))) {
+                            while (!(in.atEnd() || line.contains(QLatin1String("</Include>")))) {
                                 line = in.readLine();
-                                if (line.contains("<Category>")) {
-                                    line = line.remove("<Category>").remove("</Category>").trimmed();
+                                if (line.contains(QLatin1String("<Category>"))) {
+                                    line = line.remove(QStringLiteral("<Category>")).remove(QStringLiteral("</Category>")).trimmed();
                                     if (!hashCategories.values(name).contains(line))
                                         hashCategories.insert(name, line); //each menu category displays a number of categories
                                 }
-                                if (line.contains("<Filename>")) {
-                                    line = line.remove("<Filename>").remove("</Filename>").trimmed();
+                                if (line.contains(QLatin1String("<Filename>"))) {
+                                    line = line.remove(QStringLiteral("<Filename>")).remove(QStringLiteral("</Filename>")).trimmed();
                                     if (!hashInclude.values(name).contains(line))
                                         hashInclude.insert(name, line); //each menu category contains a number of files
                                 }
                             }
                             // find <Exludes> and add them in hashExclude
-                            while (!(in.atEnd() || line.contains("</Exclude>") || line.contains("<Menu>"))) {
+                            while (!(in.atEnd() || line.contains(QLatin1String("</Exclude>")) || line.contains(QLatin1String("<Menu>")))) {
                                 line = in.readLine();
-                                if (line.contains("<Exclude>")) {
-                                    while (!(in.atEnd() || line.contains("</Exclude>"))) {
+                                if (line.contains(QLatin1String("<Exclude>"))) {
+                                    while (!(in.atEnd() || line.contains(QLatin1String("</Exclude>")))) {
                                         line = in.readLine();
-                                        if (line.contains("<Filename>")) {
-                                            line = line.remove("<Filename>").remove("</Filename>").trimmed();
+                                        if (line.contains(QLatin1String("<Filename>"))) {
+                                            line = line.remove(QStringLiteral("<Filename>")).remove(QStringLiteral("</Filename>")).trimmed();
                                             if (!hashExclude.values(name).contains(line))
                                                 hashExclude.insert(name, line); //each menu category contains a number of files
                                         }
@@ -163,23 +162,24 @@ void MainWindow::setConnections()
     connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
     connect(ui->pushCancel, &QPushButton::clicked, this, &MainWindow::pushCancel_clicked);
     connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
+    connect(ui->pushRestoreApp, &QPushButton::clicked, this, &MainWindow::pushRestoreApp_clicked);
     connect(ui->pushSave, &QPushButton::clicked, this, &MainWindow::pushSave_clicked);
 }
 
 // get Name= from .directory file
 QString MainWindow::getCatName(const QString &file_name)
 {
-    proc.start("grep", QStringList{"Name=", file_name}, QIODevice::ReadOnly);
+    proc.start(QStringLiteral("grep"), QStringList{"Name=", file_name}, QIODevice::ReadOnly);
     proc.waitForFinished();
     if (proc.exitCode() != 0)
         return QString();
-    return QString(proc.readAllStandardOutput().trimmed()).remove("Name=");
+    return QString(proc.readAllStandardOutput().trimmed()).remove(QStringLiteral("Name="));
 }
 
 // return a list of .menu files
 QStringList MainWindow::listMenuFiles() {
     QString home_path = QDir::homePath();
-    QStringList menu_files("/etc/xdg/menus/xfce-applications.menu");
+    QStringList menu_files(QStringLiteral("/etc/xdg/menus/xfce-applications.menu"));
     QDir user_dir;
 
     // add menu files from user directory
@@ -187,7 +187,7 @@ QStringList MainWindow::listMenuFiles() {
     QDirIterator it(user_dir, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         QString item = it.next();
-        if (item.endsWith(".menu"))
+        if (item.endsWith(QLatin1String(".menu")))
             menu_files << item;
     }
     return menu_files;
@@ -196,7 +196,7 @@ QStringList MainWindow::listMenuFiles() {
 // Display sorted list of menu items in the treeWidget
 void MainWindow::displayList(QStringList menu_items) {
     QTreeWidgetItem *topLevelItem = nullptr;
-    ui->treeWidget->setHeaderLabel("");
+    ui->treeWidget->setHeaderLabel(QLatin1String(""));
     ui->treeWidget->setSortingEnabled(true);
     menu_items.removeDuplicates();
     for (const QString &item : menu_items) {
@@ -220,7 +220,7 @@ void MainWindow::loadApps(QTreeWidgetItem *item)
 void MainWindow::loadApps()
 {
     // execute if topLevel item is selected
-    if (!ui->treeWidget->currentItem()->parent()) {
+    if (ui->treeWidget->currentItem()->parent() == nullptr) {
         if (ui->pushSave->isEnabled() && save())
             return;
         QTreeWidgetItem *item = ui->treeWidget->currentItem();
@@ -238,6 +238,8 @@ void MainWindow::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
+        includes_usr.reserve(excludes.size());
+        includes_local.reserve(excludes.size());
         for (const QString &file : qAsConst(includes)) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
@@ -253,7 +255,7 @@ void MainWindow::loadApps()
         }
 
         // list .desktop files from /usr and .local
-        QStringList usr_desktop_files = listDesktopFiles(search_string, "/usr/share/applications");
+        QStringList usr_desktop_files = listDesktopFiles(search_string, QStringLiteral("/usr/share/applications"));
         QStringList local_desktop_files = listDesktopFiles(search_string, QDir::homePath() + "/.local/share/applications");
 
         // add included files
@@ -279,13 +281,13 @@ void MainWindow::loadApps()
         }
 
         // parse local .desktop files
-        QTreeWidgetItem *app;
+        QTreeWidgetItem *app = nullptr;
         for (const QString &local_name : qAsConst(local_desktop_files)) {
             QFileInfo fi_local(local_name);
             app = addToTree(local_name);
             all_local_desktop_files << local_name;
             if (usr_base_names.contains(fi_local.fileName()))
-                if (app) app->setData(0, Qt::UserRole, "restore");
+                if (app != nullptr) app->setData(0, Qt::UserRole, "restore");
         }
 
         // parse usr .desktop files
@@ -296,7 +298,7 @@ void MainWindow::loadApps()
             if (!local_base_names.contains(base_name))
                 addToTree(file);
         }
-        item->sortChildren(true, Qt::AscendingOrder);
+        item->sortChildren(1, Qt::AscendingOrder);
         item->setExpanded(true);
         current_item = ui->treeWidget->currentItem(); // remember the current_item in case user selects another item before saving
     } else {
@@ -305,18 +307,18 @@ void MainWindow::loadApps()
 }
 
 // add .desktop item to treeWidget
-QTreeWidgetItem* MainWindow::addToTree(QString file_name)
+QTreeWidgetItem* MainWindow::addToTree(const QString &file_name)
 {
     if (QFileInfo::exists(file_name)) {
-        proc.start("grep", QStringList{"-m1", "^Name=", file_name}, QIODevice::ReadOnly);
+        proc.start(QStringLiteral("grep"), QStringList{"-m1", "^Name=", file_name}, QIODevice::ReadOnly);
         proc.waitForFinished();
         if (proc.exitCode() != 0)
             return nullptr;
         QString app_name = proc.readAllStandardOutput().trimmed();
-        app_name = app_name.section("=", 1, 1);
+        app_name = app_name.section(QStringLiteral("="), 1, 1);
 
         // add item as childItem to treeWidget
-        QTreeWidgetItem *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
+        auto *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
         if (isHidden(file_name))
             childItem->setForeground(0, QBrush(Qt::gray));
         childItem->setText(0, app_name);
@@ -326,27 +328,25 @@ QTreeWidgetItem* MainWindow::addToTree(QString file_name)
     return nullptr;
 }
 
-// list .desktop files
 QStringList MainWindow::listDesktopFiles(const QString &search_string, const QString &location)
 {
     if (search_string.isEmpty())
-        proc.start("find", QStringList{location, "-name", "*.desktop"}, QIODevice::ReadOnly);
+        proc.start(QStringLiteral("find"), QStringList{location, "-name", "*.desktop"}, QIODevice::ReadOnly);
     else
-        proc.start("grep", QStringList{"-Elr", search_string, location}, QIODevice::ReadOnly);
+        proc.start(QStringLiteral("grep"), QStringList{"-Elr", search_string, location}, QIODevice::ReadOnly);
     proc.waitForFinished();
     if (proc.exitCode() != 0)
         return QStringList();
     QString out = proc.readAllStandardOutput().trimmed();
     if (out.isEmpty())
         return QStringList();
-    return out.split("\n");
+    return out.split(QStringLiteral("\n"));
 }
 
-// load selected item to be edited
-void MainWindow::loadItem(QTreeWidgetItem *item, int)
+void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
 {
     // execute if not topLevel item is selected
-    if (item->parent()) {
+    if (item->parent() != nullptr) {
         if (ui->pushSave->isEnabled() && save())
             return;
         QString file_name = ui->treeWidget->currentItem()->text(1).trimmed();
@@ -369,34 +369,34 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
         while (!file.atEnd()) {
             line = file.readLine();
             content.append(line);
-            if (line.startsWith("Categories=")) {
-                line = line.section("=", 1);
-                line.remove(QRegularExpression(";$"));
-                QStringList categories = line.trimmed().split(";");
+            if (line.startsWith(QLatin1String("Categories="))) {
+                line = line.section(QStringLiteral("="), 1);
+                line.remove(QRegularExpression(QStringLiteral(";$")));
+                QStringList categories = line.trimmed().split(QStringLiteral(";"));
                 ui->listWidgetEditCategories->addItems(categories);
-            } else if (line.startsWith("Name=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("Name="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 ui->lineEditName->setText(line);
-            } else if (line.startsWith("Comment=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("Comment="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 ui->lineEditComment->setText(line);
-            } else if (line.startsWith("Exec=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("Exec="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 if (ui->lineEditCommand->text().isEmpty()) // some .desktop files have multiple Exec= display first one
                     ui->lineEditCommand->setText(line);
                 ui->lineEditCommand->home(false);
-            } else if (line.startsWith("StartupNotify=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("StartupNotify="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 ui->checkNotify->setChecked(true);
-            } else if (line.startsWith("NoDisplay=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("NoDisplay="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 ui->checkHide->setChecked(true);
-            } else if (line.startsWith("Terminal=")) {
-                line = line.section("=", 1).trimmed();
+            } else if (line.startsWith(QLatin1String("Terminal="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
                 ui->checkRunInTerminal->setChecked(true);
-            } else if (line.startsWith("Icon=")) {
-                line = line.section("=", 1).trimmed();
-                if (!line.isEmpty() && !ui->labelIcon->pixmap()) // some .desktop files have multiple Icon= display first
+            } else if (line.startsWith(QLatin1String("Icon="))) {
+                line = line.section(QStringLiteral("="), 1).trimmed();
+                if (!line.isEmpty() && (ui->labelIcon->pixmap() == nullptr)) // some .desktop files have multiple Icon= display first
                     ui->labelIcon->setPixmap(findIcon(line, size).scaled(size));
             }
         }
@@ -411,18 +411,15 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int)
     }
 }
 
-// check if the item is hidden
 bool MainWindow::isHidden(const QString &file_name)
 {
-    QString cmd = "grep -q NoDisplay=true \"" + file_name + "\"";
-    return !system(cmd.toUtf8());
+    return QProcess::execute(QStringLiteral("grep"), {"-q", "NoDisplay=true", file_name}) == 0;
 }
 
 // select command to be used
 void MainWindow::selectCommand()
 {
-    QFileDialog dialog;
-    QString selected = dialog.getOpenFileName(this, tr("Select executable file"), "/usr/bin");
+    QString selected = QFileDialog::getOpenFileName(this, tr("Select executable file"), QStringLiteral("/usr/bin"));
     if (!selected.isEmpty()) {
         if (ui->lineEditCommand->isEnabled()) {
             ui->lineEditCommand->setText(selected);
@@ -434,7 +431,6 @@ void MainWindow::selectCommand()
     }
 }
 
-// clear selection and reset GUI components
 void MainWindow::resetInterface()
 {
     ui->listWidgetEditCategories->clear();
@@ -464,10 +460,9 @@ void MainWindow::resetInterface()
 
 void MainWindow::saveSettings()
 {
-    settings.setValue("geometry", saveGeometry());
+    settings.setValue(QStringLiteral("geometry"), saveGeometry());
 }
 
-// enable buttons to edit item
 void MainWindow::enableEdit()
 {
     ui->checkNotify->setEnabled(true);
@@ -482,7 +477,6 @@ void MainWindow::enableEdit()
     ui->lineEditName->setEnabled(true);
 }
 
-// change the icon of the application
 void MainWindow::changeIcon()
 {
     QFileDialog dialog;
@@ -490,8 +484,8 @@ void MainWindow::changeIcon()
     dialog.setFilter(QDir::Hidden);
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm *.svg)"));
-    dialog.setDirectory("/usr/share/icons");
-    if (dialog.exec()) {
+    dialog.setDirectory(QStringLiteral("/usr/share/icons"));
+    if (dialog.exec() == QDialog::Accepted) {
         QStringList selected_list = dialog.selectedFiles();
         selected = selected_list.at(0);
     }
@@ -499,8 +493,8 @@ void MainWindow::changeIcon()
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
             ui->pushSave->setEnabled(true);
-            if (text.contains(QRegularExpression("(^|\n)Icon=")))
-                text.replace(QRegularExpression("(^|\n)Icon=[^\n]*(\n|$)"), "\nIcon=" + selected + "\n");
+            if (text.contains(QRegularExpression(QStringLiteral("(^|\n)Icon="))))
+                text.replace(QRegularExpression(QStringLiteral("(^|\n)Icon=[^\n]*(\n|$)")), "\nIcon=" + selected + "\n");
             else
                 text.append("\nIcon=" + selected + "\n");
             ui->advancedEditor->setText(text);
@@ -513,7 +507,6 @@ void MainWindow::changeIcon()
     }
 }
 
-// change the name of the entry
 void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
@@ -521,7 +514,7 @@ void MainWindow::changeName()
         const QString &new_name = ui->lineEditName->text();
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            QRegularExpression regex("(^|\n)Name=[^\n]*(\n|$)");
+            QRegularExpression regex(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
             QRegularExpressionMatch regex_match = regex.match(text);
             int index = regex_match.capturedStart();
             int length = regex_match.capturedLength();
@@ -541,7 +534,6 @@ void MainWindow::changeName()
     }
 }
 
-// change the command string
 void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
@@ -549,7 +541,7 @@ void MainWindow::changeCommand()
         const QString &new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            text.replace(QRegularExpression("(^|\n)Exec=[^\n]*(\n|$)"), "\nExec=" + new_command + "\n");
+            text.replace(QRegularExpression(QStringLiteral("(^|\n)Exec=[^\n]*(\n|$)")), "\nExec=" + new_command + "\n");
             ui->advancedEditor->setText(text);
         }
     } else { // if running command from add-custom-app window
@@ -563,7 +555,6 @@ void MainWindow::changeCommand()
     }
 }
 
-// change the comment string
 void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
@@ -571,35 +562,33 @@ void MainWindow::changeComment()
         const QString &new_comment = ui->lineEditComment->text();
         QString text = ui->advancedEditor->toPlainText();
         if (!new_comment.isEmpty()) {
-            if (text.contains("Comment=")) {
-                text.replace(QRegularExpression("(^|\n)Comment=[^\n]*(\n|$)"), "\nComment=" + new_comment + "\n");
+            if (text.contains(QLatin1String("Comment="))) {
+                text.replace(QRegularExpression(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)")), "\nComment=" + new_comment + "\n");
             } else {
                 text = text.trimmed();
                 text.append("\nComment=" + new_comment + "\n");
             }
         } else {
-            text.remove(QRegularExpression("(^|\n)Comment=[^\n]*(\n|$)"));
+            text.remove(QRegularExpression(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)")));
         }
         ui->advancedEditor->setText(text);
     }
 }
 
-// enable delete button for category
 void MainWindow::enableDelete()
 {
     ui->pushDelete->setEnabled(true);
 }
 
-// delete selected category
 void MainWindow::delCategory()
 {
-    int row;
+    int row = 0;
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         ui->pushSave->setEnabled(true);
         row = ui->listWidgetEditCategories->currentRow();
         QListWidgetItem *item = ui->listWidgetEditCategories->takeItem(row);
         QString text = ui->advancedEditor->toPlainText();
-        int indexCategory = text.indexOf(QRegularExpression("(^|\n)Categories=[^\n]*(\n|$)"));
+        int indexCategory = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
         int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
         text.remove(indexToDelete, item->text().length() + 1);
         ui->advancedEditor->setText(text);
@@ -617,14 +606,13 @@ void MainWindow::delCategory()
     }
 }
 
-// change startup notify
 void MainWindow::changeNotify(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? "true" : "false");
+    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText();
-    if (text.contains("StartupNotify=")) {
-        text.replace(QRegularExpression("(^|\n)StartupNotify=[^\n]*(\n|$)"), "\nStartupNotify=" + str + "\n");
+    if (text.contains(QLatin1String("StartupNotify="))) {
+        text.replace(QRegularExpression(QStringLiteral("(^|\n)StartupNotify=[^\n]*(\n|$)")), "\nStartupNotify=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nStartupNotify=" + str);
@@ -636,15 +624,15 @@ void MainWindow::changeNotify(bool checked)
 void MainWindow::changeHide(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? "true" : "false");
+    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText().trimmed();
-    if (text.contains("NoDisplay=")) {
-        text.replace(QRegularExpression("(^|\n)NoDisplay=[^\n]*(\n|$)"), "\nNoDisplay=" + str + "\n");
+    if (text.contains(QLatin1String("NoDisplay="))) {
+        text.replace(QRegularExpression(QStringLiteral("(^|\n)NoDisplay=[^\n]*(\n|$)")), "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
-        for (const QString &line : text.split("\n")) {
+        for (const QString &line : text.split(QStringLiteral("\n"))) {
             new_text.append(line + "\n");
-            if (line.startsWith("Exec="))
+            if (line.startsWith(QLatin1String("Exec=")))
                 new_text.append("NoDisplay=" + str + "\n");
         }
         text = new_text;
@@ -656,10 +644,10 @@ void MainWindow::changeHide(bool checked)
 void MainWindow::changeTerminal(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? "true" : "false");
+    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText();
-    if (text.contains("Terminal=")) {
-        text.replace(QRegularExpression("(^|\n)Terminal=[^\n]*(\n|$)"), "\nTerminal=" + str + "\n");
+    if (text.contains(QLatin1String("Terminal="))) {
+        text.replace(QRegularExpression(QStringLiteral("(^|\n)Terminal=[^\n]*(\n|$)")), "\nTerminal=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nTerminal=" + str);
@@ -667,9 +655,8 @@ void MainWindow::changeTerminal(bool checked)
     ui->advancedEditor->setText(text);
 }
 
-
 // list categories of the displayed items
-QStringList MainWindow::listCategories()
+QStringList MainWindow::listCategories() const
 {
     QStringList categories;
     QHashIterator<QString, QString> i(hashCategories);
@@ -678,7 +665,7 @@ QStringList MainWindow::listCategories()
         categories << i.value();
     }
     categories.removeDuplicates();
-    categories = categories.filter(QRegularExpression("^(?!<Not>).*$"));
+    categories = categories.filter(QRegularExpression(QStringLiteral("^(?!<Not>).*$")));
     categories.sort();
     return categories;
 }
@@ -688,11 +675,13 @@ void MainWindow::addCategoryMsgBox()
 {
     const QStringList &categories = listCategories();
 
-    QWidget *window = new QWidget(add, Qt::Dialog);
+    auto *window = new QWidget(add, Qt::Dialog);
     window->setWindowTitle(tr("Choose category"));
-    window->resize(250, 80);
+    const int height = 80;
+    const int width = 250;
+    window->resize(width, height);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox();
+    auto *buttonBox = new QDialogButtonBox();
 
     comboBox->clear();
     //comboBox->setEditable(true);
@@ -706,7 +695,7 @@ void MainWindow::addCategoryMsgBox()
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MainWindow::addCategory);
     connect(buttonBox, &QDialogButtonBox::rejected, window, &QWidget::close);
 
-    QFormLayout *layout = new QFormLayout;
+    auto *layout = new QFormLayout;
     layout->addRow(comboBox);
     layout->addRow(buttonBox);
 
@@ -716,7 +705,7 @@ void MainWindow::addCategoryMsgBox()
 
 void MainWindow::centerWindow()
 {
-    QRect screenGeometry = qApp->screens().first()->geometry();
+    QRect screenGeometry = QApplication::screens().constFirst()->geometry();
     int x = (screenGeometry.width()-this->width()) / 2;
     int y = (screenGeometry.height()-this->height()) / 2;
     this->move(x, y);
@@ -727,8 +716,8 @@ void MainWindow::addCategory()
 {
     const QString &str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
-    int index = text.indexOf(QRegularExpression("(^|\n)Categories=[^\n]*(\n|$)"));
-    index = text.indexOf(QRegularExpression("(\n|$)"), index + 1); // find the end of the string
+    int index = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
+    index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1); // find the end of the string
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
             ui->pushSave->setEnabled(true);
@@ -760,7 +749,7 @@ void MainWindow::addAppMsgBox()
     QStringList categories;
     QTreeWidgetItemIterator it(ui->treeWidget);
     // list top level items
-    while (*it && !(*it)->parent()) {
+    while (((*it) != nullptr) && ((*it)->parent() == nullptr)) {
         categories << (*it)->text(0);
         ++it;
     }
@@ -785,17 +774,14 @@ void MainWindow::addAppMsgBox()
     connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
 }
 
-
-// Save button clicked
 void MainWindow::pushSave_clicked()
 {
-    QDir dir;
     QString file_name = current_item->text(1);
     QFileInfo fi(file_name);
     QString base_name = fi.fileName();
-    if (!QFileInfo::exists(dir.homePath() + "/.local/share/applications/"))
-        dir.mkpath(dir.homePath() + "/.local/share/applications/");
-    QString out_name = dir.homePath() + "/.local/share/applications/" + base_name;
+    if (!QFileInfo::exists(QDir::homePath() + "/.local/share/applications/"))
+        QDir().mkpath(QDir::homePath() + "/.local/share/applications/");
+    QString out_name = QDir::homePath() + "/.local/share/applications/" + base_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text))
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
@@ -803,13 +789,12 @@ void MainWindow::pushSave_clicked()
     out.write(ui->advancedEditor->toPlainText().toUtf8());
     out.flush();
     out.close();
-    if (system("pgrep xfce4-panel") == 0)
-        system("xfce4-panel --restart");
+    if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
+        QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     ui->pushSave->setDisabled(true);
     findReloadItem(base_name);
 }
 
-// About button clicked
 void MainWindow::pushAbout_clicked()
 {
     this->hide();
@@ -817,34 +802,36 @@ void MainWindow::pushAbout_clicked()
                        tr("About MX Menu Editor"), "<p align=\"center\"><b><h2>" +
                        tr("MX Menu Editor") + "</h2></b></p><p align=\"center\">" + tr("Version: ") + VERSION +
                        "</p><p align=\"center\"><h3>" + tr("Program for editing Xfce menu") +
-                       "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
+                       R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
-    auto btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    auto btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    auto btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    btnCancel->setIcon(QIcon::fromTheme("window-close"));
+    auto *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
+    auto *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
+    auto *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
+    btnCancel->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
 
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        system("xdg-open file:///usr/share/doc/mx-menu-editor/license.html");
+        QProcess::execute(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"});
     } else if (msgBox.clickedButton() == btnChangelog) {
-        auto changelog = new QDialog(this);
-        changelog->resize(600, 500);
+        auto *changelog = new QDialog(this);
+        const int width = 500;
+        const int height = 600;
+        changelog->resize(width, height);
 
-        auto text = new QTextEdit;
+        auto *text = new QTextEdit;
         text->setReadOnly(true);
-        proc.start("zless", QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"});
+        proc.start(QStringLiteral("zless"), QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"});
         proc.waitForFinished();
         if (proc.exitCode() != 0)
             return;
         text->setText(proc.readAllStandardOutput());
 
-        auto btnClose = new QPushButton(tr("&Close"));
-        btnClose->setIcon(QIcon::fromTheme("window-close"));
+        auto *btnClose = new QPushButton(tr("&Close"));
+        btnClose->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
         connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
 
-        auto layout = new QVBoxLayout;
+        auto *layout = new QVBoxLayout;
         layout->addWidget(text);
         layout->addWidget(btnClose);
         changelog->setLayout(layout);
@@ -853,23 +840,22 @@ void MainWindow::pushAbout_clicked()
     this->show();
 }
 
-void MainWindow::setEnabled(QString)
+void MainWindow::setEnabled(const QString& /*unused*/)
 {
     ui->pushSave->setEnabled(true);
 }
 
-// Help button clicked
 void MainWindow::pushHelp_clicked()
 {
     QLocale locale;
     const QString lang = locale.bcp47Name();
 
-    QString url = "/usr/share/doc/mx-menu-editor/mx-menu-editor.html";
+    QString url = QStringLiteral("/usr/share/doc/mx-menu-editor/mx-menu-editor.html");
 
-    if (lang.startsWith("fr"))
-        url = "https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu";
+    if (lang.startsWith(QLatin1String("fr")))
+        url = QStringLiteral("https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu");
 
-    system("xdg-open " + url.toUtf8());
+    QProcess::execute(QStringLiteral("xdg-open"), {url});
 }
 
 // Cancel button clicked
@@ -877,7 +863,7 @@ void MainWindow::pushCancel_clicked()
 {
     if (ui->pushSave->isEnabled())
         save();
-    qApp->quit();
+    QApplication::quit();
 }
 
 // ask whether to save edits or not
@@ -902,18 +888,18 @@ void MainWindow::pushRestoreApp_clicked()
     QString base_name = fi.fileName();
     QFile file(file_name);
     file.remove();
-    all_local_desktop_files = listDesktopFiles("", QDir::homePath() + "/.local/share/applications");
+    all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
     ui->pushRestoreApp->setDisabled(true);
     findReloadItem(base_name);
 }
 
 // find and reload item
-void MainWindow::findReloadItem(QString base_name)
+void MainWindow::findReloadItem(const QString &base_name)
 {
     ui->treeWidget->setCurrentItem(current_item); // change current item back to original selection
     ui->treeWidget->setCurrentItem(current_item->parent()); // change current item to reload category
     QTreeWidgetItemIterator it(current_item->treeWidget());
-    while (*it) {
+    while ((*it) != nullptr) {
         QFileInfo fi((*it)->text(1));
         if ((fi.fileName() == base_name)) {
             ui->treeWidget->setCurrentItem(*it);
@@ -923,8 +909,7 @@ void MainWindow::findReloadItem(QString base_name)
     }
 }
 
-// Find icon file by name
-QPixmap MainWindow::findIcon(QString icon_name, const QSize &size)
+QPixmap MainWindow::findIcon(QString icon_name, QSize size)
 {
     if (icon_name.isEmpty())
         return QPixmap();
@@ -932,10 +917,10 @@ QPixmap MainWindow::findIcon(QString icon_name, const QSize &size)
         return QIcon(icon_name).pixmap(size);
 
     QString search_term = icon_name;
-    if (!icon_name.endsWith(".png") && !icon_name.endsWith(".svg") && !icon_name.endsWith(".xpm"))
+    if (!icon_name.endsWith(QLatin1String(".png")) && !icon_name.endsWith(QLatin1String(".svg")) && !icon_name.endsWith(QLatin1String(".xpm")))
         search_term = icon_name + ".*";
 
-    icon_name.remove(QRegularExpression("\\.png$|\\.svg$|\\.xpm$"));
+    icon_name.remove(QRegularExpression(QStringLiteral("\\.png$|\\.svg$|\\.xpm$")));
 
     // return the icon from the theme if it exists
     if (!QIcon::fromTheme(icon_name).isNull())
@@ -959,10 +944,10 @@ QPixmap MainWindow::findIcon(QString icon_name, const QSize &size)
     }
 
     // Search recursive
-    search_paths.append("/usr/share/icons/hicolor/48x48/");
-    search_paths.append("/usr/share/icons/hicolor/");
-    search_paths.append("/usr/share/icons/");
-    proc.start("find", QStringList{search_paths << "-iname" << search_term << "-print" << "-quit"});
+    search_paths.append(QStringLiteral("/usr/share/icons/hicolor/48x48/"));
+    search_paths.append(QStringLiteral("/usr/share/icons/hicolor/"));
+    search_paths.append(QStringLiteral("/usr/share/icons/"));
+    proc.start(QStringLiteral("find"), QStringList{search_paths << QStringLiteral("-iname") << search_term << QStringLiteral("-print") << QStringLiteral("-quit")});
     proc.waitForFinished();
     QString out = proc.readAllStandardOutput().trimmed();
     if (out.isEmpty())

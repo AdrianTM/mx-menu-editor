@@ -53,18 +53,18 @@ public:
     QMultiHash<QString, QString> hashCategories;
     QMultiHash<QString, QString> hashExclude;
     QMultiHash<QString, QString> hashInclude;
-    QPixmap findIcon(QString icon_name, const QSize &size);
+    QPixmap findIcon(QString icon_name, QSize size);
     QString getCatName(const QString &file_name);
     QStringList all_local_desktop_files;
     QStringList all_usr_desktop_files;
-    QStringList listCategories();
-    QStringList listDesktopFiles(const QString &search_category, const QString &location);
-    QStringList listMenuFiles();
-    QTreeWidgetItem* addToTree(QString file_name);
-    bool isHidden(const QString &file_name);
+    QStringList listCategories() const;
+    QStringList listDesktopFiles(const QString &search_string, const QString &location);
+    static QStringList listMenuFiles();
+    QTreeWidgetItem* addToTree(const QString &file_name);
+    static bool isHidden(const QString &file_name);
     bool save();
     void displayList(QStringList menu_items);
-    void findReloadItem(QString base_name);
+    void findReloadItem(const QString &base_name);
     void loadMenuFiles();
     void setConnections();
 
@@ -89,19 +89,19 @@ public slots:
     void resetInterface();
     void saveSettings();
     void selectCommand();
-    void setEnabled(QString);
+    void setEnabled(const QString&);
 
 private slots:
     void pushAbout_clicked();
     void pushCancel_clicked();
-    void pushHelp_clicked();
+    static void pushHelp_clicked();
     void pushSave_clicked();
     void pushRestoreApp_clicked();
 
 private:
     Ui::MainWindow *ui;
     AddAppDialog *add;
-    QTreeWidgetItem *current_item;
+    QTreeWidgetItem *current_item{};
     QProcess proc;
     QSettings settings;
 };

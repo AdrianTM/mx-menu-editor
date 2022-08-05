@@ -1,3 +1,9 @@
+mx-menu-editor (22.8) mx; urgency=medium
+
+  * Fix buttons add app dialog
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 04 Aug 2022 20:55:09 -0400
+
 mx-menu-editor (22.7.02) mx; urgency=medium
 
   * translation refresh
