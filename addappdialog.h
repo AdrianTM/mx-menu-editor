@@ -42,7 +42,7 @@ public:
     Ui::AddAppDialog *ui;
     QString icon_path;
     void resetInterface();
-    void setConnections();
+    void setConnections() const;
 
 public slots:
     void saveOrNot();

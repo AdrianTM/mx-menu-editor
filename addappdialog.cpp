@@ -23,6 +23,7 @@
  **********************************************************************/
 
 #include <QDir>
+#include <QProcess>
 
 #include "addappdialog.h"
 #include "ui_addappdialog.h"
@@ -41,44 +42,42 @@ AddAppDialog::~AddAppDialog()
     delete ui;
 }
 
-// Save button clicked
 void AddAppDialog::pushSave_clicked()
 {
     QString output;
-    QString file_name = ui->lineEditName->text().replace(" ", "-") + ".desktop";
+    QString file_name = ui->lineEditName->text().replace(QLatin1String(" "), QLatin1String("-")) + ".desktop";
     QString out_name = QDir::homePath() + "/.local/share/applications/" + file_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text))
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
-    output = "[Desktop Entry]\n";
+    output = QStringLiteral("[Desktop Entry]\n");
     output.append("Name=" + ui->lineEditName->text() + "\n");
     output.append("Exec=" + ui->lineEditCommand->text() + "\n");
     if (!ui->lineEditComment->text().isEmpty())
         output.append("Comment=" + ui->lineEditComment->text() + "\n");
     if (!icon_path.isEmpty())
         output.append("Icon=" + icon_path + "\n");
-    if (ui->checkStartup->checkState())
+    if (ui->checkStartup->checkState() == Qt::Checked)
         output.append("StartupNotify=true\n");
-    if (ui->checkTerminal->checkState())
+    if (ui->checkTerminal->checkState() == Qt::Checked)
         output.append("Terminal=true\n");
     else
         output.append("Terminal=false\n");
     output.append("Type=Application\n");
-    QString categories = "Categories=";
+    QString categories = QStringLiteral("Categories=");
     for (int i = 0; i < ui->listWidgetCategories->count(); ++i) {
-        QListWidgetItem* item = ui->listWidgetCategories->item(i);
+        auto *item = ui->listWidgetCategories->item(i);
         categories += item->text() + ";";
     }
     output.append(categories + "\n");
     out.write(output.toUtf8());
     out.flush();
     out.close();
-    system("xfce4-panel --restart");
+    QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     resetInterface();
     this->close();
 }
 
-// Cancel button clicked
 void AddAppDialog::pushCancel_clicked()
 {
     if (ui->pushSave->isEnabled())
@@ -115,7 +114,7 @@ void AddAppDialog::resetInterface()
     ui->listWidgetCategories->clear();
 }
 
-void AddAppDialog::setConnections()
+void AddAppDialog::setConnections() const
 {
     connect(ui->pushSave, &QPushButton::clicked, this, &AddAppDialog::pushSave_clicked);
     connect(ui->pushCancel, &QPushButton::clicked, this, &AddAppDialog::pushCancel_clicked);
