@@ -33,6 +33,7 @@ AddAppDialog::AddAppDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Add Custom Application"));
+    setConnections();
 }
 
 AddAppDialog::~AddAppDialog()
