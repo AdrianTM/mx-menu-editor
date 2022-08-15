@@ -60,6 +60,7 @@ TRANSLATIONS += translations/mx-menu-editor_am.ts \
                 translations/mx-menu-editor_fa.ts \
                 translations/mx-menu-editor_fi.ts \
                 translations/mx-menu-editor_fr.ts \
+                translations/mx-menu-editor_fr_BE.ts \
                 translations/mx-menu-editor_he_IL.ts \
                 translations/mx-menu-editor_hi.ts \
                 translations/mx-menu-editor_hr.ts \
