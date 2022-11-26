@@ -28,7 +28,8 @@
 #include <QDialog>
 #include <QMessageBox>
 
-namespace Ui {
+namespace Ui
+{
 class AddAppDialog;
 }
 
@@ -52,7 +53,6 @@ private slots:
     void pushCancel_clicked();
 
 private:
-
 };
 
 #endif // ADDAPPDIALOG_H

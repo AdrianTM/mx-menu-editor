@@ -21,26 +21,22 @@
  * You should have received a copy of the GNU General Public License
  * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
+#include "addappdialog.h"
+#include "ui_addappdialog.h"
 
 #include <QDir>
 #include <QProcess>
 
-#include "addappdialog.h"
-#include "ui_addappdialog.h"
-
-AddAppDialog::AddAppDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AddAppDialog)
+AddAppDialog::AddAppDialog(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::AddAppDialog)
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Add Custom Application"));
     setConnections();
 }
 
-AddAppDialog::~AddAppDialog()
-{
-    delete ui;
-}
+AddAppDialog::~AddAppDialog() { delete ui; }
 
 void AddAppDialog::pushSave_clicked()
 {
