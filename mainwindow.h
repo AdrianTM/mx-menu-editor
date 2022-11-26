@@ -34,7 +34,8 @@
 
 #include "addappdialog.h"
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 
@@ -60,7 +61,7 @@ public:
     QStringList listCategories() const;
     QStringList listDesktopFiles(const QString &search_string, const QString &location);
     static QStringList listMenuFiles();
-    QTreeWidgetItem* addToTree(const QString &file_name);
+    QTreeWidgetItem *addToTree(const QString &file_name);
     static bool isHidden(const QString &file_name);
     bool save();
     void displayList(QStringList menu_items);
@@ -89,7 +90,7 @@ public slots:
     void resetInterface();
     void saveSettings();
     void selectCommand();
-    void setEnabled(const QString&);
+    void setEnabled(const QString &);
 
 private slots:
     void pushAbout_clicked();
@@ -101,10 +102,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     AddAppDialog *add;
-    QTreeWidgetItem *current_item{};
+    QTreeWidgetItem *current_item {};
     QProcess proc;
     QSettings settings;
 };
 
 #endif // MAINWINDOW_H
-

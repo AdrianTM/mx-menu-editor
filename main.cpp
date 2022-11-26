@@ -26,33 +26,35 @@
 #include <QLibraryInfo>
 
 #include "mainwindow.h"
-#include <qtranslator.h>
-#include <qlocale.h>
-#include <unistd.h>
 #include <QIcon>
+#include <qlocale.h>
+#include <qtranslator.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
-    app.setOrganizationName(QStringLiteral("MX-Linux"));
+    QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
+    QApplication::setOrganizationName(QStringLiteral("MX-Linux"));
 
     QTranslator qtTran;
-    if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtTran);
+    if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"),
+                    QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        QApplication::installTranslator(&qtTran);
 
     QTranslator qtBaseTran;
     if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtBaseTran);
+        QApplication::installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
-        app.installTranslator(&appTran);
+    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
+                     "/usr/share/" + QApplication::applicationName() + "/locale"))
+        QApplication::installTranslator(&appTran);
 
     if (getuid() != 0) {
         MainWindow w;
         w.show();
-        return app.exec();
+        return QApplication::exec();
     } else {
         QApplication::beep();
         QMessageBox::critical(nullptr, QString(), QApplication::tr("You must run this program as normal user."));
