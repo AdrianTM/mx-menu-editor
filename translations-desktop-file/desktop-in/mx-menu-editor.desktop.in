@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+# The desktop entry name will be displayed within the menu.
+Name=MX Menu Editor
+# # The desktop entry comment will be shown within the menu.
+Comment=Easily edit system and user menus
+Exec=mx-menu-editor
+Terminal=false
+Type=Application
+Icon=mx-menu-editor
+Categories=GNOME;GTK;System;MX-Maintenance;
+NoDisplay=false
