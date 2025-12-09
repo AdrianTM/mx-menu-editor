@@ -34,6 +34,11 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Add Custom Application"));
+
+    // Remove focus from Cancel button
+    ui->pushCancel->setAutoDefault(false);
+    ui->pushCancel->setDefault(false);
+
     setConnections();
 }
 

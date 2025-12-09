@@ -51,6 +51,10 @@ MainWindow::MainWindow(QWidget *parent)
     if (add->ui->pushSave->icon().isNull())
         add->ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
 
+    // Remove focus from Cancel button
+    ui->pushCancel->setAutoDefault(false);
+    ui->pushCancel->setDefault(false);
+
     comboBox = new QComboBox;
 
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
@@ -850,8 +854,10 @@ void MainWindow::pushSave_clicked()
         QDir().mkpath(QDir::homePath() + "/.local/share/applications/");
     QString out_name = QDir::homePath() + "/.local/share/applications/" + base_name;
     QFile out(out_name);
-    if (!out.open(QFile::WriteOnly | QFile::Text))
+    if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
+        return;
+    }
     all_local_desktop_files << out_name;
     out.write(ui->advancedEditor->toPlainText().toUtf8());
     out.flush();
