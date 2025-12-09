@@ -1,35 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ka">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="../addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation>დიალოგი</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="33"/>
         <source>Categories</source>
-        <translation>Categorías</translation>
+        <translation>კატეგორიები</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="45"/>
         <source>Add category</source>
-        <translation>Añadir categorías</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="59"/>
         <source>Delete category</source>
-        <translation>Borrar categorías</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="76"/>
         <source>Command:</source>
-        <translation>Orden:</translation>
+        <translation>ბრძანება:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="121"/>
         <source>Save Changes</source>
-        <translation>Guardar cambios</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="128"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation>Cerrar diálogo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>გაუქმება</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="176"/>
@@ -54,67 +54,67 @@
     <message>
         <location filename="../addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation>Seleccionar...</translation>
+        <translation>აირჩიეთ...</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="201"/>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>სახელი:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="208"/>
         <source>Comment:</source>
-        <translation>Comentario:</translation>
+        <translation>კომენტარი:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="215"/>
         <source>Icon:</source>
-        <translation>Ícono:</translation>
+        <translation>ხატულა:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
         <location filename="../addappdialog.cpp" line="112"/>
         <source>Set icon</source>
-        <translation>Establecer ícono</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
-        <translation>Ejecutar en terminal</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation>Nortificador de inicio</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="36"/>
         <source>Add Custom Application</source>
-        <translation>Añadir aplicaciones personalizadas</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="52"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>შეცდომა</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="52"/>
         <source>Could not save the file</source>
-        <translation>No se pudo guardar el archivo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="93"/>
         <source>Save changes?</source>
-        <translation>¿Guardar los cambios?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="93"/>
         <source>Do you want to save your edits?</source>
-        <translation>¿Desea guardar sus cambios?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Save</source>
-        <translation type="vanished">Guardar</translation>
+        <translation type="vanished">შენახვა</translation>
     </message>
 </context>
 <context>
@@ -123,108 +123,108 @@
         <location filename="../mainwindow.ui" line="17"/>
         <location filename="../mainwindow.cpp" line="803"/>
         <source>MX Menu Editor</source>
-        <translation>MX Editor de Menú</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation>Editor avanzado</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>Categorías y aplicaciones</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="82"/>
         <source>Add custom application</source>
-        <translation>Añadir aplicacion personalizada</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation>მორგება</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation>Ejecutar en terminal</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="115"/>
         <source>Hide</source>
-        <translation>Ocultar</translation>
+        <translation>დამალვა</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="125"/>
         <source>Notify startup</source>
-        <translation>Notificar inicio</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation>Editor rápido</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="160"/>
         <source>Comment:</source>
-        <translation>Comentario:</translation>
+        <translation>კომენტარი:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="170"/>
         <source>Restore original item</source>
-        <translation>Restaurar elemento original</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="181"/>
         <source>Command:</source>
-        <translation>Orden:</translation>
+        <translation>ბრძანება:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="191"/>
         <source>Select...</source>
-        <translation>Seleccionar...</translation>
+        <translation>აირჩიეთ...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="205"/>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>სახელი:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="226"/>
         <source>Icon</source>
-        <translation>Ícono</translation>
+        <translation>ხატულა</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <location filename="../mainwindow.cpp" line="505"/>
         <source>Change icon</source>
-        <translation>Cambiar ícono</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="280"/>
         <source>Categories</source>
-        <translation>Categorías</translation>
+        <translation>კატეგორიები</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="292"/>
         <source>Add</source>
-        <translation>Añadir</translation>
+        <translation>დამატება</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="306"/>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>წაშლა</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="372"/>
         <source>Quit application</source>
-        <translation>Salir de la aplicación</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="375"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>დახურვა</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="382"/>
@@ -234,12 +234,12 @@
     <message>
         <location filename="../mainwindow.ui" line="423"/>
         <source>Display help</source>
-        <translation>Mostrar ayuda</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="426"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>დახმარება</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="433"/>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../mainwindow.ui" line="452"/>
         <source>Save Changes</source>
-        <translation>Guardar cambios</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="459"/>
@@ -259,12 +259,12 @@
     <message>
         <location filename="../mainwindow.ui" line="494"/>
         <source>About this application</source>
-        <translation>Acerca de esta aplicación</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="497"/>
         <source>About...</source>
-        <translation>Acerca de...</translation>
+        <translation>შესახებ...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="504"/>
@@ -274,87 +274,87 @@
     <message>
         <location filename="../mainwindow.cpp" line="422"/>
         <source>Select executable file</source>
-        <translation>Seleccionar archivo ejecutable</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="vanished">Archivos de imagen (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="486"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
-        <translation>Archivos de imagen (*.png *.jpg *.bmp *.xpm *.svg)</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="679"/>
         <source>Choose category</source>
-        <translation>Elegir categoría</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="692"/>
         <location filename="../mainwindow.cpp" line="809"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>გაუქმება</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>დიახ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="787"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>შეცდომა</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="787"/>
         <source>Could not save the file</source>
-        <translation>No se pudo guardar el archivo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="802"/>
         <source>About MX Menu Editor</source>
-        <translation>Acerca del MX Editor de Menú</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="803"/>
         <source>Version: </source>
-        <translation>Versión: </translation>
+        <translation>ვერსია:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="804"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Programa para editar el menú de Xfce</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="806"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="807"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation>ლიცენზია</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="808"/>
         <source>Changelog</source>
-        <translation>Registro de cambios</translation>
+        <translation>ცვლილებების ჟურნალი</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="830"/>
         <source>&amp;Close</source>
-        <translation>&amp;Cerrar</translation>
+        <translation>&amp;დახურვა</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Save changes?</source>
-        <translation>¿Guardar los cambios?</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Do you want to save your edits?</source>
-        <translation>¿Desea guardar sus cambios?</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>You must run this program as normal user.</source>
-        <translation>Debe ejecutar este programa como usuario normal.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

@@ -1,35 +1,35 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru_RU">
 <context>
     <name>AddAppDialog</name>
     <message>
         <location filename="../addappdialog.ui" line="23"/>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation>Диалоговое окно</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="33"/>
         <source>Categories</source>
-        <translation>Categorías</translation>
+        <translation>Категории</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="45"/>
         <source>Add category</source>
-        <translation>Añadir categorías</translation>
+        <translation>Добавить категорию</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="59"/>
         <source>Delete category</source>
-        <translation>Borrar categorías</translation>
+        <translation>Удалить категорию</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="76"/>
         <source>Command:</source>
-        <translation>Orden:</translation>
+        <translation>Команда:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="121"/>
         <source>Save Changes</source>
-        <translation>Guardar cambios</translation>
+        <translation>Сохранить изменения</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="128"/>
@@ -39,12 +39,12 @@
     <message>
         <location filename="../addappdialog.ui" line="166"/>
         <source>Quit dialog</source>
-        <translation>Cerrar diálogo</translation>
+        <translation>Выйти из диалога</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="169"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="176"/>
@@ -54,67 +54,67 @@
     <message>
         <location filename="../addappdialog.ui" line="194"/>
         <source>Select...</source>
-        <translation>Seleccionar...</translation>
+        <translation>Выбор...</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="201"/>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="208"/>
         <source>Comment:</source>
-        <translation>Comentario:</translation>
+        <translation>Комментарий:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="215"/>
         <source>Icon:</source>
-        <translation>Ícono:</translation>
+        <translation>Значок:</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="222"/>
         <location filename="../addappdialog.cpp" line="112"/>
         <source>Set icon</source>
-        <translation>Establecer ícono</translation>
+        <translation>Установить значок</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="235"/>
         <source>Run in Terminal</source>
-        <translation>Ejecutar en terminal</translation>
+        <translation>Выполнять в терминале</translation>
     </message>
     <message>
         <location filename="../addappdialog.ui" line="248"/>
         <source>Startup Notifier</source>
-        <translation>Nortificador de inicio</translation>
+        <translation>Использовать уведомление о запуске</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="36"/>
         <source>Add Custom Application</source>
-        <translation>Añadir aplicaciones personalizadas</translation>
+        <translation>Добавить пользовательское приложение</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="52"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="52"/>
         <source>Could not save the file</source>
-        <translation>No se pudo guardar el archivo</translation>
+        <translation>Не удалось сохранить файл</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="93"/>
         <source>Save changes?</source>
-        <translation>¿Guardar los cambios?</translation>
+        <translation>Сохранить изменения?</translation>
     </message>
     <message>
         <location filename="../addappdialog.cpp" line="93"/>
         <source>Do you want to save your edits?</source>
-        <translation>¿Desea guardar sus cambios?</translation>
+        <translation>Хотите сохранить ваши изменения?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="vanished">Guardar</translation>
+        <translation type="vanished">Сохранить</translation>
     </message>
 </context>
 <context>
@@ -123,108 +123,108 @@
         <location filename="../mainwindow.ui" line="17"/>
         <location filename="../mainwindow.cpp" line="803"/>
         <source>MX Menu Editor</source>
-        <translation>MX Editor de Menú</translation>
+        <translation>MX Редактор меню</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="34"/>
         <source>Advanced Editor</source>
-        <translation>Editor avanzado</translation>
+        <translation>Расширенный редактор</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>Categorías y aplicaciones</translation>
+        <translation>Категории и приложения</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="82"/>
         <source>Add custom application</source>
-        <translation>Añadir aplicacion personalizada</translation>
+        <translation>Добавить пользовательское приложение</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="96"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation>Варианты</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="105"/>
         <source>Run in terminal</source>
-        <translation>Ejecutar en terminal</translation>
+        <translation>Выполнять в терминале</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="115"/>
         <source>Hide</source>
-        <translation>Ocultar</translation>
+        <translation>Скрыть</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="125"/>
         <source>Notify startup</source>
-        <translation>Notificar inicio</translation>
+        <translation>Уведомлять о запуске</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="148"/>
         <source>Quick Editor</source>
-        <translation>Editor rápido</translation>
+        <translation>Быстрый редактор</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="160"/>
         <source>Comment:</source>
-        <translation>Comentario:</translation>
+        <translation>Комментарий:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="170"/>
         <source>Restore original item</source>
-        <translation>Restaurar elemento original</translation>
+        <translation>Восстановить исходный элемент</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="181"/>
         <source>Command:</source>
-        <translation>Orden:</translation>
+        <translation>Команда:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="191"/>
         <source>Select...</source>
-        <translation>Seleccionar...</translation>
+        <translation>Выбор...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="205"/>
         <source>Name:</source>
-        <translation>Nombre:</translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="226"/>
         <source>Icon</source>
-        <translation>Ícono</translation>
+        <translation>Значок</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="266"/>
         <location filename="../mainwindow.cpp" line="505"/>
         <source>Change icon</source>
-        <translation>Cambiar ícono</translation>
+        <translation>Изменить значок</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="280"/>
         <source>Categories</source>
-        <translation>Categorías</translation>
+        <translation>Категории</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="292"/>
         <source>Add</source>
-        <translation>Añadir</translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="306"/>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="372"/>
         <source>Quit application</source>
-        <translation>Salir de la aplicación</translation>
+        <translation>Выйти из приложения</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="375"/>
         <source>Close</source>
-        <translation>Cerrar</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="382"/>
@@ -234,12 +234,12 @@
     <message>
         <location filename="../mainwindow.ui" line="423"/>
         <source>Display help</source>
-        <translation>Mostrar ayuda</translation>
+        <translation>Показать справку</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="426"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>Помощь</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="433"/>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../mainwindow.ui" line="452"/>
         <source>Save Changes</source>
-        <translation>Guardar cambios</translation>
+        <translation>Сохранить изменения</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="459"/>
@@ -259,12 +259,12 @@
     <message>
         <location filename="../mainwindow.ui" line="494"/>
         <source>About this application</source>
-        <translation>Acerca de esta aplicación</translation>
+        <translation>Об этом приложении</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="497"/>
         <source>About...</source>
-        <translation>Acerca de...</translation>
+        <translation>О программе...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="504"/>
@@ -274,57 +274,57 @@
     <message>
         <location filename="../mainwindow.cpp" line="422"/>
         <source>Select executable file</source>
-        <translation>Seleccionar archivo ejecutable</translation>
+        <translation>Выберите исполняемый файл</translation>
     </message>
     <message>
         <source>Image Files (*.png *.jpg *.bmp *.xpm)</source>
-        <translation type="vanished">Archivos de imagen (*.png *.jpg *.bmp *.xpm)</translation>
+        <translation type="vanished">Файлы изображений (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="486"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
-        <translation>Archivos de imagen (*.png *.jpg *.bmp *.xpm *.svg)</translation>
+        <translation>Файлы изображений (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="679"/>
         <source>Choose category</source>
-        <translation>Elegir categoría</translation>
+        <translation>Выбрать категорию</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="692"/>
         <location filename="../mainwindow.cpp" line="809"/>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="787"/>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="787"/>
         <source>Could not save the file</source>
-        <translation>No se pudo guardar el archivo</translation>
+        <translation>Не удалось сохранить файл</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="802"/>
         <source>About MX Menu Editor</source>
-        <translation>Acerca del MX Editor de Menú</translation>
+        <translation>О программе MX Редактор меню</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="803"/>
         <source>Version: </source>
-        <translation>Versión: </translation>
+        <translation>Версия: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="804"/>
         <source>Program for editing Xfce menu</source>
-        <translation>Programa para editar el menú de Xfce</translation>
+        <translation>Программа для редактирования меню Xfce</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="806"/>
@@ -334,27 +334,27 @@
     <message>
         <location filename="../mainwindow.cpp" line="807"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation>Лицензия</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="808"/>
         <source>Changelog</source>
-        <translation>Registro de cambios</translation>
+        <translation>Список изменений</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="830"/>
         <source>&amp;Close</source>
-        <translation>&amp;Cerrar</translation>
+        <translation>&amp;Закрыть</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Save changes?</source>
-        <translation>¿Guardar los cambios?</translation>
+        <translation>Сохранить изменения?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="873"/>
         <source>Do you want to save your edits?</source>
-        <translation>¿Desea guardar sus cambios?</translation>
+        <translation>Хотите сохранить ваши изменения?</translation>
     </message>
 </context>
 <context>
@@ -362,7 +362,7 @@
     <message>
         <location filename="../main.cpp" line="58"/>
         <source>You must run this program as normal user.</source>
-        <translation>Debe ejecutar este programa como usuario normal.</translation>
+        <translation>Вы должны запустить эту программу как обычный пользователь.</translation>
     </message>
 </context>
 </TS>

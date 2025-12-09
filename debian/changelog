@@ -1,6 +1,15 @@
+mx-menu-editor (25.12) mx; urgency=medium
+
+  * Update codebase to Qt6
+  * Minor performance fixes
+  * Minor UI improvments: Cancel is not autoselected, clicking on a field
+    and switching to another item doesn't prompt for save/discard.
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 09 Dec 2025 15:34:59 -0500
+
 mx-menu-editor (22.10) mx; urgency=medium
 
-  * update translations 
+  * update translations
 
  -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 26 Oct 2022 20:03:08 -0400
 
@@ -99,7 +108,7 @@ mx-menu-editor (18.11) mx; urgency=medium
 
 mx-menu-editor (18.10.3) mx; urgency=medium
 
-  * added Type=application for new custom entries 
+  * added Type=application for new custom entries
 
  -- Adrian <adrian@mxlinux.org>  Wed, 31 Oct 2018 20:11:43 -0400
 
@@ -208,7 +217,7 @@ mx-menu-editor (16.11mx16) mx; urgency=medium
 
 mx-menu-editor (16.10mx16) mx; urgency=medium
 
-  * Changed URLs 
+  * Changed URLs
 
  -- Adrian <adrian@mxlinux.org>  Mon, 10 Oct 2016 13:38:17 -0400
 
@@ -244,7 +253,7 @@ mx-menu-editor (15.10.1mx15) mx; urgency=medium
 
 mx-menu-editor (15.10mx15) mx; urgency=medium
 
-  * added new translations 
+  * added new translations
 
  -- Adrian <adrian@mxlinux.org>  Sat, 24 Oct 2015 22:14:13 -0400
 
