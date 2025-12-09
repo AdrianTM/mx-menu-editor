@@ -617,8 +617,10 @@ void MainWindow::delCategory()
         QString text = ui->advancedEditor->toPlainText();
         int indexCategory = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
         int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
-        text.remove(indexToDelete, item->text().length() + 1);
-        ui->advancedEditor->setText(text);
+        if (indexToDelete != -1) {
+            text.remove(indexToDelete, item->text().length() + 1);
+            ui->advancedEditor->setText(text);
+        }
         if (ui->listWidgetEditCategories->count() == 0) {
             ui->pushDelete->setDisabled(true);
             ui->pushSave->setDisabled(true);
