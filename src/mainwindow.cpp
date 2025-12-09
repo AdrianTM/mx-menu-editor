@@ -923,47 +923,71 @@ void MainWindow::findReloadItem(const QString &base_name)
 
 QPixmap MainWindow::findIcon(QString icon_name, QSize size)
 {
+    static QHash<QString, QIcon> iconCache;
+    static const QRegularExpression re(QStringLiteral("\\.(png|svg|xpm)$"));
+    static const QStringList extensions {QStringLiteral(".png"), QStringLiteral(".svg"), QStringLiteral(".xpm")};
+    static const QStringList searchPaths {QDir::homePath() + QStringLiteral("/.local/share/icons/"),
+                                          QStringLiteral("/usr/share/pixmaps/"),
+                                          QStringLiteral("/usr/local/share/icons/"),
+                                          QStringLiteral("/usr/share/icons/"),
+                                          QStringLiteral("/usr/share/icons/hicolor/scalable/apps/"),
+                                          QStringLiteral("/usr/share/icons/hicolor/48x48/apps/"),
+                                          QStringLiteral("/usr/share/icons/Adwaita/48x48/legacy/")};
+
+    const auto makePixmap = [size](const QIcon &icon) {
+        return icon.isNull() ? QPixmap() : icon.pixmap(size.isValid() ? size : QSize());
+    };
+
     if (icon_name.isEmpty())
         return QPixmap();
-    if (QFileInfo::exists("/" + icon_name))
-        return QIcon(icon_name).pixmap(size);
 
-    QString search_term = icon_name;
-    if (!icon_name.endsWith(QLatin1String(".png")) && !icon_name.endsWith(QLatin1String(".svg"))
-        && !icon_name.endsWith(QLatin1String(".xpm")))
-        search_term = icon_name + ".*";
+    if (iconCache.contains(icon_name))
+        return makePixmap(iconCache.value(icon_name));
 
-    icon_name.remove(QRegularExpression(QStringLiteral("\\.png$|\\.svg$|\\.xpm$")));
+    // Absolute path handling
+    if (QFileInfo::exists(icon_name) && QFileInfo(icon_name).isAbsolute()) {
+        QIcon icon(icon_name);
+        iconCache.insert(icon_name, icon);
+        return makePixmap(icon);
+    }
 
-    // return the icon from the theme if it exists
-    if (!QIcon::fromTheme(icon_name).isNull())
-        return QIcon::fromTheme(icon_name).pixmap(size);
+    QString nameNoExt = icon_name;
+    nameNoExt.remove(re);
 
-    // Try to find in most obvious places
-    QStringList search_paths {QDir::homePath() + "/.local/share/icons/", "/usr/share/pixmaps/",
-                              "/usr/local/share/icons/", "/usr/share/icons/hicolor/48x48/apps/"};
-    for (const QString &path : search_paths) {
-        if (!QFileInfo::exists(path)) {
-            search_paths.removeOne(path);
-            continue;
+    // Themed icon
+    QIcon themedIcon = QIcon::fromTheme(nameNoExt);
+    if (!themedIcon.isNull()) {
+        iconCache.insert(icon_name, themedIcon);
+        return makePixmap(themedIcon);
+    }
+
+    const auto searchInPaths = [](const QString &name) -> QIcon {
+        for (const auto &path : searchPaths) {
+            const QString fullPath = QDir(path).filePath(name);
+            if (QFile::exists(fullPath)) {
+                QIcon icon(fullPath);
+                if (!icon.isNull())
+                    return icon;
+            }
         }
-        for (const QString &ext : {".png", ".svg", ".xpm"}) {
-            QString file = path + icon_name + ext;
-            if (QFileInfo::exists(file))
-                return QIcon(file).pixmap(QSize());
+        return QIcon();
+    };
+
+    // Try exact name first
+    QIcon icon = searchInPaths(icon_name);
+    if (!icon.isNull()) {
+        iconCache.insert(icon_name, icon);
+        return makePixmap(icon);
+    }
+
+    // Try without extension and standard extensions
+    for (const auto &ext : extensions) {
+        icon = searchInPaths(nameNoExt + ext);
+        if (!icon.isNull()) {
+            iconCache.insert(icon_name, icon);
+            return makePixmap(icon);
         }
     }
 
-    // Search recursive
-    search_paths.append(QStringLiteral("/usr/share/icons/hicolor/48x48/"));
-    search_paths.append(QStringLiteral("/usr/share/icons/hicolor/"));
-    search_paths.append(QStringLiteral("/usr/share/icons/"));
-    proc.start(QStringLiteral("find"),
-               QStringList {search_paths << QStringLiteral("-iname") << search_term << QStringLiteral("-print")
-                                         << QStringLiteral("-quit")});
-    proc.waitForFinished();
-    QString out = proc.readAllStandardOutput().trimmed();
-    if (out.isEmpty())
-        return QPixmap();
-    return QIcon(out).pixmap(size);
+    return QPixmap();
 }
