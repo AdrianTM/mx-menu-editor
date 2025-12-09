@@ -888,9 +888,12 @@ void MainWindow::pushSave_clicked()
     const auto file_name = current_item->text(1);
     const QFileInfo fi(file_name);
     const auto base_name = fi.fileName();
-    if (!QFileInfo::exists(QDir::homePath() + "/.local/share/applications/"))
-        QDir().mkpath(QDir::homePath() + "/.local/share/applications/");
-    const auto out_name = QDir::homePath() + "/.local/share/applications/" + base_name;
+    const auto applicationsDir = QDir::homePath() + "/.local/share/applications/";
+    if (!QFileInfo::exists(applicationsDir) && !QDir().mkpath(applicationsDir)) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create the applications directory"));
+        return;
+    }
+    const auto out_name = applicationsDir + base_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
