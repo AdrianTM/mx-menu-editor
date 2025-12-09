@@ -23,6 +23,7 @@
  **********************************************************************/
 
 #include <QApplication>
+#include <QMessageBox>
 #include <QLibraryInfo>
 
 #include "mainwindow.h"
@@ -33,17 +34,24 @@
 
 int main(int argc, char *argv[])
 {
+    // Set Qt platform to XCB (X11) if not already set and we're in X11 environment
+    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM")) {
+        if (!qEnvironmentVariableIsEmpty("DISPLAY") && qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY")) {
+            qputenv("QT_QPA_PLATFORM", "xcb");
+        }
+    }
+
     QApplication app(argc, argv);
     QApplication::setWindowIcon(QIcon::fromTheme(QApplication::applicationName()));
     QApplication::setOrganizationName(QStringLiteral("MX-Linux"));
 
     QTranslator qtTran;
     if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"),
-                    QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+                    QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTran);
 
     QTranslator qtBaseTran;
-    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtBaseTran);
 
     QTranslator appTran;

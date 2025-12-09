@@ -30,10 +30,9 @@
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QScreen>
-#include <QTextCodec>
+#include <utility>
 
 #include "ui_addappdialog.h"
-#include "version.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QDialog(parent)
@@ -52,8 +51,6 @@ MainWindow::MainWindow(QWidget *parent)
         add->ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
 
     comboBox = new QComboBox;
-
-    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
     all_usr_desktop_files = listDesktopFiles(QLatin1String(""), QStringLiteral("/usr/share/applications"));
@@ -253,14 +250,14 @@ void MainWindow::loadApps()
 
         includes_usr.reserve(excludes.size());
         includes_local.reserve(excludes.size());
-        for (const QString &file : qAsConst(includes)) {
+        for (const QString &file : std::as_const(includes)) {
             includes_usr << "/usr/share/applications" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
         }
 
         // determine search string for all categories to be listead under menu category
         QString search_string;
-        for (const QString &category : qAsConst(categories)) {
+        for (const QString &category : std::as_const(categories)) {
             if (search_string.isEmpty())
                 search_string = "Categories=.*" + category;
             else
@@ -277,26 +274,26 @@ void MainWindow::loadApps()
         local_desktop_files.append(includes_local);
 
         // exclude files
-        for (const QString &base_name : qAsConst(excludes)) {
+        for (const QString &base_name : std::as_const(excludes)) {
             usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
             local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
         }
 
         // list of names without path
         QStringList local_base_names;
-        for (const QString &local_name : qAsConst(all_local_desktop_files)) {
+        for (const QString &local_name : std::as_const(all_local_desktop_files)) {
             QFileInfo f_local(local_name);
             local_base_names << f_local.fileName();
         }
         QStringList usr_base_names;
-        for (const QString &usr_name : qAsConst(all_usr_desktop_files)) {
+        for (const QString &usr_name : std::as_const(all_usr_desktop_files)) {
             QFileInfo f_usr(usr_name);
             usr_base_names << f_usr.fileName();
         }
 
         // parse local .desktop files
         QTreeWidgetItem *app = nullptr;
-        for (const QString &local_name : qAsConst(local_desktop_files)) {
+        for (const QString &local_name : std::as_const(local_desktop_files)) {
             QFileInfo fi_local(local_name);
             app = addToTree(local_name);
             all_local_desktop_files << local_name;
@@ -306,7 +303,7 @@ void MainWindow::loadApps()
         }
 
         // parse usr .desktop files
-        for (const QString &file : qAsConst(usr_desktop_files)) {
+        for (const QString &file : std::as_const(usr_desktop_files)) {
             QFileInfo fi(file);
             QString base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
@@ -676,10 +673,8 @@ void MainWindow::changeTerminal(bool checked)
 QStringList MainWindow::listCategories() const
 {
     QStringList categories;
-    QHashIterator<QString, QString> i(hashCategories);
-    while (i.hasNext()) {
-        i.next();
-        categories << i.value();
+    for (auto it = hashCategories.cbegin(); it != hashCategories.cend(); ++it) {
+        categories << it.value();
     }
     categories.removeDuplicates();
     categories = categories.filter(QRegularExpression(QStringLiteral("^(?!<Not>).*$")));
