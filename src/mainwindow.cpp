@@ -606,7 +606,7 @@ void MainWindow::delCategory()
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         ui->pushSave->setEnabled(true);
         row = ui->listWidgetEditCategories->currentRow();
-        QListWidgetItem *item = ui->listWidgetEditCategories->takeItem(row);
+        QScopedPointer<QListWidgetItem> item(ui->listWidgetEditCategories->takeItem(row));
         QString text = ui->advancedEditor->toPlainText();
         int indexCategory = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
         int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
@@ -618,7 +618,8 @@ void MainWindow::delCategory()
         }
     } else { // if running command from add-custom-app window
         row = add->ui->listWidgetCategories->currentRow();
-        add->ui->listWidgetCategories->takeItem(row);
+        QScopedPointer<QListWidgetItem> item(add->ui->listWidgetCategories->takeItem(row));
+        Q_UNUSED(item); // item automatically deleted when going out of scope
         if (add->ui->listWidgetCategories->count() == 0) {
             add->ui->pushDelete->setDisabled(true);
             add->ui->pushSave->setDisabled(true);
