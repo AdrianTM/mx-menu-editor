@@ -732,12 +732,13 @@ void MainWindow::addCategoryMsgBox()
     const QStringList &categories = listCategories();
 
     auto *window = new QWidget(add, Qt::Dialog);
+    window->setAttribute(Qt::WA_DeleteOnClose); // Auto-delete when closed
     window->setWindowTitle(tr("Choose category"));
     const int height = 80;
     const int width = 250;
     window->resize(width, height);
 
-    auto *buttonBox = new QDialogButtonBox();
+    auto *buttonBox = new QDialogButtonBox(window);
 
     comboBox->clear();
     // comboBox->setEditable(true);
@@ -751,7 +752,7 @@ void MainWindow::addCategoryMsgBox()
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MainWindow::addCategory);
     connect(buttonBox, &QDialogButtonBox::rejected, window, &QWidget::close);
 
-    auto *layout = new QFormLayout;
+    auto *layout = new QFormLayout(window);
     layout->addRow(comboBox);
     layout->addRow(buttonBox);
 
