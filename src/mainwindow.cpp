@@ -182,7 +182,7 @@ void MainWindow::setConnections()
 QString MainWindow::getCatName(const QString &fileName)
 {
     proc.start(QStringLiteral("grep"), QStringList {"Name=", fileName}, QIODevice::ReadOnly);
-    proc.waitForFinished();
+    proc.waitForFinished(3000);
     if (proc.exitCode() != 0)
         return QString();
     return QString(proc.readAllStandardOutput().trimmed()).remove(QStringLiteral("Name="));
@@ -328,7 +328,7 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
 {
     if (QFileInfo::exists(fileName)) {
         proc.start(QStringLiteral("grep"), QStringList {"-m1", "^Name=", fileName}, QIODevice::ReadOnly);
-        proc.waitForFinished();
+        proc.waitForFinished(3000);
         if (proc.exitCode() != 0)
             return nullptr;
         QString app_name = proc.readAllStandardOutput().trimmed();
@@ -351,7 +351,7 @@ QStringList MainWindow::listDesktopFiles(const QString &searchString, const QStr
         proc.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
     else
         proc.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
-    proc.waitForFinished();
+    proc.waitForFinished(3000);
     if (proc.exitCode() != 0)
         return QStringList();
     QString out = proc.readAllStandardOutput().trimmed();
@@ -843,7 +843,7 @@ void MainWindow::pushAbout_clicked()
         proc.start(QStringLiteral("zless"),
                    QStringList {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
                                 + "/changelog.gz"});
-        proc.waitForFinished();
+        proc.waitForFinished(3000);
         if (proc.exitCode() != 0)
             return;
         text->setText(proc.readAllStandardOutput());

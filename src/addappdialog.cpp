@@ -76,7 +76,8 @@ void AddAppDialog::pushSave_clicked()
     out.write(output.toUtf8());
     out.flush();
     out.close();
-    QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
+    if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
+        QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     resetInterface();
     this->close();
 }
