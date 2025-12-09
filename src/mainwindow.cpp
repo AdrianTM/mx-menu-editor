@@ -328,7 +328,9 @@ void MainWindow::loadApps()
         current_item = ui->treeWidget
                            ->currentItem(); // remember the current_item in case user selects another item before saving
     } else {
-        loadItem(ui->treeWidget->currentItem(), 0);
+        QTreeWidgetItem *selectedItem = ui->treeWidget->currentItem();
+        if (selectedItem != nullptr)
+            loadItem(selectedItem, 0);
     }
 }
 
@@ -366,7 +368,11 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
         return nullptr;
 
     // add item as childItem to treeWidget
-    auto *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
+    QTreeWidgetItem *parent = ui->treeWidget->currentItem();
+    if (parent == nullptr)
+        return nullptr;
+
+    auto *childItem = new QTreeWidgetItem(parent);
     if (is_hidden)
         childItem->setForeground(0, QBrush(Qt::gray));
     childItem->setText(0, app_name);
@@ -458,12 +464,12 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
         file.close();
         ui->advancedEditor->setText(content); // adding content line by line it triggers "undo available"
         // enable RestoreApp button if flag is set up for item
-        if (ui->treeWidget->currentItem()->data(0, Qt::UserRole) == "restore")
+        QTreeWidgetItem *currentItem = ui->treeWidget->currentItem();
+        if (currentItem != nullptr && currentItem->data(0, Qt::UserRole) == "restore")
             ui->pushRestoreApp->setEnabled(true);
         else
             ui->pushRestoreApp->setEnabled(false);
-        current_item = ui->treeWidget
-                           ->currentItem(); // remember the current_item in case user selects another item before saving
+        current_item = currentItem; // remember the current_item in case user selects another item before saving
     }
 }
 
@@ -878,6 +884,11 @@ bool MainWindow::validateExecutable(const QString &execCommand)
 
 void MainWindow::pushSave_clicked()
 {
+    if (current_item == nullptr) {
+        qWarning() << "pushSave_clicked: current_item is null";
+        return;
+    }
+
     // Validate the Exec command before saving
     QString execCommand = ui->lineEditCommand->text().trimmed();
     if (!validateExecutable(execCommand))
