@@ -243,7 +243,7 @@ void MainWindow::loadApps()
     if (currentItem->parent() == nullptr) {
         if (ui->pushSave->isEnabled() && !save())
             return;
-        QTreeWidgetItem *item = ui->treeWidget->currentItem();
+        QTreeWidgetItem *item = currentItem;
         item->takeChildren();
         resetInterface();
 
@@ -322,12 +322,9 @@ void MainWindow::loadApps()
         }
         item->sortChildren(1, Qt::AscendingOrder);
         item->setExpanded(true);
-        current_item = ui->treeWidget
-                           ->currentItem(); // remember the current_item in case user selects another item before saving
+        current_item = currentItem; // remember the current_item in case user selects another item before saving
     } else {
-        QTreeWidgetItem *selectedItem = ui->treeWidget->currentItem();
-        if (selectedItem != nullptr)
-            loadItem(selectedItem, 0);
+        loadItem(currentItem, 0);
     }
 }
 
@@ -407,7 +404,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
     if (item->parent() != nullptr) {
         if (ui->pushSave->isEnabled() && !save())
             return;
-        const auto file_name = ui->treeWidget->currentItem()->text(1).trimmed();
+        const auto file_name = item->text(1).trimmed();
         resetInterface();
         enableEdit();
 
