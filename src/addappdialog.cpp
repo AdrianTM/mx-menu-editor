@@ -43,9 +43,16 @@ void AddAppDialog::pushSave_clicked()
     QString output;
     QString file_name = ui->lineEditName->text().replace(QLatin1String(" "), QLatin1String("-")) + ".desktop";
     QString out_name = QDir::homePath() + "/.local/share/applications/" + file_name;
+    const QString app_dir = QDir::homePath() + "/.local/share/applications/";
+    if (!QDir().exists(app_dir) && !QDir().mkpath(app_dir)) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create application directory"));
+        return;
+    }
     QFile out(out_name);
-    if (!out.open(QFile::WriteOnly | QFile::Text))
+    if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
+        return;
+    }
     output = QStringLiteral("[Desktop Entry]\n");
     output.append("Name=" + ui->lineEditName->text() + "\n");
     output.append("Exec=" + ui->lineEditCommand->text() + "\n");
