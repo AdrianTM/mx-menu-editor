@@ -29,7 +29,14 @@
 #include <QDirIterator>
 #include <QFileDialog>
 #include <QFormLayout>
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Walloc-size-larger-than="
+#endif
 #include <QHash>
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
 #include <QScreen>
 #include <QSignalBlocker>
 #include <QStandardPaths>
