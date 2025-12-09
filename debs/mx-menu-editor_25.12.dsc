@@ -13,20 +13,20 @@ Build-Depends: debhelper-compat (= 12), cmake (>= 3.16), ninja-build, qt6-base-d
 Package-List:
  mx-menu-editor deb admin optional arch=any
 Checksums-Sha1:
- d7f1e75cc3632145accce2b4886967a48fee6e9a 68944 mx-menu-editor_25.12.tar.xz
+ f1f14817f2b1a864f5d415a5ea59537536361b50 68964 mx-menu-editor_25.12.tar.xz
 Checksums-Sha256:
- d267efc7e7debc35711b48fbd51e22e11810603b0263f8afd5b13dd98815cbaf 68944 mx-menu-editor_25.12.tar.xz
+ 0a7d00ffb215ecf798b464a7b7a64ae0fda4332316b261a122d6dd7af509b7f3 68964 mx-menu-editor_25.12.tar.xz
 Files:
- 1b12ef621496e899040504eba7133cdf 68944 mx-menu-editor_25.12.tar.xz
+ e83d93e470b920eb7e5fc6464b15d740 68964 mx-menu-editor_25.12.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmk4iXgTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFOoB/9ECcJQ2yB3Ifh+kHLnw+1FYb9NufPA
-9DMRbVdHXbzdTOpXIfwTSE5iVHmg0rUyKONlPpOxCFDNbDCjNDbADKu8zmgLazIP
-XRT0VvbwvZ7B9yE3RzXX9oVaqKocEGODEuiG0lltcEKYSRXz5mS3o3RyUi8P7eBe
-ahbImWNi9utys1JvI9dUkkiWsUabwFUyNHvEUHARsWCOoYTk5I5u+UvIYleERMEU
-PW05htTSZcH/xoLr3n1B4K6oWMQcC5mhEKzOQvJlT43pGz0X24JghHaDo5v2YY8t
-HjWE0SoyA3Jvm0c312LcmYhujKjuW38JOq9fQN1hhjWJ4lTjJ8gQ1nDC
-=WRLS
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmk4irATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEfNB/0UmVRrEiONuzaK6XYewbJvdnQFIuE4
+6jag2TM5RMcbT/kRuHW6yZbubJSrRSiq1zFboP3sZFx8sAKrMXUW6HvIJZKw/+rA
+xfPKY4PZJM3YvS4XUZP7bnUSfHtIlcEobfsCgqCWEFP69ujPuQNJZPnGbekqfDDB
+9v/L2Fqt3bwQLSB3m+d029XrytU6b3yXBm1z+dI2HCaXdljbLOQD4H7m+NrNvsgc
+fCUIvE8U3oS1wGGzhJq8efFFCDRoYCXrWqa+drkFhO4istGUxAKQ3VUTMl0kCzl0
+uuSREeIi1XNFtpYlsxAhISHdP1KOGornpBbeQ4fJ+MpE2ShdcTFrxlGK
+=WnCg
 -----END PGP SIGNATURE-----
