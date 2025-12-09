@@ -31,6 +31,7 @@
 #include <QFormLayout>
 #include <QScreen>
 #include <QStandardPaths>
+#include <QTextStream>
 #include <utility>
 
 #include "ui_addappdialog.h"
@@ -332,23 +333,43 @@ void MainWindow::loadApps()
 // add .desktop item to treeWidget
 QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
 {
-    if (QFileInfo::exists(fileName)) {
-        proc.start(QStringLiteral("grep"), QStringList {"-m1", "^Name=", fileName}, QIODevice::ReadOnly);
-        proc.waitForFinished(3000);
-        if (proc.exitCode() != 0)
-            return nullptr;
-        QString app_name = proc.readAllStandardOutput().trimmed();
-        app_name = app_name.section(QStringLiteral("="), 1, 1);
+    if (!QFileInfo::exists(fileName))
+        return nullptr;
 
-        // add item as childItem to treeWidget
-        auto *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
-        if (isHidden(fileName))
-            childItem->setForeground(0, QBrush(Qt::gray));
-        childItem->setText(0, app_name);
-        childItem->setText(1, fileName);
-        return childItem;
+    // Read the file once to extract both Name and NoDisplay values
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return nullptr;
+
+    QString app_name;
+    bool is_hidden = false;
+    QTextStream in(&file);
+
+    // Read file line by line, looking for Name= and NoDisplay=
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.startsWith(QLatin1String("Name=")) && app_name.isEmpty()) {
+            app_name = line.section(QStringLiteral("="), 1).trimmed();
+        } else if (line.startsWith(QLatin1String("NoDisplay="))) {
+            QString value = line.section(QStringLiteral("="), 1).trimmed();
+            is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
+        }
+        // Early exit if we found both values
+        if (!app_name.isEmpty() && line.startsWith(QLatin1String("NoDisplay=")))
+            break;
     }
-    return nullptr;
+    file.close();
+
+    if (app_name.isEmpty())
+        return nullptr;
+
+    // add item as childItem to treeWidget
+    auto *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
+    if (is_hidden)
+        childItem->setForeground(0, QBrush(Qt::gray));
+    childItem->setText(0, app_name);
+    childItem->setText(1, fileName);
+    return childItem;
 }
 
 QStringList MainWindow::listDesktopFiles(const QString &searchString, const QString &location)
