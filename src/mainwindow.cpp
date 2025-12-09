@@ -29,6 +29,7 @@
 #include <QDirIterator>
 #include <QFileDialog>
 #include <QFormLayout>
+#include <QHash>
 #include <QScreen>
 #include <QStandardPaths>
 #include <QTextStream>
@@ -772,7 +773,15 @@ void MainWindow::addCategory()
     const QString &str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
     int index = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
-    index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1); // find the end of the string
+    if (index != -1) {
+        index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1); // end of Categories line
+    } else {
+        // No Categories line found; append a fresh one at the end
+        text = text.trimmed();
+        text.append("\nCategories=;\n");
+        index = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
+        index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1);
+    }
     if (ui->lineEditCommand->isEnabled()) {                                        // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
             ui->pushSave->setEnabled(true);
@@ -1014,9 +1023,27 @@ void MainWindow::findReloadItem(const QString &baseName)
     }
 }
 
+namespace {
+struct IconKey
+{
+    QString name;
+    QSize size;
+
+    bool operator==(const IconKey &other) const { return name == other.name && size == other.size; }
+};
+
+inline uint qHash(const IconKey &key, uint seed = 0) noexcept
+{
+    uint h = ::qHash(key.name, seed);
+    h = ::qHash(key.size.width(), h);
+    h = ::qHash(key.size.height(), h);
+    return h;
+}
+} // namespace
+
 QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
 {
-    static QHash<QString, QIcon> iconCache;
+    static QHash<IconKey, QIcon> iconCache;
     static const QRegularExpression re(QStringLiteral("\\.(png|svg|xpm)$"));
     static const QStringList extensions {QStringLiteral(".png"), QStringLiteral(".svg"), QStringLiteral(".xpm")};
     static const QStringList searchPaths {QDir::homePath() + QStringLiteral("/.local/share/icons/"),
@@ -1034,13 +1061,14 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     if (iconName.isEmpty())
         return QPixmap();
 
-    if (iconCache.contains(iconName))
-        return makePixmap(iconCache.value(iconName));
+    const IconKey key {iconName, size};
+    if (iconCache.contains(key))
+        return makePixmap(iconCache.value(key));
 
     // Absolute path handling
     if (QFileInfo::exists(iconName) && QFileInfo(iconName).isAbsolute()) {
         QIcon icon(iconName);
-        iconCache.insert(iconName, icon);
+        iconCache.insert(key, icon);
         return makePixmap(icon);
     }
 
@@ -1050,7 +1078,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     // Themed icon
     QIcon themedIcon = QIcon::fromTheme(nameNoExt);
     if (!themedIcon.isNull()) {
-        iconCache.insert(iconName, themedIcon);
+        iconCache.insert(key, themedIcon);
         return makePixmap(themedIcon);
     }
 
@@ -1069,7 +1097,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     // Try exact name first
     QIcon icon = searchInPaths(iconName);
     if (!icon.isNull()) {
-        iconCache.insert(iconName, icon);
+        iconCache.insert(key, icon);
         return makePixmap(icon);
     }
 
@@ -1077,7 +1105,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     for (const auto &ext : extensions) {
         icon = searchInPaths(nameNoExt + ext);
         if (!icon.isNull()) {
-            iconCache.insert(iconName, icon);
+            iconCache.insert(key, icon);
             return makePixmap(icon);
         }
     }
