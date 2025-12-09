@@ -53,6 +53,7 @@ private slots:
     void pushCancel_clicked();
 
 private:
+    static QString sanitizeFileName(const QString &name);
 };
 
 #endif // ADDAPPDIALOG_H

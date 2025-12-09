@@ -26,6 +26,7 @@
 
 #include <QDir>
 #include <QProcess>
+#include <QStandardPaths>
 
 AddAppDialog::AddAppDialog(QWidget *parent)
     : QDialog(parent)
@@ -38,10 +39,77 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 
 AddAppDialog::~AddAppDialog() { delete ui; }
 
+QString AddAppDialog::sanitizeFileName(const QString &name)
+{
+    QString sanitized = name;
+    // Remove or replace invalid filename characters
+    const QString invalid_chars = QStringLiteral("/\\:*?\"<>|\0");
+    for (const QChar &ch : invalid_chars) {
+        sanitized.replace(ch, QLatin1String("-"));
+    }
+    // Replace spaces with dashes
+    sanitized.replace(QLatin1Char(' '), QLatin1Char('-'));
+    // Remove leading/trailing dots and spaces
+    sanitized = sanitized.trimmed();
+    while (sanitized.startsWith(QLatin1Char('.'))) {
+        sanitized.remove(0, 1);
+    }
+    // Ensure it's not empty
+    if (sanitized.isEmpty()) {
+        sanitized = QStringLiteral("application");
+    }
+    return sanitized;
+}
+
 void AddAppDialog::pushSave_clicked()
 {
+    // Validate and sanitize the application name
+    QString app_name = ui->lineEditName->text().trimmed();
+    if (app_name.isEmpty()) {
+        QMessageBox::warning(this, tr("Error"), tr("Application name cannot be empty"));
+        return;
+    }
+
+    // Check if the Exec command is valid
+    QString exec_command = ui->lineEditCommand->text().trimmed();
+    if (exec_command.isEmpty()) {
+        QMessageBox::warning(this, tr("Error"), tr("Command cannot be empty"));
+        return;
+    }
+
+    // Extract the executable path (first part before any arguments)
+    QString executable = exec_command.split(QLatin1Char(' ')).first();
+    // Remove quotes if present
+    if (executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) {
+        executable = executable.mid(1, executable.length() - 2);
+    }
+    if (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\''))) {
+        executable = executable.mid(1, executable.length() - 2);
+    }
+
+    // Check if the executable exists
+    bool exec_exists = false;
+    if (executable.startsWith(QLatin1Char('/'))) {
+        // Absolute path - check directly
+        exec_exists = QFile::exists(executable);
+    } else {
+        // Relative path or command name - check in PATH
+        exec_exists = QStandardPaths::findExecutable(executable).isEmpty() == false;
+    }
+
+    if (!exec_exists) {
+        auto answer = QMessageBox::question(
+            this, tr("Warning"),
+            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
+                .arg(executable),
+            QMessageBox::Yes | QMessageBox::No);
+        if (answer != QMessageBox::Yes) {
+            return;
+        }
+    }
+
     QString output;
-    QString file_name = ui->lineEditName->text().replace(QLatin1String(" "), QLatin1String("-")) + ".desktop";
+    QString file_name = sanitizeFileName(app_name) + ".desktop";
     QString out_name = QDir::homePath() + "/.local/share/applications/" + file_name;
     const QString app_dir = QDir::homePath() + "/.local/share/applications/";
     if (!QDir().exists(app_dir) && !QDir().mkpath(app_dir)) {

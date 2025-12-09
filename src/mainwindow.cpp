@@ -30,6 +30,7 @@
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QScreen>
+#include <QStandardPaths>
 #include <utility>
 
 #include "ui_addappdialog.h"
@@ -797,8 +798,51 @@ void MainWindow::addAppMsgBox()
     connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
 }
 
+bool MainWindow::validateExecutable(const QString &execCommand)
+{
+    if (execCommand.isEmpty())
+        return true; // Empty is allowed (will be caught elsewhere if required)
+
+    // Extract the executable path (first part before any arguments)
+    QString executable = execCommand.split(QLatin1Char(' ')).first();
+
+    // Remove quotes if present
+    if (executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) {
+        executable = executable.mid(1, executable.length() - 2);
+    }
+    if (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\''))) {
+        executable = executable.mid(1, executable.length() - 2);
+    }
+
+    // Check if the executable exists
+    bool exec_exists = false;
+    if (executable.startsWith(QLatin1Char('/'))) {
+        // Absolute path - check directly
+        exec_exists = QFile::exists(executable);
+    } else {
+        // Relative path or command name - check in PATH
+        exec_exists = !QStandardPaths::findExecutable(executable).isEmpty();
+    }
+
+    if (!exec_exists) {
+        auto answer = QMessageBox::question(
+            this, tr("Warning"),
+            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
+                .arg(executable),
+            QMessageBox::Yes | QMessageBox::No);
+        return answer == QMessageBox::Yes;
+    }
+
+    return true;
+}
+
 void MainWindow::pushSave_clicked()
 {
+    // Validate the Exec command before saving
+    QString execCommand = ui->lineEditCommand->text().trimmed();
+    if (!validateExecutable(execCommand))
+        return;
+
     QString file_name = current_item->text(1);
     QFileInfo fi(file_name);
     QString base_name = fi.fileName();
