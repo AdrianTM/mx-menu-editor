@@ -231,7 +231,7 @@ void MainWindow::loadApps()
 {
     // execute if topLevel item is selected
     if (ui->treeWidget->currentItem()->parent() == nullptr) {
-        if (ui->pushSave->isEnabled() && save())
+        if (ui->pushSave->isEnabled() && !save())
             return;
         QTreeWidgetItem *item = ui->treeWidget->currentItem();
         item->takeChildren();
@@ -365,7 +365,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
 #endif
     // execute if not topLevel item is selected
     if (item->parent() != nullptr) {
-        if (ui->pushSave->isEnabled() && save())
+        if (ui->pushSave->isEnabled() && !save())
             return;
         QString file_name = ui->treeWidget->currentItem()->text(1).trimmed();
         resetInterface();
@@ -764,7 +764,7 @@ void MainWindow::addAppMsgBox()
         categories << (*it)->text(0);
         ++it;
     }
-    if (ui->pushSave->isEnabled() && save())
+    if (ui->pushSave->isEnabled() && !save())
         return;
     add->show();
     resetInterface();
@@ -871,24 +871,25 @@ void MainWindow::pushHelp_clicked()
 // Cancel button clicked
 void MainWindow::pushCancel_clicked()
 {
-    if (ui->pushSave->isEnabled())
-        save();
+    if (ui->pushSave->isEnabled() && !save())
+        return;
     QApplication::quit();
 }
 
 // ask whether to save edits or not
 bool MainWindow::save()
 {
-    if (ui->pushSave->isEnabled()) {
-        if (QMessageBox::Save
-            == QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
-                                     QMessageBox::Save, QMessageBox::Cancel)) {
-            pushSave_clicked();
-            return true;
-        }
-    }
-    ui->pushSave->setDisabled(true);
-    return false;
+    if (!ui->pushSave->isEnabled())
+        return true;
+
+    const auto answer = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
+                                              QMessageBox::Save | QMessageBox::Discard);
+    if (answer == QMessageBox::Save)
+        pushSave_clicked();
+    else
+        ui->pushSave->setDisabled(true);
+
+    return true; // always continue; discard is treated as proceed without saving
 }
 
 // delete .local file and reload files

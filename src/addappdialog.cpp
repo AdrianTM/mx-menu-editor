@@ -83,23 +83,25 @@ void AddAppDialog::pushSave_clicked()
 
 void AddAppDialog::pushCancel_clicked()
 {
-    if (ui->pushSave->isEnabled())
-        saveOrNot();
+    if (ui->pushSave->isEnabled() && !saveOrNot())
+        return;
     resetInterface();
     this->close();
 }
 
 // ask whether to save edits or not
-void AddAppDialog::saveOrNot()
+bool AddAppDialog::saveOrNot()
 {
-    if (ui->pushSave->isEnabled()) {
-        int ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
-                                        QMessageBox::Save, QMessageBox::Cancel);
-        if (ans == QMessageBox::Save)
-            pushSave_clicked();
-        else
-            ui->pushSave->setDisabled(true);
-    }
+    if (!ui->pushSave->isEnabled())
+        return true;
+
+    const auto ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
+                                           QMessageBox::Save | QMessageBox::Discard);
+    if (ans == QMessageBox::Save)
+        pushSave_clicked();
+    else
+        ui->pushSave->setDisabled(true);
+    return true; // treat discard as continue
 }
 
 // clear all the GUI items
