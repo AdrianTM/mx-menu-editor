@@ -252,8 +252,8 @@ void MainWindow::loadApps()
         includes << hashInclude.values(item->text(0));
         excludes << hashExclude.values(item->text(0));
 
-        includes_usr.reserve(excludes.size());
-        includes_local.reserve(excludes.size());
+        includes_usr.reserve(includes.size());
+        includes_local.reserve(includes.size());
         for (const QString &file : std::as_const(includes)) {
             includes_usr << "/usr/share/applications/" + file;
             includes_local << QDir::homePath() + "/.local/share/applications/" + file;
