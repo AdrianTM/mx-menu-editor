@@ -267,10 +267,11 @@ void MainWindow::loadApps()
         // determine search string for all categories to be listead under menu category
         QString search_string;
         for (const QString &category : std::as_const(categories)) {
+            QString escaped_category = QRegularExpression::escape(category);
             if (search_string.isEmpty())
-                search_string = "Categories=.*" + category;
+                search_string = "Categories=.*" + escaped_category;
             else
-                search_string += "|Categories=.*" + category;
+                search_string += "|Categories=.*" + escaped_category;
         }
 
         // list .desktop files from /usr and .local
