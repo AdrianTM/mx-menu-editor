@@ -46,7 +46,7 @@ public:
     void setConnections() const;
 
 public slots:
-    bool saveOrNot();
+    [[nodiscard]] bool saveOrNot();
 
 private slots:
     void pushSave_clicked();

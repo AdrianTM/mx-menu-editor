@@ -179,9 +179,9 @@ void MainWindow::setConnections()
 }
 
 // get Name= from .directory file
-QString MainWindow::getCatName(const QString &file_name)
+QString MainWindow::getCatName(const QString &fileName)
 {
-    proc.start(QStringLiteral("grep"), QStringList {"Name=", file_name}, QIODevice::ReadOnly);
+    proc.start(QStringLiteral("grep"), QStringList {"Name=", fileName}, QIODevice::ReadOnly);
     proc.waitForFinished();
     if (proc.exitCode() != 0)
         return QString();
@@ -320,10 +320,10 @@ void MainWindow::loadApps()
 }
 
 // add .desktop item to treeWidget
-QTreeWidgetItem *MainWindow::addToTree(const QString &file_name)
+QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
 {
-    if (QFileInfo::exists(file_name)) {
-        proc.start(QStringLiteral("grep"), QStringList {"-m1", "^Name=", file_name}, QIODevice::ReadOnly);
+    if (QFileInfo::exists(fileName)) {
+        proc.start(QStringLiteral("grep"), QStringList {"-m1", "^Name=", fileName}, QIODevice::ReadOnly);
         proc.waitForFinished();
         if (proc.exitCode() != 0)
             return nullptr;
@@ -332,21 +332,21 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &file_name)
 
         // add item as childItem to treeWidget
         auto *childItem = new QTreeWidgetItem(ui->treeWidget->currentItem());
-        if (isHidden(file_name))
+        if (isHidden(fileName))
             childItem->setForeground(0, QBrush(Qt::gray));
         childItem->setText(0, app_name);
-        childItem->setText(1, file_name);
+        childItem->setText(1, fileName);
         return childItem;
     }
     return nullptr;
 }
 
-QStringList MainWindow::listDesktopFiles(const QString &search_string, const QString &location)
+QStringList MainWindow::listDesktopFiles(const QString &searchString, const QString &location)
 {
-    if (search_string.isEmpty())
+    if (searchString.isEmpty())
         proc.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
     else
-        proc.start(QStringLiteral("grep"), QStringList {"-Elr", search_string, location}, QIODevice::ReadOnly);
+        proc.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
     proc.waitForFinished();
     if (proc.exitCode() != 0)
         return QStringList();
@@ -430,9 +430,9 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
     }
 }
 
-bool MainWindow::isHidden(const QString &file_name)
+bool MainWindow::isHidden(const QString &fileName)
 {
-    return QProcess::execute(QStringLiteral("grep"), {"-q", "NoDisplay=true", file_name}) == 0;
+    return QProcess::execute(QStringLiteral("grep"), {"-q", "NoDisplay=true", fileName}) == 0;
 }
 
 // select command to be used
@@ -906,14 +906,14 @@ void MainWindow::pushRestoreApp_clicked()
 }
 
 // find and reload item
-void MainWindow::findReloadItem(const QString &base_name)
+void MainWindow::findReloadItem(const QString &baseName)
 {
     ui->treeWidget->setCurrentItem(current_item);           // change current item back to original selection
     ui->treeWidget->setCurrentItem(current_item->parent()); // change current item to reload category
     QTreeWidgetItemIterator it(current_item->treeWidget());
     while ((*it) != nullptr) {
         QFileInfo fi((*it)->text(1));
-        if ((fi.fileName() == base_name)) {
+        if ((fi.fileName() == baseName)) {
             ui->treeWidget->setCurrentItem(*it);
             return;
         }
@@ -921,7 +921,7 @@ void MainWindow::findReloadItem(const QString &base_name)
     }
 }
 
-QPixmap MainWindow::findIcon(QString icon_name, QSize size)
+QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
 {
     static QHash<QString, QIcon> iconCache;
     static const QRegularExpression re(QStringLiteral("\\.(png|svg|xpm)$"));
@@ -938,26 +938,26 @@ QPixmap MainWindow::findIcon(QString icon_name, QSize size)
         return icon.isNull() ? QPixmap() : icon.pixmap(size.isValid() ? size : QSize());
     };
 
-    if (icon_name.isEmpty())
+    if (iconName.isEmpty())
         return QPixmap();
 
-    if (iconCache.contains(icon_name))
-        return makePixmap(iconCache.value(icon_name));
+    if (iconCache.contains(iconName))
+        return makePixmap(iconCache.value(iconName));
 
     // Absolute path handling
-    if (QFileInfo::exists(icon_name) && QFileInfo(icon_name).isAbsolute()) {
-        QIcon icon(icon_name);
-        iconCache.insert(icon_name, icon);
+    if (QFileInfo::exists(iconName) && QFileInfo(iconName).isAbsolute()) {
+        QIcon icon(iconName);
+        iconCache.insert(iconName, icon);
         return makePixmap(icon);
     }
 
-    QString nameNoExt = icon_name;
+    QString nameNoExt = iconName;
     nameNoExt.remove(re);
 
     // Themed icon
     QIcon themedIcon = QIcon::fromTheme(nameNoExt);
     if (!themedIcon.isNull()) {
-        iconCache.insert(icon_name, themedIcon);
+        iconCache.insert(iconName, themedIcon);
         return makePixmap(themedIcon);
     }
 
@@ -974,9 +974,9 @@ QPixmap MainWindow::findIcon(QString icon_name, QSize size)
     };
 
     // Try exact name first
-    QIcon icon = searchInPaths(icon_name);
+    QIcon icon = searchInPaths(iconName);
     if (!icon.isNull()) {
-        iconCache.insert(icon_name, icon);
+        iconCache.insert(iconName, icon);
         return makePixmap(icon);
     }
 
@@ -984,7 +984,7 @@ QPixmap MainWindow::findIcon(QString icon_name, QSize size)
     for (const auto &ext : extensions) {
         icon = searchInPaths(nameNoExt + ext);
         if (!icon.isNull()) {
-            iconCache.insert(icon_name, icon);
+            iconCache.insert(iconName, icon);
             return makePixmap(icon);
         }
     }
