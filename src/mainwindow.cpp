@@ -942,16 +942,20 @@ void MainWindow::pushCancel_clicked()
 bool MainWindow::save()
 {
     if (!ui->pushSave->isEnabled())
-        return true;
+        return true; // No unsaved changes, continue
 
     const auto answer = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
-                                              QMessageBox::Save | QMessageBox::Discard);
-    if (answer == QMessageBox::Save)
+                                              QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+    if (answer == QMessageBox::Save) {
         pushSave_clicked();
-    else
+        return true; // Saved, continue
+    }
+    if (answer == QMessageBox::Discard) {
         ui->pushSave->setDisabled(true);
-
-    return true; // always continue; discard is treated as proceed without saving
+        return true; // Discarded, continue
+    }
+    // Cancel was clicked
+    return false; // Don't continue, stay on current item
 }
 
 // delete .local file and reload files
