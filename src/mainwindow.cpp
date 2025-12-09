@@ -814,13 +814,6 @@ void MainWindow::addCategory()
 // display add application message box
 void MainWindow::addAppMsgBox()
 {
-    QStringList categories;
-    QTreeWidgetItemIterator it(ui->treeWidget);
-    // list top level items
-    while (((*it) != nullptr) && ((*it)->parent() == nullptr)) {
-        categories << (*it)->text(0);
-        ++it;
-    }
     if (ui->pushSave->isEnabled() && !save())
         return;
     add->show();
