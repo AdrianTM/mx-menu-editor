@@ -93,6 +93,7 @@ public slots:
     void saveSettings();
     void selectCommand();
     void setEnabled(const QString &);
+    void onEditorTextChanged();
 
 private slots:
     static void pushHelp_clicked();
@@ -103,6 +104,7 @@ private slots:
 
 private:
     AddAppDialog *add;
+    QString advancedEditorBaseline;
     QSettings settings;
     QTreeWidgetItem *current_item {};
     Ui::MainWindow *ui;

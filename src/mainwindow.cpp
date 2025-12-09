@@ -31,7 +31,9 @@
 #include <QFormLayout>
 #include <QHash>
 #include <QScreen>
+#include <QSignalBlocker>
 #include <QStandardPaths>
+#include <QTextDocument>
 #include <QTextStream>
 #include <utility>
 
@@ -78,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->checkNotify, &QCheckBox::clicked, this, &MainWindow::changeNotify);
     connect(ui->checkHide, &QCheckBox::clicked, this, &MainWindow::changeHide);
     connect(ui->checkRunInTerminal, &QCheckBox::clicked, this, &MainWindow::changeTerminal);
-    connect(ui->advancedEditor, &QTextEdit::undoAvailable, ui->pushSave, &QPushButton::setEnabled);
+    connect(ui->advancedEditor, &QTextEdit::textChanged, this, &MainWindow::onEditorTextChanged);
     connect(ui->pushAddApp, &QPushButton::clicked, this, &MainWindow::addAppMsgBox);
     connect(ui->lineEditName, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditCommand, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
@@ -456,7 +458,14 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
             }
         }
         file.close();
-        ui->advancedEditor->setText(content); // adding content line by line it triggers "undo available"
+        {
+            QSignalBlocker editorBlocker(ui->advancedEditor);
+            QSignalBlocker docBlocker(ui->advancedEditor->document());
+            ui->advancedEditor->setText(content);
+            ui->advancedEditor->document()->setModified(false);
+            ui->advancedEditor->document()->clearUndoRedoStacks(QTextDocument::UndoAndRedoStacks);
+        }
+        advancedEditorBaseline = content;
         // enable RestoreApp button if flag is set up for item
         QTreeWidgetItem *currentItem = ui->treeWidget->currentItem();
         if (currentItem != nullptr && currentItem->data(0, Qt::UserRole) == "restore")
@@ -490,7 +499,14 @@ void MainWindow::selectCommand()
 void MainWindow::resetInterface()
 {
     ui->listWidgetEditCategories->clear();
-    ui->advancedEditor->clear();
+    {
+        QSignalBlocker editorBlocker(ui->advancedEditor);
+        QSignalBlocker docBlocker(ui->advancedEditor->document());
+        ui->advancedEditor->clear();
+        ui->advancedEditor->document()->setModified(false);
+        ui->advancedEditor->document()->clearUndoRedoStacks(QTextDocument::UndoAndRedoStacks);
+    }
+    advancedEditorBaseline.clear();
     ui->advancedEditor->setDisabled(true);
     ui->advancedEditor->setLineWrapMode(QTextEdit::NoWrap);
     ui->lineEditName->clear();
@@ -515,6 +531,18 @@ void MainWindow::resetInterface()
 }
 
 void MainWindow::saveSettings() { settings.setValue(QStringLiteral("geometry"), saveGeometry()); }
+
+void MainWindow::onEditorTextChanged()
+{
+    const auto currentText = ui->advancedEditor->toPlainText();
+    if (currentText == advancedEditorBaseline) {
+        ui->pushSave->setEnabled(false);
+        QSignalBlocker blocker(ui->advancedEditor->document());
+        ui->advancedEditor->document()->setModified(false);
+        return;
+    }
+    ui->pushSave->setEnabled(true);
+}
 
 void MainWindow::enableEdit()
 {
@@ -902,6 +930,13 @@ void MainWindow::pushSave_clicked()
     out.write(ui->advancedEditor->toPlainText().toUtf8());
     out.flush();
     out.close();
+    {
+        QSignalBlocker editorBlocker(ui->advancedEditor);
+        QSignalBlocker docBlocker(ui->advancedEditor->document());
+        ui->advancedEditor->document()->setModified(false);
+        ui->advancedEditor->document()->clearUndoRedoStacks(QTextDocument::UndoAndRedoStacks);
+    }
+    advancedEditorBaseline = ui->advancedEditor->toPlainText();
     if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
         QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     ui->pushSave->setDisabled(true);
