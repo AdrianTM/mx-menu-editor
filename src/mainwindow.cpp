@@ -404,14 +404,14 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
                     ui->lineEditCommand->setText(line);
                 ui->lineEditCommand->home(false);
             } else if (line.startsWith(QLatin1String("StartupNotify="))) {
-                line = line.section(QStringLiteral("="), 1).trimmed();
-                ui->checkNotify->setChecked(true);
+                const QString value = line.section(QStringLiteral("="), 1).trimmed();
+                ui->checkNotify->setChecked(value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
             } else if (line.startsWith(QLatin1String("NoDisplay="))) {
-                line = line.section(QStringLiteral("="), 1).trimmed();
-                ui->checkHide->setChecked(true);
+                const QString value = line.section(QStringLiteral("="), 1).trimmed();
+                ui->checkHide->setChecked(value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
             } else if (line.startsWith(QLatin1String("Terminal="))) {
-                line = line.section(QStringLiteral("="), 1).trimmed();
-                ui->checkRunInTerminal->setChecked(true);
+                const QString value = line.section(QStringLiteral("="), 1).trimmed();
+                ui->checkRunInTerminal->setChecked(value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
             } else if (line.startsWith(QLatin1String("Icon="))) {
                 line = line.section(QStringLiteral("="), 1).trimmed();
                 if (!line.isEmpty() && IS_LABEL_ICON_EMPTY) // some .desktop files have multiple Icon= display first
