@@ -543,7 +543,9 @@ void MainWindow::changeIcon()
     dialog.setDirectory(QStringLiteral("/usr/share/icons"));
     if (dialog.exec() == QDialog::Accepted) {
         QStringList selected_list = dialog.selectedFiles();
-        selected = selected_list.at(0);
+        if (!selected_list.isEmpty()) {
+            selected = selected_list.at(0);
+        }
     }
     if (!selected.isEmpty()) {
         QString text = ui->advancedEditor->toPlainText();
