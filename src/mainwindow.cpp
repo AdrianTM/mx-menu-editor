@@ -229,8 +229,12 @@ void MainWindow::loadApps(QTreeWidgetItem *item) { ui->treeWidget->setCurrentIte
 // load the applications in the selected category
 void MainWindow::loadApps()
 {
+    QTreeWidgetItem *currentItem = ui->treeWidget->currentItem();
+    if (currentItem == nullptr)
+        return;
+
     // execute if topLevel item is selected
-    if (ui->treeWidget->currentItem()->parent() == nullptr) {
+    if (currentItem->parent() == nullptr) {
         if (ui->pushSave->isEnabled() && !save())
             return;
         QTreeWidgetItem *item = ui->treeWidget->currentItem();
@@ -358,6 +362,9 @@ QStringList MainWindow::listDesktopFiles(const QString &searchString, const QStr
 
 void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
 {
+    if (item == nullptr)
+        return;
+
 #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
 #define IS_LABEL_ICON_EMPTY ui->labelIcon->pixmap() == nullptr
 #else
