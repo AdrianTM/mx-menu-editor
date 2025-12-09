@@ -6,20 +6,20 @@
 # * Authors: Adrian
 # *          MX Linux <http://mxlinux.org>
 # *
-# * This file is part of custom-toolbox.
+# * This file is part of mx-menu-editor.
 # *
-# * custom-toolbox is free software: you can redistribute it and/or modify
+# * mx-menu-editor is free software: you can redistribute it and/or modify
 # * it under the terms of the GNU General Public License as published by
 # * the Free Software Foundation, either version 3 of the License, or
 # * (at your option) any later version.
 # *
-# * custom-toolbox is distributed in the hope that it will be useful,
+# * mx-menu-editor is distributed in the hope that it will be useful,
 # * but WITHOUT ANY WARRANTY; without even the implied warranty of
 # * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # * GNU General Public License for more details.
 # *
 # * You should have received a copy of the GNU General Public License
-# * along with custom-toolbox.  If not, see <http://www.gnu.org/licenses/>.
+# * along with mx-menu-editor.  If not, see <http://www.gnu.org/licenses/>.
 # **********************************************************************/
 
 set -e
@@ -127,4 +127,4 @@ echo "Building project with Ninja..."
 cmake --build "$BUILD_DIR" --parallel
 
 echo "Build completed successfully!"
-echo "Executable: $BUILD_DIR/custom-toolbox"
+echo "Executable: $BUILD_DIR/mx-menu-editor"
