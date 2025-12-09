@@ -103,7 +103,6 @@ private slots:
 
 private:
     AddAppDialog *add;
-    QProcess proc;
     QSettings settings;
     QTreeWidgetItem *current_item {};
     Ui::MainWindow *ui;

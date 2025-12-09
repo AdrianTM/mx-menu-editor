@@ -187,11 +187,12 @@ void MainWindow::setConnections()
 // get Name= from .directory file
 QString MainWindow::getCatName(const QString &fileName)
 {
-    proc.start(QStringLiteral("grep"), QStringList {"Name=", fileName}, QIODevice::ReadOnly);
-    proc.waitForFinished(3000);
-    if (proc.exitCode() != 0)
+    QProcess process;
+    process.start(QStringLiteral("grep"), QStringList {"Name=", fileName}, QIODevice::ReadOnly);
+    process.waitForFinished(3000);
+    if (process.exitCode() != 0)
         return QString();
-    return QString(proc.readAllStandardOutput().trimmed()).remove(QStringLiteral("Name="));
+    return QString(process.readAllStandardOutput().trimmed()).remove(QStringLiteral("Name="));
 }
 
 // return a list of .menu files
@@ -374,14 +375,15 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
 
 QStringList MainWindow::listDesktopFiles(const QString &searchString, const QString &location)
 {
+    QProcess process;
     if (searchString.isEmpty())
-        proc.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
+        process.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
     else
-        proc.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
-    proc.waitForFinished(3000);
-    if (proc.exitCode() != 0)
+        process.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
+    process.waitForFinished(3000);
+    if (process.exitCode() != 0)
         return QStringList();
-    QString out = proc.readAllStandardOutput().trimmed();
+    QString out = process.readAllStandardOutput().trimmed();
     if (out.isEmpty())
         return QStringList();
     return out.split(QStringLiteral("\n"));
@@ -918,13 +920,14 @@ void MainWindow::pushAbout_clicked()
 
         auto *text = new QTextEdit;
         text->setReadOnly(true);
-        proc.start(QStringLiteral("zless"),
+        QProcess process;
+        process.start(QStringLiteral("zless"),
                    QStringList {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
                                 + "/changelog.gz"});
-        proc.waitForFinished(3000);
-        if (proc.exitCode() != 0)
+        process.waitForFinished(3000);
+        if (process.exitCode() != 0)
             return;
-        text->setText(proc.readAllStandardOutput());
+        text->setText(process.readAllStandardOutput());
 
         auto *btnClose = new QPushButton(tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
