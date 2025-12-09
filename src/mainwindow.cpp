@@ -57,8 +57,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushCancel->setAutoDefault(false);
     ui->pushCancel->setDefault(false);
 
-    comboBox = new QComboBox;
-
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
     all_usr_desktop_files = listDesktopFiles(QLatin1String(""), QStringLiteral("/usr/share/applications"));
 
@@ -734,6 +732,7 @@ QStringList MainWindow::listCategories() const
 // display add category message box
 void MainWindow::addCategoryMsgBox()
 {
+    comboBox = new QComboBox(this);
     const QStringList &categories = listCategories();
 
     auto *window = new QWidget(add, Qt::Dialog);
