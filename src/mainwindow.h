@@ -57,11 +57,12 @@ public:
     QStringList all_local_desktop_files;
     QStringList all_usr_desktop_files;
 
-    QTreeWidgetItem *addToTree(const QString &fileName);
+    QTreeWidgetItem *addToTree(QTreeWidgetItem *parent, const QString &fileName);
     [[nodiscard]] QPixmap findIcon(const QString &iconName, const QSize &size);
     [[nodiscard]] QString getCatName(const QString &fileName);
     [[nodiscard]] QStringList listCategories() const;
-    [[nodiscard]] QStringList listDesktopFiles(const QString &searchString, const QString &location);
+    [[nodiscard]] QStringList listDesktopFiles(const QString &searchString, const QString &location,
+                                               bool *hadError = nullptr);
     [[nodiscard]] bool save();
     [[nodiscard]] static QStringList listMenuFiles();
     [[nodiscard]] static bool isHidden(const QString &fileName);

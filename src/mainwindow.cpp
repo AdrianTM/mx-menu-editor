@@ -278,8 +278,12 @@ void MainWindow::loadApps()
         }
 
         // list .desktop files from /usr and .local
-        auto usr_desktop_files = listDesktopFiles(search_string, QStringLiteral("/usr/share/applications"));
-        auto local_desktop_files = listDesktopFiles(search_string, QDir::homePath() + "/.local/share/applications");
+        bool usr_list_error = false;
+        bool local_list_error = false;
+        auto usr_desktop_files =
+            listDesktopFiles(search_string, QStringLiteral("/usr/share/applications"), &usr_list_error);
+        auto local_desktop_files =
+            listDesktopFiles(search_string, QDir::homePath() + "/.local/share/applications", &local_list_error);
 
         // add included files
         usr_desktop_files.append(includes_usr);
@@ -307,7 +311,7 @@ void MainWindow::loadApps()
         QTreeWidgetItem *app = nullptr;
         for (const auto &local_name : std::as_const(local_desktop_files)) {
             QFileInfo fi_local(local_name);
-            app = addToTree(local_name);
+            app = addToTree(item, local_name);
             all_local_desktop_files << local_name;
             if (usr_base_names.contains(fi_local.fileName()))
                 if (app != nullptr)
@@ -320,7 +324,18 @@ void MainWindow::loadApps()
             const auto base_name = fi.fileName();
             // add items only for files that are not in the list of local .desktop files
             if (!local_base_names.contains(base_name))
-                addToTree(file);
+                addToTree(item, file);
+        }
+
+        if (usr_desktop_files.isEmpty() && local_desktop_files.isEmpty()) {
+            if (usr_list_error) {
+                qDebug() << "listDesktopFiles command failed for" << "/usr/share/applications"
+                         << "search:" << search_string << "with empty results";
+            }
+            if (local_list_error) {
+                qDebug() << "listDesktopFiles command failed for" << QDir::homePath() + "/.local/share/applications"
+                         << "search:" << search_string << "with empty results";
+            }
         }
         item->sortChildren(1, Qt::AscendingOrder);
         item->setExpanded(true);
@@ -331,7 +346,7 @@ void MainWindow::loadApps()
 }
 
 // add .desktop item to treeWidget
-QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
+QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &fileName)
 {
     if (!QFileInfo::exists(fileName))
         return nullptr;
@@ -363,8 +378,6 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
     if (app_name.isEmpty())
         return nullptr;
 
-    // add item as childItem to treeWidget
-    QTreeWidgetItem *parent = ui->treeWidget->currentItem();
     if (parent == nullptr)
         return nullptr;
 
@@ -376,17 +389,27 @@ QTreeWidgetItem *MainWindow::addToTree(const QString &fileName)
     return childItem;
 }
 
-QStringList MainWindow::listDesktopFiles(const QString &searchString, const QString &location)
+QStringList MainWindow::listDesktopFiles(const QString &searchString, const QString &location, bool *hadError)
 {
+    if (hadError != nullptr)
+        *hadError = false;
     QProcess process;
     if (searchString.isEmpty())
         process.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
     else
         process.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
-    process.waitForFinished(3000);
-    if (process.exitCode() != 0)
+    if (!process.waitForFinished(3000)) {
+        const auto out = process.readAllStandardOutput().trimmed();
+        if (hadError != nullptr)
+            *hadError = true;
         return QStringList();
+    }
     const QString out = process.readAllStandardOutput().trimmed();
+    if (process.exitCode() != 0) {
+        if (hadError != nullptr)
+            *hadError = true;
+        return QStringList();
+    }
     if (out.isEmpty())
         return QStringList();
     return out.split(QStringLiteral("\n"));
