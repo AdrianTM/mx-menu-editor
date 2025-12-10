@@ -68,6 +68,9 @@ QString AddAppDialog::sanitizeFileName(const QString &name)
 
 void AddAppDialog::pushSave_clicked()
 {
+    lastSavedPath.clear();
+    lastSavedCategories.clear();
+
     // Validate and sanitize the application name
     QString app_name = ui->lineEditName->text().trimmed();
     if (app_name.isEmpty()) {
@@ -149,9 +152,12 @@ void AddAppDialog::pushSave_clicked()
     out.write(output.toUtf8());
     out.flush();
     out.close();
+    lastSavedPath = out_name;
+    lastSavedCategories = selectedCategories();
     if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
         QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     resetInterface();
+    accept();
     this->close();
 }
 
@@ -197,4 +203,14 @@ void AddAppDialog::setConnections() const
 {
     connect(ui->pushSave, &QPushButton::clicked, this, &AddAppDialog::pushSave_clicked);
     connect(ui->pushCancel, &QPushButton::clicked, this, &AddAppDialog::pushCancel_clicked);
+}
+
+QStringList AddAppDialog::selectedCategories() const
+{
+    QStringList categories;
+    categories.reserve(ui->listWidgetCategories->count());
+    for (int i = 0; i < ui->listWidgetCategories->count(); ++i) {
+        categories << ui->listWidgetCategories->item(i)->text();
+    }
+    return categories;
 }

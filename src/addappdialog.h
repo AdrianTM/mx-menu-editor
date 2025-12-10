@@ -27,6 +27,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QStringList>
 
 namespace Ui
 {
@@ -42,8 +43,11 @@ public:
     ~AddAppDialog();
     Ui::AddAppDialog *ui;
     QString icon_path;
+    QString lastSavedPath;
+    QStringList lastSavedCategories;
     void resetInterface();
     void setConnections() const;
+    [[nodiscard]] QStringList selectedCategories() const;
 
 public slots:
     [[nodiscard]] bool saveOrNot();

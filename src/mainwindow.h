@@ -68,8 +68,13 @@ public:
     [[nodiscard]] static bool isHidden(const QString &fileName);
     [[nodiscard]] bool validateExecutable(const QString &execCommand);
     void displayList(QStringList menu_items);
+    void filterTree(const QString &query);
     void findReloadItem(const QString &baseName);
     void loadMenuFiles();
+    void updateRestoreButtonState(const QString &fileName);
+    void populateAllCategories();
+    void populateCategory(QTreeWidgetItem *categoryItem);
+    void insertAppIntoCategories(const QString &filePath, const QStringList &categories);
     void setConnections();
 
 public slots:
@@ -88,13 +93,13 @@ public slots:
     void enableDelete();
     void enableEdit();
     void loadApps();
-    void loadApps(QTreeWidgetItem *item);
     void loadItem(QTreeWidgetItem *item, int);
     void resetInterface();
     void saveSettings();
     void selectCommand();
     void setEnabled(const QString &);
     void onEditorTextChanged();
+    void onCustomAppSaved();
 
 private slots:
     static void pushHelp_clicked();
