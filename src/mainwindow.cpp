@@ -488,23 +488,47 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
     QString app_name;
     QString exec_command;
     bool is_hidden = false;
-    bool hidden_line_seen = false;
     QTextStream in(&file);
 
     // Read file line by line, looking for Name=, Exec= and NoDisplay=
+    // We scan the whole [Desktop Entry] section to ensure we find NoDisplay if it exists
+    bool in_desktop_entry = false;
     while (!in.atEnd()) {
         const auto line = in.readLine();
+        if (line.startsWith(QLatin1String("[Desktop Entry]"))) {
+            in_desktop_entry = true;
+        } else if (line.startsWith(QLatin1Char('[')) && in_desktop_entry) {
+            // Reached another section, stop reading
+            break;
+        }
         if (line.startsWith(QLatin1String("Name=")) && app_name.isEmpty()) {
             app_name = line.section(QStringLiteral("="), 1).trimmed();
         } else if (line.startsWith(QLatin1String("NoDisplay="))) {
             const auto value = line.section(QStringLiteral("="), 1).trimmed();
             is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
-            hidden_line_seen = true;
         } else if (line.startsWith(QLatin1String("Exec=")) && exec_command.isEmpty()) {
             exec_command = line.section(QStringLiteral("="), 1).trimmed();
         }
-        if (!app_name.isEmpty() && !exec_command.isEmpty() && hidden_line_seen) {
-            break;
+        // Early exit if we found both required fields (Name and Exec)
+        // Continue reading to find NoDisplay if it exists in the Desktop Entry section
+        if (in_desktop_entry && !app_name.isEmpty() && !exec_command.isEmpty()) {
+            // Continue reading until end of [Desktop Entry] section to catch NoDisplay
+            bool found_next_section = false;
+            while (!in.atEnd()) {
+                const auto next_line = in.readLine();
+                if (next_line.startsWith(QLatin1Char('['))) {
+                    found_next_section = true;
+                    break;
+                }
+                if (next_line.startsWith(QLatin1String("NoDisplay="))) {
+                    const auto value = next_line.section(QStringLiteral("="), 1).trimmed();
+                    is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
+                    break;
+                }
+            }
+            if (found_next_section || in.atEnd()) {
+                break;
+            }
         }
     }
     file.close();
