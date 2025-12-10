@@ -149,7 +149,7 @@ void MainWindow::loadMenuFiles()
                                 f_name = "/usr/share/desktop-directories/" + line;
                             }
                             name = getCatName(f_name); // get the Name= from .directory file
-                            if (!name.isEmpty() && name != QLatin1String("Other") && name != QLatin1String("Wine")) {
+                            if (!name.isEmpty() && QLatin1String("Other") != name && QLatin1String("Wine") != name) {
                                 menu_items << name;
                             }
                             // Find <Category> and <Filename> and add them in hashCategory and hashInclude
