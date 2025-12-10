@@ -1176,6 +1176,7 @@ void MainWindow::pushAbout_clicked()
         QProcess::execute(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"});
     } else if (msgBox.clickedButton() == btnChangelog) {
         auto *changelog = new QDialog(this);
+        changelog->setAttribute(Qt::WA_DeleteOnClose);
         const int width = 500;
         const int height = 600;
         changelog->resize(width, height);
