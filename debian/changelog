@@ -1,3 +1,11 @@
+mx-menu-editor (25.12.1) mx; urgency=medium
+
+  * Keep focus on the edited item on save
+  * Optimize .desktop file parsing in addToTree
+  * Add search field; add a Delete button for custom additions
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 09 Dec 2025 20:54:14 -0500
+
 mx-menu-editor (25.12) mx; urgency=medium
 
   * Update codebase to Qt6
