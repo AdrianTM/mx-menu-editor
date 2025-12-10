@@ -387,20 +387,24 @@ void MainWindow::displayList(QStringList menu_items)
 // load the applications in the selected category
 void MainWindow::loadApps()
 {
-    QTreeWidgetItem *currentItem = ui->treeWidget->currentItem();
+    auto *currentItem = ui->treeWidget->currentItem();
     if (currentItem == nullptr) {
         return;
     }
 
     if (ui->pushSave->isEnabled() && !save()) {
-        if (current_item != nullptr) {
-            ui->treeWidget->setCurrentItem(current_item);
+        // Restore previous selection if save was cancelled
+        auto *itemToRestore = current_item;
+        if (itemToRestore != nullptr) {
+            ui->treeWidget->setCurrentItem(itemToRestore);
         }
         return;
     }
 
+    // Re-fetch current item after potential save operation
     currentItem = ui->treeWidget->currentItem();
     if (currentItem == nullptr) {
+        current_item = nullptr;
         return;
     }
 
@@ -1276,8 +1280,12 @@ void MainWindow::findReloadItem(const QString &baseName)
     const auto localPath = QDir::homePath() + "/.local/share/applications/" + baseName;
     const auto usrPath = QStringLiteral("/usr/share/applications/") + baseName;
 
-    if (current_item != nullptr && current_item->parent() != nullptr) {
-        ui->treeWidget->setCurrentItem(current_item->parent());
+    // Safely access current_item's parent before any operations that might invalidate it
+    if (current_item != nullptr) {
+        auto *parent = current_item->parent();
+        if (parent != nullptr) {
+            ui->treeWidget->setCurrentItem(parent);
+        }
     }
 
     QTreeWidgetItemIterator it(ui->treeWidget);

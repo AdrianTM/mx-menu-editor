@@ -102,7 +102,7 @@ void AddAppDialog::pushSave_clicked()
         exec_exists = QFile::exists(executable);
     } else {
         // Relative path or command name - check in PATH
-        exec_exists = QStandardPaths::findExecutable(executable).isEmpty() == false;
+        exec_exists = !QStandardPaths::findExecutable(executable).isEmpty();
     }
 
     if (!exec_exists) {
