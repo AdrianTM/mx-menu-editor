@@ -1325,28 +1325,31 @@ void MainWindow::findReloadItem(const QString &baseName)
 
     QTreeWidgetItemIterator it(ui->treeWidget);
     while ((*it) != nullptr) {
-        QFileInfo fi((*it)->text(1));
+        auto *item = *it;
+        QFileInfo fi(item->text(1));
         if ((fi.fileName() == baseName)) {
             if (QFileInfo::exists(localPath)) {
-                (*it)->setText(1, localPath);
-                (*it)->setData(0, Qt::UserRole, "restore");
+                item->setText(1, localPath);
+                item->setData(0, Qt::UserRole, "restore");
+                ui->treeWidget->setCurrentItem(item);
+                current_item = item;
+                updateRestoreButtonState(item->text(1));
             } else if (QFileInfo::exists(usrPath)) {
-                (*it)->setText(1, usrPath);
-                (*it)->setData(0, Qt::UserRole, QVariant());
+                item->setText(1, usrPath);
+                item->setData(0, Qt::UserRole, QVariant());
+                ui->treeWidget->setCurrentItem(item);
+                current_item = item;
+                updateRestoreButtonState(item->text(1));
             } else {
-                QTreeWidgetItem *parent = (*it)->parent();
+                // Item doesn't exist anywhere, delete it from tree
+                auto *parent = item->parent();
                 if (parent != nullptr) {
-                    const int idx = parent->indexOfChild(*it);
+                    const int idx = parent->indexOfChild(item);
                     delete parent->takeChild(idx);
                     current_item = nullptr;
-                    filterTree(ui->lineEditSearch->text());
                     resetInterface();
                 }
-                return;
             }
-            ui->treeWidget->setCurrentItem(*it);
-            current_item = *it;
-            updateRestoreButtonState((*it)->text(1));
             filterTree(ui->lineEditSearch->text());
             return;
         }
