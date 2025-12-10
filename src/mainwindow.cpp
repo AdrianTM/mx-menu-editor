@@ -52,6 +52,20 @@
 namespace
 {
 constexpr int ExecRole = Qt::UserRole + 1;
+
+// Cached regex patterns to avoid repeated construction
+const QRegularExpression regexTrailingSemicolon(QStringLiteral(";$"));
+const QRegularExpression regexIconLine(QStringLiteral("(^|\n)Icon="));
+const QRegularExpression regexIconFull(QStringLiteral("(^|\n)Icon=[^\n]*(\n|$)"));
+const QRegularExpression regexExecFull(QStringLiteral("(^|\n)Exec=[^\n]*(\n|$)"));
+const QRegularExpression regexCommentFull(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)"));
+const QRegularExpression regexCategoriesFull(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)"));
+const QRegularExpression regexNewlineOrEnd(QStringLiteral("(\n|$)"));
+const QRegularExpression regexStartupNotifyFull(QStringLiteral("(^|\n)StartupNotify=[^\n]*(\n|$)"));
+const QRegularExpression regexNoDisplayFull(QStringLiteral("(^|\n)NoDisplay=[^\n]*(\n|$)"));
+const QRegularExpression regexTerminalFull(QStringLiteral("(^|\n)Terminal=[^\n]*(\n|$)"));
+const QRegularExpression regexNotFilter(QStringLiteral("^(?!<Not>).*$"));
+const QRegularExpression regexNameFull(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -620,7 +634,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
             content.append(line);
             if (line.startsWith(QLatin1String("Categories="))) {
                 line = line.section(QStringLiteral("="), 1);
-                line.remove(QRegularExpression(QStringLiteral(";$")));
+                line.remove(regexTrailingSemicolon);
                 QStringList categories = line.trimmed().split(QStringLiteral(";"));
                 ui->listWidgetEditCategories->addItems(categories);
             } else if (line.startsWith(QLatin1String("Name="))) {
@@ -771,9 +785,8 @@ void MainWindow::changeIcon()
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
             ui->pushSave->setEnabled(true);
-            if (text.contains(QRegularExpression(QStringLiteral("(^|\n)Icon=")))) {
-                text.replace(QRegularExpression(QStringLiteral("(^|\n)Icon=[^\n]*(\n|$)")),
-                             "\nIcon=" + selected + "\n");
+            if (text.contains(regexIconLine)) {
+                text.replace(regexIconFull, "\nIcon=" + selected + "\n");
             } else {
                 text.append("\nIcon=" + selected + "\n");
             }
@@ -794,8 +807,7 @@ void MainWindow::changeName()
         const auto new_name = ui->lineEditName->text();
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            QRegularExpression regex(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
-            QRegularExpressionMatch regex_match = regex.match(text);
+            QRegularExpressionMatch regex_match = regexNameFull.match(text);
             int index = regex_match.capturedStart();
             int length = regex_match.capturedLength();
 
@@ -821,7 +833,7 @@ void MainWindow::changeCommand()
         const auto new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            text.replace(QRegularExpression(QStringLiteral("(^|\n)Exec=[^\n]*(\n|$)")), "\nExec=" + new_command + "\n");
+            text.replace(regexExecFull, "\nExec=" + new_command + "\n");
             ui->advancedEditor->setText(text);
         }
     } else { // if running command from add-custom-app window
@@ -843,14 +855,13 @@ void MainWindow::changeComment()
         QString text = ui->advancedEditor->toPlainText();
         if (!new_comment.isEmpty()) {
             if (text.contains(QLatin1String("Comment="))) {
-                text.replace(QRegularExpression(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)")),
-                             "\nComment=" + new_comment + "\n");
+                text.replace(regexCommentFull, "\nComment=" + new_comment + "\n");
             } else {
                 text = text.trimmed();
                 text.append("\nComment=" + new_comment + "\n");
             }
         } else {
-            text.remove(QRegularExpression(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)")));
+            text.remove(regexCommentFull);
         }
         ui->advancedEditor->setText(text);
     }
@@ -872,7 +883,7 @@ void MainWindow::delCategory()
             return;
         }
         QString text = ui->advancedEditor->toPlainText();
-        int indexCategory = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
+        int indexCategory = text.indexOf(regexCategoriesFull);
         int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
         if (indexToDelete != -1) {
             text.remove(indexToDelete, item->text().length() + 1);
@@ -902,8 +913,7 @@ void MainWindow::changeNotify(bool checked)
     const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText();
     if (text.contains(QLatin1String("StartupNotify="))) {
-        text.replace(QRegularExpression(QStringLiteral("(^|\n)StartupNotify=[^\n]*(\n|$)")),
-                     "\nStartupNotify=" + str + "\n");
+        text.replace(regexStartupNotifyFull, "\nStartupNotify=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nStartupNotify=" + str);
@@ -918,7 +928,7 @@ void MainWindow::changeHide(bool checked)
     const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText().trimmed();
     if (text.contains(QLatin1String("NoDisplay="))) {
-        text.replace(QRegularExpression(QStringLiteral("(^|\n)NoDisplay=[^\n]*(\n|$)")), "\nNoDisplay=" + str + "\n");
+        text.replace(regexNoDisplayFull, "\nNoDisplay=" + str + "\n");
     } else {
         QString new_text;
         for (const auto &line : text.split(QStringLiteral("\n"))) {
@@ -939,7 +949,7 @@ void MainWindow::changeTerminal(bool checked)
     const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
     QString text = ui->advancedEditor->toPlainText();
     if (text.contains(QLatin1String("Terminal="))) {
-        text.replace(QRegularExpression(QStringLiteral("(^|\n)Terminal=[^\n]*(\n|$)")), "\nTerminal=" + str + "\n");
+        text.replace(regexTerminalFull, "\nTerminal=" + str + "\n");
     } else {
         text = text.trimmed();
         text.append("\nTerminal=" + str);
@@ -955,7 +965,7 @@ QStringList MainWindow::listCategories() const
         categories << it.value();
     }
     categories.removeDuplicates();
-    categories = categories.filter(QRegularExpression(QStringLiteral("^(?!<Not>).*$")));
+    categories = categories.filter(regexNotFilter);
     categories.sort();
     return categories;
 }
@@ -1008,15 +1018,15 @@ void MainWindow::addCategory()
 {
     const auto str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
-    int index = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
+    int index = text.indexOf(regexCategoriesFull);
     if (index != -1) {
-        index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1); // end of Categories line
+        index = text.indexOf(regexNewlineOrEnd, index + 1); // end of Categories line
     } else {
         // No Categories line found; append a fresh one at the end
         text = text.trimmed();
         text.append("\nCategories=;\n");
-        index = text.indexOf(QRegularExpression(QStringLiteral("(^|\n)Categories=[^\n]*(\n|$)")));
-        index = text.indexOf(QRegularExpression(QStringLiteral("(\n|$)")), index + 1);
+        index = text.indexOf(regexCategoriesFull);
+        index = text.indexOf(regexNewlineOrEnd, index + 1);
     }
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
