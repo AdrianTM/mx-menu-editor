@@ -286,9 +286,6 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
         }
     }
 
-    usr_desktop_files.isEmpty();
-    local_desktop_files.isEmpty();
-
     categoryItem->sortChildren(1, Qt::AscendingOrder);
 }
 
