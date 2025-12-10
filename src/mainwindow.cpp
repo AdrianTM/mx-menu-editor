@@ -37,6 +37,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
+#include <QLocale>
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSet>
@@ -352,13 +353,63 @@ void MainWindow::setConnections()
 // get Name= from .directory file
 QString MainWindow::getCatName(const QString &fileName)
 {
-    QProcess process;
-    process.start(QStringLiteral("grep"), QStringList {"Name=", fileName}, QIODevice::ReadOnly);
-    process.waitForFinished(3000);
-    if (process.exitCode() != 0) {
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return QString();
     }
-    return QString(process.readAllStandardOutput().trimmed()).remove(QStringLiteral("Name="));
+
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    QStringList localeKeys;
+    localeKeys.reserve(uiLanguages.size() * 2);
+    for (const auto &lang : uiLanguages) {
+        const auto normalized = QString(lang).replace(QLatin1Char('-'), QLatin1Char('_'));
+        localeKeys << normalized;
+        const int sepIndex = normalized.indexOf(QLatin1Char('_'));
+        if (sepIndex > 0) {
+            localeKeys << normalized.left(sepIndex);
+        }
+    }
+
+    QString defaultName;
+    QHash<QString, QString> localizedNames;
+    bool inDesktopEntry = false;
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        const auto line = in.readLine().trimmed();
+        if (line.startsWith(QLatin1Char('['))) {
+            inDesktopEntry = line == QLatin1String("[Desktop Entry]");
+            continue;
+        }
+        if (!inDesktopEntry || !line.startsWith(QLatin1String("Name"))) {
+            continue;
+        }
+        if (line.startsWith(QLatin1String("Name["))) {
+            const int closeIdx = line.indexOf(QLatin1Char(']'));
+            if (closeIdx > 5 && line.size() > closeIdx + 1 && line.at(closeIdx + 1) == QLatin1Char('=')) {
+                const auto locale = line.mid(5, closeIdx - 5);
+                const auto value = line.mid(closeIdx + 2).trimmed();
+                localizedNames.insert(locale, value);
+            }
+        } else if (line.startsWith(QLatin1String("Name="))) {
+            defaultName = line.mid(5).trimmed();
+        }
+    }
+
+    for (const auto &key : std::as_const(localeKeys)) {
+        if (localizedNames.contains(key)) {
+            return localizedNames.value(key);
+        }
+    }
+
+    if (!defaultName.isEmpty()) {
+        return defaultName;
+    }
+
+    if (!localizedNames.isEmpty()) {
+        return localizedNames.constBegin().value();
+    }
+
+    return QString();
 }
 
 // return a list of .menu files
@@ -454,7 +505,11 @@ void MainWindow::filterTree(const QString &query)
 
         const bool hideCategory = hasQuery && !categoryMatch && !anyChildVisible;
         categoryItem->setHidden(hideCategory);
-        categoryItem->setExpanded(hasQuery && !hideCategory && anyChildVisible);
+        // Only change expanded state when there's a search query
+        // Otherwise preserve the current expanded state
+        if (hasQuery) {
+            categoryItem->setExpanded(!hideCategory && anyChildVisible);
+        }
     }
 
     auto *current = ui->treeWidget->currentItem();
@@ -1140,8 +1195,22 @@ void MainWindow::pushSave_clicked()
         return;
     }
 
+    const QString editorText = ui->advancedEditor->toPlainText();
+    QString execCommand = ui->lineEditCommand->text().trimmed();
+    const QRegularExpressionMatch execMatch = regexExecFull.match(editorText);
+    if (execMatch.hasMatch()) {
+        const QString execLine = execMatch.captured();
+        const int idx = execLine.indexOf(QLatin1String("Exec="));
+        if (idx != -1) {
+            const auto extracted = execLine.mid(idx + 5).trimmed();
+            if (!extracted.isEmpty()) {
+                execCommand = extracted;
+                ui->lineEditCommand->setText(execCommand);
+            }
+        }
+    }
+
     // Validate the Exec command before saving
-    const auto execCommand = ui->lineEditCommand->text().trimmed();
     if (!validateExecutable(execCommand)) {
         return;
     }
@@ -1161,28 +1230,20 @@ void MainWindow::pushSave_clicked()
         return;
     }
     all_local_desktop_files << out_name;
-    out.write(ui->advancedEditor->toPlainText().toUtf8());
+    out.write(editorText.toUtf8());
     out.flush();
     out.close();
-    current_item->setText(1, out_name);
-    current_item->setText(0, ui->lineEditName->text());
-    current_item->setData(0, ExecRole, execCommand);
-    if (ui->checkHide->isChecked()) {
-        current_item->setForeground(0, QBrush(Qt::gray));
-    } else {
-        current_item->setForeground(0, QBrush());
-    }
-    if (all_usr_desktop_files.contains("/usr/share/applications/" + base_name)) {
-        current_item->setData(0, Qt::UserRole, "restore");
-    }
-    updateRestoreButtonState(out_name);
     {
         QSignalBlocker editorBlocker(ui->advancedEditor);
         QSignalBlocker docBlocker(ui->advancedEditor->document());
         ui->advancedEditor->document()->setModified(false);
         ui->advancedEditor->document()->clearUndoRedoStacks(QTextDocument::UndoAndRedoStacks);
     }
-    advancedEditorBaseline = ui->advancedEditor->toPlainText();
+    advancedEditorBaseline = editorText;
+    {
+        QSignalBlocker treeBlocker(ui->treeWidget);
+        populateAllCategories();
+    }
     if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0) {
         QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     }
@@ -1306,6 +1367,11 @@ void MainWindow::pushRestoreApp_clicked()
     }
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
     ui->pushRestoreApp->setDisabled(true);
+    {
+        QSignalBlocker treeBlocker(ui->treeWidget);
+        populateAllCategories();
+    }
+    filterTree(ui->lineEditSearch->text());
     findReloadItem(base_name);
 }
 
@@ -1314,14 +1380,6 @@ void MainWindow::findReloadItem(const QString &baseName)
 {
     const auto localPath = QDir::homePath() + "/.local/share/applications/" + baseName;
     const auto usrPath = QStringLiteral("/usr/share/applications/") + baseName;
-
-    // Safely access current_item's parent before any operations that might invalidate it
-    if (current_item != nullptr) {
-        auto *parent = current_item->parent();
-        if (parent != nullptr) {
-            ui->treeWidget->setCurrentItem(parent);
-        }
-    }
 
     QTreeWidgetItemIterator it(ui->treeWidget);
     while ((*it) != nullptr) {
@@ -1334,16 +1392,28 @@ void MainWindow::findReloadItem(const QString &baseName)
                 ui->treeWidget->setCurrentItem(item);
                 current_item = item;
                 updateRestoreButtonState(item->text(1));
+                // Ensure parent category is expanded so the item is visible
+                auto *parent = item->parent();
+                if (parent != nullptr) {
+                    parent->setExpanded(true);
+                }
             } else if (QFileInfo::exists(usrPath)) {
                 item->setText(1, usrPath);
                 item->setData(0, Qt::UserRole, QVariant());
                 ui->treeWidget->setCurrentItem(item);
                 current_item = item;
                 updateRestoreButtonState(item->text(1));
+                // Ensure parent category is expanded so the item is visible
+                auto *parent = item->parent();
+                if (parent != nullptr) {
+                    parent->setExpanded(true);
+                }
             } else {
                 // Item doesn't exist anywhere, delete it from tree
                 auto *parent = item->parent();
                 if (parent != nullptr) {
+                    // Select parent before deleting the item
+                    ui->treeWidget->setCurrentItem(parent);
                     const int idx = parent->indexOfChild(item);
                     delete parent->takeChild(idx);
                     current_item = nullptr;
