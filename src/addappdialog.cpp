@@ -28,6 +28,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 
+#include "mainwindow.h"
+
 AddAppDialog::AddAppDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::AddAppDialog)
@@ -154,8 +156,7 @@ void AddAppDialog::pushSave_clicked()
     out.close();
     lastSavedPath = outName;
     lastSavedCategories = selectedCategories();
-    if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
-        QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
+    MainWindow::restartPanel();
     resetInterface();
     accept();
     this->close();

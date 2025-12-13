@@ -74,6 +74,7 @@ public:
     void populateAllCategories();
     void populateCategory(QTreeWidgetItem *categoryItem);
     void insertAppIntoCategories(const QString &filePath, const QStringList &categories);
+    static void restartPanel();
     void setConnections();
 
 public slots:

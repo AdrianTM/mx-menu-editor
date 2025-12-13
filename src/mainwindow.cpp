@@ -1308,11 +1308,16 @@ void MainWindow::pushSave_clicked()
         QSignalBlocker treeBlocker(ui->treeWidget);
         populateAllCategories();
     }
+    restartPanel();
+    ui->pushSave->setDisabled(true);
+    findReloadItem(base_name);
+}
+
+void MainWindow::restartPanel()
+{
     if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0) {
         QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
     }
-    ui->pushSave->setDisabled(true);
-    findReloadItem(base_name);
 }
 
 void MainWindow::pushAbout_clicked()
