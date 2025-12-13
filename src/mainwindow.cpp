@@ -938,11 +938,29 @@ void MainWindow::delCategory()
             return;
         }
         QString text = ui->advancedEditor->toPlainText();
-        int indexCategory = text.indexOf(regexCategoriesFull);
-        int indexToDelete = text.indexOf(item->text() + ";", indexCategory);
-        if (indexToDelete != -1) {
-            text.remove(indexToDelete, item->text().length() + 1);
-            ui->advancedEditor->setText(text);
+        const auto match = regexCategoriesFull.match(text);
+        if (match.hasMatch()) {
+            const int categoriesPos = text.indexOf(QLatin1String("Categories="), match.capturedStart());
+            if (categoriesPos != -1) {
+                const int lineEnd = text.indexOf(QLatin1Char('\n'), categoriesPos);
+                const int lineLength = (lineEnd == -1) ? (text.length() - categoriesPos) : (lineEnd - categoriesPos);
+                const QString line = text.mid(categoriesPos, lineLength);
+                const int equalsPos = line.indexOf(QLatin1Char('='));
+                QStringList categories;
+                if (equalsPos != -1) {
+                    categories = line.mid(equalsPos + 1).split(QLatin1Char(';'), Qt::SkipEmptyParts);
+                }
+                categories.removeAll(item->text());
+                QString newLine = QStringLiteral("Categories=");
+                if (categories.isEmpty()) {
+                    newLine.append(QLatin1Char(';'));
+                } else {
+                    newLine.append(categories.join(QLatin1Char(';')));
+                    newLine.append(QLatin1Char(';'));
+                }
+                text.replace(categoriesPos, lineLength, newLine);
+                ui->advancedEditor->setText(text);
+            }
         }
         if (ui->listWidgetEditCategories->count() == 0) {
             ui->pushDelete->setDisabled(true);
