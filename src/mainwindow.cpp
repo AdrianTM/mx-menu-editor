@@ -632,7 +632,8 @@ QStringList MainWindow::listDesktopFiles(const QString &searchString, const QStr
         process.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
     }
     if (!process.waitForFinished(3000)) {
-        const auto out = process.readAllStandardOutput().trimmed();
+        process.kill();
+        process.waitForFinished(1000);
         if (hadError != nullptr) {
             *hadError = true;
         }
