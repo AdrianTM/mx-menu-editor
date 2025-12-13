@@ -120,8 +120,8 @@ void AddAppDialog::pushSave_clicked()
 
     QString output;
     QString fileName = sanitizeFileName(appName) + ".desktop";
-    QString outName = QDir::homePath() + "/.local/share/applications/" + fileName;
-    const QString appDir = QDir::homePath() + "/.local/share/applications/";
+    const QString appDir = QDir::homePath() + QStringLiteral("/.local/share/applications");
+    QString outName = appDir + QLatin1Char('/') + fileName;
     if (!QDir().exists(appDir) && !QDir().mkpath(appDir)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create application directory"));
         return;
