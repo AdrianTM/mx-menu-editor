@@ -893,7 +893,16 @@ void MainWindow::changeCommand()
         const auto new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            text.replace(regexExecFull, "\nExec=" + new_command + "\n");
+            QRegularExpressionMatch regex_match = regexExecFull.match(text);
+            int index = regex_match.capturedStart();
+            int length = regex_match.capturedLength();
+            if (index != -1) {
+                text.replace(index, length, "\nExec=" + new_command + "\n"); // replace only first match
+            } else {
+                // Exec= line doesn't exist, add it
+                text = text.trimmed();
+                text.append("\nExec=" + new_command + "\n");
+            }
             ui->advancedEditor->setText(text);
         }
     } else { // if running command from add-custom-app window
