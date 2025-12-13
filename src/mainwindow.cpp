@@ -572,7 +572,7 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
         }
         if (line.startsWith(QLatin1String("Name=")) && app_name.isEmpty()) {
             app_name = line.section(QStringLiteral("="), 1).trimmed();
-        } else if (line.startsWith(QLatin1String("NoDisplay="))) {
+        } else if (in_desktop_entry && line.startsWith(QLatin1String("NoDisplay="))) {
             const auto value = line.section(QStringLiteral("="), 1).trimmed();
             is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
         } else if (line.startsWith(QLatin1String("Exec=")) && exec_command.isEmpty()) {
@@ -1143,7 +1143,9 @@ void MainWindow::onCustomAppSaved()
         return;
     }
 
-    all_local_desktop_files << newPath;
+    if (!all_local_desktop_files.contains(newPath)) {
+        all_local_desktop_files << newPath;
+    }
     insertAppIntoCategories(newPath, add->lastSavedCategories);
     filterTree(ui->lineEditSearch->text());
     findReloadItem(QFileInfo(newPath).fileName());
@@ -1229,7 +1231,9 @@ void MainWindow::pushSave_clicked()
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
         return;
     }
-    all_local_desktop_files << out_name;
+    if (!all_local_desktop_files.contains(out_name)) {
+        all_local_desktop_files << out_name;
+    }
     out.write(editorText.toUtf8());
     out.flush();
     out.close();

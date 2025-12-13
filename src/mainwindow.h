@@ -50,7 +50,6 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QFile config_file;
     QMultiHash<QString, QString> hashCategories;
     QMultiHash<QString, QString> hashExclude;
     QMultiHash<QString, QString> hashInclude;
