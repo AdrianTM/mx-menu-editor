@@ -1085,7 +1085,11 @@ void MainWindow::addCategoryMsgBox()
 
 void MainWindow::centerWindow()
 {
-    QRect screenGeometry = QApplication::screens().constFirst()->geometry();
+    const auto screens = QApplication::screens();
+    if (screens.isEmpty()) {
+        return;
+    }
+    QRect screenGeometry = screens.constFirst()->geometry();
     int x = (screenGeometry.width() - this->width()) / 2;
     int y = (screenGeometry.height() - this->height()) / 2;
     this->move(x, y);
