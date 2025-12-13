@@ -869,8 +869,12 @@ void MainWindow::changeName()
 
             if (index != -1) {
                 text.replace(index, length, "\nName=" + new_name + "\n"); // replace only first match
-                ui->advancedEditor->setText(text);
+            } else {
+                // Name= line doesn't exist, add it after [Desktop Entry]
+                text = text.trimmed();
+                text.append("\nName=" + new_name + "\n");
             }
+            ui->advancedEditor->setText(text);
         }
     } else { // if running command from add-custom-app window
         if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty()
@@ -1305,7 +1309,11 @@ void MainWindow::pushAbout_clicked()
         process.start(QStringLiteral("zless"),
                       QStringList {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
                                    + "/changelog.gz"});
-        process.waitForFinished(3000);
+        if (!process.waitForFinished(3000)) {
+            process.kill();
+            process.waitForFinished(1000);
+            return;
+        }
         if (process.exitCode() != 0) {
             return;
         }
