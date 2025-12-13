@@ -682,11 +682,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
         return;
     }
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-#define IS_LABEL_ICON_EMPTY ui->labelIcon->pixmap() == nullptr
-#else
-#define IS_LABEL_ICON_EMPTY ui->labelIcon->pixmap(Qt::ReturnByValue).isNull()
-#endif
+// Qt 6: pixmap() returns by value, use isNull() to check if empty
     // execute if not topLevel item is selected
     if (item->parent() != nullptr) {
         if (ui->pushSave->isEnabled() && !save()) {
@@ -741,7 +737,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
                 ui->checkRunInTerminal->setChecked(value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
             } else if (line.startsWith(QLatin1String("Icon="))) {
                 line = line.section(QStringLiteral("="), 1).trimmed();
-                if (!line.isEmpty() && IS_LABEL_ICON_EMPTY) { // some .desktop files have multiple Icon= display first
+                if (!line.isEmpty() && ui->labelIcon->pixmap(Qt::ReturnByValue).isNull()) { // some .desktop files have multiple Icon= display first
                     ui->labelIcon->setPixmap(findIcon(line, size).scaled(size));
                 }
             }
