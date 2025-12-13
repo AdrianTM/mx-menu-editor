@@ -1046,7 +1046,6 @@ QStringList MainWindow::listCategories() const
 // display add category message box
 void MainWindow::addCategoryMsgBox()
 {
-    comboBox = new QComboBox(this);
     const QStringList &categories = listCategories();
 
     auto *window = new QWidget(add, Qt::Dialog);
@@ -1056,6 +1055,7 @@ void MainWindow::addCategoryMsgBox()
     const int width = 250;
     window->resize(width, height);
 
+    comboBox = new QComboBox(window);
     auto *buttonBox = new QDialogButtonBox(window);
 
     comboBox->clear();
