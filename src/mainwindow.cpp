@@ -27,7 +27,9 @@
 #include <QDebug>
 #include <QDialogButtonBox>
 #include <QDirIterator>
+#include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QFormLayout>
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -37,7 +39,13 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#include <QLocale>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QListWidget>
+#include <QMessageBox>
+#include <QProcess>
+#include <QPushButton>
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSet>
@@ -620,31 +628,52 @@ QStringList MainWindow::listDesktopFiles(const QString &searchString, const QStr
     if (hadError != nullptr) {
         *hadError = false;
     }
-    QProcess process;
+
+    QStringList result;
+
+    const QFileInfo locationInfo(location);
+    if (!locationInfo.exists() || !locationInfo.isDir()) {
+        if (hadError != nullptr) {
+            *hadError = true;
+        }
+        return result;
+    }
+
     if (searchString.isEmpty()) {
-        process.start(QStringLiteral("find"), QStringList {location, "-name", "*.desktop"}, QIODevice::ReadOnly);
+        // No search string, find all .desktop files recursively
+        QDirIterator it(location, QStringList() << "*.desktop", QDir::Files, QDirIterator::Subdirectories);
+        while (it.hasNext()) {
+            result.append(it.next());
+        }
     } else {
-        process.start(QStringLiteral("grep"), QStringList {"-Elr", searchString, location}, QIODevice::ReadOnly);
-    }
-    if (!process.waitForFinished(3000)) {
-        process.kill();
-        process.waitForFinished(1000);
-        if (hadError != nullptr) {
-            *hadError = true;
+        // Search for files containing the search pattern
+        const QRegularExpression regex(searchString);
+        if (!regex.isValid()) {
+            if (hadError != nullptr) {
+                *hadError = true;
+            }
+            return result;
         }
-        return QStringList();
-    }
-    const QString out = process.readAllStandardOutput().trimmed();
-    if (process.exitCode() != 0) {
-        if (hadError != nullptr) {
-            *hadError = true;
+
+        QDirIterator it(location, QStringList() << "*.desktop", QDir::Files, QDirIterator::Subdirectories);
+
+        while (it.hasNext()) {
+            const QString filePath = it.next();
+            QFile file(filePath);
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                QTextStream in(&file);
+                while (!in.atEnd()) {
+                    const QString line = in.readLine();
+                    if (regex.match(line).hasMatch()) {
+                        result.append(filePath);
+                        break;
+                    }
+                }
+            }
         }
-        return QStringList();
     }
-    if (out.isEmpty()) {
-        return QStringList();
-    }
-    return out.split(QStringLiteral("\n"));
+
+    return result;
 }
 
 void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
