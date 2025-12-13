@@ -48,8 +48,8 @@ QString AddAppDialog::sanitizeFileName(const QString &name)
 {
     QString sanitized = name;
     // Remove or replace invalid filename characters
-    const QString invalid_chars = QStringLiteral("/\\:*?\"<>|");
-    for (const QChar &ch : invalid_chars) {
+    const QString invalidChars = QStringLiteral("/\\:*?\"<>|");
+    for (const QChar &ch : invalidChars) {
         sanitized.replace(ch, QLatin1String("-"));
     }
     // Replace spaces with dashes
@@ -72,21 +72,21 @@ void AddAppDialog::pushSave_clicked()
     lastSavedCategories.clear();
 
     // Validate and sanitize the application name
-    QString app_name = ui->lineEditName->text().trimmed();
-    if (app_name.isEmpty()) {
+    QString appName = ui->lineEditName->text().trimmed();
+    if (appName.isEmpty()) {
         QMessageBox::warning(this, tr("Error"), tr("Application name cannot be empty"));
         return;
     }
 
     // Check if the Exec command is valid
-    QString exec_command = ui->lineEditCommand->text().trimmed();
-    if (exec_command.isEmpty()) {
+    QString execCommand = ui->lineEditCommand->text().trimmed();
+    if (execCommand.isEmpty()) {
         QMessageBox::warning(this, tr("Error"), tr("Command cannot be empty"));
         return;
     }
 
     // Extract the executable path (first part before any arguments)
-    QString executable = exec_command.split(QLatin1Char(' ')).first();
+    QString executable = execCommand.split(QLatin1Char(' ')).first();
     // Remove quotes if present
     if (executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) {
         executable = executable.mid(1, executable.length() - 2);
@@ -96,16 +96,16 @@ void AddAppDialog::pushSave_clicked()
     }
 
     // Check if the executable exists
-    bool exec_exists = false;
+    bool execExists = false;
     if (executable.startsWith(QLatin1Char('/'))) {
         // Absolute path - check directly
-        exec_exists = QFile::exists(executable);
+        execExists = QFile::exists(executable);
     } else {
         // Relative path or command name - check in PATH
-        exec_exists = !QStandardPaths::findExecutable(executable).isEmpty();
+        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
     }
 
-    if (!exec_exists) {
+    if (!execExists) {
         auto answer = QMessageBox::question(
             this, tr("Warning"),
             tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
@@ -117,14 +117,14 @@ void AddAppDialog::pushSave_clicked()
     }
 
     QString output;
-    QString file_name = sanitizeFileName(app_name) + ".desktop";
-    QString out_name = QDir::homePath() + "/.local/share/applications/" + file_name;
-    const QString app_dir = QDir::homePath() + "/.local/share/applications/";
-    if (!QDir().exists(app_dir) && !QDir().mkpath(app_dir)) {
+    QString fileName = sanitizeFileName(appName) + ".desktop";
+    QString outName = QDir::homePath() + "/.local/share/applications/" + fileName;
+    const QString appDir = QDir::homePath() + "/.local/share/applications/";
+    if (!QDir().exists(appDir) && !QDir().mkpath(appDir)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create application directory"));
         return;
     }
-    QFile out(out_name);
+    QFile out(outName);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
         return;
@@ -152,7 +152,7 @@ void AddAppDialog::pushSave_clicked()
     out.write(output.toUtf8());
     out.flush();
     out.close();
-    lastSavedPath = out_name;
+    lastSavedPath = outName;
     lastSavedCategories = selectedCategories();
     if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0)
         QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});

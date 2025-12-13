@@ -140,13 +140,13 @@ void MainWindow::loadMenuFiles()
     hashInclude.clear();
     ui->treeWidget->clear();
 
-    const QString &home_path = QDir::homePath();
-    QStringList menu_items;
-    const QStringList &menu_files = listMenuFiles();
+    const QString &homePath = QDir::homePath();
+    QStringList menuItems;
+    const QStringList &menuFiles = listMenuFiles();
 
     // process each menu_file
-    for (const auto &file_name : menu_files) {
-        QFile file(file_name);
+    for (const auto &fileName : menuFiles) {
+        QFile file(fileName);
         if (file.open(QIODevice::ReadOnly)) {
             QTextStream in(&file);
             while (!in.atEnd()) {
@@ -159,13 +159,13 @@ void MainWindow::loadMenuFiles()
                             line = line.remove(QStringLiteral("<Directory>"))
                                        .remove(QStringLiteral("</Directory>"))
                                        .trimmed();
-                            auto f_name = home_path + "/.local/share/desktop-directories/" + line;
-                            if (!QFileInfo::exists(f_name)) { // use /usr if the file is not present in ~/.local
-                                f_name = "/usr/share/desktop-directories/" + line;
+                            auto fName = homePath + "/.local/share/desktop-directories/" + line;
+                            if (!QFileInfo::exists(fName)) { // use /usr if the file is not present in ~/.local
+                                fName = "/usr/share/desktop-directories/" + line;
                             }
-                            name = getCatName(f_name); // get the Name= from .directory file
+                            name = getCatName(fName); // get the Name= from .directory file
                             if (!name.isEmpty() && QLatin1String("Other") != name && QLatin1String("Wine") != name) {
-                                menu_items << name;
+                                menuItems << name;
                             }
                             // Find <Category> and <Filename> and add them in hashCategory and hashInclude
                             while (!(in.atEnd() || line.contains(QLatin1String("</Include>")))) {
@@ -214,7 +214,7 @@ void MainWindow::loadMenuFiles()
             file.close();
         }
     }
-    displayList(menu_items);
+    displayList(menuItems);
     populateAllCategories();
     filterTree(ui->lineEditSearch->text());
 }
@@ -240,63 +240,58 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     const QStringList includes = hashInclude.values(categoryName);
     const QStringList excludes = hashExclude.values(categoryName);
 
-    QStringList includes_usr;
-    QStringList includes_local;
-    includes_usr.reserve(includes.size());
-    includes_local.reserve(includes.size());
+    QStringList includesUsr;
+    QStringList includesLocal;
+    includesUsr.reserve(includes.size());
+    includesLocal.reserve(includes.size());
     for (const auto &file : std::as_const(includes)) {
-        includes_usr << "/usr/share/applications/" + file;
-        includes_local << QDir::homePath() + "/.local/share/applications/" + file;
+        includesUsr << "/usr/share/applications/" + file;
+        includesLocal << QDir::homePath() + "/.local/share/applications/" + file;
     }
 
-    QString search_string;
+    QString searchString;
     for (const auto &category : std::as_const(categories)) {
-        const auto escaped_category = QRegularExpression::escape(category);
-        if (search_string.isEmpty()) {
-            search_string = "Categories=.*" + escaped_category;
+        const auto escapedCategory = QRegularExpression::escape(category);
+        if (searchString.isEmpty()) {
+            searchString = "Categories=.*" + escapedCategory;
         } else {
-            search_string += "|Categories=.*" + escaped_category;
+            searchString += "|Categories=.*" + escapedCategory;
         }
     }
 
-    bool usr_list_error = false;
-    bool local_list_error = false;
-    auto usr_desktop_files
-        = listDesktopFiles(search_string, QStringLiteral("/usr/share/applications"), &usr_list_error);
-    auto local_desktop_files
-        = listDesktopFiles(search_string, QDir::homePath() + "/.local/share/applications", &local_list_error);
+    bool usrListError = false;
+    bool localListError = false;
+    auto usrDesktopFiles
+        = listDesktopFiles(searchString, QStringLiteral("/usr/share/applications"), &usrListError);
+    auto localDesktopFiles
+        = listDesktopFiles(searchString, QDir::homePath() + "/.local/share/applications", &localListError);
 
-    usr_desktop_files.append(includes_usr);
-    local_desktop_files.append(includes_local);
+    usrDesktopFiles.append(includesUsr);
+    localDesktopFiles.append(includesLocal);
 
-    for (const auto &base_name : std::as_const(excludes)) {
-        usr_desktop_files.removeAll("/usr/share/applications/" + base_name);
-        local_desktop_files.removeAll(QDir::homePath() + "/.local/share/applications/" + base_name);
+    for (const auto &baseName : std::as_const(excludes)) {
+        usrDesktopFiles.removeAll("/usr/share/applications/" + baseName);
+        localDesktopFiles.removeAll(QDir::homePath() + "/.local/share/applications/" + baseName);
     }
 
-    QSet<QString> local_base_names;
-    for (const auto &local_name : std::as_const(all_local_desktop_files)) {
-        QFileInfo f_local(local_name);
-        local_base_names.insert(f_local.fileName());
-    }
-    QSet<QString> usr_base_names;
-    for (const auto &usr_name : std::as_const(all_usr_desktop_files)) {
-        QFileInfo f_usr(usr_name);
-        usr_base_names.insert(f_usr.fileName());
+    QSet<QString> localBaseNames;
+    for (const auto &localName : std::as_const(all_local_desktop_files)) {
+        QFileInfo fLocal(localName);
+        localBaseNames.insert(fLocal.fileName());
     }
 
-    for (const auto &local_name : std::as_const(local_desktop_files)) {
-        QFileInfo fi_local(local_name);
-        auto *app = addToTree(categoryItem, local_name);
-        if (app != nullptr && usr_base_names.contains(fi_local.fileName())) {
+    for (const auto &localName : std::as_const(localDesktopFiles)) {
+        QFileInfo fiLocal(localName);
+        auto *app = addToTree(categoryItem, localName);
+        if (app != nullptr && all_usr_desktop_files.contains("/usr/share/applications/" + fiLocal.fileName())) {
             app->setData(0, Qt::UserRole, "restore");
         }
     }
 
-    for (const auto &file : std::as_const(usr_desktop_files)) {
+    for (const auto &file : std::as_const(usrDesktopFiles)) {
         QFileInfo fi(file);
-        const auto base_name = fi.fileName();
-        if (!local_base_names.contains(base_name)) {
+        const auto baseName = fi.fileName();
+        if (!localBaseNames.contains(baseName)) {
             addToTree(categoryItem, file);
         }
     }
@@ -415,30 +410,30 @@ QString MainWindow::getCatName(const QString &fileName)
 // return a list of .menu files
 QStringList MainWindow::listMenuFiles()
 {
-    const auto home_path = QDir::homePath();
-    QStringList menu_files(QStringLiteral("/etc/xdg/menus/xfce-applications.menu"));
-    QDir user_dir;
+    const auto homePath = QDir::homePath();
+    QStringList menuFiles(QStringLiteral("/etc/xdg/menus/xfce-applications.menu"));
+    QDir userDir;
 
     // add menu files from user directory
-    user_dir.setPath(home_path + "/.config/menus");
-    QDirIterator it(user_dir, QDirIterator::Subdirectories);
+    userDir.setPath(homePath + "/.config/menus");
+    QDirIterator it(userDir, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         const auto item = it.next();
         if (item.endsWith(QLatin1String(".menu"))) {
-            menu_files << item;
+            menuFiles << item;
         }
     }
-    return menu_files;
+    return menuFiles;
 }
 
 // Display sorted list of menu items in the treeWidget
-void MainWindow::displayList(QStringList menu_items)
+void MainWindow::displayList(QStringList menuItems)
 {
     QTreeWidgetItem *topLevelItem = nullptr;
     ui->treeWidget->setHeaderLabel(QLatin1String(""));
     ui->treeWidget->setSortingEnabled(true);
-    menu_items.removeDuplicates();
-    for (const auto &item : menu_items) {
+    menuItems.removeDuplicates();
+    for (const auto &item : menuItems) {
         topLevelItem = new QTreeWidgetItem(ui->treeWidget, QStringList(item));
         // topLevelItem look
         QFont font;
@@ -554,55 +549,55 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
         return nullptr;
     }
 
-    QString app_name;
-    QString exec_command;
-    bool is_hidden = false;
+    QString appName;
+    QString execCommand;
+    bool isHidden = false;
     QTextStream in(&file);
 
     // Read file line by line, looking for Name=, Exec= and NoDisplay=
     // We scan the whole [Desktop Entry] section to ensure we find NoDisplay if it exists
-    bool in_desktop_entry = false;
+    bool inDesktopEntry = false;
     while (!in.atEnd()) {
         const auto line = in.readLine();
         if (line.startsWith(QLatin1String("[Desktop Entry]"))) {
-            in_desktop_entry = true;
-        } else if (line.startsWith(QLatin1Char('[')) && in_desktop_entry) {
+            inDesktopEntry = true;
+        } else if (line.startsWith(QLatin1Char('[')) && inDesktopEntry) {
             // Reached another section, stop reading
             break;
         }
-        if (line.startsWith(QLatin1String("Name=")) && app_name.isEmpty()) {
-            app_name = line.section(QStringLiteral("="), 1).trimmed();
-        } else if (in_desktop_entry && line.startsWith(QLatin1String("NoDisplay="))) {
+        if (line.startsWith(QLatin1String("Name=")) && appName.isEmpty()) {
+            appName = line.section(QStringLiteral("="), 1).trimmed();
+        } else if (inDesktopEntry && line.startsWith(QLatin1String("NoDisplay="))) {
             const auto value = line.section(QStringLiteral("="), 1).trimmed();
-            is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
-        } else if (line.startsWith(QLatin1String("Exec=")) && exec_command.isEmpty()) {
-            exec_command = line.section(QStringLiteral("="), 1).trimmed();
+            isHidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
+        } else if (line.startsWith(QLatin1String("Exec=")) && execCommand.isEmpty()) {
+            execCommand = line.section(QStringLiteral("="), 1).trimmed();
         }
         // Early exit if we found both required fields (Name and Exec)
         // Continue reading to find NoDisplay if it exists in the Desktop Entry section
-        if (in_desktop_entry && !app_name.isEmpty() && !exec_command.isEmpty()) {
+        if (inDesktopEntry && !appName.isEmpty() && !execCommand.isEmpty()) {
             // Continue reading until end of [Desktop Entry] section to catch NoDisplay
-            bool found_next_section = false;
+            bool foundNextSection = false;
             while (!in.atEnd()) {
-                const auto next_line = in.readLine();
-                if (next_line.startsWith(QLatin1Char('['))) {
-                    found_next_section = true;
+                const auto nextLine = in.readLine();
+                if (nextLine.startsWith(QLatin1Char('['))) {
+                    foundNextSection = true;
                     break;
                 }
-                if (next_line.startsWith(QLatin1String("NoDisplay="))) {
-                    const auto value = next_line.section(QStringLiteral("="), 1).trimmed();
-                    is_hidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
+                if (nextLine.startsWith(QLatin1String("NoDisplay="))) {
+                    const auto value = nextLine.section(QStringLiteral("="), 1).trimmed();
+                    isHidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
                     break;
                 }
             }
-            if (found_next_section || in.atEnd()) {
+            if (foundNextSection || in.atEnd()) {
                 break;
             }
         }
     }
     file.close();
 
-    if (app_name.isEmpty()) {
+    if (appName.isEmpty()) {
         return nullptr;
     }
 
@@ -611,12 +606,12 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
     }
 
     auto *childItem = new QTreeWidgetItem(parent);
-    if (is_hidden) {
+    if (isHidden) {
         childItem->setForeground(0, QBrush(Qt::gray));
     }
-    childItem->setText(0, app_name);
+    childItem->setText(0, appName);
     childItem->setText(1, fileName);
-    childItem->setData(0, ExecRole, exec_command);
+    childItem->setData(0, ExecRole, execCommand);
     return childItem;
 }
 
@@ -832,9 +827,9 @@ void MainWindow::changeIcon()
     dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm *.svg)"));
     dialog.setDirectory(QStringLiteral("/usr/share/icons"));
     if (dialog.exec() == QDialog::Accepted) {
-        QStringList selected_list = dialog.selectedFiles();
-        if (!selected_list.isEmpty()) {
-            selected = selected_list.at(0);
+        QStringList selectedList = dialog.selectedFiles();
+        if (!selectedList.isEmpty()) {
+            selected = selectedList.at(0);
         }
     }
     if (!selected.isEmpty()) {
@@ -863,9 +858,9 @@ void MainWindow::changeName()
         const auto new_name = ui->lineEditName->text();
         if (!new_name.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            QRegularExpressionMatch regex_match = regexNameFull.match(text);
-            int index = regex_match.capturedStart();
-            int length = regex_match.capturedLength();
+            QRegularExpressionMatch regexMatch = regexNameFull.match(text);
+            int index = regexMatch.capturedStart();
+            int length = regexMatch.capturedLength();
 
             if (index != -1) {
                 text.replace(index, length, "\nName=" + new_name + "\n"); // replace only first match
@@ -893,9 +888,9 @@ void MainWindow::changeCommand()
         const auto new_command = ui->lineEditCommand->text();
         if (!new_command.isEmpty()) {
             QString text = ui->advancedEditor->toPlainText();
-            QRegularExpressionMatch regex_match = regexExecFull.match(text);
-            int index = regex_match.capturedStart();
-            int length = regex_match.capturedLength();
+            QRegularExpressionMatch regexMatch = regexExecFull.match(text);
+            int index = regexMatch.capturedStart();
+            int length = regexMatch.capturedLength();
             if (index != -1) {
                 text.replace(index, length, "\nExec=" + new_command + "\n"); // replace only first match
             } else {
@@ -1017,14 +1012,14 @@ void MainWindow::changeHide(bool checked)
     if (text.contains(QLatin1String("NoDisplay="))) {
         text.replace(regexNoDisplayFull, "\nNoDisplay=" + str + "\n");
     } else {
-        QString new_text;
+        QString newText;
         for (const auto &line : text.split(QStringLiteral("\n"))) {
-            new_text.append(line + "\n");
+            newText.append(line + "\n");
             if (line.startsWith(QLatin1String("Exec="))) {
-                new_text.append("NoDisplay=" + str + "\n");
+                newText.append("NoDisplay=" + str + "\n");
             }
         }
-        text = new_text;
+        text = newText;
     }
     ui->advancedEditor->setText(text);
 }
@@ -1205,16 +1200,16 @@ bool MainWindow::validateExecutable(const QString &execCommand)
     }
 
     // Check if the executable exists
-    bool exec_exists = false;
+    bool execExists = false;
     if (executable.startsWith(QLatin1Char('/'))) {
         // Absolute path - check directly
-        exec_exists = QFile::exists(executable);
+        execExists = QFile::exists(executable);
     } else {
         // Relative path or command name - check in PATH
-        exec_exists = !QStandardPaths::findExecutable(executable).isEmpty();
+        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
     }
 
-    if (!exec_exists) {
+    if (!execExists) {
         auto answer = QMessageBox::question(
             this, tr("Warning"),
             tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")

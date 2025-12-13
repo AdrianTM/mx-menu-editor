@@ -66,7 +66,7 @@ public:
     [[nodiscard]] static QStringList listMenuFiles();
     [[nodiscard]] static bool isHidden(const QString &fileName);
     [[nodiscard]] bool validateExecutable(const QString &execCommand);
-    void displayList(QStringList menu_items);
+    void displayList(QStringList menuItems);
     void filterTree(const QString &query);
     void findReloadItem(const QString &baseName);
     void loadMenuFiles();
