@@ -48,6 +48,11 @@ public:
     void resetInterface();
     void setConnections() const;
     [[nodiscard]] QStringList selectedCategories() const;
+    [[nodiscard]] bool validateApplicationName(const QString &name, QString *errorMessage = nullptr);
+    [[nodiscard]] bool validateCommand(const QString &command, QString *errorMessage = nullptr);
+    [[nodiscard]] bool validateComment(const QString &comment, QString *errorMessage = nullptr);
+    [[nodiscard]] bool validateIconPath(const QString &iconPath, QString *errorMessage = nullptr);
+    [[nodiscard]] static QString parseCommandExecutable(const QString &command);
 
 public slots:
     [[nodiscard]] bool saveOrNot();

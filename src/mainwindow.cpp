@@ -879,23 +879,24 @@ void MainWindow::changeIcon()
 void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
+        const auto newName = ui->lineEditName->text();
         ui->pushSave->setEnabled(true);
-        const auto new_name = ui->lineEditName->text();
-        if (!new_name.isEmpty()) {
-            QString text = ui->advancedEditor->toPlainText();
-            QRegularExpressionMatch regexMatch = regexNameFull.match(text);
-            int index = regexMatch.capturedStart();
-            int length = regexMatch.capturedLength();
-
-            if (index != -1) {
-                text.replace(index, length, "\nName=" + new_name + "\n"); // replace only first match
-            } else {
-                // Name= line doesn't exist, add it after [Desktop Entry]
-                text = text.trimmed();
-                text.append("\nName=" + new_name + "\n");
-            }
-            ui->advancedEditor->setText(text);
+        if (newName.isEmpty()) {
+            return;
         }
+        QString text = ui->advancedEditor->toPlainText();
+        QRegularExpressionMatch regexMatch = regexNameFull.match(text);
+        int index = regexMatch.capturedStart();
+        int length = regexMatch.capturedLength();
+
+        if (index != -1) {
+            text.replace(index, length, "\nName=" + newName + "\n"); // replace only first match
+        } else {
+            // Name= line doesn't exist, add it after [Desktop Entry]
+            text = text.trimmed();
+            text.append("\nName=" + newName + "\n");
+        }
+        ui->advancedEditor->setText(text);
     } else { // if running command from add-custom-app window
         if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty()
             && add->ui->listWidgetCategories->count() != 0) {
@@ -909,22 +910,23 @@ void MainWindow::changeName()
 void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
+        const auto newCommand = ui->lineEditCommand->text();
         ui->pushSave->setEnabled(true);
-        const auto new_command = ui->lineEditCommand->text();
-        if (!new_command.isEmpty()) {
-            QString text = ui->advancedEditor->toPlainText();
-            QRegularExpressionMatch regexMatch = regexExecFull.match(text);
-            int index = regexMatch.capturedStart();
-            int length = regexMatch.capturedLength();
-            if (index != -1) {
-                text.replace(index, length, "\nExec=" + new_command + "\n"); // replace only first match
-            } else {
-                // Exec= line doesn't exist, add it
-                text = text.trimmed();
-                text.append("\nExec=" + new_command + "\n");
-            }
-            ui->advancedEditor->setText(text);
+        if (newCommand.isEmpty()) {
+            return;
         }
+        QString text = ui->advancedEditor->toPlainText();
+        QRegularExpressionMatch regexMatch = regexExecFull.match(text);
+        int index = regexMatch.capturedStart();
+        int length = regexMatch.capturedLength();
+        if (index != -1) {
+            text.replace(index, length, "\nExec=" + newCommand + "\n"); // replace only first match
+        } else {
+            // Exec= line doesn't exist, add it
+            text = text.trimmed();
+            text.append("\nExec=" + newCommand + "\n");
+        }
+        ui->advancedEditor->setText(text);
     } else { // if running command from add-custom-app window
         const auto new_command = add->ui->lineEditCommand->text();
         if (!new_command.isEmpty() && !add->ui->lineEditName->text().isEmpty()
@@ -939,15 +941,15 @@ void MainWindow::changeCommand()
 void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
+        const auto newComment = ui->lineEditComment->text();
         ui->pushSave->setEnabled(true);
-        const auto new_comment = ui->lineEditComment->text();
         QString text = ui->advancedEditor->toPlainText();
-        if (!new_comment.isEmpty()) {
+        if (!newComment.isEmpty()) {
             if (text.contains(QLatin1String("Comment="))) {
-                text.replace(regexCommentFull, "\nComment=" + new_comment + "\n");
+                text.replace(regexCommentFull, "\nComment=" + newComment + "\n");
             } else {
                 text = text.trimmed();
-                text.append("\nComment=" + new_comment + "\n");
+                text.append("\nComment=" + newComment + "\n");
             }
         } else {
             text.remove(regexCommentFull);

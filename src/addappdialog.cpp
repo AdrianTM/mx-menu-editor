@@ -25,7 +25,7 @@
 #include "ui_addappdialog.h"
 
 #include <QDir>
-#include <QProcess>
+#include <QFile>
 #include <QStandardPaths>
 
 #include "mainwindow.h"
@@ -45,6 +45,166 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 }
 
 AddAppDialog::~AddAppDialog() { delete ui; }
+
+bool AddAppDialog::validateApplicationName(const QString &name, QString *errorMessage)
+{
+    if (name.isEmpty()) {
+        if (errorMessage) *errorMessage = tr("Application name cannot be empty");
+        return false;
+    }
+
+    if (name.length() > 255) {
+        if (errorMessage) *errorMessage = tr("Application name is too long (maximum 255 characters)");
+        return false;
+    }
+
+    // Check for control characters
+    for (const QChar &ch : name) {
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n')) {
+            if (errorMessage) *errorMessage = tr("Application name contains invalid control characters");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool AddAppDialog::validateCommand(const QString &command, QString *errorMessage)
+{
+    if (command.isEmpty()) {
+        if (errorMessage) *errorMessage = tr("Command cannot be empty");
+        return false;
+    }
+
+    if (command.length() > 1024) {
+        if (errorMessage) *errorMessage = tr("Command is too long (maximum 1024 characters)");
+        return false;
+    }
+
+    // Note: .desktop specification allows all shell metacharacters in Exec field
+    // Users are responsible for creating valid desktop entries
+
+    // Extract the executable path (first token, respecting quotes)
+    QString executable = parseCommandExecutable(command);
+    if (executable.isEmpty()) {
+        if (errorMessage) *errorMessage = tr("Command cannot be empty");
+        return false;
+    }
+
+    // Remove surrounding quotes if present (e.g., Exec="/path/to app" -> /path/to app)
+    if ((executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) ||
+        (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\'')))) {
+        executable = executable.mid(1, executable.length() - 2);
+    }
+
+    // Check if the executable exists
+    bool execExists = false;
+    if (executable.startsWith(QLatin1Char('/'))) {
+        // Absolute path - check directly
+        execExists = QFile::exists(executable);
+    } else {
+        // Relative path or command name - check in PATH
+        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
+    }
+
+    if (!execExists) {
+        const auto answer = QMessageBox::question(
+            this, tr("Warning"),
+            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
+                .arg(executable),
+            QMessageBox::Yes | QMessageBox::No);
+        return answer == QMessageBox::Yes;
+    }
+
+    return true;
+}
+
+bool AddAppDialog::validateComment(const QString &comment, QString *errorMessage)
+{
+    if (comment.length() > 512) {
+        if (errorMessage) *errorMessage = tr("Comment is too long (maximum 512 characters)");
+        return false;
+    }
+
+    // Check for control characters (except tabs and newlines which are generally safe)
+    for (const QChar &ch : comment) {
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
+            if (errorMessage) *errorMessage = tr("Comment contains invalid control characters");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool AddAppDialog::validateIconPath(const QString &iconPath, QString *errorMessage)
+{
+    if (iconPath.isEmpty()) {
+        // Empty icon path is allowed
+        return true;
+    }
+
+    if (iconPath.length() > 512) {
+        if (errorMessage) *errorMessage = tr("Icon path is too long (maximum 512 characters)");
+        return false;
+    }
+
+    // Check for control characters
+    for (const QChar &ch : iconPath) {
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
+            if (errorMessage) *errorMessage = tr("Icon path contains invalid control characters");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+QString AddAppDialog::parseCommandExecutable(const QString &command)
+{
+    // Parse command line respecting quotes (similar to shell parsing)
+    QString result;
+    bool inSingleQuote = false;
+    bool inDoubleQuote = false;
+    bool escaped = false;
+
+    for (int i = 0; i < command.length(); ++i) {
+        QChar ch = command.at(i);
+
+        if (escaped) {
+            result.append(ch);
+            escaped = false;
+            continue;
+        }
+
+        if (ch == QLatin1Char('\\')) {
+            escaped = true;
+            continue;
+        }
+
+        if (ch == QLatin1Char('\'') && !inDoubleQuote) {
+            inSingleQuote = !inSingleQuote;
+            continue;
+        }
+
+        if (ch == QLatin1Char('"') && !inSingleQuote) {
+            inDoubleQuote = !inDoubleQuote;
+            continue;
+        }
+
+        if (ch == QLatin1Char(' ') && !inSingleQuote && !inDoubleQuote) {
+            // Found first complete token
+            if (!result.isEmpty()) {
+                break;
+            }
+            continue; // Skip leading spaces
+        }
+
+        result.append(ch);
+    }
+
+    return result.trimmed();
+}
 
 QString AddAppDialog::sanitizeFileName(const QString &name)
 {
@@ -73,49 +233,33 @@ void AddAppDialog::pushSave_clicked()
     lastSavedPath.clear();
     lastSavedCategories.clear();
 
-    // Validate and sanitize the application name
+    // Validate application name
     QString appName = ui->lineEditName->text().trimmed();
-    if (appName.isEmpty()) {
-        QMessageBox::warning(this, tr("Error"), tr("Application name cannot be empty"));
+    QString errorMessage;
+    if (!validateApplicationName(appName, &errorMessage)) {
+        QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
 
-    // Check if the Exec command is valid
+    // Validate command
     QString execCommand = ui->lineEditCommand->text().trimmed();
-    if (execCommand.isEmpty()) {
-        QMessageBox::warning(this, tr("Error"), tr("Command cannot be empty"));
+    if (!validateCommand(execCommand, &errorMessage)) {
+        QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
 
-    // Extract the executable path (first part before any arguments)
-    QString executable = execCommand.split(QLatin1Char(' ')).first();
-    // Remove quotes if present
-    if (executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) {
-        executable = executable.mid(1, executable.length() - 2);
-    }
-    if (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\''))) {
-        executable = executable.mid(1, executable.length() - 2);
+    // Validate comment
+    QString comment = ui->lineEditComment->text().trimmed();
+    if (!validateComment(comment, &errorMessage)) {
+        QMessageBox::warning(this, tr("Error"), errorMessage);
+        return;
     }
 
-    // Check if the executable exists
-    bool execExists = false;
-    if (executable.startsWith(QLatin1Char('/'))) {
-        // Absolute path - check directly
-        execExists = QFile::exists(executable);
-    } else {
-        // Relative path or command name - check in PATH
-        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
-    }
-
-    if (!execExists) {
-        auto answer = QMessageBox::question(
-            this, tr("Warning"),
-            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
-                .arg(executable),
-            QMessageBox::Yes | QMessageBox::No);
-        if (answer != QMessageBox::Yes) {
-            return;
-        }
+    // Validate icon path
+    QString iconPath = this->icon_path;
+    if (!validateIconPath(iconPath, &errorMessage)) {
+        QMessageBox::warning(this, tr("Error"), errorMessage);
+        return;
     }
 
     QString output;
