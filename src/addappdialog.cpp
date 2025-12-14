@@ -46,22 +46,23 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 
 AddAppDialog::~AddAppDialog() { delete ui; }
 
-bool AddAppDialog::validateApplicationName(const QString &name, QString *errorMessage)
+bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMessage)
 {
+    errorMessage.clear();
     if (name.isEmpty()) {
-        if (errorMessage) *errorMessage = tr("Application name cannot be empty");
+        errorMessage = tr("Application name cannot be empty");
         return false;
     }
 
     if (name.length() > 255) {
-        if (errorMessage) *errorMessage = tr("Application name is too long (maximum 255 characters)");
+        errorMessage = tr("Application name is too long (maximum 255 characters)");
         return false;
     }
 
     // Check for control characters
     for (const QChar &ch : name) {
         if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n')) {
-            if (errorMessage) *errorMessage = tr("Application name contains invalid control characters");
+            errorMessage = tr("Application name contains invalid control characters");
             return false;
         }
     }
@@ -69,15 +70,16 @@ bool AddAppDialog::validateApplicationName(const QString &name, QString *errorMe
     return true;
 }
 
-bool AddAppDialog::validateCommand(const QString &command, QString *errorMessage)
+bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage)
 {
+    errorMessage.clear();
     if (command.isEmpty()) {
-        if (errorMessage) *errorMessage = tr("Command cannot be empty");
+        errorMessage = tr("Command cannot be empty");
         return false;
     }
 
     if (command.length() > 1024) {
-        if (errorMessage) *errorMessage = tr("Command is too long (maximum 1024 characters)");
+        errorMessage = tr("Command is too long (maximum 1024 characters)");
         return false;
     }
 
@@ -87,7 +89,7 @@ bool AddAppDialog::validateCommand(const QString &command, QString *errorMessage
     // Extract the executable path (first token, respecting quotes)
     QString executable = parseCommandExecutable(command);
     if (executable.isEmpty()) {
-        if (errorMessage) *errorMessage = tr("Command cannot be empty");
+        errorMessage = tr("Command cannot be empty");
         return false;
     }
 
@@ -119,17 +121,18 @@ bool AddAppDialog::validateCommand(const QString &command, QString *errorMessage
     return true;
 }
 
-bool AddAppDialog::validateComment(const QString &comment, QString *errorMessage)
+bool AddAppDialog::validateComment(const QString &comment, QString &errorMessage)
 {
+    errorMessage.clear();
     if (comment.length() > 512) {
-        if (errorMessage) *errorMessage = tr("Comment is too long (maximum 512 characters)");
+        errorMessage = tr("Comment is too long (maximum 512 characters)");
         return false;
     }
 
     // Check for control characters (except tabs and newlines which are generally safe)
     for (const QChar &ch : comment) {
         if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
-            if (errorMessage) *errorMessage = tr("Comment contains invalid control characters");
+            errorMessage = tr("Comment contains invalid control characters");
             return false;
         }
     }
@@ -137,22 +140,23 @@ bool AddAppDialog::validateComment(const QString &comment, QString *errorMessage
     return true;
 }
 
-bool AddAppDialog::validateIconPath(const QString &iconPath, QString *errorMessage)
+bool AddAppDialog::validateIconPath(const QString &iconPath, QString &errorMessage)
 {
+    errorMessage.clear();
     if (iconPath.isEmpty()) {
         // Empty icon path is allowed
         return true;
     }
 
     if (iconPath.length() > 512) {
-        if (errorMessage) *errorMessage = tr("Icon path is too long (maximum 512 characters)");
+        errorMessage = tr("Icon path is too long (maximum 512 characters)");
         return false;
     }
 
     // Check for control characters
     for (const QChar &ch : iconPath) {
         if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
-            if (errorMessage) *errorMessage = tr("Icon path contains invalid control characters");
+            errorMessage = tr("Icon path contains invalid control characters");
             return false;
         }
     }
@@ -236,28 +240,28 @@ void AddAppDialog::pushSave_clicked()
     // Validate application name
     QString appName = ui->lineEditName->text().trimmed();
     QString errorMessage;
-    if (!validateApplicationName(appName, &errorMessage)) {
+    if (!validateApplicationName(appName, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
 
     // Validate command
     QString execCommand = ui->lineEditCommand->text().trimmed();
-    if (!validateCommand(execCommand, &errorMessage)) {
+    if (!validateCommand(execCommand, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
 
     // Validate comment
     QString comment = ui->lineEditComment->text().trimmed();
-    if (!validateComment(comment, &errorMessage)) {
+    if (!validateComment(comment, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
 
     // Validate icon path
     QString iconPath = this->icon_path;
-    if (!validateIconPath(iconPath, &errorMessage)) {
+    if (!validateIconPath(iconPath, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
         return;
     }
