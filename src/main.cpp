@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
         QApplication::installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(),
-                     "/usr/share/" + QApplication::applicationName() + "/locale"))
+    const QString localePath = QStringLiteral("/usr/share/") + QApplication::applicationName() + QStringLiteral("/locale");
+    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(), localePath))
         QApplication::installTranslator(&appTran);
 
     if (getuid() != 0) {

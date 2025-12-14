@@ -62,6 +62,18 @@ namespace
 {
 constexpr int ExecRole = Qt::UserRole + 1;
 
+// System paths
+constexpr auto SystemMenuFile = "/etc/xdg/menus/xfce-applications.menu";
+constexpr auto SystemDesktopDirectories = "/usr/share/desktop-directories/";
+constexpr auto SystemBinPath = "/usr/bin";
+constexpr auto SystemIconsPath = "/usr/share/icons";
+constexpr auto SystemDocPath = "/usr/share/doc/";
+constexpr auto SystemPixmapsPath = "/usr/share/pixmaps";
+
+// User paths (relative to home directory)
+constexpr auto UserMenuPath = "/.config/menus";
+constexpr auto UserDesktopDirectories = "/.local/share/desktop-directories/";
+
 // Cached regex patterns to avoid repeated construction
 const QRegularExpression regexTrailingSemicolon(QStringLiteral(";$"));
 const QRegularExpression regexIconLine(QStringLiteral("(^|\n)Icon="));
@@ -177,9 +189,9 @@ void MainWindow::loadMenuFiles()
                             line = line.remove(QStringLiteral("<Directory>"))
                                        .remove(QStringLiteral("</Directory>"))
                                        .trimmed();
-                            auto fName = homePath + "/.local/share/desktop-directories/" + line;
+                            auto fName = homePath + UserDesktopDirectories + line;
                             if (!QFileInfo::exists(fName)) { // use /usr if the file is not present in ~/.local
-                                fName = "/usr/share/desktop-directories/" + line;
+                                fName = SystemDesktopDirectories + line;
                             }
                             name = getCatName(fName); // get the Name= from .directory file
                             if (!name.isEmpty() && QLatin1String("Other") != name && QLatin1String("Wine") != name) {
@@ -421,10 +433,10 @@ QString MainWindow::getCatName(const QString &fileName)
 QStringList MainWindow::listMenuFiles()
 {
     const auto homePath = QDir::homePath();
-    QStringList menuFiles(QStringLiteral("/etc/xdg/menus/xfce-applications.menu"));
+    QStringList menuFiles(SystemMenuFile);
 
     // add menu files from user directory
-    const QString userMenuPath = homePath + "/.config/menus";
+    const QString userMenuPath = homePath + UserMenuPath;
     QDirIterator it(userMenuPath, QStringList() << "*.menu", QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext()) {
         menuFiles << it.next();
@@ -777,7 +789,7 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
 // select command to be used
 void MainWindow::selectCommand()
 {
-    const auto selected = QFileDialog::getOpenFileName(this, tr("Select executable file"), QStringLiteral("/usr/bin"));
+    const auto selected = QFileDialog::getOpenFileName(this, tr("Select executable file"), SystemBinPath);
     if (!selected.isEmpty()) {
         if (ui->lineEditCommand->isEnabled()) {
             ui->lineEditCommand->setText(selected);
@@ -862,7 +874,7 @@ void MainWindow::changeIcon()
     dialog.setFilter(QDir::Hidden);
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm *.svg)"));
-    dialog.setDirectory(QStringLiteral("/usr/share/icons"));
+    dialog.setDirectory(SystemIconsPath);
     if (dialog.exec() == QDialog::Accepted) {
         QStringList selectedList = dialog.selectedFiles();
         if (!selectedList.isEmpty()) {
@@ -1341,7 +1353,7 @@ void MainWindow::pushAbout_clicked()
         text->setReadOnly(true);
         QProcess process;
         process.start(QStringLiteral("zless"),
-                      QStringList {"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
+                      QStringList {QString(SystemDocPath) + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
                                    + "/changelog.gz"});
         if (!process.waitForFinished(3000)) {
             process.kill();
@@ -1376,7 +1388,7 @@ void MainWindow::pushHelp_clicked()
     const QLocale locale;
     const auto lang = locale.bcp47Name();
 
-    auto url = QStringLiteral("/usr/share/doc/mx-menu-editor/mx-menu-editor.html");
+    auto url = QString(SystemDocPath) + QStringLiteral("mx-menu-editor/mx-menu-editor.html");
 
     if (lang.startsWith(QLatin1String("fr"))) {
         url = QStringLiteral("https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu");
@@ -1584,7 +1596,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
 
         // Try /usr/share/pixmaps first (common for app icons)
         for (const QString &ext : extensions) {
-            if (QIcon icon = tryFile(QDir(QStringLiteral("/usr/share/pixmaps")).filePath(baseName + ext));
+            if (QIcon icon = tryFile(QDir(SystemPixmapsPath).filePath(baseName + ext));
                 !icon.isNull()) {
                 return icon;
             }
