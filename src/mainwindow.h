@@ -65,6 +65,8 @@ public:
     [[nodiscard]] bool save();
     [[nodiscard]] static QStringList listMenuFiles();
     [[nodiscard]] static bool isHidden(const QString &fileName);
+    [[nodiscard]] static QString localApplicationsPath();
+    [[nodiscard]] static QString systemApplicationsPath();
     [[nodiscard]] bool validateExecutable(const QString &execCommand);
     void displayList(QStringList menuItems);
     void filterTree(const QString &query);

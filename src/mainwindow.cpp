@@ -99,8 +99,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushCancel->setAutoDefault(false);
     ui->pushCancel->setDefault(false);
 
-    all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
-    all_usr_desktop_files = listDesktopFiles(QLatin1String(""), QStringLiteral("/usr/share/applications"));
+    all_local_desktop_files = listDesktopFiles(QLatin1String(""), localApplicationsPath());
+    all_usr_desktop_files = listDesktopFiles(QLatin1String(""), systemApplicationsPath());
 
     resetInterface();
     loadMenuFiles();
@@ -253,8 +253,8 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     includesUsr.reserve(includes.size());
     includesLocal.reserve(includes.size());
     for (const auto &file : std::as_const(includes)) {
-        includesUsr << "/usr/share/applications/" + file;
-        includesLocal << QDir::homePath() + "/.local/share/applications/" + file;
+        includesUsr << systemApplicationsPath() + "/" + file;
+        includesLocal << localApplicationsPath() + "/" + file;
     }
 
     QString searchString;
@@ -270,16 +270,16 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     bool usrListError = false;
     bool localListError = false;
     auto usrDesktopFiles
-        = listDesktopFiles(searchString, QStringLiteral("/usr/share/applications"), &usrListError);
+        = listDesktopFiles(searchString, systemApplicationsPath(), &usrListError);
     auto localDesktopFiles
-        = listDesktopFiles(searchString, QDir::homePath() + "/.local/share/applications", &localListError);
+        = listDesktopFiles(searchString, localApplicationsPath(), &localListError);
 
     usrDesktopFiles.append(includesUsr);
     localDesktopFiles.append(includesLocal);
 
     for (const auto &baseName : std::as_const(excludes)) {
-        usrDesktopFiles.removeAll("/usr/share/applications/" + baseName);
-        localDesktopFiles.removeAll(QDir::homePath() + "/.local/share/applications/" + baseName);
+        usrDesktopFiles.removeAll(systemApplicationsPath() + "/" + baseName);
+        localDesktopFiles.removeAll(localApplicationsPath() + "/" + baseName);
     }
 
     QSet<QString> localBaseNames;
@@ -291,7 +291,7 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     for (const auto &localName : std::as_const(localDesktopFiles)) {
         QFileInfo fiLocal(localName);
         auto *app = addToTree(categoryItem, localName);
-        if (app != nullptr && all_usr_desktop_files.contains("/usr/share/applications/" + fiLocal.fileName())) {
+        if (app != nullptr && all_usr_desktop_files.contains(systemApplicationsPath() + "/" + fiLocal.fileName())) {
             app->setData(0, Qt::UserRole, "restore");
         }
     }
@@ -336,7 +336,7 @@ void MainWindow::insertAppIntoCategories(const QString &filePath, const QStringL
         }
 
         auto *child = addToTree(categoryItem, filePath);
-        if (child != nullptr && QFileInfo::exists("/usr/share/applications/" + baseName)) {
+        if (child != nullptr && QFileInfo::exists(systemApplicationsPath() + "/" + baseName)) {
             child->setData(0, Qt::UserRole, "restore");
         }
         categoryItem->sortChildren(1, Qt::AscendingOrder);
@@ -434,6 +434,16 @@ QStringList MainWindow::listMenuFiles()
     return menuFiles;
 }
 
+QString MainWindow::localApplicationsPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/applications";
+}
+
+QString MainWindow::systemApplicationsPath()
+{
+    return QStringLiteral("/usr/share/applications");
+}
+
 // Display sorted list of menu items in the treeWidget
 void MainWindow::displayList(QStringList menuItems)
 {
@@ -528,9 +538,9 @@ void MainWindow::filterTree(const QString &query)
 void MainWindow::updateRestoreButtonState(const QString &fileName)
 {
     const QString baseName = QFileInfo(fileName).fileName();
-    const QString localPrefix = QDir::homePath() + "/.local/share/applications/";
+    const QString localPrefix = localApplicationsPath() + "/";
     const bool isLocal = fileName.startsWith(localPrefix);
-    const bool hasUsrCopy = QFile::exists("/usr/share/applications/" + baseName);
+    const bool hasUsrCopy = QFile::exists(systemApplicationsPath() + "/" + baseName);
 
     if (isLocal && hasUsrCopy) {
         ui->pushRestoreApp->setText(tr("Restore original item"));
@@ -1278,12 +1288,12 @@ void MainWindow::pushSave_clicked()
     const auto file_name = current_item->text(1);
     const QFileInfo fi(file_name);
     const auto base_name = fi.fileName();
-    const auto applicationsDir = QDir::homePath() + "/.local/share/applications/";
+    const auto applicationsDir = localApplicationsPath();
     if (!QFileInfo::exists(applicationsDir) && !QDir().mkpath(applicationsDir)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create the applications directory"));
         return;
     }
-    const auto out_name = applicationsDir + base_name;
+    const auto out_name = applicationsDir + "/" + base_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
@@ -1430,13 +1440,13 @@ void MainWindow::pushRestoreApp_clicked()
     const auto file_name = current_item->text(1);
     const QFileInfo fi(file_name);
     const auto base_name = fi.fileName();
-    const auto applicationsDir = QDir::homePath() + "/.local/share/applications/";
-    const auto localPath = applicationsDir + base_name;
+    const auto applicationsDir = localApplicationsPath();
+    const auto localPath = applicationsDir + "/" + base_name;
     QFile file(localPath);
     if (file.exists()) {
         file.remove();
     }
-    all_local_desktop_files = listDesktopFiles(QLatin1String(""), QDir::homePath() + "/.local/share/applications");
+    all_local_desktop_files = listDesktopFiles(QLatin1String(""), localApplicationsPath());
     ui->pushRestoreApp->setDisabled(true);
     {
         QSignalBlocker treeBlocker(ui->treeWidget);
@@ -1449,8 +1459,8 @@ void MainWindow::pushRestoreApp_clicked()
 // find and reload item
 void MainWindow::findReloadItem(const QString &baseName)
 {
-    const auto localPath = QDir::homePath() + "/.local/share/applications/" + baseName;
-    const auto usrPath = QStringLiteral("/usr/share/applications/") + baseName;
+    const auto localPath = localApplicationsPath() + "/" + baseName;
+    const auto usrPath = systemApplicationsPath() + "/" + baseName;
 
     QTreeWidgetItemIterator it(ui->treeWidget);
     while ((*it) != nullptr) {
