@@ -31,12 +31,12 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
-#if defined(__GNUC__)
+#if defined(__GNUC__) && !defined(__clang__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Walloc-size-larger-than="
 #endif
 #include <QHash>
-#if defined(__GNUC__)
+#if defined(__GNUC__) && !defined(__clang__)
 #pragma GCC diagnostic pop
 #endif
 #include <QHBoxLayout>
@@ -101,6 +101,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), localApplicationsPath());
     all_usr_desktop_files = listDesktopFiles(QLatin1String(""), systemApplicationsPath());
+    updateLocalBasenamesCache();
 
     resetInterface();
     loadMenuFiles();
@@ -289,12 +290,6 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
         localDesktopFiles.removeAll(localApplicationsPath() + "/" + baseName);
     }
 
-    QSet<QString> localBaseNames;
-    for (const auto &localName : std::as_const(all_local_desktop_files)) {
-        QFileInfo fLocal(localName);
-        localBaseNames.insert(fLocal.fileName());
-    }
-
     for (const auto &localName : std::as_const(localDesktopFiles)) {
         QFileInfo fiLocal(localName);
         auto *app = addToTree(categoryItem, localName);
@@ -306,7 +301,7 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     for (const auto &file : std::as_const(usrDesktopFiles)) {
         QFileInfo fi(file);
         const auto baseName = fi.fileName();
-        if (!localBaseNames.contains(baseName)) {
+        if (!local_basenames_cache.contains(baseName)) {
             addToTree(categoryItem, file);
         }
     }
@@ -445,6 +440,15 @@ QString MainWindow::localApplicationsPath()
 QString MainWindow::systemApplicationsPath()
 {
     return QStringLiteral("/usr/share/applications");
+}
+
+void MainWindow::updateLocalBasenamesCache()
+{
+    local_basenames_cache.clear();
+    for (const auto &localName : std::as_const(all_local_desktop_files)) {
+        QFileInfo fLocal(localName);
+        local_basenames_cache.insert(fLocal.fileName());
+    }
 }
 
 // Display sorted list of menu items in the treeWidget
@@ -1204,6 +1208,7 @@ void MainWindow::onCustomAppSaved()
 
     if (!all_local_desktop_files.contains(newPath)) {
         all_local_desktop_files << newPath;
+        updateLocalBasenamesCache();
     }
     insertAppIntoCategories(newPath, add->lastSavedCategories);
     filterTree(ui->lineEditSearch->text());
@@ -1293,6 +1298,7 @@ void MainWindow::pushSave_clicked()
     }
     if (!all_local_desktop_files.contains(out_name)) {
         all_local_desktop_files << out_name;
+        updateLocalBasenamesCache();
     }
     out.write(editorText.toUtf8());
     out.flush();
@@ -1438,6 +1444,7 @@ void MainWindow::pushRestoreApp_clicked()
         file.remove();
     }
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), localApplicationsPath());
+    updateLocalBasenamesCache();
     ui->pushRestoreApp->setDisabled(true);
     {
         QSignalBlocker treeBlocker(ui->treeWidget);

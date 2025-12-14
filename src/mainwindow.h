@@ -75,6 +75,7 @@ public:
     void populateAllCategories();
     void populateCategory(QTreeWidgetItem *categoryItem);
     void insertAppIntoCategories(const QString &filePath, const QStringList &categories);
+    void updateLocalBasenamesCache();
     static void restartPanel();
     void setConnections();
 
@@ -115,6 +116,7 @@ private:
     QSettings settings;
     QTreeWidgetItem *current_item {};
     Ui::MainWindow *ui;
+    QSet<QString> local_basenames_cache;
 };
 
 #endif // MAINWINDOW_H
