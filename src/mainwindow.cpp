@@ -761,11 +761,6 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
     }
 }
 
-bool MainWindow::isHidden(const QString &fileName)
-{
-    return QProcess::execute(QStringLiteral("grep"), {"-q", "NoDisplay=true", fileName}) == 0;
-}
-
 // select command to be used
 void MainWindow::selectCommand()
 {

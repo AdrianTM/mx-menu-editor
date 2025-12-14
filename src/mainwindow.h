@@ -64,7 +64,6 @@ public:
                                                bool *hadError = nullptr);
     [[nodiscard]] bool save();
     [[nodiscard]] static QStringList listMenuFiles();
-    [[nodiscard]] static bool isHidden(const QString &fileName);
     [[nodiscard]] static QString localApplicationsPath();
     [[nodiscard]] static QString systemApplicationsPath();
     [[nodiscard]] bool validateExecutable(const QString &execCommand);
