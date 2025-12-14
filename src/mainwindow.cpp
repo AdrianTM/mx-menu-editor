@@ -1092,15 +1092,17 @@ void MainWindow::addCategoryMsgBox()
 {
     const QStringList &categories = listCategories();
 
-    auto *window = new QWidget(add, Qt::Dialog);
-    window->setAttribute(Qt::WA_DeleteOnClose); // Auto-delete when closed
-    window->setWindowTitle(tr("Choose category"));
+    auto *dialog = new QDialog(add, Qt::Dialog);
+    dialog->setAttribute(Qt::WA_DeleteOnClose); // Auto-delete when closed
+    dialog->setWindowTitle(tr("Choose category"));
     const int height = 80;
     const int width = 250;
-    window->resize(width, height);
+    dialog->resize(width, height);
 
-    comboBox = new QComboBox(window);
-    auto *buttonBox = new QDialogButtonBox(window);
+    comboBox = new QComboBox(dialog);
+    auto *buttonBox = new QDialogButtonBox(dialog);
+
+    connect(dialog, &QObject::destroyed, this, [this]() { comboBox = nullptr; });
 
     comboBox->clear();
     // comboBox->setEditable(true);
@@ -1110,16 +1112,18 @@ void MainWindow::addCategoryMsgBox()
     // because we want to display the buttons in reverse order we use counter-intuitive roles.
     buttonBox->addButton(tr("Cancel"), QDialogButtonBox::AcceptRole);
     buttonBox->addButton(tr("OK"), QDialogButtonBox::RejectRole);
-    connect(buttonBox, &QDialogButtonBox::accepted, window, &QWidget::close);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &MainWindow::addCategory);
-    connect(buttonBox, &QDialogButtonBox::rejected, window, &QWidget::close);
+    connect(buttonBox, &QDialogButtonBox::accepted, dialog, &QDialog::close);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, [this, dialog]() {
+        addCategory();
+        dialog->close();
+    });
 
-    auto *layout = new QFormLayout(window);
+    auto *layout = new QFormLayout(dialog);
     layout->addRow(comboBox);
     layout->addRow(buttonBox);
 
-    window->setLayout(layout);
-    window->show();
+    dialog->setLayout(layout);
+    dialog->show();
 }
 
 void MainWindow::centerWindow()
@@ -1137,6 +1141,9 @@ void MainWindow::centerWindow()
 // add selected categorory to the .desktop file
 void MainWindow::addCategory()
 {
+    if (comboBox == nullptr) {
+        return;
+    }
     const auto str = comboBox->currentText();
     QString text = ui->advancedEditor->toPlainText();
     int index = text.indexOf(regexCategoriesFull);
