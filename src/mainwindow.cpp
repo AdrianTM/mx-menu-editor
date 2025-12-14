@@ -125,6 +125,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(add, &QDialog::accepted, this, &MainWindow::onCustomAppSaved);
 
+    // Connect AddAppDialog signals (these are shared between MainWindow and AddAppDialog)
+    connect(add->ui->selectCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
+    connect(add->ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
+    connect(add->ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
+    connect(add->ui->lineEditCommand, &QLineEdit::editingFinished, this, &MainWindow::changeCommand);
+    connect(add->ui->lineEditComment, &QLineEdit::editingFinished, this, &MainWindow::changeComment);
+    connect(add->ui->pushAdd, &QPushButton::clicked, this, &MainWindow::addCategoryMsgBox);
+    connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
+
     QSize size = this->size();
     if (settings.contains(QStringLiteral("geometry"))) {
         restoreGeometry(settings.value(QStringLiteral("geometry")).toByteArray());
@@ -1177,20 +1186,6 @@ void MainWindow::addAppMsgBox()
     add->show();
     resetInterface();
     ui->treeWidget->collapseAll();
-    add->ui->selectCommand->disconnect();
-    add->ui->pushChangeIcon->disconnect();
-    add->ui->lineEditName->disconnect();
-    add->ui->lineEditCommand->disconnect();
-    add->ui->lineEditComment->disconnect();
-    add->ui->pushAdd->disconnect();
-    add->ui->pushDelete->disconnect();
-    connect(add->ui->selectCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
-    connect(add->ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
-    connect(add->ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
-    connect(add->ui->lineEditCommand, &QLineEdit::editingFinished, this, &MainWindow::changeCommand);
-    connect(add->ui->lineEditComment, &QLineEdit::editingFinished, this, &MainWindow::changeComment);
-    connect(add->ui->pushAdd, &QPushButton::clicked, this, &MainWindow::addCategoryMsgBox);
-    connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
 }
 
 void MainWindow::onCustomAppSaved()
