@@ -1512,12 +1512,9 @@ struct IconKey {
     }
 };
 
-inline uint qHash(const IconKey &key, uint seed = 0) noexcept
+inline size_t qHash(const IconKey &key, size_t seed = 0) noexcept
 {
-    uint h = ::qHash(key.name, seed);
-    h = ::qHash(key.size.width(), h);
-    h = ::qHash(key.size.height(), h);
-    return h;
+    return qHashMulti(seed, key.name, key.size.width(), key.size.height());
 }
 } // namespace
 
