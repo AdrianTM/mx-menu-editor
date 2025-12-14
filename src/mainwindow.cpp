@@ -1216,14 +1216,15 @@ bool MainWindow::validateExecutable(const QString &execCommand)
         return true; // Empty is allowed (will be caught elsewhere if required)
     }
 
-    // Extract the executable path (first part before any arguments)
-    auto executable = execCommand.split(QLatin1Char(' ')).first();
-
-    // Remove quotes if present
-    if (executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) {
-        executable = executable.mid(1, executable.length() - 2);
+    // Extract the executable path (first token, respecting quotes)
+    QString executable = AddAppDialog::parseCommandExecutable(execCommand);
+    if (executable.isEmpty()) {
+        return true; // Empty is allowed (will be caught elsewhere if required)
     }
-    if (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\''))) {
+
+    // Remove surrounding quotes if present (e.g., Exec="/path/to app" -> /path/to app)
+    if ((executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) ||
+        (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\'')))) {
         executable = executable.mid(1, executable.length() - 2);
     }
 
