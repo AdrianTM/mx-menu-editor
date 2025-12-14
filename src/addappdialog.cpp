@@ -232,7 +232,7 @@ QString AddAppDialog::sanitizeFileName(const QString &name)
 {
     QString sanitized = name;
     // Remove or replace invalid filename characters
-    const QString invalidChars = QStringLiteral("/\\:*?\"<>|");
+    static const QString invalidChars = QStringLiteral("/\\:*?\"<>|");
     for (const QChar &ch : invalidChars) {
         sanitized.replace(ch, QLatin1String("-"));
     }
