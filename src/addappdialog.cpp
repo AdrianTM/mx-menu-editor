@@ -59,9 +59,13 @@ bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMe
         return false;
     }
 
-    // Check for control characters
+    // Check for newlines and control characters that would corrupt .desktop file format
     for (const QChar &ch : name) {
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n')) {
+        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
+            errorMessage = tr("Application name cannot contain newlines");
+            return false;
+        }
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
             errorMessage = tr("Application name contains invalid control characters");
             return false;
         }
@@ -80,6 +84,12 @@ bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage
 
     if (command.length() > 1024) {
         errorMessage = tr("Command is too long (maximum 1024 characters)");
+        return false;
+    }
+
+    // Check for newlines that would corrupt .desktop file format
+    if (command.contains(QLatin1Char('\n')) || command.contains(QLatin1Char('\r'))) {
+        errorMessage = tr("Command cannot contain newlines");
         return false;
     }
 
@@ -129,9 +139,13 @@ bool AddAppDialog::validateComment(const QString &comment, QString &errorMessage
         return false;
     }
 
-    // Check for control characters (except tabs and newlines which are generally safe)
+    // Check for newlines and control characters that would corrupt .desktop file format
     for (const QChar &ch : comment) {
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
+        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
+            errorMessage = tr("Comment cannot contain newlines");
+            return false;
+        }
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
             errorMessage = tr("Comment contains invalid control characters");
             return false;
         }
@@ -153,9 +167,13 @@ bool AddAppDialog::validateIconPath(const QString &iconPath, QString &errorMessa
         return false;
     }
 
-    // Check for control characters
+    // Check for newlines and control characters that would corrupt .desktop file format
     for (const QChar &ch : iconPath) {
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t') && ch != QLatin1Char('\n') && ch != QLatin1Char('\r')) {
+        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
+            errorMessage = tr("Icon path cannot contain newlines");
+            return false;
+        }
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
             errorMessage = tr("Icon path contains invalid control characters");
             return false;
         }
