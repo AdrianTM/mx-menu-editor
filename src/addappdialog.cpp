@@ -325,7 +325,6 @@ void AddAppDialog::pushSave_clicked()
     MainWindow::restartPanel();
     resetInterface();
     accept();
-    this->close();
 }
 
 void AddAppDialog::pushCancel_clicked()
