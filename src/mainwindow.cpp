@@ -1225,27 +1225,16 @@ bool MainWindow::validateExecutable(const QString &execCommand)
         return true; // Empty is allowed (will be caught elsewhere if required)
     }
 
-    // Remove surrounding quotes if present (e.g., Exec="/path/to app" -> /path/to app)
-    if ((executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) ||
-        (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\'')))) {
-        executable = executable.mid(1, executable.length() - 2);
-    }
-
-    // Check if the executable exists
-    bool execExists = false;
-    if (executable.startsWith(QLatin1Char('/'))) {
-        // Absolute path - check directly
-        execExists = QFile::exists(executable);
-    } else {
-        // Relative path or command name - check in PATH
-        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
-    }
-
-    if (!execExists) {
+    if (!AddAppDialog::checkExecutableExists(executable)) {
+        QString cleanExecutable = executable;
+        if ((cleanExecutable.startsWith(QLatin1Char('"')) && cleanExecutable.endsWith(QLatin1Char('"'))) ||
+            (cleanExecutable.startsWith(QLatin1Char('\'')) && cleanExecutable.endsWith(QLatin1Char('\'')))) {
+            cleanExecutable = cleanExecutable.mid(1, cleanExecutable.length() - 2);
+        }
         auto answer = QMessageBox::question(
             this, tr("Warning"),
             tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
-                .arg(executable),
+                .arg(cleanExecutable),
             QMessageBox::Yes | QMessageBox::No);
         return answer == QMessageBox::Yes;
     }

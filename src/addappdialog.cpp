@@ -103,23 +103,7 @@ bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage
         return false;
     }
 
-    // Remove surrounding quotes if present (e.g., Exec="/path/to app" -> /path/to app)
-    if ((executable.startsWith(QLatin1Char('"')) && executable.endsWith(QLatin1Char('"'))) ||
-        (executable.startsWith(QLatin1Char('\'')) && executable.endsWith(QLatin1Char('\'')))) {
-        executable = executable.mid(1, executable.length() - 2);
-    }
-
-    // Check if the executable exists
-    bool execExists = false;
-    if (executable.startsWith(QLatin1Char('/'))) {
-        // Absolute path - check directly
-        execExists = QFile::exists(executable);
-    } else {
-        // Relative path or command name - check in PATH
-        execExists = !QStandardPaths::findExecutable(executable).isEmpty();
-    }
-
-    if (!execExists) {
+    if (!checkExecutableExists(executable)) {
         const auto answer = QMessageBox::question(
             this, tr("Warning"),
             tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
@@ -180,6 +164,28 @@ bool AddAppDialog::validateIconPath(const QString &iconPath, QString &errorMessa
     }
 
     return true;
+}
+
+bool AddAppDialog::checkExecutableExists(const QString &executable)
+{
+    if (executable.isEmpty()) {
+        return false;
+    }
+
+    // Remove surrounding quotes if present (e.g., "/path/to app" -> /path/to app)
+    QString cleanExecutable = executable;
+    if ((cleanExecutable.startsWith(QLatin1Char('"')) && cleanExecutable.endsWith(QLatin1Char('"'))) ||
+        (cleanExecutable.startsWith(QLatin1Char('\'')) && cleanExecutable.endsWith(QLatin1Char('\'')))) {
+        cleanExecutable = cleanExecutable.mid(1, cleanExecutable.length() - 2);
+    }
+
+    // Check if the executable exists
+    if (cleanExecutable.startsWith(QLatin1Char('/'))) {
+        // Absolute path - check directly
+        return QFile::exists(cleanExecutable);
+    }
+    // Relative path or command name - check in PATH
+    return !QStandardPaths::findExecutable(cleanExecutable).isEmpty();
 }
 
 QString AddAppDialog::parseCommandExecutable(const QString &command)

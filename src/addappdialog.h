@@ -53,6 +53,7 @@ public:
     [[nodiscard]] bool validateComment(const QString &comment, QString &errorMessage);
     [[nodiscard]] bool validateIconPath(const QString &iconPath, QString &errorMessage);
     [[nodiscard]] static QString parseCommandExecutable(const QString &command);
+    [[nodiscard]] static bool checkExecutableExists(const QString &executable);
 
 public slots:
     bool saveOrNot();
