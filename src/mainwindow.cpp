@@ -1007,7 +1007,7 @@ void MainWindow::delCategory()
         if (item.isNull()) {
             return;
         }
-        Q_UNUSED(item); // item automatically deleted when going out of scope
+        // item automatically deleted when going out of scope
         if (add->ui->listWidgetCategories->count() == 0) {
             add->ui->pushDelete->setDisabled(true);
             add->ui->pushSave->setDisabled(true);
