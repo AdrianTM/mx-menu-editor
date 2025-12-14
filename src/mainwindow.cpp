@@ -418,16 +418,12 @@ QStringList MainWindow::listMenuFiles()
 {
     const auto homePath = QDir::homePath();
     QStringList menuFiles(QStringLiteral("/etc/xdg/menus/xfce-applications.menu"));
-    QDir userDir;
 
     // add menu files from user directory
-    userDir.setPath(homePath + "/.config/menus");
-    QDirIterator it(userDir, QDirIterator::Subdirectories);
+    const QString userMenuPath = homePath + "/.config/menus";
+    QDirIterator it(userMenuPath, QStringList() << "*.menu", QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext()) {
-        const auto item = it.next();
-        if (item.endsWith(QLatin1String(".menu"))) {
-            menuFiles << item;
-        }
+        menuFiles << it.next();
     }
     return menuFiles;
 }
