@@ -1535,13 +1535,6 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     static QHash<IconKey, QIcon> iconCache;
     static const QRegularExpression re(QStringLiteral("\\.(png|svg|xpm)$"));
     static const QStringList extensions {QStringLiteral(".png"), QStringLiteral(".svg"), QStringLiteral(".xpm")};
-    static const QStringList searchPaths {QDir::homePath() + QStringLiteral("/.local/share/icons/"),
-                                          QStringLiteral("/usr/share/pixmaps/"),
-                                          QStringLiteral("/usr/local/share/icons/"),
-                                          QStringLiteral("/usr/share/icons/"),
-                                          QStringLiteral("/usr/share/icons/hicolor/scalable/apps/"),
-                                          QStringLiteral("/usr/share/icons/hicolor/48x48/apps/"),
-                                          QStringLiteral("/usr/share/icons/Adwaita/48x48/legacy/")};
 
     const auto makePixmap = [size](const QIcon &icon) {
         return icon.isNull() ? QPixmap() : icon.pixmap(size.isValid() ? size : QSize());
@@ -1573,33 +1566,76 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
         return makePixmap(themedIcon);
     }
 
-    const auto searchInPaths = [](const QString &name) -> QIcon {
-        for (const auto &path : searchPaths) {
-            const QString fullPath = QDir(path).filePath(name);
-            if (QFile::exists(fullPath)) {
-                QIcon icon(fullPath);
-                if (!icon.isNull()) {
-                    return icon;
+    // Fallback: search common icon-theme locations even when the current theme doesn't provide the icon
+    // (e.g. icons exist under /usr/share/icons/<theme>/<size>/actions but the running theme is different).
+    const auto findFromAnyTheme = [&](const QString &requestedName) -> QIcon {
+        QString baseName = QFileInfo(requestedName).fileName();
+        baseName.remove(re);
+        static const QList<int> commonSizes {16, 22, 24, 32, 48, 64, 128, 256};
+        QStringList sizeDirs;
+        if (size.isValid() && size.width() > 0 && size.height() > 0 && size.width() == size.height()) {
+            const int px = size.width();
+            sizeDirs << QStringLiteral("%1x%1").arg(px);
+        }
+        for (int px : commonSizes) {
+            const QString dir = QStringLiteral("%1x%1").arg(px);
+            if (!sizeDirs.contains(dir)) {
+                sizeDirs << dir;
+            }
+        }
+
+        QStringList relDirs;
+        relDirs << QStringLiteral("scalable/actions") << QStringLiteral("scalable/apps");
+        for (const QString &sd : sizeDirs) {
+            relDirs << (sd + QStringLiteral("/actions")) << (sd + QStringLiteral("/apps"));
+        }
+        relDirs << QStringLiteral("48x48/legacy") << QStringLiteral("32x32/legacy") << QStringLiteral("16x16/legacy");
+
+        const QStringList themeRoots = QIcon::themeSearchPaths();
+        const auto tryFile = [&](const QString &filePath) -> QIcon {
+            if (!QFile::exists(filePath)) {
+                return QIcon();
+            }
+            QIcon icon(filePath);
+            return icon.isNull() ? QIcon() : icon;
+        };
+
+        // Try /usr/share/pixmaps first (common for app icons)
+        for (const QString &ext : extensions) {
+            if (QIcon icon = tryFile(QDir(QStringLiteral("/usr/share/pixmaps")).filePath(baseName + ext));
+                !icon.isNull()) {
+                return icon;
+            }
+        }
+
+        // Then scan installed themes under the standard icon roots.
+        for (const QString &root : themeRoots) {
+            const QDir rootDir(root);
+            if (!rootDir.exists()) {
+                continue;
+            }
+
+            const QStringList themes = rootDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+            for (const QString &theme : themes) {
+                const QString themeBase = rootDir.filePath(theme);
+                for (const QString &relDir : relDirs) {
+                    const QString dirPath = QDir(themeBase).filePath(relDir);
+                    for (const QString &ext : extensions) {
+                        if (QIcon icon = tryFile(QDir(dirPath).filePath(baseName + ext)); !icon.isNull()) {
+                            return icon;
+                        }
+                    }
                 }
             }
         }
         return QIcon();
     };
 
-    // Try exact name first
-    QIcon icon = searchInPaths(iconName);
+    QIcon icon = findFromAnyTheme(iconName);
+
     if (!icon.isNull()) {
         iconCache.insert(key, icon);
         return makePixmap(icon);
-    }
-
-    // Try without extension and standard extensions
-    for (const auto &ext : extensions) {
-        icon = searchInPaths(nameNoExt + ext);
-        if (!icon.isNull()) {
-            iconCache.insert(key, icon);
-            return makePixmap(icon);
-        }
     }
 
     return QPixmap();
