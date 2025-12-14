@@ -43,9 +43,6 @@ class MainWindow : public QDialog
 {
     Q_OBJECT
 
-protected:
-    QComboBox *comboBox;
-
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -81,7 +78,7 @@ public:
 
 public slots:
     void addAppMsgBox();
-    void addCategory();
+    void addCategory(const QString &category);
     void addCategoryMsgBox();
     void centerWindow();
     void changeCommand();

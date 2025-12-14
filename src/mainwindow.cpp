@@ -1103,10 +1103,8 @@ void MainWindow::addCategoryMsgBox()
     const int width = 250;
     dialog->resize(width, height);
 
-    comboBox = new QComboBox(dialog);
+    auto *comboBox = new QComboBox(dialog);
     auto *buttonBox = new QDialogButtonBox(dialog);
-
-    connect(dialog, &QObject::destroyed, this, [this]() { comboBox = nullptr; });
 
     comboBox->clear();
     // comboBox->setEditable(true);
@@ -1117,8 +1115,8 @@ void MainWindow::addCategoryMsgBox()
     buttonBox->addButton(tr("Cancel"), QDialogButtonBox::AcceptRole);
     buttonBox->addButton(tr("OK"), QDialogButtonBox::RejectRole);
     connect(buttonBox, &QDialogButtonBox::accepted, dialog, &QDialog::close);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, [this, dialog]() {
-        addCategory();
+    connect(buttonBox, &QDialogButtonBox::rejected, this, [this, comboBox, dialog]() {
+        addCategory(comboBox->currentText());
         dialog->close();
     });
 
@@ -1143,12 +1141,12 @@ void MainWindow::centerWindow()
 }
 
 // add selected categorory to the .desktop file
-void MainWindow::addCategory()
+void MainWindow::addCategory(const QString &category)
 {
-    if (comboBox == nullptr) {
+    if (category.isEmpty()) {
         return;
     }
-    const auto str = comboBox->currentText();
+    const auto str = category;
     QString text = ui->advancedEditor->toPlainText();
     int index = text.indexOf(regexCategoriesFull);
     if (index != -1) {
