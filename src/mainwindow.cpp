@@ -1339,13 +1339,12 @@ void MainWindow::pushAbout_clicked()
     if (msgBox.clickedButton() == btnLicense) {
         QProcess::execute(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"});
     } else if (msgBox.clickedButton() == btnChangelog) {
-        auto *changelog = new QDialog(this);
-        changelog->setAttribute(Qt::WA_DeleteOnClose);
+        QDialog changelog(this);
         const int width = 500;
         const int height = 600;
-        changelog->resize(width, height);
+        changelog.resize(width, height);
 
-        auto *text = new QTextEdit;
+        auto *text = new QTextEdit(&changelog);
         text->setReadOnly(true);
         QProcess process;
         process.start(QStringLiteral("zless"),
@@ -1361,15 +1360,15 @@ void MainWindow::pushAbout_clicked()
         }
         text->setText(process.readAllStandardOutput());
 
-        auto *btnClose = new QPushButton(tr("&Close"));
+        auto *btnClose = new QPushButton(tr("&Close"), &changelog);
         btnClose->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
-        connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
+        connect(btnClose, &QPushButton::clicked, &changelog, &QDialog::close);
 
-        auto *layout = new QVBoxLayout;
+        auto *layout = new QVBoxLayout(&changelog);
         layout->addWidget(text);
         layout->addWidget(btnClose);
-        changelog->setLayout(layout);
-        changelog->exec();
+        changelog.setLayout(layout);
+        changelog.exec();
     }
     this->show();
 }
