@@ -1,3 +1,11 @@
+mx-menu-editor (25.12.2) mx; urgency=medium
+
+  * Add fallback for icon search
+  * Improve input validation
+  * Various code fixes
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 13 Dec 2025 20:08:06 -0500
+
 mx-menu-editor (25.12.1) mx; urgency=medium
 
   * Keep focus on the edited item on save

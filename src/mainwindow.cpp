@@ -257,15 +257,13 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
         includesLocal << localApplicationsPath() + "/" + file;
     }
 
-    QString searchString;
+    QStringList searchPatterns;
+    searchPatterns.reserve(categories.size());
     for (const auto &category : std::as_const(categories)) {
         const auto escapedCategory = QRegularExpression::escape(category);
-        if (searchString.isEmpty()) {
-            searchString = "Categories=.*" + escapedCategory;
-        } else {
-            searchString += "|Categories=.*" + escapedCategory;
-        }
+        searchPatterns << ("Categories=.*" + escapedCategory);
     }
+    const QString searchString = searchPatterns.join(QLatin1Char('|'));
 
     bool usrListError = false;
     bool localListError = false;
