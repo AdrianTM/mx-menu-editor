@@ -256,7 +256,7 @@ QString AddAppDialog::sanitizeFileName(const QString &name)
     return sanitized;
 }
 
-void AddAppDialog::pushSave_clicked()
+bool AddAppDialog::pushSave_clicked()
 {
     lastSavedPath.clear();
     lastSavedCategories.clear();
@@ -266,28 +266,28 @@ void AddAppDialog::pushSave_clicked()
     QString errorMessage;
     if (!validateApplicationName(appName, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
-        return;
+        return false;
     }
 
     // Validate command
     QString execCommand = ui->lineEditCommand->text().trimmed();
     if (!validateCommand(execCommand, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
-        return;
+        return false;
     }
 
     // Validate comment
     QString comment = ui->lineEditComment->text().trimmed();
     if (!validateComment(comment, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
-        return;
+        return false;
     }
 
     // Validate icon path
     QString iconPath = this->icon_path;
     if (!validateIconPath(iconPath, errorMessage)) {
         QMessageBox::warning(this, tr("Error"), errorMessage);
-        return;
+        return false;
     }
 
     QString output;
@@ -296,12 +296,12 @@ void AddAppDialog::pushSave_clicked()
     QString outName = appDir + QLatin1Char('/') + fileName;
     if (!QDir().exists(appDir) && !QDir().mkpath(appDir)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create application directory"));
-        return;
+        return false;
     }
     QFile out(outName);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
-        return;
+        return false;
     }
     output = QStringLiteral("[Desktop Entry]\n");
     output.append("Name=" + ui->lineEditName->text() + "\n");
@@ -331,6 +331,7 @@ void AddAppDialog::pushSave_clicked()
     MainWindow::restartPanel();
     resetInterface();
     accept();
+    return true;
 }
 
 void AddAppDialog::pushCancel_clicked()
@@ -350,10 +351,9 @@ bool AddAppDialog::saveOrNot()
     const auto ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
                                            QMessageBox::Save | QMessageBox::Discard);
     if (ans == QMessageBox::Save)
-        pushSave_clicked();
-    else
-        ui->pushSave->setDisabled(true);
-    return true; // treat discard as continue
+        return pushSave_clicked(); // Continue only if the save actually succeeded
+    ui->pushSave->setDisabled(true);
+    return true; // Discarded, continue
 }
 
 // clear all the GUI items

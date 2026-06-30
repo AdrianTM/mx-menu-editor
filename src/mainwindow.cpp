@@ -1254,11 +1254,11 @@ bool MainWindow::validateExecutable(const QString &execCommand)
     return true;
 }
 
-void MainWindow::pushSave_clicked()
+bool MainWindow::pushSave_clicked()
 {
     if (current_item == nullptr) {
         qWarning() << "pushSave_clicked: current_item is null";
-        return;
+        return false;
     }
 
     const QString editorText = ui->advancedEditor->toPlainText();
@@ -1278,7 +1278,7 @@ void MainWindow::pushSave_clicked()
 
     // Validate the Exec command before saving
     if (!validateExecutable(execCommand)) {
-        return;
+        return false;
     }
 
     const auto file_name = current_item->text(1);
@@ -1287,13 +1287,13 @@ void MainWindow::pushSave_clicked()
     const auto applicationsDir = localApplicationsPath();
     if (!QFileInfo::exists(applicationsDir) && !QDir().mkpath(applicationsDir)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create the applications directory"));
-        return;
+        return false;
     }
     const auto out_name = applicationsDir + "/" + base_name;
     QFile out(out_name);
     if (!out.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
-        return;
+        return false;
     }
     if (!all_local_desktop_files.contains(out_name)) {
         all_local_desktop_files << out_name;
@@ -1316,6 +1316,7 @@ void MainWindow::pushSave_clicked()
     restartPanel();
     ui->pushSave->setDisabled(true);
     findReloadItem(base_name);
+    return true;
 }
 
 void MainWindow::restartPanel()
@@ -1416,8 +1417,7 @@ bool MainWindow::save()
     const auto answer = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
                                               QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
     if (answer == QMessageBox::Save) {
-        pushSave_clicked();
-        return true; // Saved, continue
+        return pushSave_clicked(); // Continue only if the save actually succeeded
     }
     if (answer == QMessageBox::Discard) {
         ui->pushSave->setDisabled(true);

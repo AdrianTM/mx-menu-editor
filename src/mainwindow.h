@@ -105,7 +105,7 @@ private slots:
     void pushAbout_clicked();
     void pushCancel_clicked();
     void pushRestoreApp_clicked();
-    void pushSave_clicked();
+    bool pushSave_clicked();
 
 private:
     AddAppDialog *add;

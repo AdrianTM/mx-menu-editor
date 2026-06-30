@@ -59,7 +59,7 @@ public slots:
     bool saveOrNot();
 
 private slots:
-    void pushSave_clicked();
+    bool pushSave_clicked();
     void pushCancel_clicked();
 
 private:
