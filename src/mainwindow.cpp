@@ -88,22 +88,19 @@ const QRegularExpression regexTerminalFull(QStringLiteral("(^|\n)Terminal=[^\n]*
 const QRegularExpression regexNotFilter(QStringLiteral("^(?!<Not>).*$"));
 const QRegularExpression regexNameFull(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
 
-// Strip newlines and control characters that would corrupt the single-line
-// Key=Value format of a .desktop entry if merged into the advanced editor as-is.
-QString sanitizeDesktopValue(const QString &text)
+// Newlines and control characters would corrupt the single-line Key=Value
+// format of a .desktop entry if merged into the advanced editor as-is.
+bool containsInvalidDesktopChars(const QString &text)
 {
-    QString result;
-    result.reserve(text.size());
     for (const QChar &ch : text) {
         if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            continue;
+            return true;
         }
         if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            continue;
+            return true;
         }
-        result.append(ch);
     }
-    return result;
+    return false;
 }
 }
 
@@ -901,14 +898,17 @@ void MainWindow::changeIcon()
         }
     }
     if (!selected.isEmpty()) {
+        if (ui->lineEditCommand->isEnabled() && containsInvalidDesktopChars(selected)) {
+            QMessageBox::warning(this, tr("Error"), tr("Icon path cannot contain newlines or control characters."));
+            return;
+        }
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
-            const auto cleanSelected = sanitizeDesktopValue(selected);
             ui->pushSave->setEnabled(true);
             if (text.contains(regexIconLine)) {
-                text.replace(regexIconFull, "\nIcon=" + cleanSelected + "\n");
+                text.replace(regexIconFull, "\nIcon=" + selected + "\n");
             } else {
-                text.append("\nIcon=" + cleanSelected + "\n");
+                text.append("\nIcon=" + selected + "\n");
             }
             ui->advancedEditor->setText(text);
             ui->labelIcon->setPixmap(QPixmap(selected));
@@ -923,7 +923,11 @@ void MainWindow::changeIcon()
 void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newName = sanitizeDesktopValue(ui->lineEditName->text());
+        const auto newName = ui->lineEditName->text();
+        if (containsInvalidDesktopChars(newName)) {
+            QMessageBox::warning(this, tr("Error"), tr("Application name cannot contain newlines or control characters."));
+            return;
+        }
         ui->pushSave->setEnabled(true);
         if (newName.isEmpty()) {
             return;
@@ -954,7 +958,11 @@ void MainWindow::changeName()
 void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newCommand = sanitizeDesktopValue(ui->lineEditCommand->text());
+        const auto newCommand = ui->lineEditCommand->text();
+        if (containsInvalidDesktopChars(newCommand)) {
+            QMessageBox::warning(this, tr("Error"), tr("Command cannot contain newlines or control characters."));
+            return;
+        }
         ui->pushSave->setEnabled(true);
         if (newCommand.isEmpty()) {
             return;
@@ -985,7 +993,11 @@ void MainWindow::changeCommand()
 void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newComment = sanitizeDesktopValue(ui->lineEditComment->text());
+        const auto newComment = ui->lineEditComment->text();
+        if (containsInvalidDesktopChars(newComment)) {
+            QMessageBox::warning(this, tr("Error"), tr("Comment cannot contain newlines or control characters."));
+            return;
+        }
         ui->pushSave->setEnabled(true);
         QString text = ui->advancedEditor->toPlainText();
         if (!newComment.isEmpty()) {
