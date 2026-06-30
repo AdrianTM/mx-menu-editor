@@ -87,6 +87,24 @@ const QRegularExpression regexNoDisplayFull(QStringLiteral("(^|\n)NoDisplay=[^\n
 const QRegularExpression regexTerminalFull(QStringLiteral("(^|\n)Terminal=[^\n]*(\n|$)"));
 const QRegularExpression regexNotFilter(QStringLiteral("^(?!<Not>).*$"));
 const QRegularExpression regexNameFull(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
+
+// Strip newlines and control characters that would corrupt the single-line
+// Key=Value format of a .desktop entry if merged into the advanced editor as-is.
+QString sanitizeDesktopValue(const QString &text)
+{
+    QString result;
+    result.reserve(text.size());
+    for (const QChar &ch : text) {
+        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
+            continue;
+        }
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
+            continue;
+        }
+        result.append(ch);
+    }
+    return result;
+}
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -283,7 +301,8 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     searchPatterns.reserve(categories.size());
     for (const auto &category : std::as_const(categories)) {
         const auto escapedCategory = QRegularExpression::escape(category);
-        searchPatterns << ("Categories=.*" + escapedCategory);
+        // Match the category as a whole semicolon-delimited token, not a substring of another category.
+        searchPatterns << ("Categories=(?:[^;]*;)*" + escapedCategory + "(?:;|$)");
     }
     const QString searchString = searchPatterns.join(QLatin1Char('|'));
 
@@ -884,11 +903,12 @@ void MainWindow::changeIcon()
     if (!selected.isEmpty()) {
         QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
+            const auto cleanSelected = sanitizeDesktopValue(selected);
             ui->pushSave->setEnabled(true);
             if (text.contains(regexIconLine)) {
-                text.replace(regexIconFull, "\nIcon=" + selected + "\n");
+                text.replace(regexIconFull, "\nIcon=" + cleanSelected + "\n");
             } else {
-                text.append("\nIcon=" + selected + "\n");
+                text.append("\nIcon=" + cleanSelected + "\n");
             }
             ui->advancedEditor->setText(text);
             ui->labelIcon->setPixmap(QPixmap(selected));
@@ -903,7 +923,7 @@ void MainWindow::changeIcon()
 void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newName = ui->lineEditName->text();
+        const auto newName = sanitizeDesktopValue(ui->lineEditName->text());
         ui->pushSave->setEnabled(true);
         if (newName.isEmpty()) {
             return;
@@ -934,7 +954,7 @@ void MainWindow::changeName()
 void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newCommand = ui->lineEditCommand->text();
+        const auto newCommand = sanitizeDesktopValue(ui->lineEditCommand->text());
         ui->pushSave->setEnabled(true);
         if (newCommand.isEmpty()) {
             return;
@@ -965,7 +985,7 @@ void MainWindow::changeCommand()
 void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newComment = ui->lineEditComment->text();
+        const auto newComment = sanitizeDesktopValue(ui->lineEditComment->text());
         ui->pushSave->setEnabled(true);
         QString text = ui->advancedEditor->toPlainText();
         if (!newComment.isEmpty()) {
@@ -1321,9 +1341,18 @@ bool MainWindow::pushSave_clicked()
 
 void MainWindow::restartPanel()
 {
-    if (QProcess::execute(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")}) == 0) {
-        QProcess::execute(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")});
-    }
+    auto *pgrepProcess = new QProcess;
+    connect(pgrepProcess, &QProcess::finished, pgrepProcess, [pgrepProcess](int exitCode, QProcess::ExitStatus) {
+        if (exitCode == 0 && !QProcess::startDetached(QStringLiteral("xfce4-panel"), {QStringLiteral("--restart")})) {
+            qWarning() << "Failed to restart xfce4-panel";
+        }
+        pgrepProcess->deleteLater();
+    });
+    connect(pgrepProcess, &QProcess::errorOccurred, pgrepProcess, [pgrepProcess](QProcess::ProcessError) {
+        qWarning() << "Failed to run pgrep:" << pgrepProcess->errorString();
+        pgrepProcess->deleteLater();
+    });
+    pgrepProcess->start(QStringLiteral("pgrep"), {QStringLiteral("xfce4-panel")});
 }
 
 void MainWindow::pushAbout_clicked()
@@ -1343,7 +1372,9 @@ void MainWindow::pushAbout_clicked()
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        QProcess::execute(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"});
+        if (!QProcess::startDetached(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"})) {
+            QMessageBox::warning(this, tr("Error"), tr("Could not open the license file."));
+        }
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog changelog(this);
         const int width = 500;
@@ -1353,15 +1384,18 @@ void MainWindow::pushAbout_clicked()
         auto *text = new QTextEdit(&changelog);
         text->setReadOnly(true);
         QProcess process;
-        process.start(QStringLiteral("zless"),
-                      QStringList {QString(SystemDocPath) + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
-                                   + "/changelog.gz"});
+        process.start(QStringLiteral("gzip"),
+                      QStringList {QStringLiteral("-dc"),
+                                   QString(SystemDocPath) + QFileInfo(QCoreApplication::applicationFilePath()).fileName()
+                                       + "/changelog.gz"});
         if (!process.waitForFinished(3000)) {
             process.kill();
             process.waitForFinished(1000);
+            QMessageBox::warning(this, tr("Error"), tr("Could not read the changelog (timed out)."));
             return;
         }
         if (process.exitCode() != 0) {
+            QMessageBox::warning(this, tr("Error"), tr("Could not read the changelog."));
             return;
         }
         text->setText(process.readAllStandardOutput());
@@ -1395,7 +1429,9 @@ void MainWindow::pushHelp_clicked()
         url = QStringLiteral("https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu");
     }
 
-    QProcess::execute(QStringLiteral("xdg-open"), {url});
+    if (!QProcess::startDetached(QStringLiteral("xdg-open"), {url})) {
+        QMessageBox::warning(nullptr, tr("Error"), tr("Could not open the help page."));
+    }
 }
 
 // Cancel button clicked
@@ -1439,8 +1475,9 @@ void MainWindow::pushRestoreApp_clicked()
     const auto applicationsDir = localApplicationsPath();
     const auto localPath = applicationsDir + "/" + base_name;
     QFile file(localPath);
-    if (file.exists()) {
-        file.remove();
+    if (file.exists() && !file.remove()) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not restore the application: %1").arg(file.errorString()));
+        return;
     }
     all_local_desktop_files = listDesktopFiles(QLatin1String(""), localApplicationsPath());
     updateLocalBasenamesCache();
