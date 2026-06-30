@@ -74,19 +74,19 @@ if [ "$DEBIAN_BUILD" = true ]; then
 
     echo "Creating debs directory and moving debian artifacts..."
     mkdir -p debs
-    mv ../*.deb debs/ 2>/dev/null || true
-    mv ../*.changes debs/ 2>/dev/null || true
-    mv ../*.dsc debs/ 2>/dev/null || true
-    mv ../*.tar.* debs/ 2>/dev/null || true
-    mv ../*.buildinfo debs/ 2>/dev/null || true
-    mv ../*build* debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.deb debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.changes debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.dsc debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.tar.* debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.buildinfo debs/ 2>/dev/null || true
+    mv ../mx-menu-editor_*.build debs/ 2>/dev/null || true
 
     echo "Cleaning build directory and debian artifacts..."
     rm -rf "$BUILD_DIR"
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/deb-installer/ obj-*/
     rm -f translations/*.qm
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
+    rm -f ../mx-menu-editor_*.build ../mx-menu-editor_*.buildinfo 2>/dev/null || true
 
     echo "Debian package build completed!"
     echo "Debian artifacts moved to debs/ directory"
@@ -100,7 +100,7 @@ if [ "$CLEAN" = true ]; then
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/deb-installer/ obj-*/
     rm -f translations/*.qm
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
+    rm -f ../mx-menu-editor_*.build ../mx-menu-editor_*.buildinfo 2>/dev/null || true
 fi
 
 # Create build directory

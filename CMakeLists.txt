@@ -128,7 +128,6 @@ target_link_libraries(mx-menu-editor
 # Set compiler flags
 target_compile_options(mx-menu-editor PRIVATE
     -Wpedantic
-    -pedantic
     -Werror=return-type
     -Werror=switch
     -Werror=uninitialized

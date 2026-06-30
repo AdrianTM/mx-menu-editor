@@ -39,3 +39,6 @@ Makefile*
 .tx/
 
 mx-menu-editor
+
+# Generated Debian package artifacts
+/debs/
