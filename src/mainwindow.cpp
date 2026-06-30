@@ -103,6 +103,47 @@ QString setDesktopEntryValue(QString text, const QRegularExpression &fullKeyRege
     }
     return text;
 }
+
+// Desktop-entry "Name[locale]=" candidate keys for the current system locale, most
+// preferred first (e.g. "pt_BR" before "pt"). Cached since the system locale doesn't
+// change mid-run and this is consulted once per desktop file.
+const QStringList &localizedNameLocaleKeys()
+{
+    static const QStringList keys = [] {
+        const QStringList uiLanguages = QLocale::system().uiLanguages();
+        QStringList result;
+        result.reserve(uiLanguages.size() * 2);
+        for (const auto &lang : uiLanguages) {
+            const auto normalized = QString(lang).replace(QLatin1Char('-'), QLatin1Char('_'));
+            result << normalized;
+            const int sepIndex = normalized.indexOf(QLatin1Char('_'));
+            if (sepIndex > 0) {
+                result << normalized.left(sepIndex);
+            }
+        }
+        return result;
+    }();
+    return keys;
+}
+
+// Picks the best display name for the current locale: a localized "Name[locale]="
+// matching the system locale, falling back to the plain "Name=", falling back to any
+// localized name at all if even that is missing.
+QString pickLocalizedName(const QString &defaultName, const QHash<QString, QString> &localizedNames)
+{
+    for (const auto &key : localizedNameLocaleKeys()) {
+        if (localizedNames.contains(key)) {
+            return localizedNames.value(key);
+        }
+    }
+    if (!defaultName.isEmpty()) {
+        return defaultName;
+    }
+    if (!localizedNames.isEmpty()) {
+        return localizedNames.constBegin().value();
+    }
+    return QString();
+}
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -381,18 +422,6 @@ QString MainWindow::getCatName(const QString &fileName)
         return QString();
     }
 
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    QStringList localeKeys;
-    localeKeys.reserve(uiLanguages.size() * 2);
-    for (const auto &lang : uiLanguages) {
-        const auto normalized = QString(lang).replace(QLatin1Char('-'), QLatin1Char('_'));
-        localeKeys << normalized;
-        const int sepIndex = normalized.indexOf(QLatin1Char('_'));
-        if (sepIndex > 0) {
-            localeKeys << normalized.left(sepIndex);
-        }
-    }
-
     QString defaultName;
     QHash<QString, QString> localizedNames;
     bool inDesktopEntry = false;
@@ -418,21 +447,7 @@ QString MainWindow::getCatName(const QString &fileName)
         }
     }
 
-    for (const auto &key : std::as_const(localeKeys)) {
-        if (localizedNames.contains(key)) {
-            return localizedNames.value(key);
-        }
-    }
-
-    if (!defaultName.isEmpty()) {
-        return defaultName;
-    }
-
-    if (!localizedNames.isEmpty()) {
-        return localizedNames.constBegin().value();
-    }
-
-    return QString();
+    return pickLocalizedName(defaultName, localizedNames);
 }
 
 // return a list of .menu files
@@ -582,69 +597,56 @@ void MainWindow::updateRestoreButtonState(const QString &fileName)
 // add .desktop item to treeWidget
 QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &fileName)
 {
-    if (!QFileInfo::exists(fileName)) {
+    if (!QFileInfo::exists(fileName) || parent == nullptr) {
         return nullptr;
     }
 
-    // Read the file once to extract both Name and NoDisplay values
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return nullptr;
     }
 
-    QString appName;
+    QString defaultName;
+    QHash<QString, QString> localizedNames;
     QString execCommand;
     bool isHidden = false;
     QTextStream in(&file);
 
-    // Read file line by line, looking for Name=, Exec= and NoDisplay=
-    // We scan the whole [Desktop Entry] section to ensure we find NoDisplay if it exists
+    // Single forward scan over the [Desktop Entry] section, looking for Name=,
+    // Name[locale]=, Exec= and NoDisplay= (in any order - the spec doesn't fix one).
     bool inDesktopEntry = false;
     while (!in.atEnd()) {
         const auto line = in.readLine();
-        if (line.startsWith(QLatin1String("[Desktop Entry]"))) {
-            inDesktopEntry = true;
-        } else if (line.startsWith(QLatin1Char('[')) && inDesktopEntry) {
-            // Reached another section, stop reading
-            break;
+        if (line.startsWith(QLatin1Char('['))) {
+            if (inDesktopEntry) {
+                break; // reached the next section
+            }
+            inDesktopEntry = (line == QLatin1String("[Desktop Entry]"));
+            continue;
         }
-        if (line.startsWith(QLatin1String("Name=")) && appName.isEmpty()) {
-            appName = line.section(QStringLiteral("="), 1).trimmed();
-        } else if (inDesktopEntry && line.startsWith(QLatin1String("NoDisplay="))) {
-            const auto value = line.section(QStringLiteral("="), 1).trimmed();
-            isHidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
+        if (!inDesktopEntry) {
+            continue;
+        }
+        if (line.startsWith(QLatin1String("Name["))) {
+            const int closeIdx = line.indexOf(QLatin1Char(']'));
+            if (closeIdx > 5 && line.size() > closeIdx + 1 && line.at(closeIdx + 1) == QLatin1Char('=')) {
+                const auto locale = line.mid(5, closeIdx - 5);
+                const auto value = line.mid(closeIdx + 2).trimmed();
+                localizedNames.insert(locale, value);
+            }
+        } else if (line.startsWith(QLatin1String("Name=")) && defaultName.isEmpty()) {
+            defaultName = line.section(QStringLiteral("="), 1).trimmed();
         } else if (line.startsWith(QLatin1String("Exec=")) && execCommand.isEmpty()) {
             execCommand = line.section(QStringLiteral("="), 1).trimmed();
-        }
-        // Early exit if we found both required fields (Name and Exec)
-        // Continue reading to find NoDisplay if it exists in the Desktop Entry section
-        if (inDesktopEntry && !appName.isEmpty() && !execCommand.isEmpty()) {
-            // Continue reading until end of [Desktop Entry] section to catch NoDisplay
-            bool foundNextSection = false;
-            while (!in.atEnd()) {
-                const auto nextLine = in.readLine();
-                if (nextLine.startsWith(QLatin1Char('['))) {
-                    foundNextSection = true;
-                    break;
-                }
-                if (nextLine.startsWith(QLatin1String("NoDisplay="))) {
-                    const auto value = nextLine.section(QStringLiteral("="), 1).trimmed();
-                    isHidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
-                    break;
-                }
-            }
-            if (foundNextSection || in.atEnd()) {
-                break;
-            }
+        } else if (line.startsWith(QLatin1String("NoDisplay="))) {
+            const auto value = line.section(QStringLiteral("="), 1).trimmed();
+            isHidden = (value.compare(QStringLiteral("true"), Qt::CaseInsensitive) == 0);
         }
     }
     file.close();
 
-    if (appName.isEmpty()) {
-        return nullptr;
-    }
-
-    if (parent == nullptr) {
+    const QString displayName = pickLocalizedName(defaultName, localizedNames);
+    if (displayName.isEmpty()) {
         return nullptr;
     }
 
@@ -652,7 +654,7 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
     if (isHidden) {
         childItem->setForeground(0, QBrush(Qt::gray));
     }
-    childItem->setText(0, appName);
+    childItem->setText(0, displayName);
     childItem->setText(1, fileName);
     childItem->setData(0, ExecRole, execCommand);
     return childItem;

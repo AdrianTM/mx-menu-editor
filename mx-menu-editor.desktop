@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=MX Menu Editor
 Name[am]=MX ዝርዝር ማረሚያ
 Name[ar]=MX Menu Editor
@@ -92,5 +91,5 @@ Exec=mx-menu-editor
 Terminal=false
 Type=Application
 Icon=mx-menu-editor
-Categories=GNOME;GTK;System;MX-Maintenance;
+Categories=GNOME;GTK;System;X-MX-Maintenance;
 NoDisplay=false
