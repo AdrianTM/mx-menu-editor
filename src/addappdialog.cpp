@@ -46,6 +46,21 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 
 AddAppDialog::~AddAppDialog() { delete ui; }
 
+// Newlines and control characters would corrupt the single-line Key=Value
+// format of a .desktop entry; shared by Add and Edit field validation.
+bool AddAppDialog::containsInvalidDesktopChars(const QString &text)
+{
+    for (const QChar &ch : text) {
+        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
+            return true;
+        }
+        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
+            return true;
+        }
+    }
+    return false;
+}
+
 bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMessage)
 {
     errorMessage.clear();
@@ -59,19 +74,36 @@ bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMe
         return false;
     }
 
-    // Check for newlines and control characters that would corrupt .desktop file format
-    for (const QChar &ch : name) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            errorMessage = tr("Application name cannot contain newlines");
-            return false;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            errorMessage = tr("Application name contains invalid control characters");
-            return false;
-        }
+    if (containsInvalidDesktopChars(name)) {
+        errorMessage = tr("Application name cannot contain newlines or control characters");
+        return false;
     }
 
     return true;
+}
+
+// Checks whether the command's executable exists, prompting the user to continue
+// anyway if not. Shared by the Add dialog's Save validation and the main editor's
+// Save action, so both flows ask the same question with the same wording.
+bool AddAppDialog::confirmExecutableExists(QWidget *parent, const QString &command)
+{
+    const QString executable = parseCommandExecutable(command);
+    if (executable.isEmpty() || checkExecutableExists(executable)) {
+        return true;
+    }
+
+    // Remove surrounding quotes for display (e.g., "/path/to app" -> /path/to app)
+    QString cleanExecutable = executable;
+    if ((cleanExecutable.startsWith(QLatin1Char('"')) && cleanExecutable.endsWith(QLatin1Char('"'))) ||
+        (cleanExecutable.startsWith(QLatin1Char('\'')) && cleanExecutable.endsWith(QLatin1Char('\'')))) {
+        cleanExecutable = cleanExecutable.mid(1, cleanExecutable.length() - 2);
+    }
+    const auto answer = QMessageBox::question(
+        parent, tr("Warning"),
+        tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
+            .arg(cleanExecutable),
+        QMessageBox::Yes | QMessageBox::No);
+    return answer == QMessageBox::Yes;
 }
 
 bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage)
@@ -96,23 +128,7 @@ bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage
     // Note: .desktop specification allows all shell metacharacters in Exec field
     // Users are responsible for creating valid desktop entries
 
-    // Extract the executable path (first token, respecting quotes)
-    QString executable = parseCommandExecutable(command);
-    if (executable.isEmpty()) {
-        errorMessage = tr("Command cannot be empty");
-        return false;
-    }
-
-    if (!checkExecutableExists(executable)) {
-        const auto answer = QMessageBox::question(
-            this, tr("Warning"),
-            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
-                .arg(executable),
-            QMessageBox::Yes | QMessageBox::No);
-        return answer == QMessageBox::Yes;
-    }
-
-    return true;
+    return confirmExecutableExists(this, command);
 }
 
 bool AddAppDialog::validateComment(const QString &comment, QString &errorMessage)
@@ -123,16 +139,9 @@ bool AddAppDialog::validateComment(const QString &comment, QString &errorMessage
         return false;
     }
 
-    // Check for newlines and control characters that would corrupt .desktop file format
-    for (const QChar &ch : comment) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            errorMessage = tr("Comment cannot contain newlines");
-            return false;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            errorMessage = tr("Comment contains invalid control characters");
-            return false;
-        }
+    if (containsInvalidDesktopChars(comment)) {
+        errorMessage = tr("Comment cannot contain newlines or control characters");
+        return false;
     }
 
     return true;
@@ -151,16 +160,9 @@ bool AddAppDialog::validateIconPath(const QString &iconPath, QString &errorMessa
         return false;
     }
 
-    // Check for newlines and control characters that would corrupt .desktop file format
-    for (const QChar &ch : iconPath) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            errorMessage = tr("Icon path cannot contain newlines");
-            return false;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            errorMessage = tr("Icon path contains invalid control characters");
-            return false;
-        }
+    if (containsInvalidDesktopChars(iconPath)) {
+        errorMessage = tr("Icon path cannot contain newlines or control characters");
+        return false;
     }
 
     return true;

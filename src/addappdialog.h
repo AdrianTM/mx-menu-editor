@@ -48,12 +48,14 @@ public:
     void resetInterface();
     void setConnections() const;
     [[nodiscard]] QStringList selectedCategories() const;
-    [[nodiscard]] bool validateApplicationName(const QString &name, QString &errorMessage);
+    [[nodiscard]] static bool validateApplicationName(const QString &name, QString &errorMessage);
     [[nodiscard]] bool validateCommand(const QString &command, QString &errorMessage);
-    [[nodiscard]] bool validateComment(const QString &comment, QString &errorMessage);
-    [[nodiscard]] bool validateIconPath(const QString &iconPath, QString &errorMessage);
+    [[nodiscard]] static bool validateComment(const QString &comment, QString &errorMessage);
+    [[nodiscard]] static bool validateIconPath(const QString &iconPath, QString &errorMessage);
     [[nodiscard]] static QString parseCommandExecutable(const QString &command);
     [[nodiscard]] static bool checkExecutableExists(const QString &executable);
+    [[nodiscard]] static bool containsInvalidDesktopChars(const QString &text);
+    [[nodiscard]] static bool confirmExecutableExists(QWidget *parent, const QString &command);
 
 public slots:
     bool saveOrNot();

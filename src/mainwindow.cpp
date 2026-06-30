@@ -76,7 +76,6 @@ constexpr auto UserDesktopDirectories = "/.local/share/desktop-directories/";
 
 // Cached regex patterns to avoid repeated construction
 const QRegularExpression regexTrailingSemicolon(QStringLiteral(";$"));
-const QRegularExpression regexIconLine(QStringLiteral("(^|\n)Icon="));
 const QRegularExpression regexIconFull(QStringLiteral("(^|\n)Icon=[^\n]*(\n|$)"));
 const QRegularExpression regexExecFull(QStringLiteral("(^|\n)Exec=[^\n]*(\n|$)"));
 const QRegularExpression regexCommentFull(QStringLiteral("(^|\n)Comment=[^\n]*(\n|$)"));
@@ -88,19 +87,21 @@ const QRegularExpression regexTerminalFull(QStringLiteral("(^|\n)Terminal=[^\n]*
 const QRegularExpression regexNotFilter(QStringLiteral("^(?!<Not>).*$"));
 const QRegularExpression regexNameFull(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
 
-// Newlines and control characters would corrupt the single-line Key=Value
-// format of a .desktop entry if merged into the advanced editor as-is.
-bool containsInvalidDesktopChars(const QString &text)
+// Sets a single-line "Key=Value" entry in desktop-entry text, replacing the first
+// existing line for that key or appending a freshly-formatted one if absent.
+QString setDesktopEntryValue(QString text, const QRegularExpression &fullKeyRegex, const QString &key,
+                              const QString &value)
 {
-    for (const QChar &ch : text) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            return true;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            return true;
-        }
+    const QRegularExpressionMatch match = fullKeyRegex.match(text);
+    const int index = match.capturedStart();
+    const int length = match.capturedLength();
+    if (index != -1) {
+        text.replace(index, length, "\n" + key + "=" + value + "\n");
+    } else {
+        text = text.trimmed();
+        text.append("\n" + key + "=" + value + "\n");
     }
-    return false;
+    return text;
 }
 }
 
@@ -898,19 +899,14 @@ void MainWindow::changeIcon()
         }
     }
     if (!selected.isEmpty()) {
-        if (ui->lineEditCommand->isEnabled() && containsInvalidDesktopChars(selected)) {
+        if (ui->lineEditCommand->isEnabled() && AddAppDialog::containsInvalidDesktopChars(selected)) {
             QMessageBox::warning(this, tr("Error"), tr("Icon path cannot contain newlines or control characters."));
             return;
         }
-        QString text = ui->advancedEditor->toPlainText();
         if (ui->lineEditCommand->isEnabled()) { // started from editor
             ui->pushSave->setEnabled(true);
-            if (text.contains(regexIconLine)) {
-                text.replace(regexIconFull, "\nIcon=" + selected + "\n");
-            } else {
-                text.append("\nIcon=" + selected + "\n");
-            }
-            ui->advancedEditor->setText(text);
+            ui->advancedEditor->setText(
+                setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
             ui->labelIcon->setPixmap(QPixmap(selected));
         } else { // if running command from add-custom-app window
             add->icon_path = selected;
@@ -924,7 +920,7 @@ void MainWindow::changeName()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         const auto newName = ui->lineEditName->text();
-        if (containsInvalidDesktopChars(newName)) {
+        if (AddAppDialog::containsInvalidDesktopChars(newName)) {
             QMessageBox::warning(this, tr("Error"), tr("Application name cannot contain newlines or control characters."));
             return;
         }
@@ -932,19 +928,8 @@ void MainWindow::changeName()
         if (newName.isEmpty()) {
             return;
         }
-        QString text = ui->advancedEditor->toPlainText();
-        QRegularExpressionMatch regexMatch = regexNameFull.match(text);
-        int index = regexMatch.capturedStart();
-        int length = regexMatch.capturedLength();
-
-        if (index != -1) {
-            text.replace(index, length, "\nName=" + newName + "\n"); // replace only first match
-        } else {
-            // Name= line doesn't exist, add it after [Desktop Entry]
-            text = text.trimmed();
-            text.append("\nName=" + newName + "\n");
-        }
-        ui->advancedEditor->setText(text);
+        ui->advancedEditor->setText(
+            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexNameFull, QStringLiteral("Name"), newName));
     } else { // if running command from add-custom-app window
         if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty()
             && add->ui->listWidgetCategories->count() != 0) {
@@ -959,7 +944,7 @@ void MainWindow::changeCommand()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         const auto newCommand = ui->lineEditCommand->text();
-        if (containsInvalidDesktopChars(newCommand)) {
+        if (AddAppDialog::containsInvalidDesktopChars(newCommand)) {
             QMessageBox::warning(this, tr("Error"), tr("Command cannot contain newlines or control characters."));
             return;
         }
@@ -967,18 +952,8 @@ void MainWindow::changeCommand()
         if (newCommand.isEmpty()) {
             return;
         }
-        QString text = ui->advancedEditor->toPlainText();
-        QRegularExpressionMatch regexMatch = regexExecFull.match(text);
-        int index = regexMatch.capturedStart();
-        int length = regexMatch.capturedLength();
-        if (index != -1) {
-            text.replace(index, length, "\nExec=" + newCommand + "\n"); // replace only first match
-        } else {
-            // Exec= line doesn't exist, add it
-            text = text.trimmed();
-            text.append("\nExec=" + newCommand + "\n");
-        }
-        ui->advancedEditor->setText(text);
+        ui->advancedEditor->setText(
+            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
     } else { // if running command from add-custom-app window
         const auto new_command = add->ui->lineEditCommand->text();
         if (!new_command.isEmpty() && !add->ui->lineEditName->text().isEmpty()
@@ -994,19 +969,14 @@ void MainWindow::changeComment()
 {
     if (ui->lineEditCommand->isEnabled()) { // started from editor
         const auto newComment = ui->lineEditComment->text();
-        if (containsInvalidDesktopChars(newComment)) {
+        if (AddAppDialog::containsInvalidDesktopChars(newComment)) {
             QMessageBox::warning(this, tr("Error"), tr("Comment cannot contain newlines or control characters."));
             return;
         }
         ui->pushSave->setEnabled(true);
         QString text = ui->advancedEditor->toPlainText();
         if (!newComment.isEmpty()) {
-            if (text.contains(QLatin1String("Comment="))) {
-                text.replace(regexCommentFull, "\nComment=" + newComment + "\n");
-            } else {
-                text = text.trimmed();
-                text.append("\nComment=" + newComment + "\n");
-            }
+            text = setDesktopEntryValue(text, regexCommentFull, QStringLiteral("Comment"), newComment);
         } else {
             text.remove(regexCommentFull);
         }
@@ -1075,26 +1045,21 @@ void MainWindow::delCategory()
 void MainWindow::changeNotify(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
-    QString text = ui->advancedEditor->toPlainText();
-    if (text.contains(QLatin1String("StartupNotify="))) {
-        text.replace(regexStartupNotifyFull, "\nStartupNotify=" + str + "\n");
-    } else {
-        text = text.trimmed();
-        text.append("\nStartupNotify=" + str);
-    }
-    ui->advancedEditor->setText(text);
+    const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
+    ui->advancedEditor->setText(
+        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexStartupNotifyFull, QStringLiteral("StartupNotify"), str));
 }
 
 // hide or show the item in the menu
 void MainWindow::changeHide(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
+    const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
     QString text = ui->advancedEditor->toPlainText().trimmed();
-    if (text.contains(QLatin1String("NoDisplay="))) {
-        text.replace(regexNoDisplayFull, "\nNoDisplay=" + str + "\n");
+    if (regexNoDisplayFull.match(text).hasMatch()) {
+        text = setDesktopEntryValue(text, regexNoDisplayFull, QStringLiteral("NoDisplay"), str);
     } else {
+        // No NoDisplay= line yet; insert it right after Exec= to keep related keys grouped.
         QString newText;
         for (const auto &line : text.split(QStringLiteral("\n"))) {
             newText.append(line + "\n");
@@ -1111,15 +1076,9 @@ void MainWindow::changeHide(bool checked)
 void MainWindow::changeTerminal(bool checked)
 {
     ui->pushSave->setEnabled(true);
-    const QString &str = QString(checked ? QStringLiteral("true") : QStringLiteral("false"));
-    QString text = ui->advancedEditor->toPlainText();
-    if (text.contains(QLatin1String("Terminal="))) {
-        text.replace(regexTerminalFull, "\nTerminal=" + str + "\n");
-    } else {
-        text = text.trimmed();
-        text.append("\nTerminal=" + str);
-    }
-    ui->advancedEditor->setText(text);
+    const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
+    ui->advancedEditor->setText(
+        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexTerminalFull, QStringLiteral("Terminal"), str));
 }
 
 // list categories of the displayed items
@@ -1257,35 +1216,6 @@ void MainWindow::onCustomAppSaved()
     findReloadItem(QFileInfo(newPath).fileName());
 }
 
-bool MainWindow::validateExecutable(const QString &execCommand)
-{
-    if (execCommand.isEmpty()) {
-        return true; // Empty is allowed (will be caught elsewhere if required)
-    }
-
-    // Extract the executable path (first token, respecting quotes)
-    QString executable = AddAppDialog::parseCommandExecutable(execCommand);
-    if (executable.isEmpty()) {
-        return true; // Empty is allowed (will be caught elsewhere if required)
-    }
-
-    if (!AddAppDialog::checkExecutableExists(executable)) {
-        QString cleanExecutable = executable;
-        if ((cleanExecutable.startsWith(QLatin1Char('"')) && cleanExecutable.endsWith(QLatin1Char('"'))) ||
-            (cleanExecutable.startsWith(QLatin1Char('\'')) && cleanExecutable.endsWith(QLatin1Char('\'')))) {
-            cleanExecutable = cleanExecutable.mid(1, cleanExecutable.length() - 2);
-        }
-        auto answer = QMessageBox::question(
-            this, tr("Warning"),
-            tr("The executable '%1' does not exist or is not in PATH.\nDo you want to continue anyway?")
-                .arg(cleanExecutable),
-            QMessageBox::Yes | QMessageBox::No);
-        return answer == QMessageBox::Yes;
-    }
-
-    return true;
-}
-
 bool MainWindow::pushSave_clicked()
 {
     if (current_item == nullptr) {
@@ -1309,7 +1239,7 @@ bool MainWindow::pushSave_clicked()
     }
 
     // Validate the Exec command before saving
-    if (!validateExecutable(execCommand)) {
+    if (!AddAppDialog::confirmExecutableExists(this, execCommand)) {
         return false;
     }
 
