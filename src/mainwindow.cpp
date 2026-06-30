@@ -119,9 +119,6 @@ MainWindow::MainWindow(QWidget *parent)
     if (ui->pushSave->icon().isNull()) {
         ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
     }
-    if (add->ui->pushSave->icon().isNull()) {
-        add->ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
-    }
 
     // Remove focus from Cancel button
     ui->pushCancel->setAutoDefault(false);
@@ -152,16 +149,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->lineEditName, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditCommand, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
     connect(ui->lineEditComment, &QLineEdit::textEdited, this, &MainWindow::setEnabled);
-    connect(add, &QDialog::accepted, this, &MainWindow::onCustomAppSaved);
-
-    // Connect AddAppDialog signals (these are shared between MainWindow and AddAppDialog)
-    connect(add->ui->selectCommand, &QToolButton::clicked, this, &MainWindow::selectCommand);
-    connect(add->ui->pushChangeIcon, &QPushButton::clicked, this, &MainWindow::changeIcon);
-    connect(add->ui->lineEditName, &QLineEdit::editingFinished, this, &MainWindow::changeName);
-    connect(add->ui->lineEditCommand, &QLineEdit::editingFinished, this, &MainWindow::changeCommand);
-    connect(add->ui->lineEditComment, &QLineEdit::editingFinished, this, &MainWindow::changeComment);
-    connect(add->ui->pushAdd, &QPushButton::clicked, this, &MainWindow::addCategoryMsgBox);
-    connect(add->ui->pushDelete, &QPushButton::clicked, this, &MainWindow::delCategory);
+    connect(add, &AddAppDialog::appSaved, this, &MainWindow::onCustomAppSaved);
+    connect(add, &AddAppDialog::addCategoryRequested, this, &MainWindow::addCategoryMsgBox);
 
     QSize size = this->size();
     if (settings.contains(QStringLiteral("geometry"))) {
@@ -808,12 +797,8 @@ void MainWindow::selectCommand()
 {
     const auto selected = QFileDialog::getOpenFileName(this, tr("Select executable file"), SystemBinPath);
     if (!selected.isEmpty()) {
-        if (ui->lineEditCommand->isEnabled()) {
-            ui->lineEditCommand->setText(selected);
-            ui->pushSave->setEnabled(true);
-        } else { // if running command from add-custom-app window
-            add->ui->lineEditCommand->setText(selected);
-        }
+        ui->lineEditCommand->setText(selected);
+        ui->pushSave->setEnabled(true);
         changeCommand();
     }
 }
@@ -899,89 +884,62 @@ void MainWindow::changeIcon()
         }
     }
     if (!selected.isEmpty()) {
-        if (ui->lineEditCommand->isEnabled() && AddAppDialog::containsInvalidDesktopChars(selected)) {
+        if (AddAppDialog::containsInvalidDesktopChars(selected)) {
             QMessageBox::warning(this, tr("Error"), tr("Icon path cannot contain newlines or control characters."));
             return;
         }
-        if (ui->lineEditCommand->isEnabled()) { // started from editor
-            ui->pushSave->setEnabled(true);
-            ui->advancedEditor->setText(
-                setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
-            ui->labelIcon->setPixmap(QPixmap(selected));
-        } else { // if running command from add-custom-app window
-            add->icon_path = selected;
-            add->ui->pushChangeIcon->setIcon(QIcon(selected));
-            add->ui->pushChangeIcon->setText(tr("Change icon"));
-        }
+        ui->pushSave->setEnabled(true);
+        ui->advancedEditor->setText(
+            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
+        ui->labelIcon->setPixmap(QPixmap(selected));
     }
 }
 
 void MainWindow::changeName()
 {
-    if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newName = ui->lineEditName->text();
-        if (AddAppDialog::containsInvalidDesktopChars(newName)) {
-            QMessageBox::warning(this, tr("Error"), tr("Application name cannot contain newlines or control characters."));
-            return;
-        }
-        ui->pushSave->setEnabled(true);
-        if (newName.isEmpty()) {
-            return;
-        }
-        ui->advancedEditor->setText(
-            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexNameFull, QStringLiteral("Name"), newName));
-    } else { // if running command from add-custom-app window
-        if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty()
-            && add->ui->listWidgetCategories->count() != 0) {
-            add->ui->pushSave->setEnabled(true);
-        } else {
-            add->ui->pushSave->setEnabled(false);
-        }
+    const auto newName = ui->lineEditName->text();
+    if (AddAppDialog::containsInvalidDesktopChars(newName)) {
+        QMessageBox::warning(this, tr("Error"), tr("Application name cannot contain newlines or control characters."));
+        return;
     }
+    ui->pushSave->setEnabled(true);
+    if (newName.isEmpty()) {
+        return;
+    }
+    ui->advancedEditor->setText(
+        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexNameFull, QStringLiteral("Name"), newName));
 }
 
 void MainWindow::changeCommand()
 {
-    if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newCommand = ui->lineEditCommand->text();
-        if (AddAppDialog::containsInvalidDesktopChars(newCommand)) {
-            QMessageBox::warning(this, tr("Error"), tr("Command cannot contain newlines or control characters."));
-            return;
-        }
-        ui->pushSave->setEnabled(true);
-        if (newCommand.isEmpty()) {
-            return;
-        }
-        ui->advancedEditor->setText(
-            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
-    } else { // if running command from add-custom-app window
-        const auto new_command = add->ui->lineEditCommand->text();
-        if (!new_command.isEmpty() && !add->ui->lineEditName->text().isEmpty()
-            && add->ui->listWidgetCategories->count() != 0) {
-            add->ui->pushSave->setEnabled(true);
-        } else {
-            add->ui->pushSave->setEnabled(false);
-        }
+    const auto newCommand = ui->lineEditCommand->text();
+    if (AddAppDialog::containsInvalidDesktopChars(newCommand)) {
+        QMessageBox::warning(this, tr("Error"), tr("Command cannot contain newlines or control characters."));
+        return;
     }
+    ui->pushSave->setEnabled(true);
+    if (newCommand.isEmpty()) {
+        return;
+    }
+    ui->advancedEditor->setText(
+        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
 }
 
 void MainWindow::changeComment()
 {
-    if (ui->lineEditCommand->isEnabled()) { // started from editor
-        const auto newComment = ui->lineEditComment->text();
-        if (AddAppDialog::containsInvalidDesktopChars(newComment)) {
-            QMessageBox::warning(this, tr("Error"), tr("Comment cannot contain newlines or control characters."));
-            return;
-        }
-        ui->pushSave->setEnabled(true);
-        QString text = ui->advancedEditor->toPlainText();
-        if (!newComment.isEmpty()) {
-            text = setDesktopEntryValue(text, regexCommentFull, QStringLiteral("Comment"), newComment);
-        } else {
-            text.remove(regexCommentFull);
-        }
-        ui->advancedEditor->setText(text);
+    const auto newComment = ui->lineEditComment->text();
+    if (AddAppDialog::containsInvalidDesktopChars(newComment)) {
+        QMessageBox::warning(this, tr("Error"), tr("Comment cannot contain newlines or control characters."));
+        return;
     }
+    ui->pushSave->setEnabled(true);
+    QString text = ui->advancedEditor->toPlainText();
+    if (!newComment.isEmpty()) {
+        text = setDesktopEntryValue(text, regexCommentFull, QStringLiteral("Comment"), newComment);
+    } else {
+        text.remove(regexCommentFull);
+    }
+    ui->advancedEditor->setText(text);
 }
 
 void MainWindow::enableDelete()
@@ -991,54 +949,40 @@ void MainWindow::enableDelete()
 
 void MainWindow::delCategory()
 {
-    int row = 0;
-    if (ui->lineEditCommand->isEnabled()) { // started from editor
-        ui->pushSave->setEnabled(true);
-        row = ui->listWidgetEditCategories->currentRow();
-        QScopedPointer<QListWidgetItem> item(ui->listWidgetEditCategories->takeItem(row));
-        if (item.isNull()) {
-            return;
-        }
-        QString text = ui->advancedEditor->toPlainText();
-        const auto match = regexCategoriesFull.match(text);
-        if (match.hasMatch()) {
-            const int categoriesPos = text.indexOf(QLatin1String("Categories="), match.capturedStart());
-            if (categoriesPos != -1) {
-                const int lineEnd = text.indexOf(QLatin1Char('\n'), categoriesPos);
-                const int lineLength = (lineEnd == -1) ? (text.length() - categoriesPos) : (lineEnd - categoriesPos);
-                const QString line = text.mid(categoriesPos, lineLength);
-                const int equalsPos = line.indexOf(QLatin1Char('='));
-                QStringList categories;
-                if (equalsPos != -1) {
-                    categories = line.mid(equalsPos + 1).split(QLatin1Char(';'), Qt::SkipEmptyParts);
-                }
-                categories.removeAll(item->text());
-                QString newLine = QStringLiteral("Categories=");
-                if (categories.isEmpty()) {
-                    newLine.append(QLatin1Char(';'));
-                } else {
-                    newLine.append(categories.join(QLatin1Char(';')));
-                    newLine.append(QLatin1Char(';'));
-                }
-                text.replace(categoriesPos, lineLength, newLine);
-                ui->advancedEditor->setText(text);
+    ui->pushSave->setEnabled(true);
+    const int row = ui->listWidgetEditCategories->currentRow();
+    QScopedPointer<QListWidgetItem> item(ui->listWidgetEditCategories->takeItem(row));
+    if (item.isNull()) {
+        return;
+    }
+    QString text = ui->advancedEditor->toPlainText();
+    const auto match = regexCategoriesFull.match(text);
+    if (match.hasMatch()) {
+        const int categoriesPos = text.indexOf(QLatin1String("Categories="), match.capturedStart());
+        if (categoriesPos != -1) {
+            const int lineEnd = text.indexOf(QLatin1Char('\n'), categoriesPos);
+            const int lineLength = (lineEnd == -1) ? (text.length() - categoriesPos) : (lineEnd - categoriesPos);
+            const QString line = text.mid(categoriesPos, lineLength);
+            const int equalsPos = line.indexOf(QLatin1Char('='));
+            QStringList categories;
+            if (equalsPos != -1) {
+                categories = line.mid(equalsPos + 1).split(QLatin1Char(';'), Qt::SkipEmptyParts);
             }
+            categories.removeAll(item->text());
+            QString newLine = QStringLiteral("Categories=");
+            if (categories.isEmpty()) {
+                newLine.append(QLatin1Char(';'));
+            } else {
+                newLine.append(categories.join(QLatin1Char(';')));
+                newLine.append(QLatin1Char(';'));
+            }
+            text.replace(categoriesPos, lineLength, newLine);
+            ui->advancedEditor->setText(text);
         }
-        if (ui->listWidgetEditCategories->count() == 0) {
-            ui->pushDelete->setDisabled(true);
-            ui->pushSave->setDisabled(true);
-        }
-    } else { // if running command from add-custom-app window
-        row = add->ui->listWidgetCategories->currentRow();
-        QScopedPointer<QListWidgetItem> item(add->ui->listWidgetCategories->takeItem(row));
-        if (item.isNull()) {
-            return;
-        }
-        // item automatically deleted when going out of scope
-        if (add->ui->listWidgetCategories->count() == 0) {
-            add->ui->pushDelete->setDisabled(true);
-            add->ui->pushSave->setDisabled(true);
-        }
+    }
+    if (ui->listWidgetEditCategories->count() == 0) {
+        ui->pushDelete->setDisabled(true);
+        ui->pushSave->setDisabled(true);
     }
 }
 
@@ -1119,7 +1063,11 @@ void MainWindow::addCategoryMsgBox()
     buttonBox->addButton(tr("OK"), QDialogButtonBox::RejectRole);
     connect(buttonBox, &QDialogButtonBox::accepted, dialog, &QDialog::close);
     connect(buttonBox, &QDialogButtonBox::rejected, this, [this, comboBox, dialog]() {
-        addCategory(comboBox->currentText());
+        if (ui->lineEditCommand->isEnabled()) { // started from editor
+            addCategory(comboBox->currentText());
+        } else { // running from the add-custom-app window
+            add->addCategoryToList(comboBox->currentText());
+        }
         dialog->close();
     });
 
@@ -1161,28 +1109,14 @@ void MainWindow::addCategory(const QString &category)
         index = text.indexOf(regexCategoriesFull);
         index = text.indexOf(regexNewlineOrEnd, index + 1);
     }
-    if (ui->lineEditCommand->isEnabled()) { // started from editor
-        if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
-            ui->pushSave->setEnabled(true);
-            text.insert(index, str + ";");
-            ui->listWidgetEditCategories->addItem(str);
-            ui->advancedEditor->setText(text);
-            ui->pushDelete->setEnabled(true);
-            if (ui->listWidgetEditCategories->count() == 0) {
-                ui->pushSave->setDisabled(true);
-            }
-        }
-    } else { // if running command from add-custom-app window
-        if (add->ui->listWidgetCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
-            text.insert(index, str + ";");
-            add->ui->listWidgetCategories->addItem(str);
-            add->ui->pushDelete->setEnabled(true);
-            if (!add->ui->lineEditName->text().isEmpty() && !add->ui->lineEditCommand->text().isEmpty()
-                && add->ui->listWidgetCategories->count() != 0) {
-                add->ui->pushSave->setEnabled(true);
-            } else {
-                add->ui->pushSave->setEnabled(false);
-            }
+    if (ui->listWidgetEditCategories->findItems(str, Qt::MatchFixedString).isEmpty()) {
+        ui->pushSave->setEnabled(true);
+        text.insert(index, str + ";");
+        ui->listWidgetEditCategories->addItem(str);
+        ui->advancedEditor->setText(text);
+        ui->pushDelete->setEnabled(true);
+        if (ui->listWidgetEditCategories->count() == 0) {
+            ui->pushSave->setDisabled(true);
         }
     }
 }
@@ -1193,27 +1127,20 @@ void MainWindow::addAppMsgBox()
     if (ui->pushSave->isEnabled() && !save()) {
         return;
     }
-    add->lastSavedPath.clear();
-    add->lastSavedCategories.clear();
     add->show();
     resetInterface();
     ui->treeWidget->collapseAll();
 }
 
-void MainWindow::onCustomAppSaved()
+void MainWindow::onCustomAppSaved(const QString &path, const QStringList &categories)
 {
-    const QString newPath = add->lastSavedPath;
-    if (newPath.isEmpty()) {
-        return;
-    }
-
-    if (!all_local_desktop_files.contains(newPath)) {
-        all_local_desktop_files << newPath;
+    if (!all_local_desktop_files.contains(path)) {
+        all_local_desktop_files << path;
         updateLocalBasenamesCache();
     }
-    insertAppIntoCategories(newPath, add->lastSavedCategories);
+    insertAppIntoCategories(path, categories);
     filterTree(ui->lineEditSearch->text());
-    findReloadItem(QFileInfo(newPath).fileName());
+    findReloadItem(QFileInfo(path).fileName());
 }
 
 bool MainWindow::pushSave_clicked()

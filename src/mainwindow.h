@@ -97,7 +97,7 @@ public slots:
     void selectCommand();
     void setEnabled(const QString &);
     void onEditorTextChanged();
-    void onCustomAppSaved();
+    void onCustomAppSaved(const QString &path, const QStringList &categories);
 
 private slots:
     static void pushHelp_clicked();

@@ -26,9 +26,21 @@
 
 #include <QDir>
 #include <QFile>
+#include <QFileDialog>
+#include <QIcon>
+#include <QLineEdit>
+#include <QListWidget>
+#include <QScopedPointer>
 #include <QStandardPaths>
+#include <QToolButton>
 
 #include "mainwindow.h"
+
+namespace
+{
+constexpr auto SystemBinPath = "/usr/bin";
+constexpr auto SystemIconsPath = "/usr/share/icons";
+}
 
 AddAppDialog::AddAppDialog(QWidget *parent)
     : QDialog(parent)
@@ -36,6 +48,10 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle(tr("Add Custom Application"));
+
+    if (ui->pushSave->icon().isNull()) {
+        ui->pushSave->setIcon(QIcon(":/icons/dialog-ok.svg"));
+    }
 
     // Remove focus from Cancel button
     ui->pushCancel->setAutoDefault(false);
@@ -260,9 +276,6 @@ QString AddAppDialog::sanitizeFileName(const QString &name)
 
 bool AddAppDialog::pushSave_clicked()
 {
-    lastSavedPath.clear();
-    lastSavedCategories.clear();
-
     // Validate application name
     QString appName = ui->lineEditName->text().trimmed();
     QString errorMessage;
@@ -328,10 +341,10 @@ bool AddAppDialog::pushSave_clicked()
     out.write(output.toUtf8());
     out.flush();
     out.close();
-    lastSavedPath = outName;
-    lastSavedCategories = selectedCategories();
+    const QStringList savedCategories = selectedCategories();
     MainWindow::restartPanel();
     resetInterface();
+    emit appSaved(outName, savedCategories);
     accept();
     return true;
 }
@@ -342,6 +355,71 @@ void AddAppDialog::pushCancel_clicked()
         return;
     resetInterface();
     this->close();
+}
+
+void AddAppDialog::setIconPath(const QString &path)
+{
+    icon_path = path;
+    ui->pushChangeIcon->setIcon(QIcon(path));
+    ui->pushChangeIcon->setText(tr("Change icon"));
+}
+
+void AddAppDialog::pushChangeIcon_clicked()
+{
+    QFileDialog dialog;
+    dialog.setFilter(QDir::Hidden);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setNameFilter(tr("Image Files (*.png *.jpg *.bmp *.xpm *.svg)"));
+    dialog.setDirectory(SystemIconsPath);
+    if (dialog.exec() != QDialog::Accepted) {
+        return;
+    }
+    const QStringList selectedList = dialog.selectedFiles();
+    if (selectedList.isEmpty()) {
+        return;
+    }
+    setIconPath(selectedList.at(0));
+}
+
+void AddAppDialog::selectCommand_clicked()
+{
+    const auto selected = QFileDialog::getOpenFileName(this, tr("Select executable file"), SystemBinPath);
+    if (selected.isEmpty()) {
+        return;
+    }
+    ui->lineEditCommand->setText(selected);
+    updateSaveButtonState();
+}
+
+void AddAppDialog::updateSaveButtonState()
+{
+    const bool hasMinimalEntry = !ui->lineEditName->text().isEmpty() && !ui->lineEditCommand->text().isEmpty()
+                                  && ui->listWidgetCategories->count() != 0;
+    ui->pushSave->setEnabled(hasMinimalEntry);
+}
+
+void AddAppDialog::addCategoryToList(const QString &category)
+{
+    if (!ui->listWidgetCategories->findItems(category, Qt::MatchFixedString).isEmpty()) {
+        return;
+    }
+    ui->listWidgetCategories->addItem(category);
+    ui->pushDelete->setEnabled(true);
+    updateSaveButtonState();
+}
+
+void AddAppDialog::removeCurrentCategory()
+{
+    const int row = ui->listWidgetCategories->currentRow();
+    QScopedPointer<QListWidgetItem> item(ui->listWidgetCategories->takeItem(row));
+    if (item.isNull()) {
+        return;
+    }
+    // item automatically deleted when going out of scope
+    if (ui->listWidgetCategories->count() == 0) {
+        ui->pushDelete->setDisabled(true);
+        ui->pushSave->setDisabled(true);
+    }
 }
 
 // ask whether to save edits or not
@@ -377,6 +455,12 @@ void AddAppDialog::setConnections() const
 {
     connect(ui->pushSave, &QPushButton::clicked, this, &AddAppDialog::pushSave_clicked);
     connect(ui->pushCancel, &QPushButton::clicked, this, &AddAppDialog::pushCancel_clicked);
+    connect(ui->pushChangeIcon, &QPushButton::clicked, this, &AddAppDialog::pushChangeIcon_clicked);
+    connect(ui->selectCommand, &QToolButton::clicked, this, &AddAppDialog::selectCommand_clicked);
+    connect(ui->lineEditName, &QLineEdit::editingFinished, this, &AddAppDialog::updateSaveButtonState);
+    connect(ui->lineEditCommand, &QLineEdit::editingFinished, this, &AddAppDialog::updateSaveButtonState);
+    connect(ui->pushAdd, &QPushButton::clicked, this, &AddAppDialog::addCategoryRequested);
+    connect(ui->pushDelete, &QPushButton::clicked, this, &AddAppDialog::removeCurrentCategory);
 }
 
 QStringList AddAppDialog::selectedCategories() const
