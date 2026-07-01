@@ -1,3 +1,19 @@
+mx-menu-editor (26.06) mx; urgency=medium
+
+  * Show Help and License inside the application instead of opening an
+    external browser.
+  * Show application names in the user's language when translated names are
+    available.
+  * Warn about invalid names, commands, comments, and icons before saving menu
+    entries.
+  * Keep users on the current edit when a save fails, instead of continuing as
+    if it succeeded.
+  * Put applications only in categories that match exactly, avoiding matches
+    from similarly named categories.
+  * Show an error when restoring an application fails.
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 30 Jun 2026 22:19:32 -0400
+
 mx-menu-editor (25.12.2) mx; urgency=medium
 
   * Add fallback for icon search

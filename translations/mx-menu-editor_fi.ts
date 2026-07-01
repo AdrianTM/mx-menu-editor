@@ -73,7 +73,7 @@
     </message>
     <message>
         <location filename="../src/addappdialog.ui" line="222"/>
-        <location filename="../src/addappdialog.cpp" line="197"/>
+        <location filename="../src/addappdialog.cpp" line="369"/>
         <source>Set icon</source>
         <translation>Valitse kuvake</translation>
     </message>
@@ -88,57 +88,115 @@
         <translation>Käynnistyksen ilmaisin</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="36"/>
+        <location filename="../src/addappdialog.cpp" line="38"/>
         <source>Add Custom Application</source>
         <translation>Lisää mukautettu sovellus</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
-        <location filename="../src/addappdialog.cpp" line="84"/>
-        <location filename="../src/addappdialog.cpp" line="124"/>
-        <location filename="../src/addappdialog.cpp" line="129"/>
+        <location filename="../src/addappdialog.cpp" line="268"/>
+        <location filename="../src/addappdialog.cpp" line="275"/>
+        <location filename="../src/addappdialog.cpp" line="282"/>
+        <location filename="../src/addappdialog.cpp" line="289"/>
+        <location filename="../src/addappdialog.cpp" line="298"/>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
+        <location filename="../src/addappdialog.cpp" line="53"/>
         <source>Application name cannot be empty</source>
         <translation>Sovelluksen nimi ei voi olla tyhjä</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="84"/>
+        <location filename="../src/addappdialog.cpp" line="58"/>
+        <source>Application name is too long (maximum 255 characters)</source>
+        <translation>Sovelluksen nimi on liian pitkä (enintään 255 merkkiä)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="65"/>
+        <source>Application name cannot contain newlines</source>
+        <translation>Sovelluksen nimi ei saa sisältää rivinvaihtoja</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="69"/>
+        <source>Application name contains invalid control characters</source>
+        <translation>Sovelluksen nimi sisältää virheellisiä merkkejä</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="81"/>
+        <location filename="../src/addappdialog.cpp" line="102"/>
         <source>Command cannot be empty</source>
         <translation>Kommentti ei voi olla tyhjä</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="110"/>
+        <location filename="../src/addappdialog.cpp" line="86"/>
+        <source>Command is too long (maximum 1024 characters)</source>
+        <translation>Komento on liian pitkä (enintään 1024 merkkiä)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="92"/>
+        <source>Command cannot contain newlines</source>
+        <translation>Komento ei saa sisältää rivinvaihtoja</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="108"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="111"/>
+        <location filename="../src/addappdialog.cpp" line="109"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation>Suoritettavaa &quot;%1&quot; ei ole tai se ei ole polussa.
 Haluatko jatkaa?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="124"/>
+        <location filename="../src/addappdialog.cpp" line="122"/>
+        <source>Comment is too long (maximum 512 characters)</source>
+        <translation>Kommentti on liian pitkä (enintään 512 merkkiä)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="129"/>
+        <source>Comment cannot contain newlines</source>
+        <translation>Kommentti ei saa sisältää rivinvaihtoja</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="133"/>
+        <source>Comment contains invalid control characters</source>
+        <translation>Kommentti sisältää virheellisiä merkkejä</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="150"/>
+        <source>Icon path is too long (maximum 512 characters)</source>
+        <translation>Kuvakkeen polku on liian pitkä (enintään 512 merkkiä)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="157"/>
+        <source>Icon path cannot contain newlines</source>
+        <translation>Kuvakkeen polku ei saa sisältää rivinvaihtoja</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="161"/>
+        <source>Icon path contains invalid control characters</source>
+        <translation>Kuvakkeen polku sisältää virheellisiä merkkejä</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="298"/>
         <source>Could not create application directory</source>
         <translation>Sovellukselle ei voitu luoda hakemistoa</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="129"/>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Could not save the file</source>
         <translation>Tiedostoa ei voitu tallentaa</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Save changes?</source>
         <translation>Tallenna muutokset?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Do you want to save your edits?</source>
         <translation>Haluatko tallentaa mukautuksesi?</translation>
     </message>
@@ -151,7 +209,7 @@ Haluatko jatkaa?</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>MX Menu Editor</source>
         <translation>MX-valikkomuokkaaja</translation>
     </message>
@@ -207,9 +265,9 @@ Haluatko jatkaa?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="533"/>
-        <location filename="../src/mainwindow.cpp" line="539"/>
-        <location filename="../src/mainwindow.cpp" line="789"/>
+        <location filename="../src/mainwindow.cpp" line="565"/>
+        <location filename="../src/mainwindow.cpp" line="571"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Restore original item</source>
         <translation>Palauta alkuperäinen kohde</translation>
     </message>
@@ -235,7 +293,7 @@ Haluatko jatkaa?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="276"/>
-        <location filename="../src/mainwindow.cpp" line="853"/>
+        <location filename="../src/mainwindow.cpp" line="898"/>
         <source>Change icon</source>
         <translation>Vaihda kuvaketta</translation>
     </message>
@@ -251,7 +309,7 @@ Haluatko jatkaa?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
@@ -311,7 +369,7 @@ Haluatko jatkaa?</translation>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="747"/>
+        <location filename="../src/mainwindow.cpp" line="792"/>
         <source>Select executable file</source>
         <translation>Valitse suoritettava tiedosto</translation>
     </message>
@@ -320,96 +378,96 @@ Haluatko jatkaa?</translation>
         <translation type="vanished">Kuvatiedostot (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Kuvatiedostot (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Choose category</source>
         <translation>Valitse luokka</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1049"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1339"/>
         <source>Cancel</source>
         <translation>Peru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1128"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1247"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation>Suoritettavaa &quot;%1&quot; ei ole tai se ei ole polussa.
 Haluatko jatkaa?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>Could not create the applications directory</source>
         <translation>Sovellukselle ei voitu luoda hakemistoa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Could not save the file</source>
         <translation>Tiedostoa ei voitu tallentaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1258"/>
+        <location filename="../src/mainwindow.cpp" line="1332"/>
         <source>About MX Menu Editor</source>
         <translation>Tietoja MX-valikkomuokkaajasta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>Version: </source>
         <translation>Versio: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>Program for editing Xfce menu</source>
         <translation>Ohjelma Xfce-valikon mukautukseen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>License</source>
         <translation>Lisenssi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1338"/>
         <source>Changelog</source>
         <translation>Muutosloki</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1291"/>
+        <location filename="../src/mainwindow.cpp" line="1368"/>
         <source>&amp;Close</source>
         <translation>&amp;Sulje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Save changes?</source>
         <translation>Tallenna muutokset?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Do you want to save your edits?</source>
         <translation>Haluatko tallentaa mukautuksesi?</translation>
     </message>

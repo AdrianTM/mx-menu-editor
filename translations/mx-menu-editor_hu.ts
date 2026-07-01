@@ -73,7 +73,7 @@
     </message>
     <message>
         <location filename="../src/addappdialog.ui" line="222"/>
-        <location filename="../src/addappdialog.cpp" line="197"/>
+        <location filename="../src/addappdialog.cpp" line="369"/>
         <source>Set icon</source>
         <translation>Ikon beállítása</translation>
     </message>
@@ -88,56 +88,114 @@
         <translation>Indítási értesítő</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="36"/>
+        <location filename="../src/addappdialog.cpp" line="38"/>
         <source>Add Custom Application</source>
         <translation>Egyéni alkalmazás hozzáadása</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
-        <location filename="../src/addappdialog.cpp" line="84"/>
-        <location filename="../src/addappdialog.cpp" line="124"/>
-        <location filename="../src/addappdialog.cpp" line="129"/>
+        <location filename="../src/addappdialog.cpp" line="268"/>
+        <location filename="../src/addappdialog.cpp" line="275"/>
+        <location filename="../src/addappdialog.cpp" line="282"/>
+        <location filename="../src/addappdialog.cpp" line="289"/>
+        <location filename="../src/addappdialog.cpp" line="298"/>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
+        <location filename="../src/addappdialog.cpp" line="53"/>
         <source>Application name cannot be empty</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="84"/>
+        <location filename="../src/addappdialog.cpp" line="58"/>
+        <source>Application name is too long (maximum 255 characters)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="65"/>
+        <source>Application name cannot contain newlines</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="69"/>
+        <source>Application name contains invalid control characters</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="81"/>
+        <location filename="../src/addappdialog.cpp" line="102"/>
         <source>Command cannot be empty</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="110"/>
+        <location filename="../src/addappdialog.cpp" line="86"/>
+        <source>Command is too long (maximum 1024 characters)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="92"/>
+        <source>Command cannot contain newlines</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="108"/>
         <source>Warning</source>
         <translation>Figyelmeztetés</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="111"/>
+        <location filename="../src/addappdialog.cpp" line="109"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="124"/>
-        <source>Could not create application directory</source>
+        <location filename="../src/addappdialog.cpp" line="122"/>
+        <source>Comment is too long (maximum 512 characters)</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="129"/>
+        <source>Comment cannot contain newlines</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="133"/>
+        <source>Comment contains invalid control characters</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="150"/>
+        <source>Icon path is too long (maximum 512 characters)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="157"/>
+        <source>Icon path cannot contain newlines</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="161"/>
+        <source>Icon path contains invalid control characters</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="298"/>
+        <source>Could not create application directory</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Could not save the file</source>
         <translation>Fájl mentése nem sikerült</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Save changes?</source>
         <translation>Menti a változtatásokat?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Do you want to save your edits?</source>
         <translation>Menti a változtatásokat?</translation>
     </message>
@@ -150,7 +208,7 @@ Do you want to continue anyway?</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>MX Menu Editor</source>
         <translation>MX menüszerkesztő</translation>
     </message>
@@ -206,9 +264,9 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="533"/>
-        <location filename="../src/mainwindow.cpp" line="539"/>
-        <location filename="../src/mainwindow.cpp" line="789"/>
+        <location filename="../src/mainwindow.cpp" line="565"/>
+        <location filename="../src/mainwindow.cpp" line="571"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Restore original item</source>
         <translation>Eredeti elem visszaállítása</translation>
     </message>
@@ -234,7 +292,7 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="276"/>
-        <location filename="../src/mainwindow.cpp" line="853"/>
+        <location filename="../src/mainwindow.cpp" line="898"/>
         <source>Change icon</source>
         <translation>Ikon megváltoztatása</translation>
     </message>
@@ -250,7 +308,7 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
         <source>Delete</source>
         <translation>Törlés</translation>
     </message>
@@ -310,7 +368,7 @@ Do you want to continue anyway?</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="747"/>
+        <location filename="../src/mainwindow.cpp" line="792"/>
         <source>Select executable file</source>
         <translation>Válassza ki a futtatható fájlt</translation>
     </message>
@@ -319,95 +377,95 @@ Do you want to continue anyway?</source>
         <translation type="vanished">Kép fájlok (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Képfájlok (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Choose category</source>
         <translation>Válasszon kategóriát</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1049"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1339"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1128"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1247"/>
         <source>Warning</source>
         <translation>Figyelmeztetés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>Could not create the applications directory</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Could not save the file</source>
         <translation>Fájl mentése nem sikerült</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1258"/>
+        <location filename="../src/mainwindow.cpp" line="1332"/>
         <source>About MX Menu Editor</source>
         <translation>Az MX menüszerkesztőről</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>Version: </source>
         <translation>Verzió:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program az Xfce menü szerkesztésére</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>License</source>
         <translation>Licenc</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1338"/>
         <source>Changelog</source>
         <translation>Változások listája</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1291"/>
+        <location filename="../src/mainwindow.cpp" line="1368"/>
         <source>&amp;Close</source>
         <translation>&amp;Bezárás</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Save changes?</source>
         <translation>Menti a változtatásokat?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Do you want to save your edits?</source>
         <translation>Menti a változtatásokat?</translation>
     </message>

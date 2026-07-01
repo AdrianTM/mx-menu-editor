@@ -73,7 +73,7 @@
     </message>
     <message>
         <location filename="../src/addappdialog.ui" line="222"/>
-        <location filename="../src/addappdialog.cpp" line="197"/>
+        <location filename="../src/addappdialog.cpp" line="369"/>
         <source>Set icon</source>
         <translation>Ustaw ikonę</translation>
     </message>
@@ -88,57 +88,115 @@
         <translation>Powiadomienie o uruchomieniu</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="36"/>
+        <location filename="../src/addappdialog.cpp" line="38"/>
         <source>Add Custom Application</source>
-        <translation>Dodaj aplikację</translation>
+        <translation>Dodaj program</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
-        <location filename="../src/addappdialog.cpp" line="84"/>
-        <location filename="../src/addappdialog.cpp" line="124"/>
-        <location filename="../src/addappdialog.cpp" line="129"/>
+        <location filename="../src/addappdialog.cpp" line="268"/>
+        <location filename="../src/addappdialog.cpp" line="275"/>
+        <location filename="../src/addappdialog.cpp" line="282"/>
+        <location filename="../src/addappdialog.cpp" line="289"/>
+        <location filename="../src/addappdialog.cpp" line="298"/>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="77"/>
+        <location filename="../src/addappdialog.cpp" line="53"/>
         <source>Application name cannot be empty</source>
-        <translation>Nazwa aplikacji nie może być pusta</translation>
+        <translation>Nazwa programu nie może być pusta</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="84"/>
+        <location filename="../src/addappdialog.cpp" line="58"/>
+        <source>Application name is too long (maximum 255 characters)</source>
+        <translation>Nazwa programu jest za długa (maksymalnie 255 znaków)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="65"/>
+        <source>Application name cannot contain newlines</source>
+        <translation>Nazwa programu nie może zawierać końca linii</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="69"/>
+        <source>Application name contains invalid control characters</source>
+        <translation>Nazwa programu zawiera nieprawidłowe znaki kontrolne</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="81"/>
+        <location filename="../src/addappdialog.cpp" line="102"/>
         <source>Command cannot be empty</source>
         <translation>Polecenie nie może być puste</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="110"/>
+        <location filename="../src/addappdialog.cpp" line="86"/>
+        <source>Command is too long (maximum 1024 characters)</source>
+        <translation>Polecenie jest za długie (maksymalnie 1024 znaki)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="92"/>
+        <source>Command cannot contain newlines</source>
+        <translation>Polecenie nie może zawierać końca linii</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="108"/>
         <source>Warning</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="111"/>
+        <location filename="../src/addappdialog.cpp" line="109"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation>Plik wykonywalny „%1” nie istnieje lub nie znajduje się w zmiennej PATH.
 Czy mimo to chcesz kontynuować?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="124"/>
-        <source>Could not create application directory</source>
-        <translation>Nie można utworzyć katalogu aplikacji</translation>
+        <location filename="../src/addappdialog.cpp" line="122"/>
+        <source>Comment is too long (maximum 512 characters)</source>
+        <translation>Komentarz jest za długi (maksymalnie 512 znaków)</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="129"/>
+        <source>Comment cannot contain newlines</source>
+        <translation>Komentarz nie może zawierać końca linii</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="133"/>
+        <source>Comment contains invalid control characters</source>
+        <translation>Komentarz zawiera nieprawidłowe znaki kontrolne</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="150"/>
+        <source>Icon path is too long (maximum 512 characters)</source>
+        <translation>Ścieżka ikony jest za długa (maksymalnie 512 znaków)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="157"/>
+        <source>Icon path cannot contain newlines</source>
+        <translation>Ścieżka ikony nie może zawierać końca linii</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="161"/>
+        <source>Icon path contains invalid control characters</source>
+        <translation>Ścieżka ikony zawiera nieprawidłowe znaki kontrolne</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="298"/>
+        <source>Could not create application directory</source>
+        <translation>Nie można utworzyć katalogu programu</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="303"/>
         <source>Could not save the file</source>
         <translation>Nie można zapisać pliku</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Save changes?</source>
         <translation>Zapisać zmiany?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="178"/>
+        <location filename="../src/addappdialog.cpp" line="350"/>
         <source>Do you want to save your edits?</source>
         <translation>Czy chcesz zapisać swoje zmiany?</translation>
     </message>
@@ -151,7 +209,7 @@ Czy mimo to chcesz kontynuować?</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>MX Menu Editor</source>
         <translation>MX Edytor menu</translation>
     </message>
@@ -163,7 +221,7 @@ Czy mimo to chcesz kontynuować?</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="55"/>
         <source>Categories and applications</source>
-        <translation>Kategorie i aplikacje</translation>
+        <translation>Kategorie i programy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="64"/>
@@ -173,7 +231,7 @@ Czy mimo to chcesz kontynuować?</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="92"/>
         <source>Add custom application</source>
-        <translation>Dodaj aplikację</translation>
+        <translation>Dodaj program</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="106"/>
@@ -207,9 +265,9 @@ Czy mimo to chcesz kontynuować?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="533"/>
-        <location filename="../src/mainwindow.cpp" line="539"/>
-        <location filename="../src/mainwindow.cpp" line="789"/>
+        <location filename="../src/mainwindow.cpp" line="565"/>
+        <location filename="../src/mainwindow.cpp" line="571"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Restore original item</source>
         <translation>Przywróć oryginalne ustawienia</translation>
     </message>
@@ -235,7 +293,7 @@ Czy mimo to chcesz kontynuować?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="276"/>
-        <location filename="../src/mainwindow.cpp" line="853"/>
+        <location filename="../src/mainwindow.cpp" line="898"/>
         <source>Change icon</source>
         <translation>Zmień ikonę</translation>
     </message>
@@ -251,14 +309,14 @@ Czy mimo to chcesz kontynuować?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="568"/>
         <source>Delete</source>
         <translation>Usuń</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="382"/>
         <source>Quit application</source>
-        <translation>Zakończ aplikację</translation>
+        <translation>Zakończ program</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -311,7 +369,7 @@ Czy mimo to chcesz kontynuować?</translation>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="747"/>
+        <location filename="../src/mainwindow.cpp" line="792"/>
         <source>Select executable file</source>
         <translation>Wybierz plik wykonywalny</translation>
     </message>
@@ -320,96 +378,96 @@ Czy mimo to chcesz kontynuować?</translation>
         <translation type="vanished">Pliki obrazów (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Pliki graficzne (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Choose category</source>
         <translation>Wybierz kategorię</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1049"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1339"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1128"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1247"/>
         <source>Warning</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation>Plik wykonywalny „%1” nie istnieje lub nie znajduje się w zmiennej PATH.
 Czy mimo to chcesz kontynuować?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1223"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>Could not create the applications directory</source>
-        <translation>Nie można utworzyć katalogu aplikacji</translation>
+        <translation>Nie można utworzyć katalogu programu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1229"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Could not save the file</source>
         <translation>Nie można zapisać pliku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1258"/>
+        <location filename="../src/mainwindow.cpp" line="1332"/>
         <source>About MX Menu Editor</source>
         <translation>O programie MX Edytor menu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1333"/>
         <source>Version: </source>
         <translation>Wersja:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1260"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program do edycji menu Xfce</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1336"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Prawa autorskie © MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1338"/>
         <source>Changelog</source>
         <translation>Dziennik zmian</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1291"/>
+        <location filename="../src/mainwindow.cpp" line="1368"/>
         <source>&amp;Close</source>
         <translation>&amp;Zamknij</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Save changes?</source>
         <translation>Zapisać zmiany?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Do you want to save your edits?</source>
         <translation>Czy chcesz zapisać swoje zmiany?</translation>
     </message>
