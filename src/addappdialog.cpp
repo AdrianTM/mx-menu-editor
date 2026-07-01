@@ -126,6 +126,14 @@ bool AddAppDialog::validateCommand(const QString &command, QString &errorMessage
         return false;
     }
 
+    // A non-empty command can still parse to an empty executable token (e.g. "''" or
+    // "\"\"" - just quote characters), which would silently pass confirmExecutableExists()
+    // below since it treats an empty executable as "nothing to check."
+    if (DesktopUtils::parseCommandExecutable(command).isEmpty()) {
+        errorMessage = tr("Command cannot be empty");
+        return false;
+    }
+
     // Note: .desktop specification allows all shell metacharacters in Exec field
     // Users are responsible for creating valid desktop entries
 

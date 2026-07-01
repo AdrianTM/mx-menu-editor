@@ -121,6 +121,11 @@ void TestDesktopUtils::parseCommandExecutable_data()
     QTest::newRow("escaped-space") << "/opt/My\\ App/run.sh" << "/opt/My App/run.sh";
     QTest::newRow("leading-spaces") << "   ls -la" << "ls";
     QTest::newRow("empty") << "" << "";
+    // Non-empty command, but empty parsed executable: AddAppDialog::validateCommand()
+    // must catch this itself (confirmExecutableExists() treats an empty executable as
+    // "nothing to check" and would otherwise silently accept it).
+    QTest::newRow("empty-single-quotes") << "''" << "";
+    QTest::newRow("empty-double-quotes") << "\"\"" << "";
 }
 
 void TestDesktopUtils::parseCommandExecutable()
