@@ -27,6 +27,8 @@
 #include <QLocale>
 #include <QStandardPaths>
 
+#include <algorithm>
+
 QString DesktopUtils::setEntryValue(QString text, const QRegularExpression &fullKeyRegex, const QString &key,
                                      const QString &value)
 {
@@ -57,7 +59,7 @@ QString DesktopUtils::pickLocalizedNameForKeys(const QString &defaultName,
     if (!localizedNames.isEmpty()) {
         return localizedNames.constBegin().value();
     }
-    return QString();
+    return {};
 }
 
 QStringList DesktopUtils::systemLocaleNameKeys()
@@ -161,15 +163,10 @@ bool DesktopUtils::checkExecutableExists(const QString &executable)
 
 bool DesktopUtils::containsInvalidDesktopChars(const QString &text)
 {
-    for (const QChar &ch : text) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            return true;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            return true;
-        }
-    }
-    return false;
+    return std::ranges::any_of(text, [](QChar ch) {
+        return ch == QLatin1Char('\n') || ch == QLatin1Char('\r')
+            || (ch.unicode() < 32 && ch != QLatin1Char('\t'));
+    });
 }
 
 QString DesktopUtils::sanitizeFileName(const QString &name)

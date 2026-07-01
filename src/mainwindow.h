@@ -45,7 +45,7 @@ class MainWindow : public QDialog
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
     QMultiHash<QString, QString> hashCategories;
     QMultiHash<QString, QString> hashExclude;

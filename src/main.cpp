@@ -23,14 +23,14 @@
  **********************************************************************/
 
 #include <QApplication>
-#include <QMessageBox>
+#include <QIcon>
 #include <QLibraryInfo>
+#include <QLocale>
+#include <QMessageBox>
+#include <QTranslator>
+#include <unistd.h>
 
 #include "mainwindow.h"
-#include <QIcon>
-#include <qlocale.h>
-#include <qtranslator.h>
-#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
@@ -47,25 +47,29 @@ int main(int argc, char *argv[])
 
     QTranslator qtTran;
     if (qtTran.load(QLocale::system(), QStringLiteral("qt"), QStringLiteral("_"),
-                    QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
+                    QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
         QApplication::installTranslator(&qtTran);
+    }
 
     QTranslator qtBaseTran;
-    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath)))
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
         QApplication::installTranslator(&qtBaseTran);
+    }
 
     QTranslator appTran;
-    const QString localePath = QStringLiteral("/usr/share/") + QApplication::applicationName() + QStringLiteral("/locale");
-    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(), localePath))
+    const QString localePath
+        = QStringLiteral("/usr/share/") + QApplication::applicationName() + QStringLiteral("/locale");
+    if (appTran.load(QApplication::applicationName() + "_" + QLocale::system().name(), localePath)) {
         QApplication::installTranslator(&appTran);
+    }
 
-    if (getuid() != 0) {
-        MainWindow w;
-        w.show();
-        return QApplication::exec();
-    } else {
+    if (getuid() == 0) {
         QApplication::beep();
         QMessageBox::critical(nullptr, QString(), QApplication::tr("You must run this program as normal user."));
         return EXIT_FAILURE;
     }
+
+    MainWindow w;
+    w.show();
+    return QApplication::exec();
 }

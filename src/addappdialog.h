@@ -40,7 +40,7 @@ class AddAppDialog : public QDialog
 
 public:
     explicit AddAppDialog(QWidget *parent = nullptr);
-    ~AddAppDialog();
+    ~AddAppDialog() override;
     void resetInterface();
     void setConnections() const;
     void addCategoryToList(const QString &category);

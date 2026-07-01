@@ -224,16 +224,20 @@ bool AddAppDialog::pushSave_clicked()
     output = QStringLiteral("[Desktop Entry]\n");
     output.append("Name=" + ui->lineEditName->text() + "\n");
     output.append("Exec=" + ui->lineEditCommand->text() + "\n");
-    if (!ui->lineEditComment->text().isEmpty())
+    if (!ui->lineEditComment->text().isEmpty()) {
         output.append("Comment=" + ui->lineEditComment->text() + "\n");
-    if (!icon_path.isEmpty())
+    }
+    if (!icon_path.isEmpty()) {
         output.append("Icon=" + icon_path + "\n");
-    if (ui->checkStartup->checkState() == Qt::Checked)
+    }
+    if (ui->checkStartup->checkState() == Qt::Checked) {
         output.append("StartupNotify=true\n");
-    if (ui->checkTerminal->checkState() == Qt::Checked)
+    }
+    if (ui->checkTerminal->checkState() == Qt::Checked) {
         output.append("Terminal=true\n");
-    else
+    } else {
         output.append("Terminal=false\n");
+    }
     output.append("Type=Application\n");
     QString categories = QStringLiteral("Categories=");
     for (int i = 0; i < ui->listWidgetCategories->count(); ++i) {
@@ -254,8 +258,9 @@ bool AddAppDialog::pushSave_clicked()
 
 void AddAppDialog::pushCancel_clicked()
 {
-    if (ui->pushSave->isEnabled() && !saveOrNot())
+    if (ui->pushSave->isEnabled() && !saveOrNot()) {
         return;
+    }
     resetInterface();
     this->close();
 }
@@ -328,13 +333,15 @@ void AddAppDialog::removeCurrentCategory()
 // ask whether to save edits or not
 bool AddAppDialog::saveOrNot()
 {
-    if (!ui->pushSave->isEnabled())
+    if (!ui->pushSave->isEnabled()) {
         return true;
+    }
 
     const auto ans = QMessageBox::question(this, tr("Save changes?"), tr("Do you want to save your edits?"),
                                            QMessageBox::Save | QMessageBox::Discard);
-    if (ans == QMessageBox::Save)
+    if (ans == QMessageBox::Save) {
         return pushSave_clicked(); // Continue only if the save actually succeeded
+    }
     ui->pushSave->setDisabled(true);
     return true; // Discarded, continue
 }

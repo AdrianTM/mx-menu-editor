@@ -56,8 +56,8 @@
 #include <QStandardPaths>
 #include <QTextDocument>
 #include <QTextStream>
-#include <utility>
 #include <algorithm>
+#include <utility>
 
 #include "ui_addappdialog.h"
 
@@ -323,7 +323,7 @@ void MainWindow::insertAppIntoCategories(const QString &filePath, const QStringL
     for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i) {
         auto *categoryItem = ui->treeWidget->topLevelItem(i);
         const auto existingCategories = hashCategories.values(categoryItem->text(0));
-        const bool belongs = std::any_of(categories.cbegin(), categories.cend(), [&](const QString &cat) {
+        const bool belongs = std::ranges::any_of(categories, [&](const QString &cat) {
             return existingCategories.contains(cat);
         });
         if (!belongs) {
@@ -362,7 +362,7 @@ QString MainWindow::getCatName(const QString &fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        return QString();
+        return {};
     }
 
     QString defaultName;
@@ -834,8 +834,8 @@ void MainWindow::changeIcon()
             return;
         }
         ui->pushSave->setEnabled(true);
-        ui->advancedEditor->setText(
-            DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
+        ui->advancedEditor->setText(DesktopUtils::setEntryValue(
+            ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
         ui->labelIcon->setPixmap(QPixmap(selected));
     }
 }
@@ -866,8 +866,8 @@ void MainWindow::changeCommand()
     if (newCommand.isEmpty()) {
         return;
     }
-    ui->advancedEditor->setText(
-        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
+    ui->advancedEditor->setText(DesktopUtils::setEntryValue(
+        ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
 }
 
 void MainWindow::changeComment()
@@ -935,8 +935,8 @@ void MainWindow::changeNotify(bool checked)
 {
     ui->pushSave->setEnabled(true);
     const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
-    ui->advancedEditor->setText(
-        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexStartupNotifyFull, QStringLiteral("StartupNotify"), str));
+    ui->advancedEditor->setText(DesktopUtils::setEntryValue(
+        ui->advancedEditor->toPlainText(), regexStartupNotifyFull, QStringLiteral("StartupNotify"), str));
 }
 
 // hide or show the item in the menu
@@ -966,8 +966,8 @@ void MainWindow::changeTerminal(bool checked)
 {
     ui->pushSave->setEnabled(true);
     const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
-    ui->advancedEditor->setText(
-        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexTerminalFull, QStringLiteral("Terminal"), str));
+    ui->advancedEditor->setText(DesktopUtils::setEntryValue(
+        ui->advancedEditor->toPlainText(), regexTerminalFull, QStringLiteral("Terminal"), str));
 }
 
 // list categories of the displayed items
@@ -1186,7 +1186,8 @@ void MainWindow::pushAbout_clicked()
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        displayDoc(QString(SystemDocPath) + QStringLiteral("mx-menu-editor/license.html"), tr("%1 License").arg(this->windowTitle()));
+        displayDoc(QString(SystemDocPath) + QStringLiteral("mx-menu-editor/license.html"),
+                   tr("%1 License").arg(this->windowTitle()));
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog changelog(this);
         const int width = 500;
@@ -1374,10 +1375,10 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
     };
 
     if (iconName.isEmpty()) {
-        return QPixmap();
+        return {};
     }
 
-    const IconKey key {iconName, size};
+    const IconKey key {.name = iconName, .size = size};
     if (iconCache.contains(key)) {
         return makePixmap(iconCache.value(key));
     }
@@ -1427,7 +1428,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
         const QStringList themeRoots = QIcon::themeSearchPaths();
         const auto tryFile = [&](const QString &filePath) -> QIcon {
             if (!QFile::exists(filePath)) {
-                return QIcon();
+                return {};
             }
             QIcon icon(filePath);
             return icon.isNull() ? QIcon() : icon;
@@ -1461,7 +1462,7 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
                 }
             }
         }
-        return QIcon();
+        return {};
     };
 
     QIcon icon = findFromAnyTheme(iconName);
@@ -1471,5 +1472,5 @@ QPixmap MainWindow::findIcon(const QString &iconName, const QSize &size)
         return makePixmap(icon);
     }
 
-    return QPixmap();
+    return {};
 }
