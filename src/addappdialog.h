@@ -49,9 +49,6 @@ public:
     [[nodiscard]] bool validateCommand(const QString &command, QString &errorMessage);
     [[nodiscard]] static bool validateComment(const QString &comment, QString &errorMessage);
     [[nodiscard]] static bool validateIconPath(const QString &iconPath, QString &errorMessage);
-    [[nodiscard]] static QString parseCommandExecutable(const QString &command);
-    [[nodiscard]] static bool checkExecutableExists(const QString &executable);
-    [[nodiscard]] static bool containsInvalidDesktopChars(const QString &text);
     [[nodiscard]] static bool confirmExecutableExists(QWidget *parent, const QString &command);
 
 signals:
@@ -76,7 +73,6 @@ private slots:
 
 private:
     void setIconPath(const QString &path);
-    static QString sanitizeFileName(const QString &name);
 
     Ui::AddAppDialog *ui;
     QString icon_path;

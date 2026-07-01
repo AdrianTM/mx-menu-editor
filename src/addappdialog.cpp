@@ -31,9 +31,9 @@
 #include <QLineEdit>
 #include <QListWidget>
 #include <QScopedPointer>
-#include <QStandardPaths>
 #include <QToolButton>
 
+#include "desktoputils.h"
 #include "mainwindow.h"
 
 namespace
@@ -62,21 +62,6 @@ AddAppDialog::AddAppDialog(QWidget *parent)
 
 AddAppDialog::~AddAppDialog() { delete ui; }
 
-// Newlines and control characters would corrupt the single-line Key=Value
-// format of a .desktop entry; shared by Add and Edit field validation.
-bool AddAppDialog::containsInvalidDesktopChars(const QString &text)
-{
-    for (const QChar &ch : text) {
-        if (ch == QLatin1Char('\n') || ch == QLatin1Char('\r')) {
-            return true;
-        }
-        if (ch.unicode() < 32 && ch != QLatin1Char('\t')) {
-            return true;
-        }
-    }
-    return false;
-}
-
 bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMessage)
 {
     errorMessage.clear();
@@ -90,7 +75,7 @@ bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMe
         return false;
     }
 
-    if (containsInvalidDesktopChars(name)) {
+    if (DesktopUtils::containsInvalidDesktopChars(name)) {
         errorMessage = tr("Application name cannot contain newlines or control characters");
         return false;
     }
@@ -103,8 +88,8 @@ bool AddAppDialog::validateApplicationName(const QString &name, QString &errorMe
 // Save action, so both flows ask the same question with the same wording.
 bool AddAppDialog::confirmExecutableExists(QWidget *parent, const QString &command)
 {
-    const QString executable = parseCommandExecutable(command);
-    if (executable.isEmpty() || checkExecutableExists(executable)) {
+    const QString executable = DesktopUtils::parseCommandExecutable(command);
+    if (executable.isEmpty() || DesktopUtils::checkExecutableExists(executable)) {
         return true;
     }
 
@@ -155,7 +140,7 @@ bool AddAppDialog::validateComment(const QString &comment, QString &errorMessage
         return false;
     }
 
-    if (containsInvalidDesktopChars(comment)) {
+    if (DesktopUtils::containsInvalidDesktopChars(comment)) {
         errorMessage = tr("Comment cannot contain newlines or control characters");
         return false;
     }
@@ -176,102 +161,12 @@ bool AddAppDialog::validateIconPath(const QString &iconPath, QString &errorMessa
         return false;
     }
 
-    if (containsInvalidDesktopChars(iconPath)) {
+    if (DesktopUtils::containsInvalidDesktopChars(iconPath)) {
         errorMessage = tr("Icon path cannot contain newlines or control characters");
         return false;
     }
 
     return true;
-}
-
-bool AddAppDialog::checkExecutableExists(const QString &executable)
-{
-    if (executable.isEmpty()) {
-        return false;
-    }
-
-    // Remove surrounding quotes if present (e.g., "/path/to app" -> /path/to app)
-    QString cleanExecutable = executable;
-    if ((cleanExecutable.startsWith(QLatin1Char('"')) && cleanExecutable.endsWith(QLatin1Char('"'))) ||
-        (cleanExecutable.startsWith(QLatin1Char('\'')) && cleanExecutable.endsWith(QLatin1Char('\'')))) {
-        cleanExecutable = cleanExecutable.mid(1, cleanExecutable.length() - 2);
-    }
-
-    // Check if the executable exists
-    if (cleanExecutable.startsWith(QLatin1Char('/'))) {
-        // Absolute path - check directly
-        return QFile::exists(cleanExecutable);
-    }
-    // Relative path or command name - check in PATH
-    return !QStandardPaths::findExecutable(cleanExecutable).isEmpty();
-}
-
-QString AddAppDialog::parseCommandExecutable(const QString &command)
-{
-    // Parse command line respecting quotes (similar to shell parsing)
-    QString result;
-    bool inSingleQuote = false;
-    bool inDoubleQuote = false;
-    bool escaped = false;
-
-    for (int i = 0; i < command.length(); ++i) {
-        QChar ch = command.at(i);
-
-        if (escaped) {
-            result.append(ch);
-            escaped = false;
-            continue;
-        }
-
-        if (ch == QLatin1Char('\\')) {
-            escaped = true;
-            continue;
-        }
-
-        if (ch == QLatin1Char('\'') && !inDoubleQuote) {
-            inSingleQuote = !inSingleQuote;
-            continue;
-        }
-
-        if (ch == QLatin1Char('"') && !inSingleQuote) {
-            inDoubleQuote = !inDoubleQuote;
-            continue;
-        }
-
-        if (ch == QLatin1Char(' ') && !inSingleQuote && !inDoubleQuote) {
-            // Found first complete token
-            if (!result.isEmpty()) {
-                break;
-            }
-            continue; // Skip leading spaces
-        }
-
-        result.append(ch);
-    }
-
-    return result.trimmed();
-}
-
-QString AddAppDialog::sanitizeFileName(const QString &name)
-{
-    QString sanitized = name;
-    // Remove or replace invalid filename characters
-    static const QString invalidChars = QStringLiteral("/\\:*?\"<>|");
-    for (const QChar &ch : invalidChars) {
-        sanitized.replace(ch, QLatin1String("-"));
-    }
-    // Replace spaces with dashes
-    sanitized.replace(QLatin1Char(' '), QLatin1Char('-'));
-    // Remove leading/trailing dots and spaces
-    sanitized = sanitized.trimmed();
-    while (sanitized.startsWith(QLatin1Char('.'))) {
-        sanitized.remove(0, 1);
-    }
-    // Ensure it's not empty
-    if (sanitized.isEmpty()) {
-        sanitized = QStringLiteral("application");
-    }
-    return sanitized;
 }
 
 bool AddAppDialog::pushSave_clicked()
@@ -306,7 +201,7 @@ bool AddAppDialog::pushSave_clicked()
     }
 
     QString output;
-    QString fileName = sanitizeFileName(appName) + ".desktop";
+    QString fileName = DesktopUtils::sanitizeFileName(appName) + ".desktop";
     const QString appDir = MainWindow::localApplicationsPath();
     QString outName = appDir + QLatin1Char('/') + fileName;
     if (!QDir().exists(appDir) && !QDir().mkpath(appDir)) {

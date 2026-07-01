@@ -24,6 +24,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "desktoputils.h"
+
 #include <QDebug>
 #include <QDialogButtonBox>
 #include <QDirIterator>
@@ -86,64 +88,6 @@ const QRegularExpression regexNoDisplayFull(QStringLiteral("(^|\n)NoDisplay=[^\n
 const QRegularExpression regexTerminalFull(QStringLiteral("(^|\n)Terminal=[^\n]*(\n|$)"));
 const QRegularExpression regexNotFilter(QStringLiteral("^(?!<Not>).*$"));
 const QRegularExpression regexNameFull(QStringLiteral("(^|\n)Name=[^\n]*(\n|$)"));
-
-// Sets a single-line "Key=Value" entry in desktop-entry text, replacing the first
-// existing line for that key or appending a freshly-formatted one if absent.
-QString setDesktopEntryValue(QString text, const QRegularExpression &fullKeyRegex, const QString &key,
-                              const QString &value)
-{
-    const QRegularExpressionMatch match = fullKeyRegex.match(text);
-    const int index = match.capturedStart();
-    const int length = match.capturedLength();
-    if (index != -1) {
-        text.replace(index, length, "\n" + key + "=" + value + "\n");
-    } else {
-        text = text.trimmed();
-        text.append("\n" + key + "=" + value + "\n");
-    }
-    return text;
-}
-
-// Desktop-entry "Name[locale]=" candidate keys for the current system locale, most
-// preferred first (e.g. "pt_BR" before "pt"). Cached since the system locale doesn't
-// change mid-run and this is consulted once per desktop file.
-const QStringList &localizedNameLocaleKeys()
-{
-    static const QStringList keys = [] {
-        const QStringList uiLanguages = QLocale::system().uiLanguages();
-        QStringList result;
-        result.reserve(uiLanguages.size() * 2);
-        for (const auto &lang : uiLanguages) {
-            const auto normalized = QString(lang).replace(QLatin1Char('-'), QLatin1Char('_'));
-            result << normalized;
-            const int sepIndex = normalized.indexOf(QLatin1Char('_'));
-            if (sepIndex > 0) {
-                result << normalized.left(sepIndex);
-            }
-        }
-        return result;
-    }();
-    return keys;
-}
-
-// Picks the best display name for the current locale: a localized "Name[locale]="
-// matching the system locale, falling back to the plain "Name=", falling back to any
-// localized name at all if even that is missing.
-QString pickLocalizedName(const QString &defaultName, const QHash<QString, QString> &localizedNames)
-{
-    for (const auto &key : localizedNameLocaleKeys()) {
-        if (localizedNames.contains(key)) {
-            return localizedNames.value(key);
-        }
-    }
-    if (!defaultName.isEmpty()) {
-        return defaultName;
-    }
-    if (!localizedNames.isEmpty()) {
-        return localizedNames.constBegin().value();
-    }
-    return QString();
-}
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -328,9 +272,7 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
     QStringList searchPatterns;
     searchPatterns.reserve(categories.size());
     for (const auto &category : std::as_const(categories)) {
-        const auto escapedCategory = QRegularExpression::escape(category);
-        // Match the category as a whole semicolon-delimited token, not a substring of another category.
-        searchPatterns << ("Categories=(?:[^;]*;)*" + escapedCategory + "(?:;|$)");
+        searchPatterns << DesktopUtils::categoryMatchPattern(category);
     }
     const QString searchString = searchPatterns.join(QLatin1Char('|'));
 
@@ -447,7 +389,7 @@ QString MainWindow::getCatName(const QString &fileName)
         }
     }
 
-    return pickLocalizedName(defaultName, localizedNames);
+    return DesktopUtils::pickLocalizedName(defaultName, localizedNames);
 }
 
 // return a list of .menu files
@@ -645,7 +587,7 @@ QTreeWidgetItem *MainWindow::addToTree(QTreeWidgetItem *parent, const QString &f
     }
     file.close();
 
-    const QString displayName = pickLocalizedName(defaultName, localizedNames);
+    const QString displayName = DesktopUtils::pickLocalizedName(defaultName, localizedNames);
     if (displayName.isEmpty()) {
         return nullptr;
     }
@@ -886,13 +828,13 @@ void MainWindow::changeIcon()
         }
     }
     if (!selected.isEmpty()) {
-        if (AddAppDialog::containsInvalidDesktopChars(selected)) {
+        if (DesktopUtils::containsInvalidDesktopChars(selected)) {
             QMessageBox::warning(this, tr("Error"), tr("Icon path cannot contain newlines or control characters."));
             return;
         }
         ui->pushSave->setEnabled(true);
         ui->advancedEditor->setText(
-            setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
+            DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexIconFull, QStringLiteral("Icon"), selected));
         ui->labelIcon->setPixmap(QPixmap(selected));
     }
 }
@@ -900,7 +842,7 @@ void MainWindow::changeIcon()
 void MainWindow::changeName()
 {
     const auto newName = ui->lineEditName->text();
-    if (AddAppDialog::containsInvalidDesktopChars(newName)) {
+    if (DesktopUtils::containsInvalidDesktopChars(newName)) {
         QMessageBox::warning(this, tr("Error"), tr("Application name cannot contain newlines or control characters."));
         return;
     }
@@ -909,13 +851,13 @@ void MainWindow::changeName()
         return;
     }
     ui->advancedEditor->setText(
-        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexNameFull, QStringLiteral("Name"), newName));
+        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexNameFull, QStringLiteral("Name"), newName));
 }
 
 void MainWindow::changeCommand()
 {
     const auto newCommand = ui->lineEditCommand->text();
-    if (AddAppDialog::containsInvalidDesktopChars(newCommand)) {
+    if (DesktopUtils::containsInvalidDesktopChars(newCommand)) {
         QMessageBox::warning(this, tr("Error"), tr("Command cannot contain newlines or control characters."));
         return;
     }
@@ -924,20 +866,20 @@ void MainWindow::changeCommand()
         return;
     }
     ui->advancedEditor->setText(
-        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
+        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexExecFull, QStringLiteral("Exec"), newCommand));
 }
 
 void MainWindow::changeComment()
 {
     const auto newComment = ui->lineEditComment->text();
-    if (AddAppDialog::containsInvalidDesktopChars(newComment)) {
+    if (DesktopUtils::containsInvalidDesktopChars(newComment)) {
         QMessageBox::warning(this, tr("Error"), tr("Comment cannot contain newlines or control characters."));
         return;
     }
     ui->pushSave->setEnabled(true);
     QString text = ui->advancedEditor->toPlainText();
     if (!newComment.isEmpty()) {
-        text = setDesktopEntryValue(text, regexCommentFull, QStringLiteral("Comment"), newComment);
+        text = DesktopUtils::setEntryValue(text, regexCommentFull, QStringLiteral("Comment"), newComment);
     } else {
         text.remove(regexCommentFull);
     }
@@ -993,7 +935,7 @@ void MainWindow::changeNotify(bool checked)
     ui->pushSave->setEnabled(true);
     const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
     ui->advancedEditor->setText(
-        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexStartupNotifyFull, QStringLiteral("StartupNotify"), str));
+        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexStartupNotifyFull, QStringLiteral("StartupNotify"), str));
 }
 
 // hide or show the item in the menu
@@ -1003,7 +945,7 @@ void MainWindow::changeHide(bool checked)
     const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
     QString text = ui->advancedEditor->toPlainText().trimmed();
     if (regexNoDisplayFull.match(text).hasMatch()) {
-        text = setDesktopEntryValue(text, regexNoDisplayFull, QStringLiteral("NoDisplay"), str);
+        text = DesktopUtils::setEntryValue(text, regexNoDisplayFull, QStringLiteral("NoDisplay"), str);
     } else {
         // No NoDisplay= line yet; insert it right after Exec= to keep related keys grouped.
         QString newText;
@@ -1024,7 +966,7 @@ void MainWindow::changeTerminal(bool checked)
     ui->pushSave->setEnabled(true);
     const QString str = checked ? QStringLiteral("true") : QStringLiteral("false");
     ui->advancedEditor->setText(
-        setDesktopEntryValue(ui->advancedEditor->toPlainText(), regexTerminalFull, QStringLiteral("Terminal"), str));
+        DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexTerminalFull, QStringLiteral("Terminal"), str));
 }
 
 // list categories of the displayed items

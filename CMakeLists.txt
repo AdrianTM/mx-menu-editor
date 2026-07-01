@@ -80,6 +80,7 @@ find_package(Qt6 REQUIRED COMPONENTS
     Widgets
     LinguistTools
 )
+find_package(Qt6 QUIET COMPONENTS Test)
 
 # Enable automatic MOC, UIC, and RCC processing
 set(CMAKE_AUTOMOC ON)
@@ -89,12 +90,14 @@ set(CMAKE_AUTORCC ON)
 # Define source files
 set(SOURCES
     src/addappdialog.cpp
+    src/desktoputils.cpp
     src/main.cpp
     src/mainwindow.cpp
 )
 
 set(HEADERS
     src/addappdialog.h
+    src/desktoputils.h
     src/mainwindow.h
 )
 
@@ -181,3 +184,10 @@ set_target_properties(mx-menu-editor PROPERTIES
 install(TARGETS mx-menu-editor
     RUNTIME DESTINATION bin
 )
+
+# Tests
+option(BUILD_TESTS "Build the test suite" ON)
+if(BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
