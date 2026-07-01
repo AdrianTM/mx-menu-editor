@@ -91,6 +91,7 @@ set(CMAKE_AUTORCC ON)
 set(SOURCES
     src/addappdialog.cpp
     src/desktoputils.cpp
+    src/docviewer.cpp
     src/main.cpp
     src/mainwindow.cpp
 )
@@ -98,6 +99,7 @@ set(SOURCES
 set(HEADERS
     src/addappdialog.h
     src/desktoputils.h
+    src/docviewer.h
     src/mainwindow.h
 )
 

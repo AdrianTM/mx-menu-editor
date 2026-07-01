@@ -6,6 +6,7 @@ endif()
 add_executable(test_desktoputils
     test_desktoputils.cpp
     ${CMAKE_SOURCE_DIR}/src/desktoputils.cpp
+    ${CMAKE_SOURCE_DIR}/src/docviewer.cpp
     ${CMAKE_SOURCE_DIR}/src/addappdialog.cpp
     ${CMAKE_SOURCE_DIR}/src/addappdialog.ui
     ${CMAKE_SOURCE_DIR}/src/mainwindow.cpp

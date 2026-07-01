@@ -25,6 +25,7 @@
 #include "ui_mainwindow.h"
 
 #include "desktoputils.h"
+#include "docviewer.h"
 
 #include <QDebug>
 #include <QDialogButtonBox>
@@ -1185,9 +1186,7 @@ void MainWindow::pushAbout_clicked()
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        if (!QProcess::startDetached(QStringLiteral("xdg-open"), {"file:///usr/share/doc/mx-menu-editor/license.html"})) {
-            QMessageBox::warning(this, tr("Error"), tr("Could not open the license file."));
-        }
+        displayDoc(QString(SystemDocPath) + QStringLiteral("mx-menu-editor/license.html"), tr("%1 License").arg(this->windowTitle()));
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog changelog(this);
         const int width = 500;
@@ -1233,18 +1232,8 @@ void MainWindow::setEnabled(const QString & /*unused*/)
 
 void MainWindow::pushHelp_clicked()
 {
-    const QLocale locale;
-    const auto lang = locale.bcp47Name();
-
-    auto url = QString(SystemDocPath) + QStringLiteral("mx-menu-editor/mx-menu-editor.html");
-
-    if (lang.startsWith(QLatin1String("fr"))) {
-        url = QStringLiteral("https://mxlinux.org/wiki/help-files/help-mx-editeur-de-menu");
-    }
-
-    if (!QProcess::startDetached(QStringLiteral("xdg-open"), {url})) {
-        QMessageBox::warning(nullptr, tr("Error"), tr("Could not open the help page."));
-    }
+    const auto path = QString(SystemDocPath) + QStringLiteral("mx-menu-editor/mx-menu-editor.html");
+    displayDoc(path, tr("MX Menu Editor Help"), true);
 }
 
 // Cancel button clicked
