@@ -56,6 +56,7 @@
 #include <QStandardPaths>
 #include <QTextDocument>
 #include <QTextStream>
+#include <QtAlgorithms>
 #include <algorithm>
 #include <utility>
 
@@ -254,7 +255,7 @@ void MainWindow::populateCategory(QTreeWidgetItem *categoryItem)
         return;
     }
 
-    categoryItem->takeChildren();
+    qDeleteAll(categoryItem->takeChildren());
 
     const auto &categoryName = categoryItem->text(0);
     const QStringList categories = hashCategories.values(categoryName);
