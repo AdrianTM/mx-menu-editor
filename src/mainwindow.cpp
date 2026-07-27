@@ -948,12 +948,15 @@ void MainWindow::changeHide(bool checked)
     if (regexNoDisplayFull.match(text).hasMatch()) {
         text = DesktopUtils::setEntryValue(text, regexNoDisplayFull, QStringLiteral("NoDisplay"), str);
     } else {
-        // No NoDisplay= line yet; insert it right after Exec= to keep related keys grouped.
+        // No NoDisplay= line yet; insert it right after the first Exec= to keep related keys grouped
+        // (some .desktop files have multiple Exec= lines, see readItem()).
         QString newText;
+        bool inserted = false;
         for (const auto &line : text.split(QStringLiteral("\n"))) {
             newText.append(line + "\n");
-            if (line.startsWith(QLatin1String("Exec="))) {
+            if (!inserted && line.startsWith(QLatin1String("Exec="))) {
                 newText.append("NoDisplay=" + str + "\n");
+                inserted = true;
             }
         }
         text = newText;
