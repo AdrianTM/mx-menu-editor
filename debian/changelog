@@ -1,3 +1,11 @@
+mx-menu-editor (26.07) mx; urgency=medium
+
+  * Remove stale application entries when refreshing a menu category.
+  * When hiding an application with multiple commands, add the hidden status
+    only to the first command entry.
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 27 Jul 2026 17:13:40 -0400
+
 mx-menu-editor (26.06) mx; urgency=medium
 
   * Show Help and License inside the application instead of opening an

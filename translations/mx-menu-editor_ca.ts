@@ -73,7 +73,7 @@
     </message>
     <message>
         <location filename="../src/addappdialog.ui" line="222"/>
-        <location filename="../src/addappdialog.cpp" line="369"/>
+        <location filename="../src/addappdialog.cpp" line="359"/>
         <source>Set icon</source>
         <translation>Defineix icona </translation>
     </message>
@@ -88,115 +88,115 @@
         <translation>Notificador d&apos;arrencada </translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="38"/>
+        <location filename="../src/addappdialog.cpp" line="50"/>
         <source>Add Custom Application</source>
         <translation>Afegeix aplicació a mida </translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="268"/>
-        <location filename="../src/addappdialog.cpp" line="275"/>
-        <location filename="../src/addappdialog.cpp" line="282"/>
-        <location filename="../src/addappdialog.cpp" line="289"/>
-        <location filename="../src/addappdialog.cpp" line="298"/>
-        <location filename="../src/addappdialog.cpp" line="303"/>
+        <location filename="../src/addappdialog.cpp" line="152"/>
+        <source>Comment cannot contain newlines or control characters</source>
+        <translation>El comentari no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="173"/>
+        <source>Icon path cannot contain newlines or control characters</source>
+        <translation>El camí de la icona no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="186"/>
+        <location filename="../src/addappdialog.cpp" line="193"/>
+        <location filename="../src/addappdialog.cpp" line="200"/>
+        <location filename="../src/addappdialog.cpp" line="207"/>
+        <location filename="../src/addappdialog.cpp" line="216"/>
+        <location filename="../src/addappdialog.cpp" line="221"/>
         <source>Error</source>
         <translation>S&apos;ha produït un error</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="53"/>
+        <location filename="../src/addappdialog.cpp" line="69"/>
         <source>Application name cannot be empty</source>
         <translation>El nom de l&apos;aplicació no pot estar buit.</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="58"/>
+        <location filename="../src/addappdialog.cpp" line="74"/>
         <source>Application name is too long (maximum 255 characters)</source>
         <translation>El nom del programa és massa llarg (màxim 255 caràcters)</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="65"/>
-        <source>Application name cannot contain newlines</source>
-        <translation>El nom del programa no pot contenir canvis de línia</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="69"/>
-        <source>Application name contains invalid control characters</source>
-        <translation>El nom del programa conté caràcters de control no vàlids</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="81"/>
-        <location filename="../src/addappdialog.cpp" line="102"/>
+        <location filename="../src/addappdialog.cpp" line="114"/>
+        <location filename="../src/addappdialog.cpp" line="133"/>
         <source>Command cannot be empty</source>
         <translation>L&apos;ordre no pot estar buida.</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="86"/>
+        <location filename="../src/addappdialog.cpp" line="119"/>
         <source>Command is too long (maximum 1024 characters)</source>
         <translation>L&apos;ordre és massa llarga (màxim 1024 caràcters)</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="92"/>
+        <location filename="../src/addappdialog.cpp" line="125"/>
         <source>Command cannot contain newlines</source>
         <translation>L&apos;ordre no pot contenir canvis de línia</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="108"/>
+        <location filename="../src/addappdialog.cpp" line="103"/>
         <source>Warning</source>
         <translation>Atenció </translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="109"/>
+        <location filename="../src/addappdialog.cpp" line="79"/>
+        <source>Application name cannot contain newlines or control characters</source>
+        <translation>El nom de l&apos;aplicació no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="104"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
         <translation>L&apos;executable %1&apos; no existeix o no es troba a PATH.
 Voleu continuar tanmateix?</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="122"/>
+        <location filename="../src/addappdialog.cpp" line="147"/>
         <source>Comment is too long (maximum 512 characters)</source>
         <translation>El comentari és massa llarg (màxim 512 caràcters)</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="129"/>
-        <source>Comment cannot contain newlines</source>
-        <translation>El comentari no pot contenir canvis de línia</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="133"/>
-        <source>Comment contains invalid control characters</source>
-        <translation>El comentari conté caràcters de control no vàlids</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="150"/>
+        <location filename="../src/addappdialog.cpp" line="168"/>
         <source>Icon path is too long (maximum 512 characters)</source>
         <translation>El camí de la icona és massa llarg (màxim 512 caràcters)</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="157"/>
-        <source>Icon path cannot contain newlines</source>
-        <translation>El camí de la icona no pot contenir canvis de línia</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="161"/>
-        <source>Icon path contains invalid control characters</source>
-        <translation>El camí de la icona conté caràcters de control no vàlids</translation>
-    </message>
-    <message>
-        <location filename="../src/addappdialog.cpp" line="298"/>
+        <location filename="../src/addappdialog.cpp" line="216"/>
         <source>Could not create application directory</source>
         <translation>No s&apos;ha pogut crear el directori de l&apos;aplicació.</translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="303"/>
+        <location filename="../src/addappdialog.cpp" line="221"/>
         <source>Could not save the file</source>
         <translation>No es pot desar el fitxer </translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="350"/>
+        <location filename="../src/addappdialog.cpp" line="272"/>
+        <source>Change icon</source>
+        <translation>Canvia la icona </translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="280"/>
+        <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
+        <translation>Fitxers gràfics (*.png *.jpg *.bmp *.xpm *.svg)</translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="294"/>
+        <source>Select executable file</source>
+        <translation>Tria el fitxer executable </translation>
+    </message>
+    <message>
+        <location filename="../src/addappdialog.cpp" line="340"/>
         <source>Save changes?</source>
         <translation>Desa els canvis? </translation>
     </message>
     <message>
-        <location filename="../src/addappdialog.cpp" line="350"/>
+        <location filename="../src/addappdialog.cpp" line="340"/>
         <source>Do you want to save your edits?</source>
         <translation>Voleu desar la vostra edició? </translation>
     </message>
@@ -209,7 +209,7 @@ Voleu continuar tanmateix?</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1333"/>
+        <location filename="../src/mainwindow.cpp" line="1177"/>
         <source>MX Menu Editor</source>
         <translation>MX Menu Editor </translation>
     </message>
@@ -265,9 +265,9 @@ Voleu continuar tanmateix?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="565"/>
-        <location filename="../src/mainwindow.cpp" line="571"/>
-        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="529"/>
+        <location filename="../src/mainwindow.cpp" line="535"/>
+        <location filename="../src/mainwindow.cpp" line="781"/>
         <source>Restore original item</source>
         <translation>Restaura l&apos;ítem original </translation>
     </message>
@@ -293,7 +293,6 @@ Voleu continuar tanmateix?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="276"/>
-        <location filename="../src/mainwindow.cpp" line="898"/>
         <source>Change icon</source>
         <translation>Canvia la icona </translation>
     </message>
@@ -309,7 +308,7 @@ Voleu continuar tanmateix?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="568"/>
+        <location filename="../src/mainwindow.cpp" line="532"/>
         <source>Delete</source>
         <translation>Esborra </translation>
     </message>
@@ -369,7 +368,7 @@ Voleu continuar tanmateix?</translation>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="792"/>
+        <location filename="../src/mainwindow.cpp" line="743"/>
         <source>Select executable file</source>
         <translation>Tria el fitxer executable </translation>
     </message>
@@ -378,98 +377,138 @@ Voleu continuar tanmateix?</translation>
         <translation type="vanished">Fitxers gràfics (*.png, *.jpg, *bmb, *xpm) </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="876"/>
+        <location filename="../src/mainwindow.cpp" line="823"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Fitxers gràfics (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1113"/>
+        <location filename="../src/mainwindow.cpp" line="993"/>
         <source>Choose category</source>
         <translation>Trieu la categoria </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1127"/>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
+        <location filename="../src/mainwindow.cpp" line="1183"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1128"/>
+        <location filename="../src/mainwindow.cpp" line="1008"/>
         <source>OK</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1247"/>
-        <source>Warning</source>
-        <translation>Atenció </translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1248"/>
-        <source>The executable '%1' does not exist or is not in PATH.
-Do you want to continue anyway?</source>
-        <translation>L&apos;executable %1&apos; no existeix o no es troba a PATH.
-Voleu continuar tanmateix?</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1289"/>
-        <location filename="../src/mainwindow.cpp" line="1295"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="1123"/>
+        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
+        <source>Icon path cannot contain newlines or control characters.</source>
+        <translation>El caní de la icona no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="847"/>
+        <source>Application name cannot contain newlines or control characters.</source>
+        <translation>El nom de l&apos;aplicació no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="862"/>
+        <source>Command cannot contain newlines or control characters.</source>
+        <translation>L&apos;ordre no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="877"/>
+        <source>Comment cannot contain newlines or control characters.</source>
+        <translation>El comentari no pot contenir salts de línia o caràcters de control.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1123"/>
         <source>Could not create the applications directory</source>
         <translation>No s&apos;ha pogut crear el directori d&apos;aplicacions.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1295"/>
+        <location filename="../src/mainwindow.cpp" line="1129"/>
         <source>Could not save the file</source>
         <translation>No es pot desar el fitxer </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1332"/>
+        <location filename="../src/mainwindow.cpp" line="1176"/>
         <source>About MX Menu Editor</source>
         <translation>Quant al MX Menu Editor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1333"/>
+        <location filename="../src/mainwindow.cpp" line="1177"/>
         <source>Version: </source>
         <translation>Versió: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1334"/>
+        <location filename="../src/mainwindow.cpp" line="1178"/>
         <source>Program for editing Xfce menu</source>
         <translation>Programa per editar el menú Xfce </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1336"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>License</source>
         <translation>Llicència</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1338"/>
+        <location filename="../src/mainwindow.cpp" line="1182"/>
         <source>Changelog</source>
         <translation>Registre de canvis</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1368"/>
+        <location filename="../src/mainwindow.cpp" line="1190"/>
+        <source>%1 License</source>
+        <translation>Llicència de %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <source>Could not read the changelog (timed out).</source>
+        <translation>No he pogut llegir el registre de canvis (temps excedit).</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <source>Could not read the changelog.</source>
+        <translation>No he pogut llegir el registre de canvis.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1216"/>
         <source>&amp;Close</source>
         <translation>Tan&amp;ca </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <source>MX Menu Editor Help</source>
+        <translation>Ajuda del MX Menu Editor</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Save changes?</source>
         <translation>Desa els canvis? </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Do you want to save your edits?</source>
         <translation>Voleu desar la vostra edició? </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <source>Could not restore the application: %1</source>
+        <translation>No he pogut restaurar l&apos;aplicació: %1</translation>
     </message>
 </context>
 <context>
@@ -478,6 +517,19 @@ Voleu continuar tanmateix?</translation>
         <location filename="../src/main.cpp" line="68"/>
         <source>You must run this program as normal user.</source>
         <translation>Cal executar aquest programa com a usuari normal</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../src/docviewer.cpp" line="50"/>
+        <source>Could not load %1</source>
+        <translation>No s&apos;ha pogut carregar %1</translation>
+    </message>
+    <message>
+        <location filename="../src/docviewer.cpp" line="53"/>
+        <source>&amp;Close</source>
+        <translation>Tan&amp;ca </translation>
     </message>
 </context>
 </TS>
