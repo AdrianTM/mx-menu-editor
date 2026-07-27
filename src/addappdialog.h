@@ -1,7 +1,7 @@
 /**********************************************************************
  *  addappdialog.h
  **********************************************************************
- * Copyright (C) 2015 MX Authors
+ * Copyright (C) 2015-2026 MX Authors
  *
  * Authors: Adrian
  *          MX Linux <http://mxlinux.org>
