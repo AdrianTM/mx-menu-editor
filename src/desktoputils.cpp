@@ -190,3 +190,16 @@ QString DesktopUtils::sanitizeFileName(const QString &name)
     }
     return sanitized;
 }
+
+QString DesktopUtils::uniqueCopyFileName(const QString &baseName, const std::function<bool(const QString &)> &exists)
+{
+    const int dotIndex = baseName.lastIndexOf(QLatin1Char('.'));
+    const QString stem = dotIndex > 0 ? baseName.left(dotIndex) : baseName;
+    const QString suffix = dotIndex > 0 ? baseName.mid(dotIndex) : QString();
+
+    QString candidate = stem + QStringLiteral("-copy") + suffix;
+    for (int n = 2; exists(candidate); ++n) {
+        candidate = stem + QStringLiteral("-copy-") + QString::number(n) + suffix;
+    }
+    return candidate;
+}

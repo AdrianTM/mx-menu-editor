@@ -230,6 +230,20 @@
             </property>
            </widget>
           </item>
+          <item row="3" column="4" colspan="2">
+           <widget class="QPushButton" name="pushDuplicateApp">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Duplicate entry</string>
+            </property>
+            <property name="icon">
+             <iconset theme="edit-copy">
+              <normaloff>.</normaloff>.</iconset>
+            </property>
+           </widget>
+          </item>
           <item row="4" column="4" rowspan="3" colspan="2">
            <widget class="QGroupBox" name="groupIconBox">
             <property name="title">

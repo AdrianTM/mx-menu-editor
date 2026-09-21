@@ -22,6 +22,7 @@
  * along with MX Menu Editor.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 #include <QRegularExpression>
+#include <QSet>
 #include <QTest>
 
 #include "addappdialog.h"
@@ -50,6 +51,9 @@ private slots:
     // DesktopUtils::sanitizeFileName - filename sanitization
     void sanitizeFileName_data();
     void sanitizeFileName();
+
+    // DesktopUtils::uniqueCopyFileName - collision-avoiding "copy" basenames
+    void uniqueCopyFileName();
 
     // DesktopUtils::containsInvalidDesktopChars / DesktopUtils::pickLocalizedNameForKeys
     void containsInvalidDesktopChars_data();
@@ -161,6 +165,19 @@ void TestDesktopUtils::sanitizeFileName()
     QFETCH(QString, name);
     QFETCH(QString, expected);
     QCOMPARE(DesktopUtils::sanitizeFileName(name), expected);
+}
+
+void TestDesktopUtils::uniqueCopyFileName()
+{
+    const auto noneExist = [](const QString &) { return false; };
+    QCOMPARE(DesktopUtils::uniqueCopyFileName(QStringLiteral("foo.desktop"), noneExist),
+             QStringLiteral("foo-copy.desktop"));
+    QCOMPARE(DesktopUtils::uniqueCopyFileName(QStringLiteral("foo"), noneExist), QStringLiteral("foo-copy"));
+
+    QSet<QString> taken {QStringLiteral("foo-copy.desktop"), QStringLiteral("foo-copy-2.desktop")};
+    const auto existsInSet = [&taken](const QString &candidate) { return taken.contains(candidate); };
+    QCOMPARE(DesktopUtils::uniqueCopyFileName(QStringLiteral("foo.desktop"), existsInSet),
+             QStringLiteral("foo-copy-3.desktop"));
 }
 
 void TestDesktopUtils::containsInvalidDesktopChars_data()

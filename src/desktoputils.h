@@ -30,6 +30,8 @@
 #include <QString>
 #include <QStringList>
 
+#include <functional>
+
 // Pure, GUI-free helpers for working with .desktop entry text and metadata.
 // Kept free of QWidget/QObject so they can be exercised directly by CTest.
 namespace DesktopUtils
@@ -71,6 +73,11 @@ namespace DesktopUtils
 // Sanitizes a string for use as a filename: replaces characters invalid in filenames
 // and spaces with "-", strips leading dots, and falls back to "application" if empty.
 [[nodiscard]] QString sanitizeFileName(const QString &name);
+
+// Derives a ".desktop" basename for a copy of baseName that doesn't already exist,
+// per the caller-supplied exists() predicate: "foo.desktop" -> "foo-copy.desktop", then
+// "foo-copy-2.desktop", "foo-copy-3.desktop", etc. if earlier candidates are taken.
+[[nodiscard]] QString uniqueCopyFileName(const QString &baseName, const std::function<bool(const QString &)> &exists);
 }
 
 #endif // DESKTOPUTILS_H

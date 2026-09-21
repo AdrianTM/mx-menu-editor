@@ -355,6 +355,7 @@ void MainWindow::setConnections()
     connect(ui->pushCancel, &QPushButton::clicked, this, &MainWindow::pushCancel_clicked);
     connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
     connect(ui->pushRestoreApp, &QPushButton::clicked, this, &MainWindow::pushRestoreApp_clicked);
+    connect(ui->pushDuplicateApp, &QPushButton::clicked, this, &MainWindow::pushDuplicateApp_clicked);
     connect(ui->pushSave, &QPushButton::clicked, this, &MainWindow::pushSave_clicked);
 }
 
@@ -780,6 +781,7 @@ void MainWindow::resetInterface()
     ui->pushChangeIcon->setDisabled(true);
     ui->pushRestoreApp->setDisabled(true);
     ui->pushRestoreApp->setText(tr("Restore original item"));
+    ui->pushDuplicateApp->setDisabled(true);
     ui->pushSave->setDisabled(true);
     ui->labelIcon->setPixmap(QPixmap());
 }
@@ -809,6 +811,7 @@ void MainWindow::enableEdit()
     ui->toolButtonCommand->setEnabled(true);
     ui->pushAdd->setEnabled(true);
     ui->pushChangeIcon->setEnabled(true);
+    ui->pushDuplicateApp->setEnabled(true);
     ui->advancedEditor->setEnabled(true);
     ui->lineEditCommand->setEnabled(true);
     ui->lineEditComment->setEnabled(true);
@@ -1295,6 +1298,55 @@ void MainWindow::pushRestoreApp_clicked()
     }
     filterTree(ui->lineEditSearch->text());
     findReloadItem(base_name);
+}
+
+// copy the current item to a new, independently-editable .desktop file
+void MainWindow::pushDuplicateApp_clicked()
+{
+    if (current_item == nullptr) {
+        return;
+    }
+    const auto base_name = QFileInfo(current_item->text(1)).fileName();
+    const auto applicationsDir = localApplicationsPath();
+
+    const auto exists = [&applicationsDir](const QString &candidate) {
+        return QFileInfo::exists(applicationsDir + "/" + candidate)
+            || QFileInfo::exists(systemApplicationsPath() + "/" + candidate);
+    };
+    const auto newBaseName = DesktopUtils::uniqueCopyFileName(base_name, exists);
+
+    const auto newName = ui->lineEditName->text() + tr(" (copy)");
+    const auto newContent = DesktopUtils::setEntryValue(ui->advancedEditor->toPlainText(), regexNameFull,
+                                                         QStringLiteral("Name"), newName);
+
+    if (!QFileInfo::exists(applicationsDir) && !QDir().mkpath(applicationsDir)) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create the applications directory"));
+        return;
+    }
+    const auto out_name = applicationsDir + "/" + newBaseName;
+    QFile out(out_name);
+    if (!out.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not save the file"));
+        return;
+    }
+    out.write(newContent.toUtf8());
+    out.flush();
+    out.close();
+
+    if (!all_local_desktop_files.contains(out_name)) {
+        all_local_desktop_files << out_name;
+        updateLocalBasenamesCache();
+    }
+
+    QStringList categories;
+    for (int i = 0; i < ui->listWidgetEditCategories->count(); ++i) {
+        categories << ui->listWidgetEditCategories->item(i)->text();
+    }
+    insertAppIntoCategories(out_name, categories);
+
+    restartPanel();
+    filterTree(ui->lineEditSearch->text());
+    findReloadItem(newBaseName);
 }
 
 // find and reload item
