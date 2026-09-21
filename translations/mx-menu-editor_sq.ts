@@ -209,7 +209,7 @@ Doni të vazhdoni, sido qoftë?</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>MX Menu Editor</source>
         <translation>Përpunues MX Menush</translation>
     </message>
@@ -265,9 +265,9 @@ Doni të vazhdoni, sido qoftë?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="529"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="530"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>Restore original item</source>
         <translation>Rikthe objektin origjinal</translation>
     </message>
@@ -308,7 +308,7 @@ Doni të vazhdoni, sido qoftë?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Delete</source>
         <translation>Fshije</translation>
     </message>
@@ -368,7 +368,7 @@ Doni të vazhdoni, sido qoftë?</translation>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
         <source>Select executable file</source>
         <translation>Përzgjidhni kartelë të ekzekutueshme</translation>
     </message>
@@ -377,136 +377,136 @@ Doni të vazhdoni, sido qoftë?</translation>
         <translation type="vanished">Kartela Figurash (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="824"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Kartela Figurë (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Choose category</source>
         <translation>Zgjidhni kategori</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
+        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1187"/>
         <source>Cancel</source>
         <translation>Anuloje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
-        <location filename="../src/mainwindow.cpp" line="847"/>
-        <location filename="../src/mainwindow.cpp" line="862"/>
-        <location filename="../src/mainwindow.cpp" line="877"/>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <location filename="../src/mainwindow.cpp" line="1211"/>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Icon path cannot contain newlines or control characters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
         <source>Application name cannot contain newlines or control characters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
         <source>Command cannot contain newlines or control characters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Comment cannot contain newlines or control characters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Could not create the applications directory</source>
         <translation>S’u krijua dot drejtori aplikacionesh</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Could not save the file</source>
         <translation>S’u ruajt dot kartela</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
         <source>About MX Menu Editor</source>
         <translation>Mbi Përpunues MX Menush</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1178"/>
+        <location filename="../src/mainwindow.cpp" line="1182"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program për përpunim menush Xfce-je</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1180"/>
+        <location filename="../src/mainwindow.cpp" line="1184"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Të drejta kopjimi (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1185"/>
         <source>License</source>
         <translation>Licencë</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1186"/>
         <source>Changelog</source>
         <translation>Regjistër ndryshimesh</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1190"/>
+        <location filename="../src/mainwindow.cpp" line="1194"/>
         <source>%1 License</source>
         <translation>Licencë %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
         <source>Could not read the changelog (timed out).</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
         <source>Could not read the changelog.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1216"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>&amp;Close</source>
         <translation>&amp;Mbylle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>MX Menu Editor Help</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Save changes?</source>
         <translation>Të ruhen ndryshimet?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Do you want to save your edits?</source>
         <translation>Doni të ruhen përpunimet tuaja?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Could not restore the application: %1</source>
         <translation type="unfinished"/>
     </message>

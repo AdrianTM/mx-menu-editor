@@ -208,7 +208,7 @@ Do you want to continue anyway?</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>MX Menu Editor</source>
         <translation>Editor do Menu do MX</translation>
     </message>
@@ -264,9 +264,9 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="529"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="530"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>Restore original item</source>
         <translation>Restaurar o item original</translation>
     </message>
@@ -307,7 +307,7 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Delete</source>
         <translation>Excluir</translation>
     </message>
@@ -367,7 +367,7 @@ Do you want to continue anyway?</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
         <source>Select executable file</source>
         <translation>Selecionar o arquivo executável</translation>
     </message>
@@ -376,136 +376,136 @@ Do you want to continue anyway?</source>
         <translation type="vanished">Arquivos de Imagem (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="824"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Arquivos de Imagem (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Choose category</source>
         <translation>Escolher a categoria</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
+        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1187"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>OK</source>
         <translation>Aceitar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
-        <location filename="../src/mainwindow.cpp" line="847"/>
-        <location filename="../src/mainwindow.cpp" line="862"/>
-        <location filename="../src/mainwindow.cpp" line="877"/>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <location filename="../src/mainwindow.cpp" line="1211"/>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Icon path cannot contain newlines or control characters.</source>
         <translation>O diretório do ícone não pode conter quebras de linha e nem caracteres inválidos.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
         <source>Application name cannot contain newlines or control characters.</source>
         <translation>O nome do programa não pode ter quebras de linha e nem caracteres inválidos.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
         <source>Command cannot contain newlines or control characters.</source>
         <translation>O comando não pode ter quebras de linha e nem caracteres inválidos.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Comment cannot contain newlines or control characters.</source>
         <translation>O comentário não pode ter quebras de linha e nem caracteres inválidos.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Could not create the applications directory</source>
         <translation>Não foi possível criar a pasta dos aplicativos</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Could not save the file</source>
         <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
         <source>About MX Menu Editor</source>
         <translation>Sobre o Editor do Menu do MX</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>Version: </source>
         <translation>Versão: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1178"/>
+        <location filename="../src/mainwindow.cpp" line="1182"/>
         <source>Program for editing Xfce menu</source>
         <translation>Programa para editar o menu do Xfce</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1180"/>
+        <location filename="../src/mainwindow.cpp" line="1184"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Direitos de Autor (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1185"/>
         <source>License</source>
         <translation>Licença</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1186"/>
         <source>Changelog</source>
         <translation>Relatório de alterações</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1190"/>
+        <location filename="../src/mainwindow.cpp" line="1194"/>
         <source>%1 License</source>
         <translation>Licença do ‘%1’</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
         <source>Could not read the changelog (timed out).</source>
         <translation>Não foi possível ler o registro de mudanças (tempo esgotado).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
         <source>Could not read the changelog.</source>
         <translation>Não foi possível ler o registro de mudanças.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1216"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>&amp;Close</source>
         <translation>&amp;Fechar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>MX Menu Editor Help</source>
         <translation>Ajuda do Editor do Menu do MX</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Save changes?</source>
         <translation>Salvar as alterações?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Do you want to save your edits?</source>
         <translation>Você quer salvar as alterações?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Could not restore the application: %1</source>
         <translation>Não foi possível restaurar o aplicativo: %1</translation>
     </message>

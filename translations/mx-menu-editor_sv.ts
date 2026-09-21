@@ -209,7 +209,7 @@ Vill du fortsätta trots det?</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>MX Menu Editor</source>
         <translation>MX Meny Editor</translation>
     </message>
@@ -265,9 +265,9 @@ Vill du fortsätta trots det?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="529"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="530"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>Restore original item</source>
         <translation>Återställ orginal-objekt</translation>
     </message>
@@ -308,7 +308,7 @@ Vill du fortsätta trots det?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -368,7 +368,7 @@ Vill du fortsätta trots det?</translation>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
         <source>Select executable file</source>
         <translation>Välj körbar fil</translation>
     </message>
@@ -377,136 +377,136 @@ Vill du fortsätta trots det?</translation>
         <translation type="vanished">Bildfiler (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="824"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Bildfiler (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Choose category</source>
         <translation>Välj kategori</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
+        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1187"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
-        <location filename="../src/mainwindow.cpp" line="847"/>
-        <location filename="../src/mainwindow.cpp" line="862"/>
-        <location filename="../src/mainwindow.cpp" line="877"/>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <location filename="../src/mainwindow.cpp" line="1211"/>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Icon path cannot contain newlines or control characters.</source>
         <translation>Ikonsökväg kan inte innehålla nyradstecken eller kontrolltecken.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
         <source>Application name cannot contain newlines or control characters.</source>
         <translation>Applikationsnamn kan inte innehålla nyradstecken eller kontrolltecken.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
         <source>Command cannot contain newlines or control characters.</source>
         <translation>Kommando kan inte innehålla nyradstecken eller kontrolltecken.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Comment cannot contain newlines or control characters.</source>
         <translation>Kommentar kan inte innehålla nyradstecken eller kontrolltecken.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Could not create the applications directory</source>
         <translation>Kunde inte skapa programkatalogen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Could not save the file</source>
         <translation>Kunde inte spara filen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
         <source>About MX Menu Editor</source>
         <translation>Om MX Meny Editor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1178"/>
+        <location filename="../src/mainwindow.cpp" line="1182"/>
         <source>Program for editing Xfce menu</source>
         <translation>Program för att redigera Xfce meny</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1180"/>
+        <location filename="../src/mainwindow.cpp" line="1184"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1185"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1186"/>
         <source>Changelog</source>
         <translation>Ändringslogg</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1190"/>
+        <location filename="../src/mainwindow.cpp" line="1194"/>
         <source>%1 License</source>
         <translation>%1 Licens</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
         <source>Could not read the changelog (timed out).</source>
         <translation>Kunde inte läsa ändringsloggen (timeout).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
         <source>Could not read the changelog.</source>
         <translation>Kunde inte läsa ändringsloggen.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1216"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>&amp;Close</source>
         <translation>&amp;Close</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>MX Menu Editor Help</source>
         <translation>MX Menyredigerare Hjälp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Save changes?</source>
         <translation>Spara ändringar?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Do you want to save your edits?</source>
         <translation>Vill du spara dina redigeringar?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Could not restore the application: %1</source>
         <translation>Kunde inte återställa applikationen: %1</translation>
     </message>

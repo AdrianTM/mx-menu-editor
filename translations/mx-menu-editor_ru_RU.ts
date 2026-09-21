@@ -95,12 +95,12 @@
     <message>
         <location filename="../src/addappdialog.cpp" line="152"/>
         <source>Comment cannot contain newlines or control characters</source>
-        <translation type="unfinished"/>
+        <translation>Комментарий не может содержать символы новой строки или управляющие символы</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="173"/>
         <source>Icon path cannot contain newlines or control characters</source>
-        <translation type="unfinished"/>
+        <translation>Путь к значку не может содержать символы новой строки или управляющие символы</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="186"/>
@@ -146,13 +146,14 @@
     <message>
         <location filename="../src/addappdialog.cpp" line="79"/>
         <source>Application name cannot contain newlines or control characters</source>
-        <translation type="unfinished"/>
+        <translation>Имя приложения не может содержать символы новой строки или управляющие символы</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="104"/>
         <source>The executable '%1' does not exist or is not in PATH.
 Do you want to continue anyway?</source>
-        <translation>Исполняемый файл &apos;%1&apos; не существует или отсутствует в PATH.Вы всё равно хотите продолжить?</translation>
+        <translation>Исполняемый файл &apos;%1&apos; не существует или отсутствует в PATH.
+Всё равно продолжить?</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="147"/>
@@ -162,7 +163,7 @@ Do you want to continue anyway?</source>
     <message>
         <location filename="../src/addappdialog.cpp" line="168"/>
         <source>Icon path is too long (maximum 512 characters)</source>
-        <translation>Длина пути к значку слишком велика (максимум 512 символов)</translation>
+        <translation>Путь к значку слишком длинный (максимум 512 символов)</translation>
     </message>
     <message>
         <location filename="../src/addappdialog.cpp" line="216"/>
@@ -208,7 +209,7 @@ Do you want to continue anyway?</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="17"/>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>MX Menu Editor</source>
         <translation>MX Редактор меню</translation>
     </message>
@@ -264,9 +265,9 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="180"/>
-        <location filename="../src/mainwindow.cpp" line="529"/>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="530"/>
+        <location filename="../src/mainwindow.cpp" line="536"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>Restore original item</source>
         <translation>Восстановить исходный элемент</translation>
     </message>
@@ -307,7 +308,7 @@ Do you want to continue anyway?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="532"/>
+        <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -367,7 +368,7 @@ Do you want to continue anyway?</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
         <source>Select executable file</source>
         <translation>Выберите исполняемый файл</translation>
     </message>
@@ -376,138 +377,138 @@ Do you want to continue anyway?</source>
         <translation type="vanished">Файлы изображений (*.png *.jpg *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="824"/>
         <source>Image Files (*.png *.jpg *.bmp *.xpm *.svg)</source>
         <translation>Файлы изображений (*.png *.jpg *.bmp *.xpm *.svg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Choose category</source>
         <translation>Выбрать категорию</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
+        <location filename="../src/mainwindow.cpp" line="1011"/>
+        <location filename="../src/mainwindow.cpp" line="1187"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
-        <location filename="../src/mainwindow.cpp" line="847"/>
-        <location filename="../src/mainwindow.cpp" line="862"/>
-        <location filename="../src/mainwindow.cpp" line="877"/>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <location filename="../src/mainwindow.cpp" line="1211"/>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="833"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Icon path cannot contain newlines or control characters.</source>
-        <translation type="unfinished"/>
+        <translation>Путь к значку не может содержать символы новой строки или управляющие символы.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="847"/>
+        <location filename="../src/mainwindow.cpp" line="848"/>
         <source>Application name cannot contain newlines or control characters.</source>
-        <translation type="unfinished"/>
+        <translation>Имя приложения не может содержать символы новой строки или управляющие символы.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="862"/>
+        <location filename="../src/mainwindow.cpp" line="863"/>
         <source>Command cannot contain newlines or control characters.</source>
-        <translation type="unfinished"/>
+        <translation>Команда не может содержать символы новой строки или управляющие символы.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="877"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Comment cannot contain newlines or control characters.</source>
-        <translation type="unfinished"/>
+        <translation>Комментарий не может содержать символы новой строки или управляющие символы.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1123"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Could not create the applications directory</source>
         <translation>Не удалось создать каталог приложений</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1129"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Could not save the file</source>
         <translation>Не удалось сохранить файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
         <source>About MX Menu Editor</source>
         <translation>О программе MX Редактор меню</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
         <source>Version: </source>
         <translation>Версия: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1178"/>
+        <location filename="../src/mainwindow.cpp" line="1182"/>
         <source>Program for editing Xfce menu</source>
         <translation>Программа для редактирования меню Xfce</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1180"/>
+        <location filename="../src/mainwindow.cpp" line="1184"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Авторское право (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1185"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1182"/>
+        <location filename="../src/mainwindow.cpp" line="1186"/>
         <source>Changelog</source>
         <translation>Список изменений</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1190"/>
+        <location filename="../src/mainwindow.cpp" line="1194"/>
         <source>%1 License</source>
-        <translation>%1 Лицензия</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1207"/>
-        <source>Could not read the changelog (timed out).</source>
-        <translation type="unfinished"/>
+        <translation>Лицензия %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1211"/>
-        <source>Could not read the changelog.</source>
-        <translation type="unfinished"/>
+        <source>Could not read the changelog (timed out).</source>
+        <translation>Не удалось прочитать список изменений (тайм-аут).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1216"/>
+        <location filename="../src/mainwindow.cpp" line="1215"/>
+        <source>Could not read the changelog.</source>
+        <translation>Не удалось прочитать список изменений.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрыть</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>MX Menu Editor Help</source>
-        <translation type="unfinished"/>
+        <translation>Справка MX Редактор меню</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Save changes?</source>
         <translation>Сохранить изменения?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Do you want to save your edits?</source>
         <translation>Хотите сохранить ваши изменения?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>Could not restore the application: %1</source>
-        <translation type="unfinished"/>
+        <translation>Не удалось восстановить приложение: %1</translation>
     </message>
 </context>
 <context>
