@@ -687,9 +687,23 @@ void MainWindow::loadItem(QTreeWidgetItem *item, int /*unused*/)
         // reset lines for Exec and Icon
         ui->labelCommand->clear();
         ui->labelIcon->clear();
+        // Only fields from the [Desktop Entry] group are relevant to the Quick Editor;
+        // later groups like [Desktop Action ...] can redeclare Name=/Exec=/etc. for a
+        // specific action and must not overwrite the main entry's values.
+        bool inDesktopEntrySection = false;
         while (!file.atEnd()) {
             line = file.readLine();
             content.append(line);
+
+            const QString trimmedLine = line.trimmed();
+            if (trimmedLine.startsWith(QLatin1Char('['))) {
+                inDesktopEntrySection = trimmedLine == QLatin1String("[Desktop Entry]");
+                continue;
+            }
+            if (!inDesktopEntrySection) {
+                continue;
+            }
+
             if (line.startsWith(QLatin1String("Categories="))) {
                 line = line.section(QStringLiteral("="), 1);
                 line.remove(regexTrailingSemicolon);
